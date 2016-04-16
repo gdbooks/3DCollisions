@@ -72,6 +72,6 @@
     * [OBB](Chapter7/obb.md)
     * [Capsule](Chapter7/capsule.md)
     * [Elipsoid](Chapter7/elipsoid.md)
-    * [Cylinder]
-  * [Physics Engines]    
+    * [Cylinder](Chapter7/cylinder.md)
+  * [Physics Engines](Chapter7/engines.md)
 * [FPS Project](Chapter8/README.md)
