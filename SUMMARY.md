@@ -67,4 +67,11 @@
     * [Rendering](Chapter6/render_frustum.md)
   * [Culling](Chapter6/culling.md)
   * [Picking](Chapter6/picking.md)
+* [Further Research](Chapter7/README.md)
+  * [Other Shapes](Chapter7/shapes.md)
+    * [OBB](Chapter7/obb.md)
+    * [Capsule](Chapter7/capsule.md)
+    * [Elipsoid](Chapter7/elipsoid.md)
+    * [Cylinder]
+  * [Physics Engines]    
 * [FPS Project](Chapter8/README.md)
