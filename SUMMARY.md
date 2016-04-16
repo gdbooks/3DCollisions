@@ -67,4 +67,4 @@
     * [Rendering](Chapter6/render_frustum.md)
   * [Culling](Chapter6/culling.md)
   * [Picking](Chapter6/picking.md)
-* [FPS Project](Chapter7/README.md)
+* [FPS Project](Chapter8/README.md)
