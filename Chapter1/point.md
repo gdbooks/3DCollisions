@@ -6,6 +6,7 @@ class Point {
   
   public Vector3 Position {
     get;
+    set;
   }
   
   public float X { get; set; }
