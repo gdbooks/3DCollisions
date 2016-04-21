@@ -93,3 +93,7 @@ p2: (7, 3, 4)
 And that is what we'd expect. The takeaway here is to ALWAYS pay attention to what you're assigning, a reference, a new object or a struct. And know what ramifications that assignement might have! When can you get away with a reference assign, and when do you need to do a deep copy that duplicates data into a new object. It's a lot to think about!
 
 ## Unit Test
+
+Finally unit tests. From here on out i'll be providing you with unit tests. Just make a new .cs file and paste the unit test verbatim in it. I'll provide a guide as to the console output you should see and what the visual scene should look like.
+
+For the humble point, the unit test is this:
