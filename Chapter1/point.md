@@ -52,16 +52,44 @@ public Point(Vector3 v) {
 
 Now if we run this code:
 
-```
+```cs
 void DoPointUnitTest() {
     Vector3 v = new Vector3(2, 3, 4);
     Point unitPoint1 = v;
     Console.WriteLine("p1: " + unitPoint1.ToString());
-    v.x = 7;
+    v.X = 7;
     Point unitPoint2 = v;
     Console.WriteLine("p1: " + unitPoint1.ToString());
     Console.WriteLine("p2: " + unitPoint2.ToString());
 }
 ```
+
+The output of the unit test will be:
+
+```
+p1: (2, 3, 4)
+p1: (7, 3, 4)
+p2: (7, 3, 4)
+```
+
+As you can see, the X value of p1 would get changed. This is wrong. It happens because by doing a simple assignment like that, we're setting the ```position``` vector as a reference to the ```v``` argument. Essentially both variables point to the same vector!
+
+Instead the constructor needs to create a NEW vector, using the values of ```v```
+
+```cs
+public Point(Vector3 v) {
+    position = new Vector3(v.X, v.Y, v.Z);
+}
+```
+
+This works better. The vector that ```position``` is assigned to was made right there on the spot. If we run the same unit test as above, the new output will be:
+
+```
+p1: (2, 3, 4)
+p1: (2, 3, 4)
+p2: (7, 3, 4)
+```
+
+And that is what we'd expect. The takeaway here is to ALWAYS pay attention to what you're assigning, a reference, a new object or a struct. And know what ramifications that assignement might have! When can you get away with a reference assign, and when do you need to do a deep copy that duplicates data into a new object. It's a lot to think about!
 
 ## Unit Test
