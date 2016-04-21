@@ -29,3 +29,7 @@ So, let's get started!
 
 * Add a new ```Collision.cs``` file to the project
 * For now, this class is going to be empty
+
+## Point
+
+We're not going to do anything special for points. Because a 3D point consists of an X, Y and Z coordinate, we're just going to use the existing Vector3 class we wrote to represent points.
