@@ -1,5 +1,4 @@
 * [Shapes And Points](Chapter1/README.md)
-  * [Point](Chapter1/point.md)
   * [Sphere](Chapter1/sphere.md)
     * [Point in Sphere](Chapter1/point_in_sphere.md)
     * [Closest point on Sphere](Chapter1/closest_point_sphere.md)
