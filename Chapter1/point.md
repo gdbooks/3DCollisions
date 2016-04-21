@@ -56,7 +56,11 @@ Now if we run this code:
 void DoPointUnitTest() {
     Vector3 v = new Vector3(2, 3, 4);
     Point unitPoint1 = v;
-    
+    Console.WriteLine("p1: " + unitPoint1.ToString());
+    v.x = 7;
+    Point unitPoint2 = v;
+    Console.WriteLine("p1: " + unitPoint1.ToString());
+    Console.WriteLine("p2: " + unitPoint2.ToString());
 }
 ```
 
