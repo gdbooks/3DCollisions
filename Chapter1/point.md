@@ -100,8 +100,4 @@ Finally unit tests. From here on out i'll be providing you with unit tests. Just
 
 For the humble point, the unit test is this:
 
-```
-p1: (2, 3, 4)
-p1: (7, 3, 4)
-p2: (7, 3, 4)
-```
+TODO
