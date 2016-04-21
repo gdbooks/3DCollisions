@@ -29,3 +29,7 @@ So, let's get started!
 
 * Add a new ```Collision.cs``` file to the project
 * For now, this class is going to be empty
+
+##Main
+
+I'm going to provide you with a main class, place the following code into __Program.cs__. It will let you run whatever unit test you need to.
