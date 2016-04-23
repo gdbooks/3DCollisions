@@ -1,4 +1,33 @@
+#Application
 
+This is going to be your __base class__ for all the applications we build with the collision detection projects. All your classes will subclass this one. There are two member variables your classes will inherit:
+
+* ```Application Instance``` a static instance to the active subclass of Application. However, the type is of the base class. Singleton access is convenient sometimes
+* ```OpenTK.GameWindow Window``` this is the actual OpenTK window that the Application class launches. Chances are you won't need to do anything with this, but it's included just in case.
+
+### Extending Application
+
+When you extend the application class, there are a few functions you will be able to override to add your own logic. 
+
+```cs
+public virtual void Main(string[] args)
+```
+
+Main is the entry point. You will be forwarded all the default arguments from the program. By default, the base class version of this function creates the OpenTK window. If you want to make a console application, you just override ```Main``` and not call the base class version of it!
+
+The next few functions are pretty self explanatory, as we've been using similar functions all along. You NEVER need to call the base versions of these functions (as they are empty). Usually if you override one or more of these, you don't need to override main.
+
+```cs
+public virtual void Intialize(int width, int height)
+public virtual void Resize(int width, int height)
+public virtual void Update(float deltaTime)
+public virtual void Render()
+public virtual void Shutdown()
+```
+
+### The code
+
+Here is the code for the ```Application``` class in it's entirety. 
 
 ```cs
 using System;
