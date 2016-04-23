@@ -9,6 +9,8 @@ You SHOULD NOT out put primitives in the __Samples__ directory. Remember, only c
 Aside from shapes and points, we're going to make a helper class called ```Collision```. This class will hold the actual collision logic. It's going to contain only public static methods. This is an example of how collisions will work when we're done:
 
 ```cs
+// THIS IS JUST SAMPLE CODE, DON'T COPY IT!
+
 // Integrate function causes moving sphere to rest on plane
 void Integrate(Sphere sphere, Plane plane, float velocity) {
     // CollisionResult is a helper class, it contains information
@@ -21,7 +23,7 @@ void Integrate(Sphere sphere, Plane plane, float velocity) {
 }
 ```
 
-So, let's get started!
+## Let's Get Started!
 
 * Add a new ```Collision.cs``` file to the project
 * For now, this class is going to be empty
