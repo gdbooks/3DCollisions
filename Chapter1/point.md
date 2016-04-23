@@ -97,10 +97,49 @@ And that is what we'd expect. The takeaway here is to ALWAYS pay attention to wh
 
 Go ahead and implement the rest of this class on your own. There isn't much to do, just implement the stubs (Or figure out how you would implement it and do that, like i said you don't have to follow my pseudo-code i give, but you certainly can).
 
-## Unit Test
+## Sample / Unit Test
 
-Finally unit tests. From here on out i'll be providing you with unit tests. Just make a new .cs file and paste the unit test verbatim in it. I'll provide a guide as to the console output you should see and what the visual scene should look like.
+For every section i'll try to provide a sample application, or a unit test. For Points, make a new sample application (I called mine __PointSample.cs__ and add the following code to it:
 
-For the humble point, the unit test is this:
+```cs
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+using CollisionDetectionSelector.Primitives;
 
-TODO
+namespace CollisionDetectionSelector.Samples {
+    class PointSample : Application {
+        Point[] points = null;
+
+        public override void Intialize(int width, int height) {
+            points = new Point[100];
+            for (int i = 0; i < 100; ++i) {
+                points[i] = new Point(i -50, i - 50, i - 50 );
+            }
+            GL.PointSize(2f);
+        }
+
+        public override void Render() {
+            Matrix4 lookAt = Matrix4.LookAt(new Vector3(0.0f, 0.0f, 30.0f), new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+            GL.LoadMatrix(lookAt.OpenGL);
+
+            for (int i = 0; i < points.Length; ++i) {
+                points[i].Render();
+            }
+        }
+
+        public override void Resize(int width, int height) {
+            GL.Viewport(0, 0, width, height);
+            GL.MatrixMode(MatrixMode.Projection);
+            float aspect = (float)width / (float)height;
+            Matrix4 perspective = Matrix4.Perspective(60, aspect, 0.01f, 1000.0f);
+            GL.LoadMatrix(Matrix4.Transpose(perspective).Matrix);
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity();
+        }
+    }
+}
+```
+
+If you implemented your ```Point``` class well, the resulting sample window should look like this:
+
+![PS](point_sample.png)
