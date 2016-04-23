@@ -97,9 +97,11 @@ class Application {
     #region OpenTK Callbacks
     private void OpenTKInitialize(object sender, EventArgs e) {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.DarkGray;
         Console.WriteLine("OpenGL Vendor: " + GL.GetString(StringName.Vendor));
         Console.WriteLine("OpenGL Renderer: " + GL.GetString(StringName.Renderer));
         Console.WriteLine("OpenGL Version: " + GL.GetString(StringName.Version));
+        Console.ResetColor();
         Instance.Intialize(800, 600);
     }
 
