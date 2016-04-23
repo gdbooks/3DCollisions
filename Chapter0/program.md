@@ -1,4 +1,6 @@
+#Program
 
+The nice thing about this ```Program``` class is that it's automated. It scans your executable (assembly) for specific subclasses, and dynamically creates a selected subclass of ```Application```.
 
 
 ```cs
