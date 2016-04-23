@@ -27,7 +27,7 @@ public virtual void Shutdown()
 
 ### The code
 
-Here is the code for the ```Application``` class in it's entirety. 
+Here is the code for the ```Application``` class in it's entirety. Other than what was discussed above, the class has a constructor and a few other private OpenTK related functions.
 
 ```cs
 using System;
