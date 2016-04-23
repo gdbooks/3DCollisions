@@ -4,6 +4,8 @@ Troughout this course, i'm going to be providing you with skeleton code for shap
 
 __I will render it for you__. The difference being the ```Render``` function. Because this course is about collisions, not rendering, i will provide the rendering code for each primitive in full. 
 
+I will also try to provide unit-tests or sample applications for everything __THIS CODE WILL COMPILE__, just copy / paste.
+
 # Point
 
 The point is the simplest 3D primitive we will use. That makes it a good primitive to start with. A point is just a 3D touple, a collection of 3 numbers. Therefore, it makes sense to use a Vector3 to represent a point.
