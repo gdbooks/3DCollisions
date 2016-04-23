@@ -1,6 +1,6 @@
 # Getting Started
 
-Troughout this course, i'm going to be providing you with skeleton code for classes. __THIS CODE WILL NOT COMPILE__. You don't even have to use my code for implementation! The code is just there to give you an idea of what a class needs to have. It's pseudo-code.
+Troughout this course, i'm going to be providing you with skeleton code for shape classes. __THIS CODE WILL NOT COMPILE__. You don't even have to use my code for implementation! The code is just there to give you an idea of what a class needs to have. It's pseudo-code.
 
 __I will render it for you__. The difference being the ```Render``` function. Because this course is about collisions, not rendering, i will provide the rendering code for each primitive in full. 
 
