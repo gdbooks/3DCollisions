@@ -2,6 +2,8 @@
 
 We're going to start out by implementing some basic shapes (We're going to make classes for each shape) and methods to test if a point is inside any of the shapes. This may seem simple but it's the basis of collision detection. In later chapters we're going to add functionality to our existing shape classes.
 
+You SHOULD NOT out put primitives in the __Samples__ directory. Remember, only code that creates a window (or console) goes in sample. You might want to consider making a "Collision" directory or something.
+
 ##Collision class
  
 Aside from shapes and points, we're going to make a helper class called ```Collision```. This class will hold the actual collision logic. It's going to contain only public static methods. This is an example of how collisions will work when we're done:
