@@ -11,6 +11,9 @@ The point is the simplest 3D primitive we will use. That makes it a good primiti
 Remember, this layout is to give you an idea of WHAT the class is and should do. You don't HAVE to implement the class like this, just be sure to understand what the clas does.
 
 ```cs
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+
 class Point {
   protected Vector3 position = new Vector3();
   
@@ -28,7 +31,7 @@ class Point {
   public Point(Vector3 v); // TODO (Make new)
   
   public Vector3 ToVector(); // TODO (Return new)
-  public FromVector(Vector3 v); // TODO (Make new)
+  public void FromVector(Vector3 v); // TODO (Make new)
   
   public void Render() {
   
