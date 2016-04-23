@@ -4,6 +4,8 @@ The nice thing about this ```Program``` class is that it's automated. It scans y
 
 This magic is done trough reflection, using the built-in ```Assembly.GetTypes``` method. Because this class will never be edited, i'm just going to give you the code listing. If you are interested in how it works, ask me or do some google-ing on any code you don't recognize.
 
+You select the subclass of ```Application``` based on class name of the subclasses!
+
 ### The code
 
 The one thing we do here that we haven't done before is that the ```Program``` class is not in a specific namespace! This is not an error. C# has an anonymous global namespace. If you fail to specify a namespace for a class, it gets put into this global namespace. 
