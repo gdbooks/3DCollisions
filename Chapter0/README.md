@@ -12,4 +12,4 @@ This should make running sample application super simple! __Program.cs__ already
 
 At this point, your directory tree should resamble this, only two .cs files.
 
-![S0](solution_0.png)
+![S1](solution_1.png)
