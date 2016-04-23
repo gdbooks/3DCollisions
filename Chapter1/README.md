@@ -1,5 +1,3 @@
-
-
 ##Shapes & Points
 
 We're going to start out by implementing some basic shapes (We're going to make classes for each shape) and methods to test if a point is inside any of the shapes. This may seem simple but it's the basis of collision detection. In later chapters we're going to add functionality to our existing shape classes.
@@ -26,8 +24,3 @@ So, let's get started!
 * Add a new ```Collision.cs``` file to the project
 * For now, this class is going to be empty
 
-##Main
-
-I'm going to provide you with a main class, place the following code into __Program.cs__. It will let you run whatever unit test you need to.
-
-TODO
