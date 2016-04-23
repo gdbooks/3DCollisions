@@ -47,3 +47,7 @@ namespace CollisionDetectionSelector.Samples {
     }
 }
 ```
+
+# Run it!
+
+After having created both samples, run your application. You can select which one to run based on the name of the class.
