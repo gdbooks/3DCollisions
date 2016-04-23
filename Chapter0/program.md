@@ -1,6 +1,8 @@
 #Program
 
-The nice thing about this ```Program``` class is that it's automated. It scans your executable (assembly) for specific subclasses, and dynamically creates a selected subclass of ```Application```.
+The nice thing about this ```Program``` class is that it's automated. It scans your executable (assembly) for subclasses of ```Application```, and dynamically creates a selected subclass of ```Application```.
+
+This magic is done trough reflection, using the built-in ```Assembly.GetTypes``` method. Because this class will never be edited, i'm just going to give you the code listing. If you are interested in how it works, ask me or do some google-ing on any code you don't recognize.
 
 
 ```cs
