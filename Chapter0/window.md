@@ -7,3 +7,4 @@ Making a windowed sample is as easy as making a console one. If you want a windo
 * Update(float deltaTime)
 * Render()
 * Shutdown()
+
