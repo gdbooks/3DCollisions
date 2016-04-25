@@ -13,5 +13,12 @@ class Sphere {
     public Point Position { get; set; } // Gets / Sets point vector
     public float Radius { get; set; } // Self explanatory
     
+    public void Render() {
+
+    }
+
+    public override string ToString() {
+        return "Position: (" + point.X + ", " + point.Y + ", " + point.Z + "), Radius: " + radius;
+    }
 }
 ```
