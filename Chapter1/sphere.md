@@ -8,7 +8,10 @@ Because we're not going to actually expose a lot of the data underneath the sphe
 
 Based on the above information, and the image, the simplest implementation of a sphere would be:
 
+```cs
+// SAMPLE CODE ONLY, DON'T TYPE
 
+```
 
 ### Code Guide
 
