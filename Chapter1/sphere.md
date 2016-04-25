@@ -4,6 +4,9 @@ Other than a point, the next most basic 3D  shape. A sphere consists of a point 
 
 ![SPHERE](sphere.jpg)
 
+### Code Guide
+
+Everything in and after the __Rendering__ region will compile. The code above it is more of a suggestion than a hard guide, tough i do think this is good design. The ```CreateRenderArrays```
 
 ```cs
 using System;
@@ -41,7 +44,7 @@ class Sphere {
     private float[] norms = null;
     private uint[] indices = null;
 
-    private void CreateVBO(uint rings = 7, uint sectors = 10) {
+    private void CreateRenderArrays(uint rings = 7, uint sectors = 10) {
         // From:
         // http://stackoverflow.com/questions/5988686/creating-a-3d-sphere-in-opengl-using-visual-c/5989676#5989676
         // http://stackoverflow.com/questions/7957254/connecting-sphere-vertices-opengl
