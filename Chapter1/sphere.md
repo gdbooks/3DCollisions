@@ -6,7 +6,7 @@ Other than a point, the next most basic 3D  shape. A sphere consists of a point 
 
 ### Code Guide
 
-Everything in and after the __Rendering__ region will compile. The code above it is more of a suggestion than a hard guide, tough i do think this is good design. The ```CreateRenderArrays```
+Everything in and after the __Rendering__ region will compile. The code above it is more of a suggestion than a hard guide, tough i do think this is good design. The ```CreateRenderArrays``` function __MUST__ be called in __EVERY__ constructor.
 
 ```cs
 using System;
