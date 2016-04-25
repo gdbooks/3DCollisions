@@ -144,3 +144,5 @@ namespace CollisionDetectionSelector.Samples {
     }
 }
 ```
+
+![UNIT_RESULT](sphere_sample.png)
