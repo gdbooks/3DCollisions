@@ -1,8 +1,14 @@
 # Sphere
 
-Other than a point, the next most basic 3D  shape. A sphere consists of a point and a radius. Because we're not going to actually expose a lot of the data underneath the sphere, i'm going to store the point as a ```Vector3```, and the radius as a ```float```, but you could store the point as a ```Point```
+Other than a point, the next most basic 3D  shape. A sphere consists of a point and a radius. 
 
 ![SPHERE](sphere.jpg)
+
+Because we're not going to actually expose a lot of the data underneath the sphere, i'm going to store the point as a ```Vector3```, and the radius as a ```float```, but you could store the point as a ```Point```
+
+Based on the above information, and the image, the simplest implementation of a sphere would be:
+
+
 
 ### Code Guide
 
