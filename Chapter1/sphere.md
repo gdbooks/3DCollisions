@@ -106,3 +106,41 @@ class Sphere {
     }
 }
 ```
+
+### Sample / Unit Test
+
+This sample is short and simple, it makes a new sphere at origin, configures some render settings and draws the sphere. There is an image of what it's supposed to look like after the code.
+
+```cs
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+using CollisionDetectionSelector.Primitives;
+
+namespace CollisionDetectionSelector.Samples {
+    class SphereSample : Application{
+        Sphere sphere = new Sphere();
+
+        public override void Intialize(int width, int height) {
+            GL.Enable(EnableCap.CullFace);
+            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+        }
+
+        public override void Render() {
+            Matrix4 lookAt = Matrix4.LookAt(new Vector3(0.0f, 0.0f, 10), new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+            GL.LoadMatrix(lookAt.OpenGL);
+
+            sphere.Render();
+        }
+
+        public override void Resize(int width, int height) {
+            GL.Viewport(0, 0, width, height);
+            GL.MatrixMode(MatrixMode.Projection);
+            float aspect = (float)width / (float)height;
+            Matrix4 perspective = Matrix4.Perspective(60, aspect, 0.01f, 1000.0f);
+            GL.LoadMatrix(Matrix4.Transpose(perspective).Matrix);
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity();
+        }
+    }
+}
+```
