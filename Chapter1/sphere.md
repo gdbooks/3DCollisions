@@ -1,6 +1,6 @@
 # Sphere
 
-Other than a point, the next most basic 3D  shape. A sphere consists of a point and a radius. 
+Other than a point, the next most basic 3D  shape. A sphere consists of a point and a radius. The radius of a sphere goes half-way accross it. So, a sphere with a radius of 1, will have a diameter of 2. This can be counter-intuitive when modelling a world, but keep it in mind!
 
 ![SPHERE](sphere.jpg)
 
@@ -10,7 +10,10 @@ Based on the above information, and the image, the simplest implementation of a 
 
 ```cs
 // THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
-
+class Sphere { // Could be a struct?
+  public Vector3 position; // Could be 3 floats?
+  public float radius = 1f;
+}
 ```
 
 ### Code Guide
