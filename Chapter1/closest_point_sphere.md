@@ -35,3 +35,5 @@ Point ClosestPoint(Vector3 spherePos, float sphereRad, Vector3 point) {
   return new Point(worldPoint.x, worldPoint.y, worldPoint.z);
 }
 ```
+
+## On Your Own
