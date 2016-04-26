@@ -15,3 +15,5 @@ The algorithm is not as straight forward as Point in Sphere, but it's pretty sim
 Normalize this vector, then multiply it by the radius of the sphere. You now have a vector that points from the center of the sphere, to the edge of the sphere, towards the point in question.
 
 Finally, add the position of the sphere (as a vector) to the new vector you have. This gives you a vector that points from the origin of the world to the edge of the sphere (A Point)
+
+### Prototype
