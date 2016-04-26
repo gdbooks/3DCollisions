@@ -18,11 +18,20 @@ Finally, add the position of the sphere (as a vector) to the new vector you have
 
 ### Prototype
 
+The sample code below is probably not needed, it's a literal translation of the paragraph above. 
+
 ```cs
 // THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
 Point ClosestPoint(Vector3 spherePos, float sphereRad, Vector3 point) {
-  Vector3 difference = spherePos - point;
-  float distance = Vector3.Length(difference);
-  return distance < sphereRad;
+  // First, get a vetor from the sphere to the point
+  Vector3 sphereToPoint = point - spherePos;
+  // Normalize that vector
+  sphereToPoint = Vector3.Normalize(sphereToPoint);
+  // Adjust it's length to point to edge of sphere
+  sphereToPoint *= sphereRad;
+  // Translate into world space
+  Vector3 worldPoint = spherePos + sphereToPoint;
+  // Return new point
+  return new Point(worldPoint.x, worldPoint.y, worldPoint.z);
 }
 ```
