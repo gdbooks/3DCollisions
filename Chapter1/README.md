@@ -28,5 +28,6 @@ void Integrate(Sphere sphere, Plane plane, float velocity) {
 * Add a new ```Collision.cs``` file to the project
 * For now, this class is going to be empty
 
+![NEW FILE](collisions_file.png)
 
 And let's just add the skeleton, like ```Program``` and ```Application``` this class is going to live in global scope.
