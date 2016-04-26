@@ -40,7 +40,9 @@ class Point {
   public void FromVector(Vector3 v); // TODO (Make new)
   
   public void Render() {
-  
+      GL.Begin(PrimitiveType.Points);
+      GL.Vertex3(position.X, position.Y, position.Z);
+      GL.End();
   }
   
   public override string ToString() {
