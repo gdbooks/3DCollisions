@@ -41,3 +41,7 @@ How do they know you entered the enemy area? Or that you got far enough down an 
 If the invisble geometry contains the point, it is deleted (to keep from triggering the same event twice) and the cutscene is spawned, or the enemy AI is alerted to your presence.
 
 Of course this is a small, trivial example of where a point containment test can help, there are HUNDREDS of uses for this simple technique.
+
+### On Your Own
+
+We're going to keep geometry implemented as mostly data. The collision functions don't really belong inside the geometry classes.
