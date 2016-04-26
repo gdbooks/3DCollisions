@@ -8,6 +8,8 @@ Before reading the next paragraph (Because i will answer the question there), se
 
 # TODO
 
+### The algorithm
+
 The algorithm is not as straight forward as Point in Sphere, but it's pretty simple. First, you need to subtract the point from the center of the sphere. Subtraction order matters on this one. You are left with a vector that points from the center of the sphere, to the test point.
 
 Normalize this vector, then multiply it by the radius of the sphere
