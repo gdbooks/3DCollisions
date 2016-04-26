@@ -2,7 +2,7 @@
 
 Testing if a point is inside a sphere is one of the simplest 3D tests. Take a look at this image, and see if you can figure out the algorithm to perform the test.
 
-#TODO
+![Point In Sphere](point_in_sphere.jpg)
 
 The actual algorithm is very simple. If the distance from the point to the center of the sphere is less than the radius of the sphere, the sphere contains the point!
 
