@@ -8,7 +8,7 @@ The key to the closest point on sphere algorithm is to realize that no matter wh
 
 Before reading the next paragraph (Because i will answer the question there), see if you can figure out given a point and a sphere how to get the closest point on the sphere to that point. I'll provide an image:
 
-# TODO
+![SAMPLE](closest_point_on_sphere.jpg)
 
 ### The algorithm
 
