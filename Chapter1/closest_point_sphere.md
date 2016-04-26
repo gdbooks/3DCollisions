@@ -43,3 +43,9 @@ Add the following function to the ```Collisions``` class:
 ```cs
 public Point ClosestPoint(Sphere sphere, Point point)
 ```
+
+And provide an implementation for it!
+
+### Unit Test
+
+TODO: Gabor, Need to implement unit tests still
