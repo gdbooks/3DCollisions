@@ -37,3 +37,9 @@ Point ClosestPoint(Vector3 spherePos, float sphereRad, Vector3 point) {
 ```
 
 ## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+
+```
