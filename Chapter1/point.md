@@ -6,6 +6,10 @@ __I will render it for you__. The difference being the ```Render``` function. Be
 
 I will also try to provide unit-tests or sample applications for everything __THIS CODE WILL COMPILE__, just copy / paste.
 
+#### THERE IS NOTHING TO CODE UNTIL THE ON YOUR OWN SECTION
+
+And that's going to stay that way troughout the rest of these chapters. Just read and digest the information until you get to the _On Your Own_ section. That's the only place where you need to implement stuff.
+
 # Point
 
 The point is the simplest 3D primitive we will use. That makes it a good primitive to start with. A point is just a 3D touple, a collection of 3 numbers. Therefore, it makes sense to use a Vector3 to represent a point.
@@ -97,7 +101,15 @@ p2: (7, 3, 4)
 
 And that is what we'd expect. The takeaway here is to ALWAYS pay attention to what you're assigning, a reference, a new object or a struct. And know what ramifications that assignement might have! When can you get away with a reference assign, and when do you need to do a deep copy that duplicates data into a new object. It's a lot to think about!
 
-Go ahead and implement the rest of this class on your own. There isn't much to do, just implement the stubs (Or figure out how you would implement it and do that, like i said you don't have to follow my pseudo-code i give, but you certainly can).
+### On Your own
+
+Go ahead and implement the ```Point``` class on your own. There isn't much to do, just implement the stubs (Or figure out how you would implement it and do that, like i said you don't have to follow my pseudo-code i give, but you certainly can).
+
+I made all my geometry classes under a geometry folder, to keep the project clean:
+
+![NEW FOLDER](primitives_file.png)
+
+I'm going to be putting all geometry (Point, Sphere, AABB, Plane, etc...) under the Primitives folder. You can orgonize your project however you want, but i think this is the cleanest way of doing things.
 
 ## Sample / Unit Test
 
