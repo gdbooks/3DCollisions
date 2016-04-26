@@ -39,6 +39,7 @@ class Point {
   public Vector3 ToVector(); // TODO (Return new)
   public void FromVector(Vector3 v); // TODO (Make new)
   
+#region Rendering  
   public void Render() {
       GL.Begin(PrimitiveType.Points);
       GL.Vertex3(position.X, position.Y, position.Z);
@@ -48,6 +49,7 @@ class Point {
   public override string ToString() {
     return "(" + X + ", " + Y + ", " + Z + ")";
   }
+#endregion  
 }
 ```
 
