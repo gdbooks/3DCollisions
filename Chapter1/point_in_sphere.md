@@ -31,3 +31,13 @@ The answer is ```LengthSquared```! It's a function we implemented that does the 
 ```
 
 That, is the most optimal way to check if a sphere contains a point.
+
+### But Why?
+
+Why do we care if a sphere contains a point? Or a bounding box contains a point? Or anything really? Triggers! You've played games where after running down an alley a cutscene triggers. Or when you enter an enemy area all the enemies attack. Perhaps running accross a bridge caused it to collapse behind you, forcing you to move forward?
+
+How do they know you entered the enemy area? Or that you got far enough down an alley to show the cutscene? There is an invisible sphere (or box, or other geometry), they take the point in space represented by the characters world matrix and test it agains the invisible geometry. 
+
+If the invisble geometry contains the point, it is deleted (to keep from triggering the same event twice) and the cutscene is spawned, or the enemy AI is alerted to your presence.
+
+Of course this is a small, trivial example of where a point containment test can help, there are HUNDREDS of uses for this simple technique.
