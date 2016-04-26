@@ -17,3 +17,12 @@ Normalize this vector, then multiply it by the radius of the sphere. You now hav
 Finally, add the position of the sphere (as a vector) to the new vector you have. This gives you a vector that points from the origin of the world to the edge of the sphere (A Point)
 
 ### Prototype
+
+```cs
+// THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
+Point ClosestPoint(Vector3 spherePos, float sphereRad, Vector3 point) {
+  Vector3 difference = spherePos - point;
+  float distance = Vector3.Length(difference);
+  return distance < sphereRad;
+}
+```
