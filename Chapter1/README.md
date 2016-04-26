@@ -31,3 +31,12 @@ void Integrate(Sphere sphere, Plane plane, float velocity) {
 ![NEW FILE](collisions_file.png)
 
 And let's just add the skeleton, like ```Program``` and ```Application``` this class is going to live in global scope.
+
+```cs
+using System;
+using Math_Implementation;
+
+class Collisions {
+    
+}
+```
