@@ -23,16 +23,16 @@ The sample code below is probably not needed, it's a literal translation of the 
 ```cs
 // THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
 Point ClosestPoint(Vector3 spherePos, float sphereRad, Vector3 point) {
-  // First, get a vetor from the sphere to the point
-  Vector3 sphereToPoint = point - spherePos;
-  // Normalize that vector
-  sphereToPoint = Vector3.Normalize(sphereToPoint);
-  // Adjust it's length to point to edge of sphere
-  sphereToPoint *= sphereRad;
-  // Translate into world space
-  Vector3 worldPoint = spherePos + sphereToPoint;
-  // Return new point
-  return new Point(worldPoint.x, worldPoint.y, worldPoint.z);
+    // First, get a vetor from the sphere to the point
+    Vector3 sphereToPoint = point - spherePos;
+    // Normalize that vector
+    sphereToPoint = Vector3.Normalize(sphereToPoint);
+    // Adjust it's length to point to edge of sphere
+    sphereToPoint *= sphereRad;
+    // Translate into world space
+    Vector3 worldPoint = spherePos + sphereToPoint;
+    // Return new point
+    return new Point(worldPoint.x, worldPoint.y, worldPoint.z);
 }
 ```
 
