@@ -44,7 +44,7 @@ If the invisble geometry contains the point, it is deleted (to keep from trigger
 
 Of course this is a small, trivial example of where a point containment test can help, there are HUNDREDS of uses for this simple technique.
 
-### On Your Own
+## On Your Own
 
 We're going to keep geometry implemented as mostly data. The collision functions don't really belong inside the geometry classes.
 
