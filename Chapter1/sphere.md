@@ -122,6 +122,10 @@ class Sphere {
 }
 ```
 
+## On Your Own
+
+Implement a sphere class. Feel free to use the above code as a guide, or come up with your own implementeation.
+
 ### Sample / Unit Test
 
 This sample is short and simple, it makes a new sphere at origin, configures some render settings and draws the sphere. There is an image of what it's supposed to look like after the code.
