@@ -41,5 +41,5 @@ Point ClosestPoint(Vector3 spherePos, float sphereRad, Vector3 point) {
 Add the following function to the ```Collisions``` class:
 
 ```cs
-public Point bool ClosestPoint(Sphere sphere, Point point)
+public Point ClosestPoint(Sphere sphere, Point point)
 ```
