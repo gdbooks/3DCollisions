@@ -45,3 +45,18 @@ Of course this is a small, trivial example of where a point containment test can
 ### On Your Own
 
 We're going to keep geometry implemented as mostly data. The collision functions don't really belong inside the geometry classes.
+
+Go ahead and implement a static ```PointInSphere``` function inside the ```Collisions``` class:
+
+```cs
+using System;
+using Math_Implementation;
+// If your geometry is in a namespace, pull it in
+
+class Collisions {
+    public static bool PointInSphere(Sphere sphere, Point point) {
+        // TODO
+        return false;
+    }
+}
+```
