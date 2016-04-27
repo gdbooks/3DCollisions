@@ -193,4 +193,4 @@ namespace CollisionDetectionSelector.Samples {
 }
 ```
 
-![UNIT_RESULT](sphere_sample.png)
+![UNIT_RESULT](updated_spheres_sample.png)
