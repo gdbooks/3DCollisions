@@ -1,5 +1,3 @@
-# WIP, This page is still being worked on!
-
 # Closes Point On Sphere
 
 Finding the closest point on a sphere can be just as useful as knowing if a point is inside a sphere or not. The closest point on sphere is often used for AI, Physics simuation and special effects.
