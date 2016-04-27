@@ -56,6 +56,7 @@ If you don't see anything on screen, it's because the math library is probably w
 
 Here is a screenshot of what the unit test will look like:
 
+![UNIT](point_in_sphere_unit.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
