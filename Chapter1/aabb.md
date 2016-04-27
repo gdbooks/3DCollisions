@@ -4,3 +4,20 @@ An AABB (Axis Aligned Bounding Box) is a 3D box. It's width / height / depth don
 
 AABB's are pivotal to spacial partitioning, they let us cut a section of 3D space up into smaller sections of 3D space. AABB's also serve as a great acceleration structure for hit detection, but more on that later.
 
+The first question we have to ask is how to represent an AABB? There are two common ways, by storing the leftmost and rightmost corners, OR by storing the center point and a vector of how far the box extends on each side.
+
+```cs
+class AABB {
+    Vector3 min;
+    Vector3 max;
+}
+```
+
+
+```cs
+class AABB {
+    Vector3 center;
+    Vector3 extents;
+}
+```
+
