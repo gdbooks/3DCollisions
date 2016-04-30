@@ -35,3 +35,116 @@ public void Fix() {
 
 At the end of the day, your representation doesn't matter much. If you represent your AABB as a min and max internally, you can expose getter only ```Center``` and ```Extents``` properties.
 
+### Code Guide
+
+```cs
+using System;
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+
+namespace CollisionDetectionSelector.Primitives {
+    class AABB {
+        public Point Min = new Point();
+        public Point Max = new Point();
+
+        public Point Center {
+            get {
+                Vector3 center = Min.ToVector() + Max.ToVector();
+                center *= 0.5f;
+                return new Point(center.X, center.Y, center.Z);
+            }
+            // NO SET!
+        }
+
+        public Vector3 Extents {
+            get {
+                Vector3 extents = Max.ToVector() - Min.ToVector();
+                extents *= 0.5f;
+                return extents;
+            }
+            // NO SET!
+        }
+
+        public bool IsValid {
+            get {
+                return Min.X < Max.X && Min.Y < Max.Y && Min.Z < Max.Z;
+            }
+        }
+
+        public void Fix() {
+            if (Min.X > Max.X) {
+                // SWAP
+            }
+            if (Min.Y > Max.Y) {
+                // Swap
+            }
+            if (Min.Z > Max.Z) {
+                // Swap
+            }
+        }
+
+        public AABB() {
+
+        }
+
+        public AABB(Point min, Point max) {
+            Min = new Point(min.X, min.Y, min.Z);
+            Max = new Point(max.X, max.Y, max.Z);
+
+            if (!IsValid) {
+                Fix();
+            }
+        }
+
+        public AABB(Point center, Vector3 extents) {
+            Vector3 min = center.ToVector() - extents;
+            Vector3 max = center.ToVector() + extents;
+
+            Min = new Point(min.X, min.Y, min.Z);
+            Max = new Point(max.X, max.Y, max.Z);
+        }
+
+        public void Render() {
+            GL.Begin(PrimitiveType.Quads);
+
+            GL.Vertex3(Min.X, Min.Y, Max.Z);
+            GL.Vertex3(Max.X, Min.Y, Max.Z);
+            GL.Vertex3(Max.X, Max.Y, Max.Z);
+            GL.Vertex3(Min.X, Max.Y, Max.Z);
+
+            GL.Vertex3(Max.X, Min.Y, Max.Z);
+            GL.Vertex3(Max.X, Min.Y, Min.Z);
+            GL.Vertex3(Max.X, Max.Y, Min.Z);
+            GL.Vertex3(Max.X, Max.Y, Max.Z);
+
+            GL.Vertex3(Min.X, Max.Y, Max.Z);
+            GL.Vertex3(Max.X, Max.Y, Max.Z);
+            GL.Vertex3(Max.X, Max.Y, Min.Z);
+            GL.Vertex3(Min.X, Max.Y, Min.Z);
+
+            GL.Vertex3(Min.X, Min.Y, Min.Z);
+            GL.Vertex3(Min.X, Max.Y, Min.Z);
+            GL.Vertex3(Max.X, Max.Y, Min.Z);
+            GL.Vertex3(Max.X, Min.Y, Min.Z);
+
+            GL.Vertex3(Min.X, Min.Y, Min.Z);
+            GL.Vertex3(Max.X, Min.Y, Min.Z);
+            GL.Vertex3(Max.X, Min.Y, Max.Z);
+            GL.Vertex3(Min.X, Min.Y, Max.Z);
+
+            GL.Vertex3(Min.X, Min.Y, Min.Z);
+            GL.Vertex3(Min.X, Min.Y, Max.Z);
+            GL.Vertex3(Min.X, Max.Y, Max.Z);
+            GL.Vertex3(Min.X, Max.Y, Min.Z);
+
+            GL.End();
+        }
+
+        public override string ToString() {
+            string result = "Min: (" + Min.X + ", " + Min.Y + ", " + Min.Z + "), ";
+            result += "Max: ( " + Max.X + ", " + Max.Y + ", " + Max.Z + ")";
+            return result;
+        }
+    }
+}
+```
