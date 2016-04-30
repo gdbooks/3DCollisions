@@ -82,7 +82,9 @@ namespace CollisionDetectionSelector.Primitives {
         public AABB(Point center, Vector3 extents) {
             // TODO: Set Min and Max
         }
-
+        
+        // No need to change below this, render and to-string
+        // functions are provided
         public void Render() {
             GL.Begin(PrimitiveType.Quads);
 
