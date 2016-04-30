@@ -20,7 +20,7 @@ That is to say, if ```Point > min && Point < max``` then the point is inside the
 Add the following function to the ```Collisions``` class:
 
 ```cs
-public static Point ClosestPoint(Sphere sphere, Point point)
+public static bool PointInAABB(AABB aabb, Point point)
 ```
 
 And provide an implementation for it!
