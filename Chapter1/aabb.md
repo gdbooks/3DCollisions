@@ -35,6 +35,12 @@ At the end of the day, your representation doesn't matter much. If you represent
 
 ### Code Guide
 
+This code guide is actually valid C# code. If you do all the TODO sections, it will compile. Like always, you don't have to use / follow this implementation. 
+
+One thing to keep in mind, the constructor that takes a min / max point as argument should call the ```Fix``` function because we can't trust user provided values.
+
+That's the only constructor that needs to call Fix, the one that takes a point and extents builds min and max in-line, so you know it will be correct!
+
 ```cs
 using System;
 using OpenTK.Graphics.OpenGL;
