@@ -2,7 +2,9 @@
 
 Finding the closest point on a plane is not too difficult. Consider the following image:
 
-# TODO
+![CLOSE](aabb_closest.png)
+
+The red, green and blue dots are outside the AABB, the closest point to them on the AABB is shown in a transparent projection. The purple dot is INSIDE the aabb. The closest point to the purple one is its-self.
 
 Given that image, can you figure out the rules of the closest point?
 
