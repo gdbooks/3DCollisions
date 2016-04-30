@@ -13,23 +13,24 @@ The first question we have to ask is how to represent an AABB? There are two com
 Most mathematical texts describe an AABB as a min and max point. Because of this, i like to design my AABB classes as such. However, there is a bit of a problem, what if a user sets the min.X of the AABB to be greater than the max.X? For this reason i usually include 2 bits of code:
 
 ```cs
+// THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
 public bool IsValid {
-            get {
-                return Min.X < Max.X && Min.Y < Max.Y && Min.Z < Max.Z;
-            }
-        }
+    get {
+        return Min.X < Max.X && Min.Y < Max.Y && Min.Z < Max.Z;
+    }
+}
 
-        public void Fix() {
-            if (Min.X > Max.X) {
-                // SWAP
-            }
-            if (Min.Y > Max.Y) {
-                // Swap
-            }
-            if (Min.Z > Max.Z) {
-                // Swap
-            }
-        }
+public void Fix() {
+    if (Min.X > Max.X) {
+        // SWAP
+    }
+    if (Min.Y > Max.Y) {
+        // Swap
+    }
+    if (Min.Z > Max.Z) {
+        // Swap
+    }
+}
 ```
 
 At the end of the day, your representation doesn't matter much. If you represent your AABB as a min and max internally, you can expose getter only ```Center``` and ```Extents``` properties.
