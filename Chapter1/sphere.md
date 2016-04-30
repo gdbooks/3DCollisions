@@ -141,6 +141,8 @@ Implement a sphere class. Feel free to use the above code as a guide, or come up
 
 ### Sample / Unit Test
 
+You can [Download](../Samples/CollisionSphere.rar) the samples for this chapter to see if your result looks like the unit test.
+
 This sample is short and simple, it makes a new sphere at origin, configures some render settings and draws the sphere. There is an image of what it's supposed to look like after the code.
 
 ```cs
