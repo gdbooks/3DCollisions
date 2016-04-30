@@ -49,59 +49,38 @@ namespace CollisionDetectionSelector.Primitives {
 
         public Point Center {
             get {
-                Vector3 center = Min.ToVector() + Max.ToVector();
-                center *= 0.5f;
-                return new Point(center.X, center.Y, center.Z);
+                // FIGURE OUT CENTER POINT
             }
             // NO SET!
         }
 
         public Vector3 Extents {
             get {
-                Vector3 extents = Max.ToVector() - Min.ToVector();
-                extents *= 0.5f;
-                return extents;
+                // FIGURE OUT EXTENTS
             }
             // NO SET!
         }
 
         public bool IsValid {
-            get {
-                return Min.X < Max.X && Min.Y < Max.Y && Min.Z < Max.Z;
-            }
+            // TODO: Implement, getter only, no setter!
         }
 
         public void Fix() {
-            if (Min.X > Max.X) {
-                // SWAP
-            }
-            if (Min.Y > Max.Y) {
-                // Swap
-            }
-            if (Min.Z > Max.Z) {
-                // Swap
-            }
+            // TODO: Implement
         }
 
         public AABB() {
-
+            // TODO: Make a unit AABB
+            // Min = -1, max = +1 on all axis
         }
 
         public AABB(Point min, Point max) {
-            Min = new Point(min.X, min.Y, min.Z);
-            Max = new Point(max.X, max.Y, max.Z);
-
-            if (!IsValid) {
-                Fix();
-            }
+            // TODO: Set Min and Max
+            // Don't forget, could be invalid
         }
 
         public AABB(Point center, Vector3 extents) {
-            Vector3 min = center.ToVector() - extents;
-            Vector3 max = center.ToVector() + extents;
-
-            Min = new Point(min.X, min.Y, min.Z);
-            Max = new Point(max.X, max.Y, max.Z);
+            // TODO: Set Min and Max
         }
 
         public void Render() {
