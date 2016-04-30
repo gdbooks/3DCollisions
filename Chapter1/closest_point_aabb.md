@@ -35,6 +35,8 @@ And provide an implementation for it!
 
 ### Unit Test
 
+If you comment out the update function, your image should look like the one attached. The constructor only checks for one 
+
 ![UNIT](aabb_closest_point_unit.png)
 
 ```cs
