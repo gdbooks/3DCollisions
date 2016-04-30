@@ -1,5 +1,3 @@
-#WIP - This section is being worked on
-
 #AABB - Axis Aligned Bounding Box
 
 An AABB (Axis Aligned Bounding Box) is a 3D box. It's width / height / depth don't have to be equal, but the width is always aligned to the X axis, the height to the Y axis and depth to the Z axis. That is to say, this box can't be rotated.
