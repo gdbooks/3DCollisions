@@ -48,6 +48,8 @@ And provide an implementation for it!
 
 ### Unit Test
 
+You can [Download](../Samples/CollisionSphere.rar) the samples for this chapter to see if your result looks like the unit test.
+
 This unit test will test both the point in sphere, and closest point to sphere sections of code. If any kind of error occurs, red text should be printed to the console. The camera in this example orbits, but you can disable that by commenting out the update method.
 
 If you don't see anything on screen, it's because the math library is probably wrong. This would happen if you forgot to copy the math implementation from OpenGL1X into Math-Implementation, and used the old Math-Implementation library.
