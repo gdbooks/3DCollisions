@@ -28,7 +28,7 @@ This might sound like a bug at first, but it's not. In order to use the closest-
 Add the following function to the ```Collisions``` class:
 
 ```cs
-public static Point ClosestPoint(Sphere sphere, Point point)
+public static Point ClosestPoint(AABB aabb, Point point)
 ```
 
 And provide an implementation for it!
