@@ -14,3 +14,13 @@ Looking at the above image, we can figure out that if a point is inside of a AAB
   * ```Point.X```, ```Point.Y``` and ```Point.Z``` are all __less__ than ```Min.X```, ```Min.Y``` and ```Min.Z```.
 
 That is to say, if ```Point > min && Point < max``` then the point is inside the AABB.
+
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+public static Point ClosestPoint(Sphere sphere, Point point)
+```
+
+And provide an implementation for it!
