@@ -140,4 +140,5 @@ Implement the AABB class. You can use the code guide above, or use your own impl
 
 ### Sample / Unit Test
 
-This sample is short and simple, it makes a new sphere at origin, configures some render settings and draws the sphere. There is an image of what it's supposed to look like after the code.
+The sample will render 3 AABB's constructed using the 3 different constructors above. It will render each AABB, it's min and max points (in magenta and yellow), it's center point (In light blue) and it's extents (r, g, b for x, y, z). If there are any errors, the console should print red. This is what the sample will look like:
+
