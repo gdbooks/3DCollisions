@@ -22,3 +22,15 @@ You might have noticed something odd, if the point is outside the min or max x i
 This might sound like a bug at first, but it's not. In order to use the closest-point algorithm, we need the closest point to be inside the volume sometimes. This image shows how the algorithm works given points in different places:
 
 # TODO
+
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+public static Point ClosestPoint(Sphere sphere, Point point)
+```
+
+And provide an implementation for it!
+
+### Unit Test
