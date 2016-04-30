@@ -10,5 +10,11 @@ The first question we have to ask is how to represent an AABB? There are two com
 
 ![Types](AABB_Types.png)
 
-Most mathematical texts describe an AABB as a min and max point. Because of this, i like to design my AABB classes as such. However, there is a bit of a problem, what if a user sets the min.X of the AABB to be greater than the max.X?
+Most mathematical texts describe an AABB as a min and max point. Because of this, i like to design my AABB classes as such. However, there is a bit of a problem, what if a user sets the min.X of the AABB to be greater than the max.X? For this reason i usually include 2 bits of code:
+
+```cs
+TODO: Fix function
+```
+
+At the end of the day, your representation doesn't matter much. If you represent your AABB as a min and max internally, you can expose getter only ```Center``` and ```Extents``` properties.
 
