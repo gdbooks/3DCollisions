@@ -65,4 +65,4 @@ class Collisions {
 
 ### Unit Test
 
-The sample / Unit test code for this section will be included with the next (Closest point on Sphere) sections.
+The sample / Unit test code for this section will be included with the next (Closest point on Sphere) section.
