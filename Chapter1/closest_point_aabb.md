@@ -34,3 +34,5 @@ public static Point ClosestPoint(AABB aabb, Point point)
 And provide an implementation for it!
 
 ### Unit Test
+
+![UNIT](aabb_closest_point_unit.png)
