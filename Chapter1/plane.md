@@ -12,4 +12,5 @@ Your native plane implementation should represent the plane as the third, a norm
 Dot(X, Normal) == Distance
 ```
 
-Is on the plane. 
+Is on the plane. We can represent a plane as a normal and a distance from origin, but we can still [construct it from 3 points](http://www.maplesoft.com/support/help/maple/view.aspx?path=MathApps%2FEquationofaPlane3Points) using the following formula:
+
