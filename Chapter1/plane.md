@@ -38,29 +38,26 @@ namespace CollisionDetectionSelector.Primitives {
         protected Vector3 _normal = new Vector3();
 
         public Vector3 Normal {
-            get { return _normal; }
-            set {
-                _normal = new Vector3(value.X, value.Y, value.Z);
-                _normal.Normalize();
-            }
+            // TODO: Getter and setter
+            // remember, this just accesses and sets _normal
+            // Which must be normalized when set!
         }
         public float Distance = 0f;
 
         public Plane() {
-            _normal = new Vector3(0f, 0f, 1f);
-            Distance = 0;
+            // TODO: Make a default plane
+            // by default normal is (0, 0, 1) and distance is 0
         }
 
         public Plane(Vector3 norm, float dist) {
-            Normal = norm;
-            Distance = dist;
+            // TODO
         }
 
         public Plane(Point a, Point b, Point c) {
-            Normal = Vector3.Cross(b.ToVector() - a.ToVector(), c.ToVector() - a.ToVector());
-            Distance = Vector3.Dot(Normal, a.ToVector());
+            // TODO: Construct this plane from a point
         }
 
+        // No need to edit anything below this
         public void Render(float scale = 1f) {
             //Debug Normal
             /* // GL.Color3(1f, 1f, 0f);
@@ -74,7 +71,8 @@ namespace CollisionDetectionSelector.Primitives {
             Vector3 up = new Vector3(0f, 1f, 0f);
             Vector3 right = Vector3.Cross(forward, up);
             up = Vector3.Cross(right, forward);
-
+            
+            // Because this is going to be a matrix, it needs to be normalized
             forward.Normalize();
             right.Normalize();
             up.Normalize();
