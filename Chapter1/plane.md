@@ -12,7 +12,7 @@ Your native plane implementation should represent the plane as the third, a norm
 Dot(X, Normal) == Distance
 ```
 
-Is on the plane. 
+Is on the plane. The above dot product example can also be written as the formal plane equasion: ```NormalX * PointX + NormalY * PointY + NormalZ * PointZ + D = 0``` or ```A * x + B * y + C * z + D = 0```
 
 ![EQ](PlaneEquation.gif)
 
