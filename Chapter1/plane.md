@@ -100,7 +100,7 @@ namespace CollisionDetectionSelector.Primitives {
          }
 
         public override string ToString() {
-            return "N: (" + Normal.X + ", " + Normal.Y + ", " + Normal.Z + "): " + Distance;
+            return "N: (" + Normal.X + ", " + Normal.Y + ", " + Normal.Z + "), D: " + Distance;
         }
     }
 }
