@@ -16,6 +16,11 @@ Is on the plane. We can represent a plane as a normal and a distance from origin
 
 ```cs
 // THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
-
+Plane ComputePlane(Point a, Point b, Point c) {
+    Plane result = new Plane();
+    result.Normal = Normalize(Cross(b - a, c - a));
+    result.Distance = Dot(result.Normal, a);
+    return result;
+}
 ```
 
