@@ -14,3 +14,8 @@ Dot(X, Normal) == Distance
 
 Is on the plane. We can represent a plane as a normal and a distance from origin, but we can still [construct it from 3 points](http://www.maplesoft.com/support/help/maple/view.aspx?path=MathApps%2FEquationofaPlane3Points) using the following formula:
 
+```cs
+// THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
+
+```
+
