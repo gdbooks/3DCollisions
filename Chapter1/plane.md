@@ -24,3 +24,9 @@ Plane ComputePlane(Point a, Point b, Point c) {
 }
 ```
 
+### Code Guide
+
+Because the plane's normal is finicky, i suggest not exposing it directly. Instead, have a private ```_normal``` variable, and a ```Normal``` getter / setter. Whenever ```Normal``` is set, it just sets ```_normal``` and calls ```Normalize``` on it.
+
+
+
