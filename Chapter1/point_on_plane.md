@@ -112,7 +112,7 @@ namespace CollisionDetectionSelector.Samples {
                     result[i] = 0;
                 }
                 else {
-                    if (Collisions.PointPlaneEquasion(point, plane) < 0f) {
+                    if (Collisions.DistanceFromPlane(point, plane) < 0f) {
                         result[i] = -1;
                     }
                     else {
