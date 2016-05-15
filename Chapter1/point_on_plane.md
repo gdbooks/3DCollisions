@@ -176,7 +176,7 @@ namespace CollisionDetectionSelector.Samples {
                     GL.Color3(0f, 1f, 0f);
                 }
                 else {
-                    if (Collisions.PointPlaneEquasion(point, plane) < 0f) {
+                    if (Collisions.DistanceFromPlane(point, plane) < 0f) {
                         GL.Color3(1f, 0f, 0f);
                     }
                     else {
