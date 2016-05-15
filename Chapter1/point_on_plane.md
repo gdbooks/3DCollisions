@@ -10,8 +10,9 @@ class Plane {
 }
 
 // Plane equasion (XYZ is an unknown point)
-Ax + 
+A*X + B*Y + C*Z + D = 0
 
+// Equasion can also be written as
 Dot(UnknownPoint, Normal) == Distance
 
 ```
