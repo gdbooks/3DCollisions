@@ -16,3 +16,16 @@ A*X + B*Y + C*Z + D = 0
 Dot(UnknownPoint, Normal) == Distance
 ```
 
+Given this information we can figure out if a point is on a plane or not.
+
+We already know A, B, C & D. That is our plane. And the point X, Y, Z is provided because that's what we are testing. If we plug all these variables into the equasion:
+
+```cs
+A*X + B*Y + C*Z + D
+```
+
+The resulting number is what we care about. 
+
+* If it is 0, the point is on the plane
+* If it is positive,
+* If it is negative, 
