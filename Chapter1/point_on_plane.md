@@ -40,8 +40,7 @@ public static bool PointOnPlane(Point point, Plane plane);
 public static float PointPlaneEquasion(Point point, Plane plane);
 ```
 
-And provide an implementation for it!
+And provide an implementation for them!
 
 ### Unit Test
 
-The sample / Unit test code for this section will be included with the next (Closest point on AABB) section.
