@@ -39,7 +39,7 @@ Point ClosestPointOnPlane(Plane plane, Point point) {
 Add the following function to the ```Collisions``` class:
 
 ```cs
-public static bool PointInAABB(AABB aabb, Point point)
+public static Point ClosestPoint(Plane plane, Point point);
 ```
 
 And provide an implementation for it!
