@@ -15,6 +15,7 @@
   * [Plane](Chapter1/plane.md)
     * [Point on Plane](Chapter1/point_on_plane.md)
     * [Closest point on Plane](Chapter1/closest_point_on_plane.md)
+    * [3 Plane Intersection](Chapter1/three_plane_intersection.md)
   * [Line](Chapter1/line.md)
     * [Point on line](Chapter1/point_on_line.md)
     * [Closes point on Line](Chapter1/closest_point_on_line.md)
