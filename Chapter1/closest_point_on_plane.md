@@ -14,4 +14,15 @@ The closest point on a plane will always be in the direction of the plane normal
 
 Thanks to the above image, we can deduct that given a plane, and a point, the closest point on the plane from that point will be the point minus the distance of the point from the plane in the direction of the planes normal.
 
+```cs
+// THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
+Point ClosestPointOnPlane(Plane plane, Point point) {
+    // This works assuming plane.Normal is normalized, which it should be
+    float distance = DOT(plane.Normal, point) - plane.Distance;
+    // If the plane normal wasn't normalized, we'd need this:
+    // distance = distance / DOT(plane.Normal, plane.Normal);
+    
+    return point - distance * plane.Normal;
+}
+
 ```
