@@ -14,6 +14,14 @@ The closest point on a plane will always be in the direction of the plane normal
 
 Thanks to the above image, we can deduct that given a plane, and a point, the closest point on the plane from that point will be the point minus the distance of the point from the plane in the direction of the planes normal.
 
+The question now becomes, how do we find the distance between a point and a plane? The last section _Point on Plane_ mentioned this as the formula:
+
+```cs
+Dot(SomePoint, Normal) == Distance
+```
+
+This becomes pretty easy to implement in a function like so:
+
 ```cs
 // THIS BLOCK IS JUST SAMPLE CODE, DON'T COPY IT!
 Point ClosestPointOnPlane(Plane plane, Point point) {
