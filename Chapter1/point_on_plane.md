@@ -46,7 +46,7 @@ Add the following functions to the ```Collisions``` class:
 ```cs
 public static bool PointOnPlane(Point point, Plane plane);
 // Should return a positive number, a negative number or 0
-public static float PointPlaneEquasion(Point point, Plane plane);
+public static float DistanceFromPlane(Point point, Plane plane);
 ```
 
 And provide an implementation for them!
