@@ -14,5 +14,5 @@ A*X + B*Y + C*Z + D = 0
 
 // Equasion can also be written as
 Dot(UnknownPoint, Normal) == Distance
-
 ```
+
