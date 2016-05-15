@@ -27,5 +27,5 @@ A*X + B*Y + C*Z + D
 The resulting number is what we care about. 
 
 * If it is 0, the point is on the plane
-* If it is positive,
-* If it is negative, 
+* If it is positive, the point is in front of the plane
+* If it is negative, the point is behind the plane
