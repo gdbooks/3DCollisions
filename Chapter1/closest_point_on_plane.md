@@ -50,6 +50,8 @@ And provide an implementation for it!
 
 The following code is visual only, if you make any mistakes no error is printed!
 
+The image is straight forward, there is a plane, the test point is red, the closest point is green. There is a blue line going from the test point to the closest point. The magenta line is the normal of the plane (rendered on top of the blue line) 
+
 ![UNIT](unit_closest_point_plane.png)
 
 ```cs
