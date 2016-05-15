@@ -51,6 +51,9 @@ public static float PointPlaneEquasion(Point point, Plane plane);
 
 And provide an implementation for them!
 
+**HINT** ```PointOnPlane``` not behaving as expected? Remember, floating point numbers are finicky. You WILL need to do an epsilon comparison!
+
+
 ### Unit Test
 
 # TODO: DOWNLOAD
