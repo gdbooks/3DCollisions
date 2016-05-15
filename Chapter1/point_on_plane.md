@@ -53,6 +53,8 @@ And provide an implementation for them!
 
 **HINT** ```PointOnPlane``` not behaving as expected? Remember, floating point numbers are finicky. You WILL need to do an epsilon comparison! 
 
+```DistanceFromPlane``` does not need an epsilon, as it returns the result of an equasion!
+
 Try to implement the epsilon comparison on your own, if you can't figure it out, [here](https://gist.github.com/gszauer/8d424f0ec0eee18a382bfb676f0820d4) is how to do it.
 
 
