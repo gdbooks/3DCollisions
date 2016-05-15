@@ -53,3 +53,8 @@ And provide an implementation for them!
 
 ### Unit Test
 
+# TODO: DOWNLOAD
+
+If you comment out the update function, your image should look like the one attached. The constructor only checks for one 
+
+![UNIT](aabb_closest_point_unit.png)
