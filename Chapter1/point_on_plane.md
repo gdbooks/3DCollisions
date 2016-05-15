@@ -29,3 +29,19 @@ The resulting number is what we care about.
 * If it is 0, the point is on the plane
 * If it is positive, the point is in front of the plane
 * If it is negative, the point is behind the plane
+
+## On Your Own
+
+Add the following functions to the ```Collisions``` class:
+
+```cs
+public static bool PointOnPlane(Point point, Plane plane);
+// Should return a positive number, a negative number or 0
+public static float PointPlaneEquasion(Point point, Plane plane);
+```
+
+And provide an implementation for it!
+
+### Unit Test
+
+The sample / Unit test code for this section will be included with the next (Closest point on AABB) section.
