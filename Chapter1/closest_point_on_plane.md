@@ -6,6 +6,6 @@ Technically, the we find the closest point to a plane using an orthographic proj
 
 Consider 
 
-![P1](cp_plane1)
+!(P1)[cp_plane1]
 
 ### The algorithm
