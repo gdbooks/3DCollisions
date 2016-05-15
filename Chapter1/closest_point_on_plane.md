@@ -50,7 +50,7 @@ And provide an implementation for it!
 
 The following code is visual only, if you make any mistakes no error is printed!
 
-![UNIT](aabb_closest_point_unit.png)
+![UNIT](unit_closest_point_plane.png)
 
 ```cs
 TODO
