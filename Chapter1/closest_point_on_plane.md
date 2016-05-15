@@ -46,9 +46,9 @@ And provide an implementation for it!
 
 ### Unit Test
 
-You can [Download](../Samples/CollisionAABB.rar) the samples for this chapter to see if your result looks like the unit test.
+#TODO: Download
 
-If you comment out the update function, your image should look like the one attached. The constructor only checks for one 
+The following code is visual only, if you make any mistakes no error is printed!
 
 ![UNIT](aabb_closest_point_unit.png)
 
