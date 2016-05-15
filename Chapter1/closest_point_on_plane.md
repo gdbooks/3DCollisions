@@ -4,8 +4,14 @@ Sometimes knowing if a point is on a plane or not isn't enough. Imagine your cha
 
 Technically, the we find the closest point to a plane using an orthographic projection, but there is an easyer way to understand this.
 
-Consider 
-
 ![P1](cp_plane1.gif)
 
+Here we have a plane with a normal N. We want to find the closest point on the plane to P0, on the image that would be Px. Take note, the point Px is some distance away from P0, but that distance is in the direciton of the normal!
+
+The closest point on a plane will always be in the direction of the plane normal from the test point. All we have to figure out is __how far is the test point from the plane__? In the above picture, that distance is __d__.
+
 ### The algorithm
+
+Thanks to the above image, we can deduct that given a plane, and a point, the closest point on the plane from that point will be the point minus the distance of the point from the plane in the direction of the planes normal.
+
+```
