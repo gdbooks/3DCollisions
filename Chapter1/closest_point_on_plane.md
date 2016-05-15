@@ -32,5 +32,14 @@ Point ClosestPointOnPlane(Plane plane, Point point) {
     
     return point - distance * plane.Normal;
 }
-
 ```
+
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+public static bool PointInAABB(AABB aabb, Point point)
+```
+
+And provide an implementation for it!
