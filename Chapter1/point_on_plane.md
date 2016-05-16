@@ -14,7 +14,7 @@ A*X + B*Y + C*Z + D = 0
 
 // This means that the distance (D) of the point from 
 // the plane can be represented as:
-Dot(UnknownPoint, Normal) + Distance = 0
+Dot(Normal, UnknownPoint) + Distance = 0
 ```
 
 Given this information we can figure out if a point is on a plane or not. Let's rearrange the distance equasion, so the distance is on the left side and the right side is 0:
