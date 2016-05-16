@@ -1,5 +1,8 @@
 #Plane
 
+# TODO:HAD THE EQUASION WRONG!
+http://www.had2know.com/academics/equation-plane-through-3-points.html
+ 
 A plane is a flat surface that extends infinateley in all directions. There are three common ways to represent a plane:
 
 * [Three points (not on a straight line)](https://www.khanacademy.org/math/geometry/tools-of-geometry/points-lines-planes/v/specifying-planes-in-three-dimensions)
