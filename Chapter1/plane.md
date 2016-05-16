@@ -2,6 +2,7 @@
 
 # TODO:HAD THE EQUASION WRONG!
 http://www.had2know.com/academics/equation-plane-through-3-points.html
+
  
 A plane is a flat surface that extends infinateley in all directions. There are three common ways to represent a plane:
 
