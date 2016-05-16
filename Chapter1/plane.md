@@ -9,7 +9,7 @@ A plane is a flat surface that extends infinateley in all directions. There are 
 Your native plane implementation should represent the plane as the third, a normal and a distance from origin. This is the plane equasion. Given the normal and distance, any point ```X``` that satisfyes the equation
 
 ```
-Dot(X, Normal) == Distance
+Dot(X, Normal) + Distance = 0; // Plane equasion
 ```
 
 Is on the plane. The above dot product example can also be written as the formal plane equasion: ```NormalX * PointX + NormalY * PointY + NormalZ * PointZ + D = 0``` or ```A * x + B * y + C * z + D = 0```
