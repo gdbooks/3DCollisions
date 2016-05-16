@@ -28,7 +28,7 @@ Plane ComputePlane(Point a, Point b, Point c) {
 }
 ```
 
-Let's break this appart. We create two vectors (ba and ca) by subtracting point a from b and c from c. Both of these vectors lie on the plane. We can get the normal of the plane (A vector perpendicular to ba and ca) by taking the cross product of ba and ca. Becuase we don't know that ba and ca are of unit length or not, we need to assume they are not. In order to get a normal, we have to normalize the result of the cross product.
+Let's break this apart. We create two vectors (ba and ca) by subtracting point a from b and c from c. Both of these vectors lie on the plane. We can get the normal of the plane (A vector perpendicular to ba and ca) by taking the cross product of ba and ca. Becuase we don't know that ba and ca are of unit length or not, we need to assume they are not. In order to get a normal, we have to normalize the result of the cross product.
 
 Now we have the normal (ABC), all we need to fill out the plane equasion is D. To get the distance of the plane from origin, take the dot product of any point on the plane (In this case i chose a because it is already a known) and the normal we just found.
 
