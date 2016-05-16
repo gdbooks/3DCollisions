@@ -19,6 +19,8 @@ Dot(Normal, UnknownPoint) + Distance = 0
 
 Given this information we can figure out if a point is on a plane or not. Let's rearrange the distance equasion, so the distance is on the left side and the right side is 0:
 
+#TODO:THIS FORMULA IS WRONG!
+
 ```cs
 Dot(UnknownPoint, Normal) - Distance == 0
 ```
