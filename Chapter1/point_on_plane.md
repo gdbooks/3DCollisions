@@ -55,7 +55,7 @@ Try to implement the epsilon comparison on your own, if you can't figure it out,
 
 ### Unit Test
 
-# TODO: DOWNLOAD
+You can [Download](../Samples/CollisionPlane.rar) the samples for this chapter to see if your result looks like the unit test.
 
 The unit test renders a large plane and colors the dots around it. Any point on the plane is green, points behind the plane are red, points in front of it are blue. The constructor will spit out errors if either of the above equasions is bad.
 
