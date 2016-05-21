@@ -9,5 +9,4 @@ class Line {
     public Point start;
     Public Point end;
 }
-
 ```
