@@ -42,6 +42,12 @@ Ax + By + Cz + D = 0
 
 That gets super confusing. But for some reason developers seem to like adding D instead of subtracting it, even tough it adds un-necesary complication to the equation.
 
+Because of this, moving forward i'm going to write the equation as:
+
+```
+Ax + By + Cz + (-D) = 0
+```
+
 We can represent a plane as a normal and a distance from origin, but we can still [construct it from 3 points](http://www.maplesoft.com/support/help/maple/view.aspx?path=MathApps%2FEquationofaPlane3Points) using the following formula:
 
 ```cs
