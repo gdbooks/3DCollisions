@@ -43,3 +43,21 @@ Of course, there are ways for 3 planes to intersect that do not end in a point:
 ![P](plane_intersection_npot.png)
 
 In that case we just return 0, but it might be appropriate to throw an exception. Or it might not, depends on what you use this function for!
+
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+public static Point Intersection(Plane p1, Plane p2, Plane p3);
+```
+
+And provide an implementation for it!
+
+### Unit Test
+
+#TODO: Download
+
+The following code is visual only, if you make any mistakes no error is printed!
+
+The image is straight forward, there is a plane, the test point is red, the closest point is green. There is a blue line going from the test point to the closest point. The magenta line is the normal of the plane (rendered on top of the blue line) 
