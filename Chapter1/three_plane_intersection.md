@@ -9,3 +9,9 @@ Any 3 dimensional cordinate system has 3 axis (x, y, z) which can be represented
 Other than debug visualization, i've never used this intersection test in production. But it's useful to know in order to visualize some debug properties.
 
 ### The algorithm
+
+I don't fully understand this algorithm, usually i copy it out of a book. In that spirit, i'm just going to go ahead and provide it:
+
+```cs
+
+```
