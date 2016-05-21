@@ -154,7 +154,7 @@ Implement the Plane class. You can use the code guide above, or use your own imp
 
 ### Sample / Unit Test
 
-#TODO: Download
+You can [Download](../Samples/CollisionPlane.rar) the samples for this chapter to see if your result looks like the unit test.
 
 This example is visual only, no errors will be printed to the console if the code is bad. This is what the final render should look like:
 
