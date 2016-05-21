@@ -14,6 +14,26 @@ I don't fully understand this algorithm, usually i copy it out of a book. In tha
 
 ```cs
 Point IntersectPlanes(Plane p1, Plane p2, Plane p3) {
-    Vector m1 = new Vector(p1.
+    Vector m1 = new Vector(p1.Normal.X, p2.Normal.X, p3.Normal.X);
+    Vector m2 = new Vector(p1.Normal.Y, p2.Normal.Y, p3.Normal.Y);
+    Vector m3 = new Vector(p1.Normal.Z, p2.Normal.Z, p3.Normal.Z);
+    Vector d = new Vector(p1.Distance, P2.Distance, P3.Distance);
+    
+    Vector u = Cross(m2, m3);
+    Vector v =Cross (m1, d);
+    
+    float demon = Dot(m1, u);
+    
+    if (Abs(denom) < EPSILON) {
+        // Planes don't actually intersect in a point
+        // Throw exception maybe?
+        return new Point(0, 0, 0);
+    }
+       
+    return new Point(
+        Dot(d, u) / denom,
+        Dot(m3, v) / denom,
+        -Dot(m2, v) / denom
+    );
 }
 ```
