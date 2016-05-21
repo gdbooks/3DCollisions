@@ -16,7 +16,31 @@ Dot(X, Normal) = Distance; // Plane equasion
 
 Is on the plane. The above dot product example can also be written as the formal plane equasion: ```NormalX * PointX + NormalY * PointY + NormalZ * PointZ = Distance``` or ```A * x + B * y + C * z = Distance```
 
-![EQ](PlaneEquation.gif)
+![EQ](PlaneEquation2.png)
+
+When researching this topic, you will often see the equation represented as:
+
+```
+Ax + By + Cz + D = 0
+```
+
+instead of 
+
+```
+Ax + By + Cz = d
+```
+
+Why is that? They re-dedine D!
+
+```
+Ax + By + Cz = d
+Ax + By + Cz - d = 0
+--------------------
+D = -d
+Ax + By + Cz + D = 0
+```
+
+That gets super confusing. But for some reason developers seem to like adding D instead of subtracting it, even tough it adds un-necesary complication to the equation.
 
 We can represent a plane as a normal and a distance from origin, but we can still [construct it from 3 points](http://www.maplesoft.com/support/help/maple/view.aspx?path=MathApps%2FEquationofaPlane3Points) using the following formula:
 
