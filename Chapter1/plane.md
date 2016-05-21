@@ -1,8 +1,4 @@
 #Plane
-
-# TODO:HAD THE EQUASION WRONG!
-http://www.had2know.com/academics/equation-plane-through-3-points.html
-
  
 A plane is a flat surface that extends infinateley in all directions. There are three common ways to represent a plane:
 
@@ -10,13 +6,15 @@ A plane is a flat surface that extends infinateley in all directions. There are 
 * [A normal and a point on the plane](https://www.khanacademy.org/math/linear-algebra/vectors_and_spaces/dot_cross_products/v/defining-a-plane-in-r3-with-a-point-and-normal-vector)
 * __A normal and the distance from origin__
 
-Your native plane implementation should represent the plane as the third, a normal and a distance from origin. This is the plane equasion. Given the normal and distance, any point ```X``` that satisfyes the equation
+Your native plane implementation should represent the plane as the third, a normal and a distance from origin. This is the plane [equation](http://www.had2know.com/academics/equation-plane-through-3-points.html
+). Given the normal and distance, any point ```X``` that satisfies the [equation](http://www.had2know.com/academics/equation-plane-through-3-points.html
+)
 
 ```
-Dot(X, Normal) + Distance = 0; // Plane equasion
+Dot(X, Normal) = Distance; // Plane equasion
 ```
 
-Is on the plane. The above dot product example can also be written as the formal plane equasion: ```NormalX * PointX + NormalY * PointY + NormalZ * PointZ + D = 0``` or ```A * x + B * y + C * z + D = 0```
+Is on the plane. The above dot product example can also be written as the formal plane equasion: ```NormalX * PointX + NormalY * PointY + NormalZ * PointZ = Distance``` or ```A * x + B * y + C * z = Distance```
 
 ![EQ](PlaneEquation.gif)
 
