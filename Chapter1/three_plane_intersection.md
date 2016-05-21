@@ -13,5 +13,7 @@ Other than debug visualization, i've never used this intersection test in produc
 I don't fully understand this algorithm, usually i copy it out of a book. In that spirit, i'm just going to go ahead and provide it:
 
 ```cs
-
+Point IntersectPlanes(Plane p1, Plane p2, Plane p3) {
+    Vector m1 = new Vector(p1.
+}
 ```
