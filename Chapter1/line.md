@@ -7,7 +7,7 @@ Given the above definition, defining a line is pretty simple:
 ```cs
 class Line {
     public Point start;
-    Public Point end;
+    public Point end;
 }
 ```
 
