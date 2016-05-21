@@ -37,3 +37,7 @@ Point IntersectPlanes(Plane p1, Plane p2, Plane p3) {
     );
 }
 ```
+
+Of course, there are ways for 3 planes to intersect that do not end in a point:
+
+In that case we just return 0, but it might be appropriate to throw an exception. Or it might not, depends on what you use this function for!
