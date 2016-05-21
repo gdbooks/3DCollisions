@@ -10,16 +10,13 @@ class Plane {
 }
 
 // Plane equasion (XYZ is a point on the plane)
-A*X + B*Y + C*Z + (-Distance) = 0
+A*X + B*Y + C*Z + = Distance
 
-// This means that the distance (D) of the point from 
-// the plane can be represented as:
-Dot(Normal, UnknownPoint) + Distance = 0
+// We can represent the above as:
+Dot(Normal, UnknownPoint)  = Distance
 ```
 
 Given this information we can figure out if a point is on a plane or not. Let's rearrange the distance equasion, so the distance is on the left side and the right side is 0:
-
-#TODO:THIS FORMULA IS WRONG!
 
 ```cs
 Dot(UnknownPoint, Normal) - Distance == 0
@@ -27,12 +24,8 @@ Dot(UnknownPoint, Normal) - Distance == 0
 
 If a point satisfies the above equasion it is on the plane!
 
-We already know A, B, C & D. That is our plane. And the point X, Y, Z is provided because that's what we are testing. If we plug all these variables into the equasion:
-
 ```cs
-// NOTE the -D, this is NOT the plane equasion
-// It is the modified distance equasion!
-A*X + B*Y + C*Z - D // DOT(ABD, XYZ) - D
+A*X + B*Y + C*Z - D = Result
 ```
 
 The resulting number is what we care about. 
@@ -55,7 +48,7 @@ And provide an implementation for them!
 
 **HINT** ```PointOnPlane``` not behaving as expected? Remember, floating point numbers are finicky. You WILL need to do an epsilon comparison! 
 
-```DistanceFromPlane``` does not need an epsilon, as it returns the result of an equasion!
+```DistanceFromPlane``` does not need an epsilon, as it returns the result of an equation!
 
 Try to implement the epsilon comparison on your own, if you can't figure it out, [here](https://gist.github.com/gszauer/8d424f0ec0eee18a382bfb676f0820d4) is how to do it.
 
