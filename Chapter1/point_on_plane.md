@@ -10,7 +10,7 @@ class Plane {
 }
 
 // Plane equasion (XYZ is a point on the plane)
-A*X + B*Y + C*Z + D = 0
+A*X + B*Y + C*Z + (-Distance) = 0
 
 // This means that the distance (D) of the point from 
 // the plane can be represented as:
