@@ -62,6 +62,8 @@ The following code is visual only, if you make any mistakes no error is printed!
 
 The red and blue planes render just fine, the green plane will not. This is because of a minor flaw in the render code of the plane class. The intersection of the 3 planes renders in a light blue color.
 
+![SN](plane_intersect_screenshot.png)
+
 ```cs
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
