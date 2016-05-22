@@ -24,7 +24,7 @@ M = (line.end.y - line.start.y) / (line.end.x - line.start.x);
 b = line.start.y - M * line.start.x;
 ```
 
-If any of that is unclear, i suggest watchint [this khan academy video](https://www.khanacademy.org/math/algebra-basics/core-algebra-graphing-lines-slope/core-algebra-equation-of-a-line/v/equation-of-a-line-3)
+If any of that is unclear, i suggest watching [this khan academy video](https://www.khanacademy.org/math/algebra-basics/core-algebra-graphing-lines-slope/core-algebra-equation-of-a-line/v/equation-of-a-line-3)
 
 ### The algorithm
 
