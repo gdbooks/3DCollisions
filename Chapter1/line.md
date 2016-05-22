@@ -48,6 +48,10 @@ namespace CollisionDetectionSelector.Primitives {
             // TODO
         }
 
+        public Vector3 ToVector() {
+            // TODO: return end - start
+        }
+        
         //Render and toString must be there!
         public void Render() {
             GL.Begin(PrimitiveType.Lines);
