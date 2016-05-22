@@ -1,6 +1,37 @@
 # Point On Line
 
+Finding the closest point on a line to another point is simple vector math. Think of the line as a vector, let's call it AB. The point is another vector, C. To get the closest point on the line to the vector we simply project C onto AB. 
 
+This works for a Line, but we don't actually have a line, we have a __line segment__. For this, you also have to interpolate the projected point. The interpolation formula is simple:
+
+```
+I(t) = START + t * (END - START)
+```
+
+```t``` in the above example is time. It's how far we've interpolated. ```I``` is the interpolation result. ```START``` and ```END``` are self explanatory. This also works with regular numbers, let's try to interpolate 25% (0.25f) between 1 and 3:
+
+```
+// Formula
+I(t) = START + t * (END - START)
+// Substitute start and end
+I(t) = 1 + t * (3 - 1)
+// Substitute t
+I(0.25) = 1 + 0.25 * (3 - 1)
+// Evaluate
+I(0.25) = 1.5
+```
+
+This works, let's reason it out. The range from 1 to 3 is 2. So the total distance between 1 and 3 is 2. 1/4 (0.25) of 2 is .5. If we want to interpolate 25% between 1 and 3 we add .5 to 1, resulting in 1.5.
+
+Similarly, if you wanted to interpolate 1/2 between 1 and 3, the result would be 2. This is becuase 2 is half-way between 1 and 3.
+
+
+
+The above formula will intepolate in all dimensions. Back to what i was saying, there are 3 ways to project a point (C) onto a line (AB):
+
+![SAMPLE](point_line_projection_screen.png)
+
+In the first and last example T would be __< 0__ and __> 1__. In the middle example T is between 0 and 1. In order for the projected point to be ON THE SEGMENT, we need to clamp T between 0 and 1. 
 
 ```cs
 // This is Pseudo code, the types are not 100% correct,
