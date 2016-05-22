@@ -12,3 +12,4 @@ class Line {
 ```
 
 There is really no magic to a line. For example if you want to get the length of a line, it's the same as getting the length of a vector! You get a vector by subtracting start from end, then find the length!
+
