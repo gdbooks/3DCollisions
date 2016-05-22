@@ -84,7 +84,7 @@ You can [Download](../Samples/CollisionLine.rar) the samples for this chapter to
 
 The constructor of the code will try to spit out some errors if your functions are not correct.
 
-![UNIT](unit_closest_point_plane.png)
+![UNIT](closest_point_to_line_02.png)
 
 ```cs
 TODO
