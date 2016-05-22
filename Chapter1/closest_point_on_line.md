@@ -54,7 +54,7 @@ Point ClosestPoint(Line ab, Point c, out float t) {
   t = Clamp(t, 0f, 1f);
   
   // Compute the projected position from the clamped t
-  Point d = a + t * ab;
+  Point d = new Point(a + t * ab.ToVector());
   
   // Return result
   return d;
@@ -65,7 +65,6 @@ Point ClosestPoint(Line ab, Point c) {
     float t = 0f;
     return ClosestPoint(ab, c, out t);
 }
-
 ```
 
 ## On Your Own
