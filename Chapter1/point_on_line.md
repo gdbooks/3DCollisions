@@ -83,7 +83,7 @@ And provide an implementation for them! The second function can just call the fi
 
 You can [Download](../Samples/CollisionLine.rar) the samples for this chapter to see if your result looks like the unit test.
 
-The following code is visual only, if you make any mistakes no error is printed!
+The constructor of the code will try to spit out some errors if your functions are not correct.
 
 The image is straight forward, there is a plane, the test point is red, the closest point is green. There is a blue line going from the test point to the closest point. The magenta line is the normal of the plane (rendered on top of the blue line) 
 
