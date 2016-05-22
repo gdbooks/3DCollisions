@@ -26,19 +26,27 @@ b = line.start.y - M * line.start.x;
 
 If any of that is unclear, i suggest watchint [this khan academy video](https://www.khanacademy.org/math/algebra-basics/core-algebra-graphing-lines-slope/core-algebra-equation-of-a-line/v/equation-of-a-line-3)
 
+### The algorithm
+
+Now that we can express a line in y intercept form, we can write some code to test if a point is on a line:
 
 ```
-const float EPSILON = 0.001f;
-
-bool IsPointOnLine(Point linePointA, Point linePointB, Point point) 
-{
-   float a = (linePointB.y - linePointA.y) / (linePointB.x - linePointB.x);
-   float b = linePointA.y - a * linePointA.x;
-   if ( fabs(point.y - (a*point.x+b)) < EPSILON)
-   {
+bool IsPointOnLine(Line line, Point point)  {
+   float m = (line.end.y - line.start.y) / (line.end.x - line.start.x);
+   float b = line.start.y - m * line.start.x;
+   
+   // At this point, evaluating the equation should be:
+   // return point.y == m * point.x + b;
+   // But that won't work, because we're working with floats
+   // floating point error can accumulate, we have to use an epsilon
+   
+   // using an epislon, we can compare the distance of the 
+   // equations result to 0 by the epsilon
+   if (ABS(point.y - (m * point.x + b)) < EPSILON) {
        return true;
    }
-
    return false;
+   
+   // EPSILON is just a small number, like 0.001f;
 }
 ```
