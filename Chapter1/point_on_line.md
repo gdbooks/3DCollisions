@@ -25,7 +25,7 @@ This works, let's reason it out. The range from 1 to 3 is 2. So the total distan
 
 Similarly, if you wanted to interpolate 1/2 between 1 and 3, the result would be 2. This is becuase 2 is half-way between 1 and 3.
 
-
+### The algorithm
 
 The above formula will intepolate in all dimensions. Back to what i was saying, there are 3 ways to project a point (C) onto a line (AB):
 
