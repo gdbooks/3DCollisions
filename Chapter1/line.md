@@ -15,25 +15,24 @@ There is really no magic to a line. For example if you want to get the length of
 
 ### Code Guide
 
-Because the plane's normal is finicky, i suggest not exposing it directly. Instead, have a private ```_normal``` variable, and a ```Normal``` getter / setter. Whenever ```Normal``` is set, it just sets ```_normal``` and calls ```Normalize``` on it.
+The ```Line``` class is straight forward. You can follow this guide for implementation, or make your own.
 
 ```cs
-
+TODO
 ```
 
-Unlike the previous primitives the ```Render``` function for the plane takes a scale. By default, this function renders a plane that ranges from -1 to 1. But because a plane is infinate, you may need it to be larger. If that's the case, provide a large number as the scale argument when calling ```Render```
 
 ## On Your Own
 
-Implement the Plane class. You can use the code guide above, or use your own implementation
+Implement the Line class. You can use the code guide above, or use your own implementation
 
 ### Sample / Unit Test
 
-You can [Download](../Samples/CollisionPlane.rar) the samples for this chapter to see if your result looks like the unit test.
+You can [Download](../Samples/CollisionLine.rar) the samples for this chapter to see if your result looks like the unit test.
 
 This example is visual only, no errors will be printed to the console if the code is bad. This is what the final render should look like:
 
-![SAMPLE](planes_sample_1.png)
+![SAMPLE](lines_sample_01.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
