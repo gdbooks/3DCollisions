@@ -42,8 +42,8 @@ In the first and last example T would be __< 0__ and __> 1__. In the middle exam
 // on segment AB. Also return T where D(T) = A + T * (B - A)
 Point ClosestPoint(Line ab, Point c, out float t) {
   // Break ab appart into components a and b
-  Vector a = c.start;
-  Vector b = c.end;
+  Vector a = ab.start;
+  Vector b = ab.end;
   
   // Project c onto ab, computing the 
   // paramaterized position d(t) = a + t * (b - a)
