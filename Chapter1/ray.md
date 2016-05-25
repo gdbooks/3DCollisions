@@ -10,3 +10,5 @@ class Ray {
     public Vector3 direction;
 }
 ```
+
+Much like line segments, rays are fairly straight forward objets.
