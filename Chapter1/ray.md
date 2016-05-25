@@ -87,11 +87,11 @@ namespace CollisionDetectionSelector.Primitives {
 
 ## On Your Own
 
-Implement the Line class. You can use the code guide above, or use your own implementation
+Implement the Ray class. You can use the code guide above, or use your own implementation
 
 ### Sample / Unit Test
 
-You can [Download](../Samples/CollisionLine.rar) the samples for this chapter to see if your result looks like the unit test.
+You can [Download](../Samples/CollisionRay.rar) the samples for this chapter to see if your result looks like the unit test.
 
 This example is visual only, no errors will be printed to the console if the code is bad. This is what the final render should look like:
 
