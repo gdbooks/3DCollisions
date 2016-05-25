@@ -67,7 +67,7 @@ You can [Download](../Samples/CollisionLine.rar) the samples for this chapter to
 
 This code doesn't spit out any errors. It's all visual. There is 1 line and several points. The points are projected to the line and lines are drawn between the points.
 
-![UNIT](closest_point_to_line_02.png)
+![UNIT](screen_point_on_line.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
