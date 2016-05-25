@@ -65,7 +65,7 @@ And provide an implementation for it!
 
 You can [Download](../Samples/CollisionLine.rar) the samples for this chapter to see if your result looks like the unit test.
 
-This code doesn't spit out any errors. It's all visual. There is 1 line and several points. The points are projected to the line and lines are drawn between the points.
+The constructor of this code will spit out errors if they are present. A line is rendered, along with a random sampling of points. Any point that falls on the line is rendered in red, points not on the line are rendered in blue.
 
 ![UNIT](screen_point_on_line.png)
 
@@ -75,12 +75,15 @@ using Math_Implementation;
 using CollisionDetectionSelector.Primitives;
 
 namespace CollisionDetectionSelector.Samples {
-    class ClosestPointLine : Application {
+    class PointOnLine : Application {
         protected Vector3 cameraAngle = new Vector3(120.0f, -10f, 20.0f);
         protected float rads = (float)(System.Math.PI / 180.0f);
 
-        Line testLine = new Line(new Point(-3, -2, -1), new Point(1, 2, 3));
+        Line testLine = new Line(new Point(-3, -2, -1), new Point(3, 2, 1));
         Point[] testPoints = new Point[] {
+            new Point(0, 0, 0),
+            new Point(-3, -2, -1),
+            new Point(3, 2, 1),
             new Point(7, -2, -1),
             new Point(-4, -7, -8),
             new Point(7, 8, 5),
@@ -94,6 +97,20 @@ namespace CollisionDetectionSelector.Samples {
         public override void Intialize(int width, int height) {
             GL.Enable(EnableCap.DepthTest);
             GL.PointSize(4f);
+
+            for (int i = 0; i < 3; ++i) {
+                if (!Collisions.PointOnLine(testPoints[i], testLine)) {
+                    System.Console.ForegroundColor = System.ConsoleColor.Red;
+                    System.Console.WriteLine("Expected point: " + testPoints[i].ToString() + " to be on Line!");
+                }
+            }
+
+            for (int i = 3; i < testPoints.Length; ++i) {
+                if (Collisions.PointOnLine(testPoints[i], testLine)) {
+                    System.Console.ForegroundColor = System.ConsoleColor.Red;
+                    System.Console.WriteLine("Expected point: " + testPoints[i].ToString() + " to be on Line!");
+                }
+            }
         }
 
         public override void Render() {
@@ -105,46 +122,22 @@ namespace CollisionDetectionSelector.Samples {
             Matrix4 lookAt = Matrix4.LookAt(eyePos, new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
             GL.LoadMatrix(Matrix4.Transpose(lookAt).Matrix);
 
-            DrawOrigin();
-
             GL.Color3(1f, 0f, 1f);
             testLine.Render();
 
-            GL.Color3(0f, 1f, 1f);
-            foreach(Point point in testPoints) {
+            foreach (Point point in testPoints) {
+                if (Collisions.PointOnLine(point, testLine)) {
+                    GL.Color3(1f, 0f, 0f);
+                }
+                else {
+                    GL.Color3(0f, 0f, 1f);
+                }
                 point.Render();
-            }
-
-            GL.Color3(1f, 1f, 0f);
-            foreach (Point point in testPoints) {
-                Point closest = Collisions.ClosestPoint(testLine, point);
-                closest.Render();
-            }
-
-            GL.Color3(1f, 1f, 1f);
-            foreach (Point point in testPoints) {
-                Point closest = Collisions.ClosestPoint(testLine, point);
-                Line newLine = new Line(closest, point);
-                newLine.Render();
             }
         }
 
         public override void Update(float deltaTime) {
             cameraAngle.X += 45.0f * deltaTime;
-        }
-
-        protected void DrawOrigin() {
-            GL.Begin(PrimitiveType.Lines);
-            GL.Color3(1f, 0f, 0f);
-            GL.Vertex3(0f, 0f, 0f);
-            GL.Vertex3(1f, 0f, 0f);
-            GL.Color3(0f, 1f, 0f);
-            GL.Vertex3(0f, 0f, 0f);
-            GL.Vertex3(0f, 1f, 0f);
-            GL.Color3(0f, 0f, 1f);
-            GL.Vertex3(0f, 0f, 0f);
-            GL.Vertex3(0f, 0f, 1f);
-            GL.End();
         }
 
         public override void Resize(int width, int height) {
