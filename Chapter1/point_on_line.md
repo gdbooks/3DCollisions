@@ -51,3 +51,12 @@ bool IsPointOnLine(Line line, Point point)  {
 }
 ```
 
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+public static bool PointOnLine(Point point, Line line);
+```
+
+And provide an implementation for it!
