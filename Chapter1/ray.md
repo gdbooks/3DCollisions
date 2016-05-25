@@ -95,7 +95,7 @@ You can [Download](../Samples/CollisionRay.rar) the samples for this chapter to 
 
 This example is visual only, no errors will be printed to the console if the code is bad. This is what the final render should look like:
 
-![SAMPLE](lines_sample_01.png)
+![SAMPLE](ray_sample_01.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
