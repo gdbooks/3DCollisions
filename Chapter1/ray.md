@@ -12,3 +12,4 @@ class Ray {
 ```
 
 Much like line segments, rays are fairly straight forward objets.
+
