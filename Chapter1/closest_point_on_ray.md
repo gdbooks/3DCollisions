@@ -21,29 +21,27 @@ In the first and last example T would be __< 0__ and __> 1__. In the middle exam
 // that is, casting is needed. But the formula is fully 
 // implemented for demonstration purposes
 
-Point ClosestPoint(Ray r, Point c, out float t) {
+Point ClosestPoint(Ray r, Point c) {
+  // t is now local, there is no need to pass it out of the function
+  float t = 0f;
+  // Construct a line segment out of the plane
+  Line ab = new Line(r.Position, r.Position + r.Normal);
   // Break ray into a (start) and b (end) components
-  Vector a = ab.start;
-  Vector b = ab.end;
+  Vector a = r.Position;
+  Vector b = r.Position + r.Normal;
   
   // Project c onto ab, computing the 
   // paramaterized position d(t) = a + t * (b - a)
   t = Dot(c - a, ab) / Dot(ab, ab);
   
-  // Clamp T to a 0-1 range. If t was < 0 or > 1
-  // then the closest point was outside the line!
-  t = Clamp(t, 0f, 1f);
+  // We only want to clamp t in the positive direction.
+  // The ray extends infinatley in this direction!
+  t = Max(t, 0f);
   
   // Compute the projected position from the clamped t
   Point d = new Point(a + t * ab.ToVector());
   
   // Return result
   return d;
-}
-
-// Provide a useful overload, we don't always care about T
-Point ClosestPoint(Line ab, Point c) {
-    float t = 0f;
-    return ClosestPoint(ab, c, out t);
 }
 ```
