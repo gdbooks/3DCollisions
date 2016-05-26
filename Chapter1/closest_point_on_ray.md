@@ -44,14 +44,13 @@ Point ClosestPoint(Ray r, Point c) {
 
 ## On Your Own
 
-Add the following functions to the ```Collisions``` class:
+Add the following function to the ```Collisions``` class:
 
 ```cs
-public static Point ClosestPoint(Line ab, Point c, out float t)
-public static Point ClosestPoint(Line ab, Point c)
+public static Point ClosestPoint(Ray r, Point c)
 ```
 
-And provide an implementation for them! The second function can just call the first function. It's for conveniance, because we don't always care about t.
+And provide an implementation for it!
 
 ### Unit Test
 
