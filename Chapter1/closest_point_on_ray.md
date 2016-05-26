@@ -62,7 +62,9 @@ You can [Download](../Samples/CollisionRay.rar) the samples for this chapter to 
 
 This code doesn't spit out any errors. It's all visual. There is 1 ray and several points. The points are projected to the ray and lines are drawn between the points.
 
-![UNIT](TODO)
+This will look very similar to the Closest Point On Line Sample!
+
+![UNIT](closest_point_ray_sample.png)
 
 ```cs
 TODO
