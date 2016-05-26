@@ -21,10 +21,8 @@ In the first and last example T would be __< 0__ and __> 1__. In the middle exam
 // that is, casting is needed. But the formula is fully 
 // implemented for demonstration purposes
 
-// Given segment AB and Point C, compute the closest point D
-// on segment AB. Also return T where D(T) = A + T * (B - A)
-Point ClosestPoint(Line ab, Point c, out float t) {
-  // Break ab appart into components a and b
+Point ClosestPoint(Ray r, Point c, out float t) {
+  // Break ray into a (start) and b (end) components
   Vector a = ab.start;
   Vector b = ab.end;
   
