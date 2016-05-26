@@ -35,7 +35,11 @@ Point ClosestPoint(Ray r, Point c) {
   t = Max(t, 0f);
   
   // Compute the projected position from the clamped t
-  Point d = new Point(a + t * ab.ToVector());
+  // Notice we multiply r.Normal by t, not AB.
+  // This is becuase we want the ray in the direction 
+  // of the normal, which technically the line segment is
+  // but this is much more explicit and easy to read.
+  Point d = new Point(a + t * r.Normal);
   
   // Return result
   return d;
