@@ -24,7 +24,7 @@ In the first and last example T would be __< 0__ and __> 1__. In the middle exam
 Point ClosestPoint(Ray r, Point c) {
   // t is now local, there is no need to pass it out of the function
   float t = 0f;
-  // Construct a line segment out of the plane
+  // Construct a line segment out of the ray
   Line ab = new Line(r.Position, r.Position + r.Normal);
   // Break ray into a (start) and b (end) components
   Vector a = r.Position;
