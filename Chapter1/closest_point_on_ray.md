@@ -10,11 +10,7 @@ If the above doesn't sound familiar, re-read Closest Point On Line and make sure
 
 ### The algorithm
 
-The above formula will intepolate in all dimensions. Back to what i was saying, there are 3 ways to project a point (C) onto a line (AB):
-
-![SAMPLE](point_line_projection_screen.png)
-
-In the first and last example T would be __< 0__ and __> 1__. In the middle example T is between 0 and 1. In order for the projected point to be ON THE SEGMENT, we need to clamp T between 0 and 1. 
+Again, it's so similar to the closest point on line algorithm, i just copied it and made some subtle changes. You shouldn't even need this guide, you should be able to make the same changes based on the above paragraph.
 
 ```cs
 // This is Pseudo code, the types are not 100% correct,
