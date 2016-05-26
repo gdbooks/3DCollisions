@@ -57,7 +57,7 @@ And provide an implementation for them! The second function can just call the fi
 
 You can [Download](../Samples/CollisionRay.rar) the samples for this chapter to see if your result looks like the unit test.
 
-This code doesn't spit out any errors. It's all visual. There is 1 line and several points. The points are projected to the line and lines are drawn between the points.
+This code doesn't spit out any errors. It's all visual. There is 1 ray and several points. The points are projected to the ray and lines are drawn between the points.
 
 ![UNIT](TODO)
 
