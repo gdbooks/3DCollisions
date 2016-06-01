@@ -13,14 +13,15 @@ Of course you need to use a very small epsilon here, because of floating point e
 Implementing the above in code is fairly straight forward:
 
 ```
-public static Point ClosestPoint(Ray r, Point c) {
-        Line ab = new Line(r.Position, new Point(r.Position.ToVector() + r.Normal));
-        Vector3 a = r.Position.ToVector();
-        Vector3 b = r.Position.ToVector() + r.Normal;
-        float t = Vector3.Dot(c.ToVector() - a, ab.ToVector()) / Vector3.Dot(ab.ToVector(), ab.ToVector());
-        t = Math.Max(t, 0f);
-        return new Point(a + r.Normal * t);
+public static bool PointOnRay(Point point, Ray ray) {
+    if (point.ToVector() == ray.Position.ToVector()) {
+        return true;
     }
+    Vector3 newNorm = point.ToVector() - ray.Position.ToVector();
+    newNorm.Normalize();
+    float d = Vector3.Dot(newNorm, ray.Normal);
+    return Math.Abs(1f - d) < 0.000001f; // SUPER SMALL EPSILON!
+}
 ```
 
 ## On Your Own
@@ -28,7 +29,7 @@ public static Point ClosestPoint(Ray r, Point c) {
 Add the following function to the ```Collisions``` class:
 
 ```cs
-public static Point ClosestPoint(Ray r, Point c)
+public static bool PointOnRay(Point point, Ray ray)
 ```
 
 And provide an implementation for it!
