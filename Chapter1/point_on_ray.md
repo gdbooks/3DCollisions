@@ -19,8 +19,10 @@ Implementing the above in code is fairly straight forward:
 ```
 public static bool PointOnRay(Point point, Ray ray) {
     // If point and ray are the same, return true
-    Vector3 newNorm = point.ToVector() - ray.Position.ToVector();
+    
+    Vector3 newNorm = point - ray.Position;
     newNorm.Normalize();
+    
     float d = Vector3.Dot(newNorm, ray.Normal);
     return Math.Abs(1f - d) < 0.000001f; // SUPER SMALL EPSILON!
 }
