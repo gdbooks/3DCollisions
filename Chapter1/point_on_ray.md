@@ -6,7 +6,11 @@ Determining if a point is on a ray or not comes down to the dot product. The key
 * __positive__ if TODO
 * __negative__ if TODO
 
-Of course you need to use a very small epsilon here, because of floating point error. See if you can implement this on your own before looking at the code below
+Of course you need to use a very small epsilon here, because of floating point error. 
+
+Now, there is one edge case to all this. What happens if the point we are testing and the origin of the ray are the same point? Well, the dot product breaks down and we get no new normal vector. But that point is on the ray. You should add a special case if check for that.
+
+See if you can implement this on your own before looking at the code below.
 
 ### The algorithm
 
@@ -14,9 +18,7 @@ Implementing the above in code is fairly straight forward:
 
 ```
 public static bool PointOnRay(Point point, Ray ray) {
-    if (point.ToVector() == ray.Position.ToVector()) {
-        return true;
-    }
+    // If point and ray are the same, return true
     Vector3 newNorm = point.ToVector() - ray.Position.ToVector();
     newNorm.Normalize();
     float d = Vector3.Dot(newNorm, ray.Normal);
