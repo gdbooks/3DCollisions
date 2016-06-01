@@ -64,6 +64,7 @@ This code doesn't spit out any errors. It's all visual. There is 1 ray and sever
 
 This will look very similar to the Closest Point On Line Sample!
 
+
 ![UNIT](closest_point_ray_sample.png)
 
 ```cs
