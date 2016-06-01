@@ -3,10 +3,17 @@
 Determining if a point is on a ray or not comes down to the dot product. The key here is to realize that given the direction of the ray we have a normal vector. If we subtract the point from the ray, and normalize the resuling vector, we have a normal from the origin of the ray to the test point. At this point we have two normals. Remember, the dot product of two normals is:
 
 * __0__ if the two vectors point in the same direction
-* __positive__ if TODO
-* __negative__ if TODO
+  * That is to say, if the vectors are perpendicular 
+* __positive__ If the vectors point in the same direction
+* __negative__ If the vectors point in opposing direction
 
-Of course you need to use a very small epsilon here, because of floating point error. 
+Of course you need to use a very small epsilon here, because of floating point error. A visual example of the above bullet points:
+
+![DOTSIMPLE](dotsimple.jpg)
+
+In a more practical example, if we know the forward vector of a guard, a player is in the guards view if the dot product of the guards forward and the vector from the guard to the player are positive.
+
+![SNEAK](sneak.jpg)
 
 Now, there is one edge case to all this. What happens if the point we are testing and the origin of the ray are the same point? Well, the dot product breaks down and we get no new normal vector. But that point is on the ray. You should add a special case if check for that.
 
