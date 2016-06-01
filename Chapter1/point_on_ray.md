@@ -42,7 +42,7 @@ And provide an implementation for it!
 
 You can [Download](../Samples/CollisionLine.rar) the samples for this chapter to see if your result looks like the unit test.
 
-The constructor of this code will spit out errors if they are present. A line is rendered, along with a random sampling of points. Any point that falls on the line is rendered in red, points not on the line are rendered in blue.
+The constructor of this code will spit out errors if they are present. A ray is rendered, along with a random sampling of points. Any point that falls on the ray is rendered in red, points not on the ray are rendered in blue.
 
 ![UNIT](point_on_ray_sample_01.PNG)
 
