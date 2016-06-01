@@ -44,7 +44,7 @@ You can [Download](../Samples/CollisionLine.rar) the samples for this chapter to
 
 The constructor of this code will spit out errors if they are present. A line is rendered, along with a random sampling of points. Any point that falls on the line is rendered in red, points not on the line are rendered in blue.
 
-![UNIT](point_on_ray_sample_02.png)
+![UNIT](point_on_ray_sample_01.PNG)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
