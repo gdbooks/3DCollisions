@@ -17,7 +17,7 @@ See if you can implement this on your own before looking at the code below.
 Implementing the above in code is fairly straight forward:
 
 ```
-public static bool PointOnRay(Point point, Ray ray) {
+bool PointOnRay(Point point, Ray ray) {
     // If point and ray are the same, return true
     
     Vector3 newNorm = point - ray.Position;
