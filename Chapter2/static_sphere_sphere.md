@@ -23,7 +23,7 @@ bool TestSphereSphere(Sphere a, Sphere b) {
     float squaredDistance = Dot(d, d); // Same as d.LengthSquared()
     
     // Spheres intersect if squared distance is less than squared sum of radii
-    float radiusSum = a.r + b.r;
+    float radiusSum = a.radius + b.radius;
     float squaredRadii = radiusSum * radiusSum;
     
     return squaredDistance <= squaredRadii;
