@@ -32,6 +32,15 @@ bool TestSphereSphere(Sphere a, Sphere b) {
 
 ## On Your Own
 
+Add the following function to the ```Collisions``` class:
+
 ```cs
 public static bool Intersects(Sphere s1, Sphere s2)
 ```
+
+And provide an implementation for it!
+
+```cs
+public static Point ClosestPoint(Ray r, Point c)
+```
+
