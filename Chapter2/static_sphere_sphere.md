@@ -19,7 +19,7 @@ The code to test intersecting spheres is super straight forward.
 ```cs
 bool TestSphereSphere(Sphere a, Sphere b) {
     // Calculate squared distance between centers
-    Vector d = a.c - b.c;
+    Vector d = a.position - b.position;
     float squaredDistance = Dot(d, d);
     
     // Spheres intersect if squared distance is less than squared sum of radii
