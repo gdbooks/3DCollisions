@@ -1,8 +1,8 @@
 #Intermission
 
-This is a good stopping point to stop and reflect on your code-base. Make any changes that you feel are necesary for moving forward, then proceed. Iteration and reflection like this is key to writing clean, well orgonized code.
+This is a good stopping point to stop and reflect on your code-base. Make any changes that you feel are necessary for moving forward, then proceed. Iteration and reflection like this is key to writing clean, well organized code.
 
-## Application Behavious
+## Application Behaviours
 
 One of the things that bothers me is that all of our sample code contains a lot of copy/paste code. So i want to move a lot of that into the base ```Application``` class. The things i really want to move are: Rendering the origin, resizing the window and making the camera rotate.
 
