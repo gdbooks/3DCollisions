@@ -13,3 +13,18 @@ The above example fails to show the radii of the spheres, in the below image, th
 ![NIT](sphtosph.png)
 
 ## The Algorithm
+
+
+```cs
+bool TestSphereSphere(Sphere a, Sphere b) {
+    // Calculate squared distance between centers
+    Vector d = a.c - b.c;
+    float squaredDistance = Dot(d, d);
+    
+    // Spheres intersect if squared distance is less than squared sum of radii
+    float radiusSum = a.r + b.r;
+    float squaredRadii = radiusSum * radiusSum;
+    
+    return squaredDistance <= squaredRadii;
+}
+```
