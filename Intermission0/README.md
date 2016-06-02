@@ -169,4 +169,5 @@ I only have 1 file
 
 And it only contains 1 class named ```Collisions```, this is where i put all my collision functions.
 
-I'm not saying you need to change anything, you should proceed with whatever method makes more sense to you! I just wanted to point out what my code is looking like.
+I'm not saying you need to change anything, you should proceed with whatever method makes more sense to you! I just wanted to point out what my code is looking like. This is what my hierarchy is:
+
