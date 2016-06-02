@@ -44,7 +44,7 @@ And provide an implementation for it!
 
 You can [Download](../Samples/StaticIntersections.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
+This unit test will render 4 spheres, in verious test cases. Any sphere that intersects another sphere is rendered as red. If a sphere does not intersect any other spheres, it will render blue.
 
 ![UNIT](sphere_sphere_intersection.png)
 
