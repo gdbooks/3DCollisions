@@ -13,7 +13,7 @@ code
 Add the following function to the ```Collisions``` class:
 
 ```cs
-public static bool Intersects(Sphere s1, Sphere s2)
+code
 ```
 
 And provide an implementation for it!
