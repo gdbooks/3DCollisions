@@ -156,3 +156,11 @@ public class Application {
 ```
 
 ## Collision Handling Code
+
+I noticed you have different files to handle different collision types:
+
+* AABBCollisions.cs
+* PlaneCollision.cs
+* SphereCollisions.cs
+
+I only have 1
