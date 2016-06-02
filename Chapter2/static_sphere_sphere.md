@@ -39,8 +39,3 @@ public static bool Intersects(Sphere s1, Sphere s2)
 ```
 
 And provide an implementation for it!
-
-```cs
-public static Point ClosestPoint(Ray r, Point c)
-```
-
