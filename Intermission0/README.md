@@ -172,3 +172,5 @@ And it only contains 1 class named ```Collisions```, this is where i put all my 
 I'm not saying you need to change anything, you should proceed with whatever method makes more sense to you! I just wanted to point out what my code is looking like. This is what my hierarchy is:
 
 ![Mine](mine.png)
+
+Take a minute, make sure your hierarchy is one you are happy with and that you are happy with how your code is formatted.
