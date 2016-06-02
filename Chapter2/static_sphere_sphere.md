@@ -20,7 +20,7 @@ The code to test intersecting spheres is super straight forward.
 bool TestSphereSphere(Sphere a, Sphere b) {
     // Calculate squared distance between centers
     Vector d = a.position - b.position;
-    float squaredDistance = Dot(d, d);
+    float squaredDistance = Dot(d, d); // Same as d.LengthSquared()
     
     // Spheres intersect if squared distance is less than squared sum of radii
     float radiusSum = a.r + b.r;
