@@ -82,7 +82,6 @@ namespace CollisionDetectionSelector.Samples {
                             (results[t++] ? "" : "not ") + "intersect"
                         );
                     }
-                    //System.Console.Write(Collisions.Intersects(spheres[i], spheres[j]).ToString().ToLower() + ", ");
                 }
             }
         }
