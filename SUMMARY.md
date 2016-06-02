@@ -22,6 +22,7 @@
   * [Ray](Chapter1/ray.md)
     * [Point on ray](Chapter1/point_on_ray.md)
     * [Closest point on Ray](Chapter1/closest_point_on_ray.md)
+* [Intermission](Intermission0/README.md) 
 * [Intersections](Chapter2/README.md)
   * [Static](Chapter2/static.md)
     * [Sphere-Sphere](Chapter2/static_sphere_sphere.md)
