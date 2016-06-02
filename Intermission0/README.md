@@ -4,7 +4,9 @@ This is a good stopping point to stop and reflect on your code-base. Make any ch
 
 ## Application Behaviours
 
-One of the things that bothers me is that all of our sample code contains a lot of copy/paste code. So i want to move a lot of that into the base ```Application``` class. The things i really want to move are: Rendering the origin, resizing the window and making the camera rotate.
+One of the things that bothers me is that all of our sample code contains a lot of copy/paste code. So i want to move a lot of that into the base ```Application``` class. The things i really want to move are: Rendering the origin, resizing the window and making the camera rotate. 
+
+Additionally, the unit tests write red text constantly, i want to add a LogError function to make writing unit tests less verbose.
 
 We have to move this functionality into the ```Application``` class without breaking the existing samples. I propose we just copy / paste the code into the implementation of the base class, with new variable names. 
 
@@ -37,6 +39,12 @@ public class Application {
     }
 
     #region Common methods
+    public void LogError(string error) {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Error: " + error);
+        Console.ResetColor();
+    }
+    
     public void DrawOrigin() {
         GL.Begin(PrimitiveType.Lines);
         GL.Color3(1f, 0f, 0f);
