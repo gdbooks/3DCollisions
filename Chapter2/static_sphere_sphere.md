@@ -14,6 +14,7 @@ The above example fails to show the radii of the spheres, in the below image, th
 
 ## The Algorithm
 
+The code to test intersecting spheres is super straight forward.
 
 ```cs
 bool TestSphereSphere(Sphere a, Sphere b) {
