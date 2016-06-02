@@ -29,3 +29,9 @@ bool TestSphereSphere(Sphere a, Sphere b) {
     return squaredDistance <= squaredRadii;
 }
 ```
+
+## On Your Own
+
+```cs
+public static bool Intersects(Sphere s1, Sphere s2)
+```
