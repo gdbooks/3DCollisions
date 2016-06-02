@@ -154,3 +154,5 @@ public class Application {
     #endregion
 }
 ```
+
+## Collision Handling Code
