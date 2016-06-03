@@ -44,7 +44,7 @@ And provide an implementation for it!
 
 You can [Download](../Samples/StaticIntersections.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
+This unit tests will spit out some errors in the constructor if your intersection code is returning the wrong values. There is a blue sphere rendered and 4 cubes. 3 of the cubes intersect the sphere. Any intersecting cubes are rendered red, while non-intersecting ones are rendered blue.
 
 ![UNIT](sphere_aabb_intersection_sample.png)
 
