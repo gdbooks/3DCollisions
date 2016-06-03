@@ -10,8 +10,18 @@ changing the result of the test.
 
 ## The Algorithm
 
+Again, this is pseudo-code. The types might not match up to what you expect them to be.
+
 ```cs
-code
+bool Intersects(Sphere sphere, AABB aabb) {
+    Vector3 closestPoint = ClosestPoint(aabb, sphere.Position);
+    Vector3 differenceVec = sphere.Position - closestPoint;
+
+    float distanceSquared = Vector3.LengthSquared(differenceVec);
+    float radiusSquared = sphere.Radius * sphere.Radius;
+
+    return distanceSquared < radiusSquared;
+}
 ```
 
 ## On Your Own
@@ -19,7 +29,13 @@ code
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+// TODO: Implement this
+public static bool Intersects(Sphere sphere, AABB aabb)
+
+// Just a conveniance function, so argument order wont matter!
+public static bool Intersects(AABB aabb, Sphere sphere) {
+    return Intersection(sphere, aabb);
+}
 ```
 
 And provide an implementation for it!
