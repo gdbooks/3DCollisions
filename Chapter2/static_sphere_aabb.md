@@ -46,7 +46,7 @@ You can [Download](../Samples/StaticIntersections.rar) the samples for this chap
 
 description of unit test
 
-![UNIT](image)
+![UNIT](sphere_aabb_intersection_sample.png)
 
 ```cs
 code
