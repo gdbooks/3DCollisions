@@ -79,7 +79,7 @@ namespace CollisionDetectionSelector.Samples {
                 for (int j = 0; j < spheres.Length; ++j) {
                     if (Collisions.Intersects(spheres[i], spheres[j]) != results[t++]) {
                         LogError("sphere " + i + " and " + j + " should " +
-                            (results[t++] ? "" : "not ") + "intersect"
+                            (results[t - 1] ? "" : "not ") + "intersect"
                         );
                     }
                 }
