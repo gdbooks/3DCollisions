@@ -4,7 +4,9 @@ To test if an AABB and plane intersect, we first have to project each vertex of 
 
 We then check the vertex that is furthest from the plane. If the vertex diagonally opposite that one is on the other side of the plane, we have an intersection. 
 
-This might be a bit hard to visualize.
+This might be a bit hard to visualize, so i rendered it out step by step:
+
+
 
 ## The Algorithm
 
