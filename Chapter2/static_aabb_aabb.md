@@ -1,6 +1,6 @@
 # AABB v AABB intersection
 
-Desctiption with images
+One to the most useful intersection tests is testing an AABB against another AABB. In fact, this is probably the intersection test you will use the most!
 
 ## The Algorithm
 
