@@ -37,7 +37,14 @@ int TestAABBPlane(AABB b, Plane p) {
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+// TODO: Provide implementation for this
+public static bool Intersects(AABB aabb, Plane plane) 
+
+// Conveniance function
+public static bool Intersects(Plane plane, AABB aabb) {
+    return Intersects(aabb, plane);
+}
+
 ```
 
 And provide an implementation for it!
