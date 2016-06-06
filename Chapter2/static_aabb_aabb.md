@@ -64,8 +64,8 @@ namespace CollisionDetectionSelector.Samples {
             aabbs[3] = new AABB(new Point(-3f, -3f, -3f), new Point(-4f, -4f, -4f));
 
             bool[] results = new bool[] {
-                true, false, true, true, false, true, false, false, true,
-                false, true, false, true, false, false, true
+                true, true, false, false, true, true, true, false, false,
+                true, true, false, false, false, false, true,
             };
             int t = 0;
 
