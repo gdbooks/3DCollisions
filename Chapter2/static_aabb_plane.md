@@ -6,7 +6,7 @@ We then check the vertex that is furthest from the plane. If the vertex diagonal
 
 This might be a bit hard to visualize, so i rendered it out step by step:
 
-
+#TODO
 
 ## The Algorithm
 
