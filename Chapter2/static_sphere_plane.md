@@ -9,16 +9,14 @@ That's it. Of course you might want to check length squared against radius squar
 
 ## The Algorithm
 
-```cs
-code
-```
+This is a super simple algorithm (about 3 lines), try implementing it without a code guide.
 
 ## On Your Own
 
 Add the following function to the ```Collisions``` class:
 
 ```cs
-// TODO
+// TODO: Provide implementation
 public static bool Intersects(Sphere sphere, Plane plane) 
 
 // Conveniance function
