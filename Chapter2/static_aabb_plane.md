@@ -32,6 +32,22 @@ int TestAABBPlane(AABB b, Plane p) {
 }
 ```
 
+## Another method
+
+Of course, this is not the only way to do the intersection test, it's just the most elegant. You could always take the more logical brute force approach.
+
+The brute force approach would be to loop trough all 8 points of the box and check them against the plane. There are 3 possible outcomes:
+
+1) All points are in front of the plane, no collision
+2) All points are behind the plane, no collision
+3) Some points are in front of the plane, some are behind. COLLISION
+
+The code for a brute force approach might look something like this:
+
+```
+TODO
+```
+
 ## On Your Own
 
 Add the following function to the ```Collisions``` class:
