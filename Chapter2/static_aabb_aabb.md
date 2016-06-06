@@ -38,7 +38,7 @@ And provide an implementation for it!
 
 You can [Download](../Samples/StaticIntersections.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
+The constructor of the unit test will spit out errors if your results are not as expected. Boxes that intersect are rendered in red, those that don't are rendered in blue.
 
 ![UNIT](aabb_aabb_unit_test.png)
 
