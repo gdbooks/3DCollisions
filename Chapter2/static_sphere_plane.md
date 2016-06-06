@@ -31,7 +31,7 @@ And provide an implementation for it!
 
 You can [Download](../Samples/StaticIntersections.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
+This unit test will spit out minimal errors if your collision results are not as expected. It will render a blue sphere and several planes. Planes that intersect the sphere are rendered in red, planes that don't are rendered in blue. 
 
 ![UNIT](plane_sphere_intersection_sample.png)
 
