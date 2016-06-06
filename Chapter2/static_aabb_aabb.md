@@ -40,7 +40,7 @@ You can [Download](../Samples/StaticIntersections.rar) the samples for this chap
 
 description of unit test
 
-![UNIT](image)
+![UNIT](aabb_aabb_unit_test.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
