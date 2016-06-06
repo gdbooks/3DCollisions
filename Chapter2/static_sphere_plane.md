@@ -33,7 +33,7 @@ You can [Download](../Samples/StaticIntersections.rar) the samples for this chap
 
 description of unit test
 
-![UNIT](image)
+![UNIT](plane_sphere_intersection_sample.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
