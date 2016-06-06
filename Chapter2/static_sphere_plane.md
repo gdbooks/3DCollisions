@@ -1,6 +1,11 @@
 # Sphere Plane Intersection
 
-Desctiption with images
+This is a pretty simple intersection logic, like with the Sphere-AABB intersection, we've already written the basic checks to support it. To see if a sphere and plane intersect:
+
+1. Find the closest point on the plane to the sphere
+2. Make sure the distance of that point is <= than the sphere radius
+
+That's it. Of course you might want to check length squared against radius squared to save on some performance.
 
 ## The Algorithm
 
@@ -13,7 +18,13 @@ code
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+// TODO
+public static bool Intersects(Sphere sphere, Plane plane) 
+
+// Conveniance function
+public static bool Intersects(Plane plane, Sphere sphere) {
+    return Intersects(sphere, plane);
+}
 ```
 
 And provide an implementation for it!
