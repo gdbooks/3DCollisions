@@ -50,7 +50,7 @@ TODO
 
 ## On Your Own
 
-Add the following function to the ```Collisions``` class:
+Add the following function to the ```Collisions``` class, how you implement this function (brute force or fancy) is up to you:
 
 ```cs
 // TODO: Provide implementation for this
