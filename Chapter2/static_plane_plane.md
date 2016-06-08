@@ -6,6 +6,8 @@ The only time two planes don't intersect is if they are parallel. If the planes 
 
 ![int](intersection_of_planes.png)
 
+#TODO: Eval [This](https://www.youtube.com/watch?v=o7CfCDkRwfY) video
+
 ## The Algorithm
 
 ```cs
