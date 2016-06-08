@@ -42,10 +42,21 @@ The brute force approach would be to loop trough all 8 points of the box and che
 2) All points are behind the plane, no collision
 3) Some points are in front of the plane, some are behind. COLLISION
 
-The code for a brute force approach might look something like this:
+That is to say, if you encounter any points that are not on the same side of the plane, a collision has occured. The hardest thing about the brute force approach is figuring out how to get all 4 sides of the AABB as vertices.
 
-```
-TODO
+```cs
+Vector3[] points = new Vector3[] {
+    // Min side
+    new Vector3(min.X, min.Y, min.Z),
+    new Vector3(max.X, min.Y, min.Z),
+    new Vector3(min.X, max.Y, min.Z),
+    new Vector3(min.X, min.Y, max.Z),
+    // Max side
+    new Vector3(max.X, max.Y, max.Z),
+    new Vector3(min.X, max.Y, max.Z),
+    new Vector3(max.X, min.Y, max.Z),
+    new Vector3(max.X, max.Y, min.Z)
+};
 ```
 
 ## On Your Own
