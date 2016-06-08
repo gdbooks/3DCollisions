@@ -107,7 +107,7 @@ namespace CollisionDetectionSelector.Samples {
                 if (Collisions.Intersects(aabbs[i], test) != results[t++]) {
                     LogError("Expected aabb " + i + " to " +
                         (results[t - 1] ? "intersect" : "not intersect") +
-                    " the sphere");
+                    " the plane");
                 }
             }
         }
