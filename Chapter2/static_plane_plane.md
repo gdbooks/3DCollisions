@@ -1,6 +1,10 @@
-# TOPIC
+# Plane Plane intersection
 
-Desctiption with images
+We've already done some work with plane intersection, when we did the intersection for 3 planes onto a point. Luckly the intersection of 2 planes is a lot simpler.
+
+The only time two planes don't intersect is if they are parallel. If the planes are not parallel they will intersect in a line (of infinate length)
+
+![int](intersection_of_planes.png)
 
 ## The Algorithm
 
