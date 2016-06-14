@@ -73,4 +73,9 @@ Fun fact, this is how Bethesda games do physics, and the problem of querrying co
 
 There are a few physics engines that seemingly never miss a collision. This is possible trough a method known as __Swept Volume__ intersection. The upside of this method is that it will always work. The downside is that it's prohibitavley expensive!
 
-(Generic) Swept volumes tend to be so expensive
+(Generic) Swept volumes tend to be so expensive few games can pull them off. So how do they work, and why are they so expensive? 
+
+A swept volume will create new geometry (usually a mesh) that encloses the object before the update and after the update. It then tests this new mesh against the world, if the new mesh collides tunneling is tought to have occured.
+
+### More later
+
