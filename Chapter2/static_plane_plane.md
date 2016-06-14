@@ -31,7 +31,7 @@ bool PlanesIntersect(Plane p1, Plane p2) {
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+public static bool Intersects(Plane p1, Plane p2)
 ```
 
 And provide an implementation for it!
