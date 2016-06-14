@@ -40,9 +40,7 @@ And provide an implementation for it!
 
 You can [Download](../Samples/StaticIntersections.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
-
-![UNIT](image)
+Visually, the unit test does not matter, this is because  all of the planes intersect at least one other plane. Instead, the Initialize funciton will throw detailed error messages if needed.
 
 ```cs
 using OpenTK.Graphics.OpenGL;
