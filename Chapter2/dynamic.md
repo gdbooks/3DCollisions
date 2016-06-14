@@ -73,4 +73,4 @@ Fun fact, this is how Bethesda games do physics, and the problem of querrying co
 
 There are a few physics engines that seemingly never miss a collision. This is possible trough a method known as __Swept Volume__ intersection. The upside of this method is that it will always work. The downside is that it's prohibitavley expensive!
 
-(Generic) Swept volumes 
+(Generic) Swept volumes tend to be so expensive
