@@ -79,3 +79,4 @@ A swept volume will create new geometry (usually a mesh) that encloses the objec
 
 ### More later
 
+That's all for now, at the end of the chapter we will look at some common tunnelling issues and how to solve them.
