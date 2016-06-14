@@ -22,7 +22,7 @@ bool PlanesIntersect(Plane p1, Plane p2) {
     // If the length(Squared) of d is zero, the planes are 
     // parallel (and separated) or coincident, 
     // so they’re not considered intersecting
-    return (Dot(d, d) > EPSILON);
+    return (Dot(d, d) > EPSILON); // EPSILON = 0.0001f
 }
 ```
 
