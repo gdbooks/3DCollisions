@@ -6,13 +6,24 @@ The only time two planes don't intersect is if they are parallel. If the planes 
 
 ![int](intersection_of_planes.png)
 
-#TODO: Eval [This](https://www.youtube.com/watch?v=SoSTdgqknvY) video
-#TODO: Eval [This](http://forum.devmaster.net/t/2-plane-intersection/13676/6) article
+The line of intersection is fairly useless in game development, so we will not be covering it here.
 
 ## The Algorithm
 
+The key piece of information above is that two planes never intersect if they are parallel. Only if they are parallel. Knowing this case, the problem becomes, how can we tell if two planes are parallel?
+
+Dot Product to the rescue! We have the normal of each plane! If the normals point in the same direction, we have parallel planes!
+
 ```cs
-code
+bool PlanesIntersect(Plane p1, Plane p2) {
+    // Compute direction of intersection line
+    Vector d = Cross(p1.n, p2.n);
+    
+    // If the length(Squared) of d is zero, the planes are 
+    // parallel (and separated) or coincident, 
+    // so they’re not considered intersecting
+    return (Dot(d, d) > EPSILON);
+}
 ```
 
 ## On Your Own
