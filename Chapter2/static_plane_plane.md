@@ -6,7 +6,7 @@ The only time two planes don't intersect is if they are parallel. If the planes 
 
 ![int](intersection_of_planes.png)
 
-The line of intersection is fairly useless in game development, so we will not be covering it here.
+The line of intersection is fairly useless in game development, so we will not be covering it here. If you are interested, youtube is full of videos on how to find this line, and the book [Real Time Collision Detection](https://www.amazon.com/Real-Time-Collision-Detection-Interactive-Technology/dp/1558607323/182-5816879-0409622?ie=UTF8&redirect=true) covers how to do it in the context of games. I have a PDF if you need it.
 
 ## The Algorithm
 
