@@ -1,6 +1,12 @@
 # Ray Against Sphere
 
-Desctiption with images
+Given the following image, we have :
+* Ray __R__, defined by:
+  * point __p0__
+  * normal __d__
+* Sphere __S__, defined by:
+  * center point __c__ 
+  * radius __r__
 
 ## The Algorithm
 
