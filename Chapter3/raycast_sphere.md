@@ -21,12 +21,12 @@ An intersection happens at time __t__, along ray __R__. Another way to express t
 t = a - f
 ```
 
-In order to find __a__ and __f__, we need one more vector, vector __e__. Vector __e__ i the vector from __p0__ to __c__.
+In order to find __a__ and __f__, we need two more vectors, vector __e__ and vector __b__. Vector __e__ is the vector from __p0__ to __c__. Vector __b__ is one side of the right triangle formed by vectors __r__, __f__ and __b__.
 
 ![IMG4](raycast_image_4.png)
 
 In this image, we have two triangles we care about. 
-* Triangle __f__, __b__, ___r__
+* Triangle __f__, __b__, __r__
 * Triangle __a__, __e__, __b__
 
 Given these two triangles, we can figure out the following
@@ -128,5 +128,79 @@ Not every ray is tested against every line, that's why visually this one is impo
 ![SAMPLE](raycast_sphere_unit_sample.PNG)
 
 ```cs
-code
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+using CollisionDetectionSelector.Primitives;
+
+namespace CollisionDetectionSelector.Samples {
+    class RaycastSphere : Application {
+        public class Touple {
+            public Ray ray;
+            public Sphere sphere;
+            public bool result;
+
+            public Touple(float rayX, float rayY, float rayZ, float normX, float normY, float normZ, 
+                float sphereX, float sphereY, float sphereZ, float rad, bool res) {
+                ray = new Ray(new Point(rayX, rayY, rayZ), new Vector3(normX, normY, normZ));
+                sphere = new Sphere(new Point(sphereX, sphereY, sphereZ), rad);
+                result = res;
+            }
+        }
+
+        Touple[] touples = new Touple[] {
+            new Touple(-2, 1, 0, 2, 0, 0, 2, 0, 0, 2, true),
+            new Touple(-2, 0, 0, 2, 0, 0, 2, 2, 0, 2, true),
+            new Touple(-2, 0, 0, 2, 0, 0, 0, 0, 0, 2, true),
+            new Touple(-2, 2, 0, 2, -1, 2, 0, 0, 0, 2, true),
+            new Touple(2, 1, 0, 2, 0, 0, 2, 0, 0, 2, true),
+            new Touple(-2, 1, 0, -1, 0, 0, 2, 0, 0, 2, false),
+            new Touple(-5, 1, 0, 2, 0.4f, 0, 2, 0, 0, 2, false)
+        };
+
+        public override void Intialize(int width, int height) {
+            GL.Enable(EnableCap.DepthTest);
+            GL.PointSize(5f);
+            GL.Enable(EnableCap.CullFace);
+            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+
+            foreach(Touple touple in touples) {
+                float t = 0f;
+                if (Collisions.Raycast(touple.ray, touple.sphere, out t) != touple.result) {
+                    LogError("Expected ray: " + touple.ray + "\nTo " +
+                        (touple.result ? "intersect" : "not intersect")
+                    + " sphere: " + touple.sphere);
+                }
+            }
+        }
+
+        public override void Render() {
+            //GL.Enable(EnableCap.CullFace);
+            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+
+            base.Render();
+            DrawOrigin();
+
+            GL.Color3(1f, 0f, 0f);
+            for (int i = 0; i < 3; ++i) {
+                touples[i].sphere.Render();
+            }
+
+            GL.Color3(0f, 1f, 0f);
+            foreach (Touple touple in touples) {
+                touple.ray.Render();
+                if (touple.result) {
+                    Point p = new Point();
+                    Collisions.Raycast(touple.ray, touple.sphere, out p);
+                    GL.Color3(0f, 0f, 1f);
+                    p.Render();
+                    GL.Color3(0f, 1f, 0f);
+                }
+            }
+        }
+
+        private void Log(string s) {
+            System.Console.WriteLine(s);
+        }
+    }
+}
 ```
