@@ -18,7 +18,7 @@ Given this information, we want to find out if ray __R__ intersects sphere __S__
 An intersection happens at time __t__, along ray __R__. Another way to express this would be that the intersection happens at __R(t)__. To find __t__, we need to first find  __a__ and __f__. The formula for __t__ is:
 
 ```
-t = length(a) - length(f)
+t = a - f
 ```
 
 In order to find __a__ and __f__, we need one more vector, vector __e__. Vector __e__ i the vector from __p0__ to __c__.
@@ -46,9 +46,15 @@ Given these two triangles, we can figure out the following
   * $$t=a - sqrt(r^2- b^2)$$ : Expanded __f__  
   * $$t=a - sqrt(r^2- e^2 + a^2)$$ : Expanded __b__, final
 
-With that, we have the value of t! What happens when the ray doesn't hit the sphere? The expression inside the square root $$sqrt(r^2- e^2 + a^2)$$ will be negative. Therefore, we have to make an early out test for that!
+With that, we have the value of t! 
+
+What happens when the ray doesn't hit the sphere? The expression inside the square root $$sqrt(r^2- e^2 + a^2)$$ will be negative. Therefore, we have to make an early out test for that!
+
+There is one more edge case, if $$e^2$$ is less than the squared radius of the sphere, the ray starts INSIDE the sphere! This is again a special case that we need to handle delicatley.
 
 ## The Algorithm
+
+In the above diagrams, it's not always clear what is a vector value and what is a scalar value! When a vector is used in a square root, we are talking about the length of the vector. The code below should give more context.
 
 ```cs
 // This function will return the value of t
@@ -60,6 +66,7 @@ float Raycast01(Ray ray, Sphere sphere) {
     float r = sphere.Radius;
 
     Vector3 e = c - p0;
+    // Using Length here would cause floating point error to creep in
     float Esq = Vector3.LengthSquared(e);
     float a = Vector3.Dot(e, d);
     float b = Sqrt(Esq - (a * a));
@@ -85,7 +92,29 @@ float Raycast01(Ray ray, Sphere sphere) {
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+// TODO: Implement this function
+static bool Raycast(Ray ray, Sphere sphere, out float t)
+
+// I've implemented these for you!
+
+// Conveniance method, returns t without an out param
+// If no collision happened, will return -1
+static float Raycast(Ray ray, Sphere sphere) {
+    float t = -1;
+    if (!Raycast(ray, sphere, out t)) {
+        return -1;
+    }
+    return t;
+}
+
+// Conveniance method, returns the point of intersection
+// instead of p
+static bool Raycast(Ray ray, Sphere sphere, out Point p) {
+    float t = -1;
+    bool result = Raycast(ray, sphere, out t);
+    p = new Point(ray.Position.ToVector() + ray.Normal * t);
+    return result;
+}
 ```
 
 And provide an implementation for it!
