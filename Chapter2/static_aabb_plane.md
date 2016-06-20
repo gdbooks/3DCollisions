@@ -28,6 +28,14 @@ int TestAABBPlane(AABB b, Plane p) {
 }
 ```
 
+So, what happens here, is we compute the center of the aabb (```c```) and it's extents (```e```). We then collapse extents ```e``` onto the plane normal (```p.n```). 
+
+At this point we have a line with center point ```c``` and size ```r``` in both directions.
+
+We then compute ```s```, which is the distance of the line from the plane. If the line is further away than half it's length, it does not intersect. If it's closer, it does.
+
+![EXP](aww-board.png)
+
 ## Another method
 
 Of course, this is not the only way to do the intersection test. You could always take the more logical brute force approach.
