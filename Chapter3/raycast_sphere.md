@@ -78,9 +78,7 @@ float Raycast01(Ray ray, Sphere sphere) {
     }
     // Ray is inside
     else if (Esq < r * r) {
-        Vector3 colPoint = c + d * r;
-        Vector3 colVec = p0 - colPoint;
-        return Vector3.Length(colVec);
+        return a + f; // Just reverse direction
     }
     // else Normal intersection
     return = a - f;
