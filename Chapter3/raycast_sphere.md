@@ -51,19 +51,32 @@ With that, we have the value of t! What happens when the ray doesn't hit the sph
 ## The Algorithm
 
 ```cs
-void Raycast(Ray r, Sphere s, out float t) {
-    // Known variables
-    Vector p0 = r.Position;
-    Vector d = r.Direction;
-    Vector c = s.Position;
-    Vector r = s.Radius;
-    
-    // Solve for a, b, f and e
-    Vector e = c - p0;
-    // Project e onto d
-    Vector a = d * Dot(e, d);
-    Vector b = e - a; 
-    Vector f = r - b;
+// This function will return the value of t
+// if it returns negative, no collision!
+float Raycast01(Ray ray, Sphere sphere) {
+    Vector3 p0 = ray.Position;
+    Vector3 d = ray.Normal;
+    Vector3 c = sphere.Position;
+    float r = sphere.Radius;
+
+    Vector3 e = c - p0;
+    float Esq = Vector3.LengthSquared(e);
+    float a = Vector3.Dot(e, d);
+    float b = Sqrt(Esq - (a * a));
+    float f = Sqrt((r * r) - (b * b));
+
+    // No collision
+    if (r * r - Esq + a * a < 0f) {
+       return -1; // -1 is invalid.
+    }
+    // Ray is inside
+    else if (Esq < r * r) {
+        Vector3 colPoint = c + d * r;
+        Vector3 colVec = p0 - colPoint;
+        return Vector3.Length(colVec);
+    }
+    // else Normal intersection
+    return = a - f;
 }
 ```
 
