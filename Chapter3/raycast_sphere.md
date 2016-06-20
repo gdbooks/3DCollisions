@@ -21,7 +21,7 @@ An intersection happens at time __t__, along ray __R__. Another way to express t
 t = a - f
 ```
 
-In order to find __a__ and __f__, we need two more vectors, vector __e__ and vector __b__. Vector __e__ is the vector from __p0__ to __c__. Vector __b__ is one side of the right triangle formed by vectors __r__, __f__ and __b__.
+In order to find __a__ and __f__, we need two more vectors, vector __e__ and vector __b__. Vector __e__ is the vector from __p0__ to __c__. Vector __b__ is one side of the right triangle formed by vectors __r__, __f__ and __b__. The image below demonstrates this. You know r and f, you have to solve the right triangle for b.
 
 ![IMG4](raycast_image_4.png)
 
