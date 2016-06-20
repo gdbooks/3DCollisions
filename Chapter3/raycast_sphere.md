@@ -34,8 +34,8 @@ Given these two triangles, we can figure out the following
 * Vector __e__ is a vector going to __p0__ to __c__
 * Vector __a__ is vector __e__ projected onto vector __d__
 * Vector __b__ is given by the pathegroen therom
-  * $$A^2+B^2=C^2$$ : Therom
-  * $$a^2+b^2=e^2$$ : Triangle __a__, __e__, __b__
+  * $$ A^2+B^2=C^2 $$ : Therom
+  * $$ a^2+b^2=e^2 $$ : Triangle __a__, __e__, __b__
   * $$b^2=e^2-a^2$$ : Re-arranged
   * $$b = sqrt(e*e - a*a)$$ :final
 * Vector __f__ is given by the pathegroen therom
