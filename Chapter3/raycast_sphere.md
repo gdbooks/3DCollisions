@@ -121,9 +121,11 @@ And provide an implementation for it!
 
 You can [Download](../Samples/Raycast.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
+The unit test looks visually messy. 3 red spheres are rendered, and a bunch of green lines. Any collision point between a ray and a sphere is marked as blue.
 
-![UNIT](image)
+Not every ray is tested against every line, that's why visually this one is impossible to call. The constructor however, will throw errors where needed.
+
+![SAMPLE](raycast_sphere_unit_sample.PNG)
 
 ```cs
 code
