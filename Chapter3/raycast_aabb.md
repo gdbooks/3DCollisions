@@ -63,6 +63,14 @@ tMax = Min(
         );
 ```
 
+Thats it! If tMax is less than 0, then the ray is intersecting the AABB, but before the origin of the ray. So, it's not a collision! (t would be negative)
+
+If tMin is less than tMax, then there is no collision. These images demonstrate why:
+
+![DIAGRAM](line-aabb-clipping-diagram1.png)
+
+You want to return tMin as t, becuase it's smalelr, it's closer on our ray
+
 ## The Algorithm
 
 ```cs
