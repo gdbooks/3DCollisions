@@ -74,6 +74,9 @@ You want to return tMin as t, becuase it's smalelr, it's closer on our ray
 ## The Algorithm
 
 ```cs
+// Given a ray and an aabb:
+// return t at which the ray intersects the aabb. 
+// return -1 if there is no intersection
 public static float Raycast(Ray ray, AABB aabb) {
     float t1 = (aabb.minX - ray.Position.X) / ray.Normal.X;
     float t2 = (aabb.maxX - ray.Position.X) / ray.Normal.X;
