@@ -88,6 +88,7 @@ public static bool Raycast(Ray ray, AABB aabb, out float t)
 
 // I've implemented the blow methods for you.
 // Nothing to do past this point
+
 public static float Raycast(Ray ray, AABB aabb) {
     float t = -1;
     if (!Raycast(ray, aabb, out t)) {
