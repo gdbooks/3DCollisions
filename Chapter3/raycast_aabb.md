@@ -74,7 +74,29 @@ You want to return tMin as t, becuase it's smalelr, it's closer on our ray
 ## The Algorithm
 
 ```cs
-code
+public static float Raycast(Ray ray, AABB aabb) {
+    float t1 = (aabb.minX - ray.Position.X) / ray.Normal.X;
+    float t2 = (aabb.maxX - ray.Position.X) / ray.Normal.X;
+    float t3 = (aabb.minY - ray.Position.Y) / ray.Normal.Y;
+    float t4 = (aabb.maxY - ray.Position.Y) / ray.Normal.Y;
+    float t5 = (aabb.minZ - ray.Position.Z) / ray.Normal.Z;
+    float t6 = (aabb.maxZ - ray.Position.Z) / ray.Normal.Z;
+
+    float tmin = Max(Max(Min(t1, t2), Min(t3, t4)), Min(t5, t6));
+    float tmax = Min(Min(Max(t1, t2), Max(t3, t4)), Max(t5, t6));
+
+    // if tmax < 0, ray (line) is intersecting AABB, but whole AABB is behing us
+    if (tmax < 0) {
+        return -1;
+    }
+
+    // if tmin > tmax, ray doesn't intersect AABB
+    if (tmin > tmax) {
+        return -1
+    }
+
+    return tmin;
+}
 ```
 
 ## On Your Own
