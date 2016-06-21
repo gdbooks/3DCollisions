@@ -82,7 +82,26 @@ code
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+// TODO: Implement ONLY THIS ONE method:
+public static bool Raycast(Ray ray, AABB aabb, out float t)
+
+
+// I've implemented the blow methods for you.
+// Nothing to do past this point
+public static float Raycast(Ray ray, AABB aabb) {
+    float t = -1;
+    if (!Raycast(ray, aabb, out t)) {
+        return -1;
+    }
+    return t;
+}
+
+public static bool Raycast(Ray ray, AABB aabb, out Point p) {
+    float t = -1;
+    bool result = Raycast(ray, aabb, out t);
+    p = new Point(ray.Position.ToVector() + ray.Normal * t);
+    return result;
+}
 ```
 
 And provide an implementation for it!
