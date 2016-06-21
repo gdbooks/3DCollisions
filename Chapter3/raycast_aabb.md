@@ -44,8 +44,23 @@ tMaxX = (aabb.max.y – ray.origin.x) / ray.direction.x
 At this point we have 6 min and max values, tMinX, tMinY, tMinZ, tMaxX, tMaxY, tMaxZ. How do we find just tMin and tMax? Find the MAXIMUM tMin and the MINIMUM tFar.
 
 ```
-tMin = Max(Max(Min(t1, t2), Min(t3, t4)), Min(t5, t6));
-tMax = Min(Min(Max(t1, t2), Max(t3, t4)), Max(t5, t6));
+// The BIGGEST MIN value
+tMin = Max( // Whats bigger [minX/minY] or MinZ
+          Max( // What's bigger, minX or minY
+            Min(tMinX, tMaxX), // Get the smaller X
+            Min(tMinY, tMaxY) // Get teh smaller Y
+          ), 
+          Min(tMinZ, tMaxZ) // Get the smaller Z
+        );
+
+// The SMALLEST MAX value
+tMax = Min( 
+          Min( // Whats smaller [minX/minY] or MinZ
+            Max(tMinX, tMaxX),  // Get the bigger X
+            Max(tMinY, tMaxY)  // Get teh bigger Y
+          ), 
+          Max(tMinZ, tMaxZ) // Get the bigger Z
+        );
 ```
 
 ## The Algorithm
