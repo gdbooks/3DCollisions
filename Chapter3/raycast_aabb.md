@@ -1,6 +1,6 @@
-# TOPIC
+# Raycast AABB
 
-Desctiption with images
+Raycasting an AABB is often done trough an algorithm called 
 
 ## The Algorithm
 
