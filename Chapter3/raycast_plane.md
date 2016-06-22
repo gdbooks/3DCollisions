@@ -42,3 +42,15 @@ Finally, we can divide each side by ray.normal DOT plane.normal.
 ```
 t = (plane.distance - DOT(ray.position, plane.normal) / DOT(ray.normal, plane.normal)
 ```
+
+That's it! We now have T! The above might be a bit confusing, let's take a look at it as just math. In the below formula __pos__ is the position of the ray, __dir__ is the normal of the ray. __norm__ is the normal of the plane and __dist__ is the distance of the plane. __t__ is of course t. t__dir__ means t * dir.
+
+* First we have the formula for a plane
+* $$unknownPoint \cdot norm = dist$$
+* Next, we substitute the point on ray formula for the unknown point
+* $$(pos + t\mathbf d\mathbf i \mathbf r) \cdot norm = dist$$
+* Distribute the dot product
+* $$pos \cdot norm + t\mathbf d\mathbf i\mathbf r \cdot norm = dist$$
+* $$t\mathbf d\mathbf i\mathbf r \cdot norm = dist - pos \cdot nrom$$
+* Divide both sides by dir dot norm
+* $$t = \frac{dist - pos \cdot nrom}{dir \cdot norm}$$
