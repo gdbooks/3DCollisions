@@ -47,10 +47,23 @@ That's it! We now have T! The above might be a bit confusing, let's take a look 
 
 * First we have the formula for a plane
 * $$unknownPoint \cdot norm = dist$$
+*   
 * Next, we substitute the point on ray formula for the unknown point
 * $$(pos + t\mathbf d\mathbf i \mathbf r) \cdot norm = dist$$
+*   
 * Distribute the dot product
 * $$pos \cdot norm + t\mathbf d\mathbf i\mathbf r \cdot norm = dist$$
+*  
+* Subtract pos dot norm from both sides
 * $$t\mathbf d\mathbf i\mathbf r \cdot norm = dist - pos \cdot nrom$$
+* 
 * Divide both sides by dir dot norm
 * $$t = \frac{dist - pos \cdot nrom}{dir \cdot norm}$$
+
+A few things to keep in mind.
+
+If the ray is parallel to the plane $$dir \cdot norm$$ will be 0 and there is no intersection.
+
+An intersection is only valid if the ray is in front of the plane.That is, if the direction of the ray is opposite of the planes normal. This is true if $$dir \cdot norm < 0$$.
+
+If the value of t is out of range (that is, if t is negative), then there is no intersection.
