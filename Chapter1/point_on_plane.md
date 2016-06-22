@@ -13,7 +13,7 @@ class Plane {
 A*X + B*Y + C*Z + = Distance
 
 // We can represent the above as:
-Dot(Normal, UnknownPoint)  = Distance
+Dot(Normal, UnknownPoint) = Distance
 ```
 
 Given this information we can figure out if a point is on a plane or not. Let's rearrange the distance equasion, so the distance is on the left side and the right side is 0:
