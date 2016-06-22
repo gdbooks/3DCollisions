@@ -126,11 +126,11 @@ And provide an implementation for it!
 
 You can [Download](../Samples/Raycast.rar) the samples for this chapter to see if your result looks like the unit test.
 
-This unit test will render an AABB on screen, and several rays. If any rays intersect the AABB they will render red, otherwise blue.
+This unit test will render a plane on screen, and several rays. If any rays intersect the Plane they will render red, otherwise blue. The point of intersection is renderd as a green dot
 
 The constructor of the unit test will spit out errors if the test results are not what are expected.
 
-![UNIT](raycast_aabb_sample.png)
+![UNIT](raycast_plane_sample.PNG)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
