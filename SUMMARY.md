@@ -81,4 +81,3 @@
     * [Elipsoid](Chapter7/elipsoid.md)
     * [Cylinder](Chapter7/cylinder.md)
   * [Physics Engines](Chapter7/engines.md)
-* [FPS Project](Chapter8/README.md)
