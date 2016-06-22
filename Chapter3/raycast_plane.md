@@ -67,3 +67,130 @@ If the ray is parallel to the plane $$dir \cdot norm$$ will be 0 and there is no
 An intersection is only valid if the ray is in front of the plane.That is, if the direction of the ray is opposite of the planes normal. This is true if $$dir \cdot norm < 0$$.
 
 If the value of t is out of range (that is, if t is negative), then there is no intersection.
+
+## The Algorithm
+
+```cs
+// Returns t if collision happened, -1 if it didnt
+float Raycast(Ray ray, Plane plane) {
+    float nd = Vector3.Dot(ray.Normal, plane.Normal);
+    float pn = Vector3.Dot(ray.Position, plane.Normal);
+
+    if (nd >= 0f) {
+        return -1;
+    }
+
+    t = (plane.Distance - pn) / nd;
+
+    if (t >= 0f) {
+      return t;
+    }
+    return -1;
+}
+```
+
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+// TODO: Implement ONLY THIS ONE method:
+public static bool Raycast(Ray ray, Plane plane, out float t) 
+
+
+// I've implemented the blow methods for you.
+// Nothing to do past this point
+
+// Conveniance method, returns t without an out param
+// If no collision happened, will return -1
+public static float Raycast(Ray ray, Plane plane) {
+    float t = -1;
+    if (!Raycast(ray, plane, out t)) {
+        return -1;
+    }
+    return t;
+}
+
+// Conveniance method, returns the point of intersection
+public static bool Raycast(Ray ray, Plane plane, out Point p) {
+    float t = -1;
+    bool result = Raycast(ray, plane, out t);
+    p = new Point(ray.Position.ToVector() + ray.Normal * t);
+    return result;
+}
+```
+
+And provide an implementation for it!
+
+### Unit Test
+
+You can [Download](../Samples/Raycast.rar) the samples for this chapter to see if your result looks like the unit test.
+
+This unit test will render an AABB on screen, and several rays. If any rays intersect the AABB they will render red, otherwise blue.
+
+The constructor of the unit test will spit out errors if the test results are not what are expected.
+
+![UNIT](raycast_aabb_sample.png)
+
+```cs
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+using CollisionDetectionSelector.Primitives;
+
+namespace CollisionDetectionSelector.Samples {
+    class RaycastAABB : Application {
+        public AABB test = new AABB(new Point(0.5f, 0.5f, 0.5f), new Point(2f, 2f, 2f));
+
+        public Ray[] rays = new Ray[] {
+            new Ray(new Point(-2, -2, -2), new Vector3(2, 2, 2)),
+            new Ray(new Point(0f, 0f, 0f), new Vector3(0f, 1f, 0f)),
+            new Ray(new Point(0f, 0f, 0f), new Vector3(-1f, 0f, 0f)),
+            new Ray(new Point(1f, 1f, 1f), new Vector3(1f, 1f, 0f)),
+            new Ray(new Point(0.4f, 1f, 1f), new Vector3(-1f, 0f, 0f)),
+        };
+
+        public override void Intialize(int width, int height) {
+            GL.Enable(EnableCap.DepthTest);
+            GL.PointSize(5f);
+            GL.Enable(EnableCap.CullFace);
+            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+
+            bool[] results = new bool[] {
+                true, false, false, true, false
+            };
+
+            float t;
+            for (int i = 0; i < results.Length; ++i) {
+                if (Collisions.Raycast(rays[i], test, out t) != results[i]) {
+                    LogError("Expected ray at index: " + i + " to " +
+                        (results[i] ? "intersect" : "not intersect") +
+                        " the aabb");
+                }
+            }
+        }
+
+        public override void Render() {
+            base.Render();
+            DrawOrigin();
+
+            GL.Color3(0f, 1f, 0f);
+            test.Render();
+
+            float t;
+            foreach(Ray ray in rays) {
+                if (Collisions.Raycast(ray, test, out t)) {
+                    GL.Color3(1f, 0f, 0f);
+                }
+                else {
+                    GL.Color3(0f, 0f, 1f);
+                }
+                ray.Render();
+            }
+        }
+
+        private void Log(string s) {
+            System.Console.WriteLine(s);
+        }
+    }
+}
+```
