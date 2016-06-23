@@ -17,3 +17,9 @@ bounding circle, wrapping the halfway-through object and its destination positio
 circle collides with the obstacle so we subdivide the second half as done before:
 
 ![BIN3](bin_impact_3.png)
+
+This goes on until the subdivided distance gets close to zero. How close to zero is a matter of
+required accuracy. The moving shape's size gives a good factor for the minimum distance.
+This method is generic and works with all kinds of shapes. Tweaking the minimum distance gives us
+control over the trade-off between speed and accuracy. Longer distances result in faster collision
+detection, smaller distances yield more accurate results.
