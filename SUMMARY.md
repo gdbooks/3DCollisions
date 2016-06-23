@@ -41,7 +41,7 @@
     * [Against Plane](Chapter3/line_plane.md)
 * [Dynamic Intersections](Chapter2/dynamic.md)
   * [Linear Impact Search](Chapter2/dynamic_sphere_sphere.md)
-  * [Sphere-AABB](Chapter2/dynamic_sphere_aabb.md)
+  * [Binary Impact Search](Chapter2/dynamic_sphere_aabb.md)
   * [Sphere-Plane](Chapter2/dynamic_sphere_plane.md)
   * [AABB-AABB](Chapter2/dynamic_aabb_aabb.md)
   * [AABB-Plane](Chapter2/dynamic_aabb_plane.md)
