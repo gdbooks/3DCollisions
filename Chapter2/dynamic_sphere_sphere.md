@@ -3,6 +3,7 @@
 To solve the tunneling problem we can take intermediate steps into account. The brute force solution
 would be testing the object stepwise displaced by fractions of the full movement.
 
+![DEMO](linear_impact_search.PNG)
 
 The number of tests rises proportionally with speed. This is no problem for slow objects. Whereas
 fast objects need many tests to avoid tunneling. Imagine a bullet fired at a wall. The high speed
