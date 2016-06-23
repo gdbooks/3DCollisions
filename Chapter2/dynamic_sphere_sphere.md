@@ -1,3 +1,4 @@
-#Dynamic Sphere Intersection
+#Linear Impact Search
 
-There is no special math for testing if a moving sphere intersects another sphere. It's just logic, and the functions we've already used!
+To solve the tunneling problem we can take intermediate steps into account. The brute force solution
+would be testing the object stepwise displaced by fractions of the full movement.
