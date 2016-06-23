@@ -44,7 +44,6 @@
   * [Linear Impact Search](Chapter2/dynamic_sphere_sphere.md)
   * [Binary Impact Search](Chapter2/dynamic_sphere_aabb.md)
   * [Multiple Moving Objects](Chapter2/dynamic_sphere_plane.md)
-  * [AABB-Plane](Chapter2/dynamic_aabb_plane.md)
 * [3D Models](Chapter4/README.md)
   * [Containers](Chapter4/containers.md)
     * [Sphere](Chapter4/sphere.md)
