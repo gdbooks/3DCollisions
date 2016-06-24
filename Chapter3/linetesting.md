@@ -6,4 +6,4 @@ These tests are essentially capped ray-casts. Assume a line goes from p0 to p1. 
 
 A primitive approach to line testing would be to simply create wrapper functions around our existing ray-cast functions. However, there are often early out cases that exist in a line test, which don't exist in a ray cast.
 
-For this reason, we are going to implement line tests as their own code. 
+For this reason, we are going to implement line tests as their own code. A lot of it will look exactly like ray-casting, that's just because the operations are similar.
