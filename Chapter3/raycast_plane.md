@@ -138,25 +138,26 @@ using Math_Implementation;
 using CollisionDetectionSelector.Primitives;
 
 namespace CollisionDetectionSelector.Samples {
-    class RaycastAABB : Application {
-        public AABB test = new AABB(new Point(0.5f, 0.5f, 0.5f), new Point(2f, 2f, 2f));
+    class RaycastPlane : Application {
+        public Plane test = new Plane(new Vector3(1f, 1f, 0f), 1f);
 
         public Ray[] rays = new Ray[] {
-            new Ray(new Point(-2, -2, -2), new Vector3(2, 2, 2)),
-            new Ray(new Point(0f, 0f, 0f), new Vector3(0f, 1f, 0f)),
-            new Ray(new Point(0f, 0f, 0f), new Vector3(-1f, 0f, 0f)),
-            new Ray(new Point(1f, 1f, 1f), new Vector3(1f, 1f, 0f)),
-            new Ray(new Point(0.4f, 1f, 1f), new Vector3(-1f, 0f, 0f)),
+            new Ray(new Point(0f, 0f, 0f), new Vector3(0f, -1f, 0f)),
+            new Ray(new Point(0.5f, 0.5f, 0f), new Vector3(-1f, -1f, 0f)),
+            new Ray(new Point(1f, 1f, 0f), new Vector3(1f, 1f, 0f)),
+            new Ray(new Point(1f, 1f, -3f), new Vector3(0f, 0f, 1f)),
+            new Ray(new Point(2f, 2f, 3f), new Vector3(0f, -1f, 0f)),
+            new Ray(new Point(3f, 3f, 3f), new Vector3(-3f, -3f, -3f)),
+            new Ray(new Point(1f, 1f, 3f), new Vector3(-2f, -3f, 1f)),
         };
 
         public override void Intialize(int width, int height) {
             GL.Enable(EnableCap.DepthTest);
             GL.PointSize(5f);
-            GL.Enable(EnableCap.CullFace);
-            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
 
             bool[] results = new bool[] {
-                true, false, false, true, false
+                false, false, false, false, true, true, true
             };
 
             float t;
@@ -164,7 +165,7 @@ namespace CollisionDetectionSelector.Samples {
                 if (Collisions.Raycast(rays[i], test, out t) != results[i]) {
                     LogError("Expected ray at index: " + i + " to " +
                         (results[i] ? "intersect" : "not intersect") +
-                        " the aabb");
+                        " the plane");
                 }
             }
         }
@@ -173,12 +174,17 @@ namespace CollisionDetectionSelector.Samples {
             base.Render();
             DrawOrigin();
 
-            GL.Color3(0f, 1f, 0f);
-            test.Render();
+            GL.Color3(1f, 1f, 1f);
+            test.Render(5f);
+
 
             float t;
-            foreach(Ray ray in rays) {
+            foreach (Ray ray in rays) {
                 if (Collisions.Raycast(ray, test, out t)) {
+                    Point colPoint = new Point();
+                    Collisions.Raycast(ray, test, out colPoint);
+                    GL.Color3(0f, 1f, 0f);
+                    colPoint.Render();
                     GL.Color3(1f, 0f, 0f);
                 }
                 else {
