@@ -9,7 +9,7 @@ This test will __test intersection__, it will __not test containment__. That is,
 Provide an implementation for the following function
 
 ```cs
-    public static bool LineTest(Line line, AABB aabb, out Point result)
+public static bool LineTest(Line line, Plane plane, out Point result) {
 ```
 
 ### Unit Test
