@@ -2,6 +2,8 @@
 
 In this chapter i will provide code for the wrapper functions of line against sphere. I'll provide all implementation as an example, the next few chapters i'll only provide the API and leave the implementation up to you.
 
+This test will __test intersection__, it will __not test containment__. That is, if you have a line, and both start and end points are INSIDE the sphere, the result of this test will be false!
+
 ### Implementation
 
 ```cs
