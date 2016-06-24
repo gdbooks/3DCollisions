@@ -77,6 +77,5 @@ namespace CollisionDetectionSelector.Samples {
             System.Console.WriteLine(s);
         }
     }
-}
 
 ```
