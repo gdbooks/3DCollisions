@@ -29,7 +29,7 @@ namespace CollisionDetectionSelector.Samples {
             new Line(new Point(2.5f, 2.5f, 2.5f), new Point(4, 4, 4)), // false
             new Line(new Point(1f, 1f, 0f), new Point(0f, 0f, 0f)), // false
             new Line(new Point(-1f, -1f, 0f), new Point(-3f, 0f, 0f)), // true
-            new Line(new Point(-5f, 0f, 0f), new Point(5f, 0f, 0f)) // Not tested
+            new Line(new Point(-5f, 0f, 0f), new Point(5f, 0f, 0f)) // true
         };
         public AABB aabb = new AABB();
 
@@ -41,11 +41,14 @@ namespace CollisionDetectionSelector.Samples {
             aabb.Max = new Point(2, 2, 2);
             aabb.Min = new Point(-2, -2, -2);
 
-            bool[] results = new bool[] { false, false, true };
+            bool[] results = new bool[] { false, false, true, true };
+            Point result = new Point();
             for (int i = 0; i < results.Length; ++i) {
-                LogError("Line at index " + i + " was " +
-                    (results[i] ? "expected" : "not expected") +
-                    "to intersect the test aabb");
+                if (Collisions.LineTest(lines[i], aabb, out result) != results[i]) {
+                    LogError("Line at index " + i + " was " +
+                        (results[i] ? "expected" : "not expected") +
+                        "to intersect the test aabb");
+                }
             }
         }
 
@@ -75,4 +78,5 @@ namespace CollisionDetectionSelector.Samples {
         }
     }
 }
+
 ```
