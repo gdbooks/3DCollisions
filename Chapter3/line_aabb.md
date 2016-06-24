@@ -10,7 +10,6 @@ Provide an implementation for the following function
 
 ```cs
     public static bool LineTest(Line line, AABB aabb, out Point result)
-}
 ```
 
 ### Unit Test
