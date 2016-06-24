@@ -16,7 +16,7 @@ You can [Download](../Samples/Raycast.rar) the samples for this chapter to see i
 
 This unit test will print out errors if any are present in your code.
 
-![S](linecast_test_aabb.png)
+![S](unit_linetest_plane.PNG)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
