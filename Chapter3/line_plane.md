@@ -1,8 +1,6 @@
 #Line Against Plane
 
-The code for Line V AABB is almost the same as the code for Line V Sphere. Both functions are wrappers around a ray cast.
-
-This test will __test intersection__, it will __not test containment__. That is, if you have a line, and both start and end points are INSIDE the sphere, the result of this test will be false!
+Again, this test is almost the same as the previous two. The code here should be really straight forward.
 
 ### Implementation
 
