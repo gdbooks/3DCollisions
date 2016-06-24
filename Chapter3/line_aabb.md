@@ -14,6 +14,8 @@ Provide an implementation for the following function
 
 ### Unit Test
 
+You can [Download](../Samples/Raycast.rar) the samples for this chapter to see if your result looks like the unit test.
+
 This unit test will print out errors if any are present in your code.
 
 ![S](linecast_test_aabb.png)
