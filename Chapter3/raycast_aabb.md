@@ -97,7 +97,10 @@ public static float Raycast(Ray ray, AABB aabb) {
     if (tmin > tmax) {
         return -1
     }
-
+    
+    if (tmin < 0f) {
+        return tmax;
+    }
     return tmin;
 }
 ```
