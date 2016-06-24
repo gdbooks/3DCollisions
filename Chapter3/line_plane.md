@@ -43,7 +43,7 @@ namespace CollisionDetectionSelector.Samples {
             plane.Normal = new Vector3(1, 1, 0);
             plane.Distance = 1;
 
-            bool[] results = new bool[] { false, false, false, true, true, false };
+            bool[] results = new bool[] { false, true, false, false, true, false };
             Point result = new Point();
             for (int i = 0; i < results.Length; ++i) {
                 if (Collisions.LineTest(lines[i], plane, out result) != results[i]) {
