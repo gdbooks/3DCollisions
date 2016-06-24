@@ -72,10 +72,13 @@ namespace CollisionDetectionSelector.Samples {
             sphere.Radius = 2;
 
             bool[] results = new bool[] { false, false, true };
+            Point result = new Point();
             for (int i = 0; i < results.Length; ++i) {
-                LogError("Line at index " + i + " was " +
-                    (results[i]? "expected" : "not expected") +
-                    "to intersect the test sphere");
+                if (Collisions.LineTest(lines[i], sphere, out result) != results[i]) {
+                    LogError("Line at index " + i + " was " +
+                        (results[i] ? "expected" : "not expected") +
+                        "to intersect the test SPHERE");
+                }
             }
         }
 
