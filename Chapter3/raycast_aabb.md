@@ -69,7 +69,7 @@ If tMin is less than tMax, then there is no collision. These images demonstrate 
 
 ![DIAGRAM](line-aabb-clipping-diagram1.png)
 
-You want to return tMin as t, becuase it's smalelr, it's closer on our ray
+You want to return tMin as t, becuase it's smalelr, it's closer on our ray. Except if tMin is less than 0, in that case, you want to return tMax.
 
 ## The Algorithm
 
