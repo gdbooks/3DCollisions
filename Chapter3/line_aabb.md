@@ -16,7 +16,7 @@ Provide an implementation for the following function
 
 This unit test will print out errors if any are present in your code.
 
-![S](sphere_line_unit_test.png)
+![S](linecast_test_aabb.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
