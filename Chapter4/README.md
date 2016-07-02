@@ -11,3 +11,7 @@ Once you have the class pulled in, go ahead and [Download suzanne.obj](../Sample
 ```cs
 
 ```
+
+The resulting window should look like this:
+
+![susane](susane_sample.png)
