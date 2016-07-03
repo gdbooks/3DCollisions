@@ -1,5 +1,7 @@
 #Point in Triangle
 
+There are a few ways to test if a point is inside a triangle. Most of them rely on the fact that a triangle is co-planar. That is, all 3 points of a triangle lie on the same plane.
+
 ## Same Side Test
 
 The easyest way to test if a point is in a triangle is commonly refered to as the [Same Side](http://www.blackpawn.com/texts/pointinpoly/) technique. I suggest reading that article, only the Same Side portion, not the barycentric one. The only problem is, the method presented is a 2D method. In addition to the 3 side tests you must also check if the test point is on the plane formed by the triangle.
