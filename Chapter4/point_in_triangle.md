@@ -20,19 +20,19 @@ P lies in the triangle ABC only if PAB, PBC and PCA are all clockwise, or counte
 
 Let's see an example, we have a triangle and a point:
 
-![PIT_1](pit_ex_1.png)
+![PIT_1](pit_rl_1.png)
 
 First, we translate the triangle so that the test point is it's origin:
 
-![PIT_2](pit_ex_2.png)
+![PIT_2](pit_rl_2.png)
 
 Next we construct triangles PAB, PBC and PCA (You can only see the red and green ones, the blue one shares the same lines so it's not visible)
 
-![PIT_3](pit_ex_3.png)
+![PIT_3](pit_rl_3.png)
 
 Now we check the normals of these 3 triangles
 
-![PIT4](pit_sample_4.png)
+![PIT4](pit_rl_4.png)
 
 Because all of the normals are facing the same way, the triangles are wound the same. Because of this, the point is inside the triangle!
 
@@ -62,6 +62,11 @@ bool PointInTriangle(Point p, Triangle t) {
   a -= p;
   b -= p;
   c -=p;
+  
+  // The point should be moved too, so they are both
+  // relative, but because we don't use p in the
+  // equation anymore, we don't need it!
+  // p -= p;
   
   // Compute the normal vectors for triangles:
   // u = PAB
