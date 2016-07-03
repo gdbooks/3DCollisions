@@ -46,7 +46,7 @@ Notice how the normals in the final image all face out! This is the same image e
 
 ## The Algorithm
 
-All of the above might sound a bit complicated, but its all really simple
+All of the above might sound a bit complicated, but its all really simple. Consider the following pseudo-code:
 
 ```cs
 bool PointInTriangle(Point p, Triangle t) {
