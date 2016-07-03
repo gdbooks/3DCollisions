@@ -43,3 +43,5 @@ This is what the same steps look like when the point is not in a triangle:
 Notice how the normals in the final image all face out! This is the same image enlarged:
 
 ![PIT_5](pit_ex_5.png)
+
+## Some Code
