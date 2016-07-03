@@ -96,7 +96,7 @@ Using the dot product to check if two normals point the same way is standard. Th
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+public static bool PointInTriangle(Triangle triangle, Point point)
 ```
 
 And provide an implementation for it!
