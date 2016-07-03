@@ -105,7 +105,7 @@ And provide an implementation for it!
 
 You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
+This unit test will render a grid of points and a triangle. If any point is outside the triangle, it's red. Any point inside the triangle is green. If you have any errors in your collision code, the constructor will alert you.
 
 ![UNIT](image)
 
