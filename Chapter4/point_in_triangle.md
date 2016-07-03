@@ -67,9 +67,9 @@ bool PointInTriangle(Point p, Triangle t) {
   // p -= p;
   
   // Compute the normal vectors for triangles:
-  // u = PAB
-  // v = PBC
-  // w = PCA
+  // u = PBC
+  // v = PCA
+  // w = PAB
   
   Vector3 u = Cross(b, c);
   Vector3 v = Cross(c, a);
