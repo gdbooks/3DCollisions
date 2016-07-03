@@ -44,4 +44,66 @@ Notice how the normals in the final image all face out! This is the same image e
 
 ![PIT_5](pit_ex_5.png)
 
-## Some Code
+## The Algorithm
+
+All of the above might sound a bit complicated, but its all really simple
+
+```cs
+bool PointInTriangle(Point p, Triangle t) {
+  // Lets define some local variables, we can change these
+  // without affecting the references passed in
+  Vector3 p = point;
+  Vector3 a = t.p0;
+  Vector3 b = t.p1;
+  Vector3 c = t.p2;
+  
+  // Move the triangle so that the point becomes the 
+  // triangles origin
+  a -= p;
+  b -= p;
+  c -=p;
+  
+  // Compute the normal vectors for triangles:
+  // u = PAB
+  // v = PBC
+  // w = PCA
+  
+  Vector3 u = Cross(b, c);
+  Vector3 v = Cross(c, a);
+  Vector3 w = Cross(a, b);
+  
+  // Test to see if the normals are facing 
+  // the same direction, return false if not
+  if (Dot(u, v) < 0f) {
+      return false;
+  }
+  if (dot(u, w) < 0.0f) {
+      return false;
+  }
+  
+  // All normals facing the same way, return true
+  return true;
+}
+```
+
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+code
+```
+
+And provide an implementation for it!
+
+### Unit Test
+
+You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
+
+description of unit test
+
+![UNIT](image)
+
+```cs
+code
+```
