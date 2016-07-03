@@ -1,6 +1,12 @@
 #Point in Triangle
 
-There are a few ways to test if a point is inside a triangle. Most of them rely on the fact that a triangle is co-planar. That is, all 3 points of a triangle lie on the same plane.
+There are a few ways to test if a point is inside a triangle. Most of them rely on the fact that a triangle is co-planar. That is, all 3 points of a triangle lie on the same plane. I'm going to describe three testing methods here, we will implement the third one.
+
+## Angle Test
+
+A common way to check if a point is in a triangle is to find the vectors connecting the point to each of the triangle's three vertices and sum the angles between those vectors. If the sum of the angles is __2\*pi__ then the point is inside the triangle, otherwise it is not. It works, but it is very slow. This text explains a faster and much easier method.
+
+
 
 ## Same Side Test
 
