@@ -39,5 +39,30 @@ Point GetClosest(Point test, Point test1, Point test2, Point test2) {
   }
   return test3;
 }
+```
 
+## The Algorithm
+
+The algorithm for closest point to triangle is so simple, i'm not going to provide pseudo-code for it. Just remember, you want to test if the point is inside the triangle first!
+
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+code
+```
+
+And provide an implementation for it!
+
+### Unit Test
+
+You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
+
+description of unit test
+
+![UNIT](image)
+
+```cs
+code
 ```
