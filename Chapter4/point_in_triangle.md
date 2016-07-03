@@ -107,7 +107,7 @@ You can [Download](../Samples/3DModels.rar) the samples for this chapter to see 
 
 This unit test will render a grid of points and a triangle. If any point is outside the triangle, it's red. Any point inside the triangle is green. If you have any errors in your collision code, the constructor will alert you.
 
-![UNIT](image)
+![UNIT](unit_point_in_triangle.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
