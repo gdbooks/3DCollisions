@@ -46,6 +46,7 @@
   * [Multiple Moving Objects](Chapter2/dynamic_sphere_plane.md)
 * [3D Models](Chapter4/README.md)
   * [Triangle](Chapter4/triangle.md)
+    * [Point in Triangle](Chapter4/point_in_triangle.md) 
     * [Sphere-Triangle](Chapter4/sphere_to_triangle.md)
     * [AABB-Triangle](Chapter4/aabb-triangle.md)
     * [Plane-Triangle](Chapter4/plane-triangle.md)
