@@ -86,6 +86,8 @@ bool PointInTriangle(Point p, Triangle t) {
 }
 ```
 
+Using the dot product to check if two normals point the same way is standard. The only thing that might be confusing here is how we use the cross products to get a normal.
+
 ## On Your Own
 
 Add the following function to the ```Collisions``` class:
