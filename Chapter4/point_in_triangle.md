@@ -8,7 +8,7 @@ Given the above paragraph and the extra condition i gave you you could build a 3
 
 ## Testing Normals
 
-There is another intersection test we can perform, this one is easyer to read but harder to visualize. 
+There is another intersection test we can perform, this one is easyer to read but harder to visualize. The first answer [Here](http://math.stackexchange.com/questions/51326/determining-if-an-arbitrary-point-lies-inside-a-triangle-defined-by-three-points) does a decent job of explaining the algorithm.
 
 Given a triangle ABC and point P, we translate triangle ABC in a way that P lies on it's origin. The test now becomes checking if world origin is contained in the translated triangle (Still refered to as ABC).
 
