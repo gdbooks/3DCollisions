@@ -28,4 +28,11 @@ Next we construct triangles PAB, PBC and PCA (You can only see the red and green
 
 ![PIT_3](pit_ex_3.png)
 
-Now we check the normals of these 3 triangles, if tey all point the same way, the point is inside the triangle!
+Now we check the normals of these 3 triangles
+
+![PIT4](pit_sample_4.png)
+
+Because all of the normals are facing the same way, the triangles are wound the same. Because of this, the point is inside the triangle!
+
+This is what the same steps look like when the point is not in a triangle:
+
