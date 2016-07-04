@@ -141,12 +141,68 @@ And provide an implementation for it! The code provided above should serve as a 
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
+You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
+This unit test will render out a triangle and several AABB's. If an AABB is intersecting the triangle it is rendered in green, if it isn't it's rendered in red.
 
-![UNIT](image)
+The constructor of the unit test will throw errors if your code is off.
+
+![UNIT](triange_aabb_int_unit.png)
 
 ```cs
-code
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+using CollisionDetectionSelector.Primitives;
+
+namespace CollisionDetectionSelector.Samples {
+    class TriangleAABBIntersection : Application {
+        AABB[] aabbs = new AABB[] {
+            new AABB(new Point(2, 4, -1), new Vector3(0.5f, 0.5f, 0.5f)),
+            new AABB(new Point(-1.0f, 5.0f, 0.0f), new Vector3(0.5f, 0.5f, 0.5f)),
+            new AABB(new Point(0.0f, 0.0f, 0.0f), new Vector3(5f, 7f, 5f)),
+            new AABB( new Point(2.0f, 3.0f, -3.0f), new Vector3(3f, 0.5f, 2f)),
+
+
+            new AABB(new Point(2f, 2f, 2f), new Vector3(1.0f, 1.0f, 1.0f)),
+            new AABB(new Point(-2f, -2f, -2f), new Vector3(1.0f, 1.0f, 1.0f))
+        };
+
+        Triangle triangle = new Triangle(new Point(-1.0f, 5.0f, 0.0f), new Point(2.0f, 2.0f, -3.0f), new Point(5.0f, 5.0f, 0.0f));
+
+        public override void Intialize(int width, int height) {
+            GL.Enable(EnableCap.DepthTest);
+            GL.PointSize(4f);
+            GL.Disable(EnableCap.CullFace);
+            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+
+            bool[] expected = new bool[] { true, true, true, true, false, false };
+            for (int i = 0; i < aabbs.Length; ++i) {
+                bool result = Collisions.Intersects(triangle, aabbs[i]);
+                if (result != expected[i]) {
+                    LogError("Expected aabb " + i + " to " +
+                        (expected[i] ? " intersect" : " NOT intersect") +
+                        " the triangle");
+                }
+            }
+        }
+
+        public override void Render() {
+            base.Render();
+            DrawOrigin();
+
+            GL.Color3(0.0f, 0.0f, 1.0f);
+            triangle.Render();
+
+            foreach (AABB aabb in aabbs) {
+                if (Collisions.Intersects(triangle, aabb)) {
+                    GL.Color3(0f, 1f, 0f);
+                }
+                else {
+                    GL.Color3(1f, 0f, 0f);
+                }
+                aabb.Render();
+            }
+        }
+    }
+}
 ```
