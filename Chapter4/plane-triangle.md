@@ -34,9 +34,11 @@ And provide an implementation for it!
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
+You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
-description of unit test
+This unit test draws a plane and some triangles. Triangles that intersect the plane are drawn in green. Triangles that don't are drawn in red.
+
+The constructor will throw errors if any are present in your code.
 
 ![UNIT](triangle_plane_intersection_ex.png)
 
