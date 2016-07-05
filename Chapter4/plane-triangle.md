@@ -38,7 +38,7 @@ You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if
 
 description of unit test
 
-![UNIT](image)
+![UNIT](triangle_plane_intersection_ex.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
