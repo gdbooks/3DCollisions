@@ -24,7 +24,43 @@ An AABB v Triangle intersection test has a total of 13 axis which could potentia
 * 3 face normals from the AABB
 * 1 face normal from the triangle
 
+Consider the following image:
+
+![IMG](tri_aabb_sat_sam.png)
+
+If we want to get the axis seperating the blue triangle normal and the magenta AABB normal, we have to cross the two vectors.
+
+```
+Blue X Magenta = SAT0
+```
+
+We get 9 separating axis by getting the cross product of each of the colored (NOT THE BLACK) normals.
+
+We get 3 separating axis from the AABB: the cyan, magenta and yellow normals are all an axis of seperation
+
+We get 1 separating axis from the black triangle normal. It is an axis of it's own.
+
+That's how we get the 9 seperating axis. 
+
+## Projecting
+
+As mentioned before, we would normally project both of the primitives onto the seperating axis and compare the projected lines. But we can optimize this!
+
+By subtracting the center of the AABB from both the AABB and the triangle
+
+```
+triangle.p0 -= aabb.center;
+triangle.p1 -= aabb.center
+triangle.p2 -= aabb.center;
+
+aabb.center -= aabb.center
+```
+
+We put the AABB at the center of the world. Now, all we care about is the half-length of the projected AABB. We know it's center is at (0, 0). We simply compare the triangles projected points against the projected half-length.
+
 ## The Algorithm
+
+As mentioned earlyer, in order for a triangle and an AABB to intersect, all 13 axis have to be NON SEPERATED. When we find the first seperating axis, it's safe to return false.
 
 ```cs
 public static bool Intersects(Triangle triangle, AABB aabb) {
@@ -97,6 +133,9 @@ public static bool Intersects(Triangle triangle, AABB aabb) {
     // the most extreme of the triangle points intersects r
     // You might need to write Min & Max functions that take 3 arguments
     if (Max(-Max(p0, p1, p2), Min(p0, p1, p2)) > r) {
+        // This means BOTH of the points of the projected triangle
+        // are outside the projected half-length of the AABB
+        // Therefore the axis is seperating and we can exit
         return false;
     }
     
