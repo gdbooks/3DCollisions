@@ -9,16 +9,23 @@ Thats it. It's a lot like AABB-V-Plane, where we just tested if every point of t
 
 ## The Algorithm
 
-```cs
-code
-```
+This one is fairly simple, i'm not going to provide an implementation for it. You need to test each point of the triangle against the plane, to see which side the points are on. 
+
+You can use the ```DistanceFromPlane``` with each point, it will return a negative number, zero or a positive number.
+
+* If all 3 distances are 0 (That is all 3 points are on the plane), there is a collision.
+* If all 3 distances have the same sign (positive or negative) then there is no collision
 
 ## On Your Own
 
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+public static bool Intersects(Triangle triangle, Plane plane)
+
+public static bool Intersects(Plane plane, Triangle triangle) {
+    return Intersects(triangle, plane);
+}
 ```
 
 And provide an implementation for it!
