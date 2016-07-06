@@ -51,6 +51,7 @@
     * [Sphere-Triangle](Chapter4/sphere_to_triangle.md)
     * [AABB-Triangle](Chapter4/aabb-triangle.md)
     * [Plane-Triangle](Chapter4/plane-triangle.md)
+    * [Generic SAT](Chapter4/generic_sat.md)
     * [Triangle-Triangle](Chapter4/triangle-triangle.md)
     * [Raycast Triangle](Chapter4/raycast_triangle.md)
     * [Line test Triangle](Chapter4/line_test_triangle.md)
