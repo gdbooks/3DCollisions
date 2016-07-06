@@ -53,6 +53,7 @@
     * [Plane-Triangle](Chapter4/plane-triangle.md)
     * [Generic SAT](Chapter4/generic_sat.md)
     * [Triangle-Triangle](Chapter4/triangle-triangle.md)
+    * [Robust SAT](Chapter4/robust_sat.md)
     * [Raycast Triangle](Chapter4/raycast_triangle.md)
     * [Line test Triangle](Chapter4/line_test_triangle.md)
   * [Containers](Chapter4/containers.md)
