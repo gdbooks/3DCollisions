@@ -163,6 +163,10 @@ public static bool Intersects(Triangle triangle, AABB aabb) {
 }
 ```
 
+This is the image references in the code as https://awwapp.com/b/umzoc8tiv/
+
+![AW](aww-sat-board.png)
+
 ## On Your Own
 
 Add the following function to the ```Collisions``` class:
