@@ -2,7 +2,7 @@
 
 As mentioned above, the triangle-triangle test is a generic form SAT test. As such
 
-## The Algorithm
+## On Your Own
 
 Add the following private static function to your collision class, it's going to be a helper function to get the interval of the triangle. You can return the interval however you like (Make a new class, use a vector 2, use out variables), whatever makes sense to you. I did mine with a Vector2.
 
@@ -13,15 +13,20 @@ Vector2 GetInterval(Triangle triangle, Vector3 axis) {
 }
 ```
 
-## On Your Own
-
-Add the following function to the ```Collisions``` class:
+Next, we need to add another private static helper function, to test two triangles on an actual axis
 
 ```cs
-code
+bool TestAxis(Triangle triangle1, Triangle triangle2, Vector3 axis) {
+    // TODO: Test the intervals for overlap
+}
 ```
 
-And provide an implementation for it!
+Finally, add the public static function that tests 2 triangles for intersections, and provide an implementation for it!
+
+
+```cs
+public static bool Intersects(Triangle triangle1, Triangle triangle2) 
+```
 
 ### Unit Test
 
