@@ -1,6 +1,6 @@
 #Generic SAT Test
 
-I originally wanted to leave this section until the end of the book, but triangle-triangle uses the most generic form of an SAT test, so this is a good place.
+I originally wanted to leave this section until the end of the book, but triangle-triangle uses the most generic form of an SAT test, so this is a good place. There is no code to do on this page, it's purley a concept page!
 
 Triangle AABB used an optimized version of the SAT, that was optimized for those primitives. But, there is a way to generalize the SAT test so that it will work with ANY primitive! See [This presentation](../Sources/GDC08_Ericson_Physics_Tutorial_SAT.ppt) for details.
 
@@ -47,7 +47,7 @@ Two objects intersect if there is no seperating axis between them. We have to te
 
 Once you have a way to get the interval of an object, you can perform an axis test like so:
 
-```css
+```cs
 bool TestAxis(BasicShape shape1, BasicShape shape2, Vector3 axis) {
     // This assumes that axis s normalized!
     Interval i1 = GetInterval(shape1, axis);
@@ -91,8 +91,70 @@ Vector3 edge2 = p2 - p1; // C - B
 Vector3 edge3 = p0 - p2; // A - C
 ```
 
-These are the edges you will cross with the edges of the other primitive to get the buld of the axis to test. Once you know the edges of a triangle, it's easy to find its face.
+These are the edges you will cross with the edges of the other primitive to get the bulk of the axis to test. Once you know the edges of a triangle, it's easy to find its face.
 
 ```cs
-Vector3 faceNormal = Cross(
+Vector3 faceNormal = Cross(edge0, edge1);
 ```
+
+It's the responsibility of the object to know that information about its-self. An AABB for example will need to know that it has 3 face normals and 3 edges.
+
+So, assuming that we know the edges and normals of an object, the most generic SAT algorithm that compares them all is:
+
+```cs
+bool SATTest(BasicShape shape1, BasicShape shape2) {
+    // First, test the face normals of object 1 as the seperating axis
+    for (int i = 0; i < shape1.FaceNormalCount(); ++i) {
+        Vector3 testAxis = shape1.GetFaceNormal(i);
+        
+        if (TestAxis(shape1, shape2, testAxis)) {
+            // Seperating axis found, early out
+            return true;
+        }
+    }
+    
+    // Then, test the face normals of object 2 as the seperating axis
+    for (int i = 0; i < shape2.FaceNormalCount(); ++i) {
+        Vector3 testAxis = shape2.GetFaceNormal(i);
+        
+        if (TestAxis(shape1, shape2, testAxis)) {
+            // Seperating axis found, early out
+            return true;
+        }
+    }
+    
+    // Finally, check the normals obtained by getting the cross product of each shapes edges.
+    for (int i = 0; i < shape1.EdgeCount(); ++i) {
+        for (int j = 0; j < shape2.EdgeCount(); ++j) {
+            Vector3 testAxis = Cross(shape1.GetEdge(i), shape2.GetEdge(j));
+            
+            if (TestAxis(shape1, shape2, testAxis)) {
+                // Seperating axis found, early out
+                return true;
+            }
+        }
+    }
+    
+    // No seperating axis found, the objects do not intersect
+    return false;
+}
+```
+
+## Fin
+
+That's it. The above test can be used to test the intersection between ANY primitives. This of course assumes that all primitives have a base class called ```BasicShape``` which has the following virtual functions that each class overrides
+
+```cs
+class BasicShape {
+    virtual int VertexCount() 
+    virtual Vector3 GetVertex(int i)
+    
+    virtual int FaceNormalCount()
+    virtual Vector3 GetFaceNormal(int i)
+    
+    virtual int EdgeCount()
+    virtual Vector3 GetEdge()
+}
+```
+
+Of course, this is not how we implemented our collision system. The specific tests we do are much faster than the generic form SAT. But, we will implement the generic form SAT for triangle-triangle collision next, so i wanted to make sure you understood how it is implemented.
