@@ -83,8 +83,16 @@ In any case, the following table should give some indication as to the complexit
 | Triangle | Triangle | 1 | 1 | 3x3 | 11 |
 | Triangle | Obb | 1 | 3 | 3x3 | 13 |
 
-This test assumes that each object knows enough about its-self to know it's own face directions and edge directions. Given a basic triangle with points ```p0```, ```p1``` and ```p2``` you first want to find the edges of the triangle:
+This test assumes that each object knows enough about its-self to know it's own face directions and edge directions. Lets see a basic example of thos. Given a basic triangle with points ```p0```, ```p1``` and ```p2``` you first want to find the edges of the triangle:
 
 ```cs
+Vector3 edge1 = p1 - p0; // B - A
+Vector3 edge2 = p2 - p1; // C - B
+Vector3 edge3 = p0 - p2; // A - C
+```
 
+These are the edges you will cross with the edges of the other primitive to get the buld of the axis to test. Once you know the edges of a triangle, it's easy to find its face.
+
+```cs
+Vector3 faceNormal = Cross(
 ```
