@@ -23,6 +23,7 @@ bool TestAxis(Triangle triangle1, Triangle triangle2, Vector3 axis) {
 
 Finally, add the public static function that tests 2 triangles for intersections, and provide an implementation for it!
 
+You will need to test 11 axis, the face normal of triangle1, the face normal of triangle2, and the cross products of each of the 3 edges of the triangles. The previous section "Generic SAT" outlined how to get this information from a triangle.
 
 ```cs
 public static bool Intersects(Triangle triangle1, Triangle triangle2) 
