@@ -74,7 +74,7 @@ It's worth noting, the AABB test is specialized by moving the triangle so that t
 
 In any case, the following table should give some indication as to the complexity of the SAT test for various primitives
 
-| Object1 | Object2 | Face Dirs (A) | Face Dirs (B) | Edge Dirs (A x B) | Total |
+| Object A | Object B | Face Dirs (A) | Face Dirs (B) | Edge Dirs (A x B) | Total |
 | -- | -- | -- | -- | -- | -- |
 | Segment | Triangle | 0 | 0 | 1x3 | 4 |
 | Segment | OBB | 0 | 3 | 1x3 | 6 |
@@ -83,3 +83,8 @@ In any case, the following table should give some indication as to the complexit
 | Triangle | Triangle | 1 | 1 | 3x3 | 11 |
 | Triangle | Obb | 1 | 3 | 3x3 | 13 |
 
+This test assumes that each object knows enough about its-self to know it's own face directions and edge directions. Given a basic triangle with points ```p0```, ```p1``` and ```p2``` you first want to find the edges of the triangle:
+
+```cs
+
+```
