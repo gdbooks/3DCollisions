@@ -31,7 +31,7 @@ public static bool Intersects(Triangle triangle1, Triangle triangle2)
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
+You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
 description of unit test
 
