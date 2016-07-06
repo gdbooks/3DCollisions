@@ -64,4 +64,22 @@ bool TestAxis(BasicShape shape1, BasicShape shape2, Vector3 axis) {
 
 ## Test Axis
 
-We now know how to get the interval of any arbitrary shape. But how do we know what axis to
+We now know how to get the interval of any arbitrary shape. But how do we know what axis to test? This comes from a math theory known as the ```Minkowski``` difference. 
+
+The theory states that to test intersection we need to test the face directions of object a, the face directions of object b and all of the edge directions of the two objects relative to each other. 
+
+We've done this with the AABB-Triangle test, where we used the 3 normals of the AABB, the 1 normal of the triangle and the cross products of all 3 faces of the triangle against the 3 faces of the aabb (9), for a total of 13 seperating axis.
+
+It's worth noting, the AABB test is specialized by moving the triangle so that the AABB is at relative origin. Normal SAT tests don't do that. If we followed the generic outline given here, it would test 6 faces of the cube, bringing the total axis up to 25!
+
+In any case, the following table should give some indication as to the complexity of the SAT test for various primitives
+
+| Object1 | Object2 | Face Dirs (A) | Face Dirs (B) | Edge Dirs (A x B) | Total |
+| -- | -- | -- | -- | -- | -- |
+| Segment | Triangle | 0 | 0 | 1x3 | 4 |
+| Segment | OBB | 0 | 3 | 1x3 | 6 |
+| AABB | AABB | 3| 0(3) | 0(3x0) | 3 |
+| OBB | OBB | 3 | 3 | 3x3 | 15 |
+| Triangle | Triangle | 1 | 1 | 3x3 | 11 |
+| Triangle | Obb | 1 | 3 | 3x3 | 13 |
+
