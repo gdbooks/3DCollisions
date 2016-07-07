@@ -20,11 +20,8 @@ Add the following function to the ```Collisions``` class:
 
 ```cs
 // Conveniance method, returns the point of intersection
-public static bool Raycast(Ray ray, Plane plane, out Point p) {
-    float t = -1;
-    bool result = Raycast(ray, plane, out t);
-    p = new Point(ray.Position.ToVector() + ray.Normal * t);
-    return result;
+public static bool Raycast(Ray ray, Triangle triangle, out Point p) {
+    // TODO: Implement your code here
 }
 
 
