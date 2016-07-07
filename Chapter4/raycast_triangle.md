@@ -19,19 +19,26 @@ Onto implementing barycentric coordinates! Watch this video:
 Add the following function to the ```Collisions``` class:
 
 ```cs
-// Conveniance method, returns the point of intersection
-public static bool Raycast(Ray ray, Triangle triangle, out Point p) {
-    // TODO: Implement your code here
+public static bool Raycast(Ray ray, Triangle triangle, out float t) {
+    // Implement your code here
 }
 
-
-// Conveniance function, just returns t
+// Conveniance method, returns t without an out param
+// If no collision happened, will return -1
 public static float Raycast(Ray ray, Triangle triangle) {
     float t = -1;
-    if (!Raycast(ray, triangle, out t)) {
+    if (!Raycast(ray, plane, out t)) {
         return -1;
     }
     return t;
+}
+
+// Conveniance method, returns the point of intersection
+public static bool Raycast(Ray ray, Triangle triangle, out Point p) {
+    float t = -1;
+    bool result = Raycast(ray, plane, out t);
+    p = new Point(ray.Position.ToVector() + ray.Normal * t);
+    return result;
 }
 ```
 
