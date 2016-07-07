@@ -30,6 +30,8 @@ bool Intersects(ObjModel m1, ObjModel m2) {
 
 In a model that consists of 100 triangles that might not be a big deal. But in modern games, the triangle count is often in the hundreds of thousands if not millions!
 
+Doing the per triangle testing is known as __narrow-phase collision__. 
+
 Containers solve this problem by adding a bounding shape to the model. That way, when you test collisions, if the bounding shape of the model doesn't interact with the test, you don't waste precious resources.
 
 An AABB around a model might look like this:
@@ -53,5 +55,7 @@ bool Intersects(ObjModel m1, ObjModel m2) {
     return false;
 }
 ```
+
+Adding a bounding volume to an object, and testing that before the actual triangle tests is known as __broad-phase collision__
 
 That optimization will save so much processing power! With all that said, let's get started. In the next section we're going to add triangles to our loaded OBJ model.
