@@ -46,7 +46,7 @@ And provide an implementation for it!
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
+You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
 description of unit test
 
