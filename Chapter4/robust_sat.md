@@ -17,7 +17,7 @@ The key here is, if we are given two parallel vectors, to create a new vector th
 
 We know a trianlge has the following properties:
 
-``cs
+```cs
 Vector3 edge1 = p1 - p0; // B - A
 Vector3 edge2 = p2 - p1; // C - B
 Vector3 edge3 = p0 - p2; // A - C
