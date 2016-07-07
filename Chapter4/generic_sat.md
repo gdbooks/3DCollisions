@@ -103,7 +103,7 @@ So, assuming that we know the edges and normals of an object, the most generic S
 
 ```cs
 bool ObjectsIntersect(BasicShape shape1, BasicShape shape2) {
-    return !SATTest(shape1, shape2);
+    return !HasSeperatingAxis(shape1, shape2);
 }
 
 // This function returns true if A seperating axis is found
