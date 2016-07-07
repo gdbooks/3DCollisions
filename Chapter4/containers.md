@@ -54,4 +54,4 @@ bool Intersects(ObjModel m1, ObjModel m2) {
 }
 ```
 
-That optimization will save so much processing power! With all that said, let's get started. In the next section we're going to add triangles to our loaded OBB model.
+That optimization will save so much processing power! With all that said, let's get started. In the next section we're going to add triangles to our loaded OBJ model.
