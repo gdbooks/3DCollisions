@@ -1,3 +1,3 @@
 # Containers
 
-Because 3D models are so expensive to test against collision, we often simplify them.
+You've seen exactly how expensive 
