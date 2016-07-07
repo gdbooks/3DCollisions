@@ -19,7 +19,21 @@ Onto implementing barycentric coordinates! Watch this video:
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+// Conveniance method, returns the point of intersection
+public static bool Raycast(Ray ray, Plane plane, out Point p) {
+    float t = -1;
+    bool result = Raycast(ray, plane, out t);
+    p = new Point(ray.Position.ToVector() + ray.Normal * t);
+    return result;
+}
+
+public static float Raycast(Ray ray, Plane plane) {
+    float t = -1;
+    if (!Raycast(ray, plane, out t)) {
+        return -1;
+    }
+    return t;
+}
 ```
 
 And provide an implementation for it!
