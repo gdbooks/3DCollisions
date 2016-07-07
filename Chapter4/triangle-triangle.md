@@ -1,6 +1,6 @@
 # Triangle Triangle
 
-As mentioned above, the triangle-triangle test is a generic form SAT test. As such
+As mentioned before, the triangle-triangle test is a generic form SAT test. As such we will need a few helper functions to get the intervals of the triangle and do the axis testing.
 
 ## On Your Own
 
