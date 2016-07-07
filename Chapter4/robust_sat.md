@@ -23,3 +23,5 @@ Vector3 edge2 = p2 - p1; // C - B
 Vector3 edge3 = p0 - p2; // A - C
 Vector3 faceNormal = Cross(edge1, edge2); BA X CB
 ```
+
+We have the function
