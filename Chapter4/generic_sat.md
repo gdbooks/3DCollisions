@@ -94,7 +94,7 @@ Vector3 edge3 = p0 - p2; // A - C
 These are the edges you will cross with the edges of the other primitive to get the bulk of the axis to test. Once you know the edges of a triangle, it's easy to find its face.
 
 ```cs
-Vector3 faceNormal = Cross(edge0, edge1);
+Vector3 faceNormal = Cross(edge1, edge2);
 ```
 
 It's the responsibility of the object to know that information about its-self. An AABB for example will need to know that it has 3 face normals and 3 edges.
