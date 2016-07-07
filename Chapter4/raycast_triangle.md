@@ -27,9 +27,11 @@ public static bool Raycast(Ray ray, Plane plane, out Point p) {
     return result;
 }
 
-public static float Raycast(Ray ray, Plane plane) {
+
+// Conveniance function, just returns t
+public static float Raycast(Ray ray, Triangle triangle) {
     float t = -1;
-    if (!Raycast(ray, plane, out t)) {
+    if (!Raycast(ray, triangle, out t)) {
         return -1;
     }
     return t;
