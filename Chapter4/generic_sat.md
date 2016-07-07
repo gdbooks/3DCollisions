@@ -102,7 +102,13 @@ It's the responsibility of the object to know that information about its-self. A
 So, assuming that we know the edges and normals of an object, the most generic SAT algorithm that compares them all is:
 
 ```cs
-bool SATTest(BasicShape shape1, BasicShape shape2) {
+bool ObjectsIntersect(BasicShape shape1, BasicShape shape2) {
+    return !SATTest(shape1, shape2);
+}
+
+// This function returns true if A seperating axis is found
+// NOT if the objects overlap
+bool HasSeperatingAxis(BasicShape shape1, BasicShape shape2) {
     // First, test the face normals of object 1 as the seperating axis
     for (int i = 0; i < shape1.FaceNormalCount(); ++i) {
         Vector3 testAxis = shape1.GetFaceNormal(i);
