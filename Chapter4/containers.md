@@ -36,6 +36,8 @@ Containers solve this problem by adding a bounding shape to the model. That way,
 
 An AABB around a model might look like this:
 
+![SAM1](GxS9p.png)
+
 And the collision test could simplify into this:
 
 ```cs
@@ -57,5 +59,9 @@ bool Intersects(ObjModel m1, ObjModel m2) {
 ```
 
 Adding a bounding volume to an object, and testing that before the actual triangle tests is known as __broad-phase collision__
+
+Visually, that might look like this
+
+![S2](OBBCollisions1.jpg)
 
 That optimization will save so much processing power! With all that said, let's get started. In the next section we're going to add triangles to our loaded OBJ model.
