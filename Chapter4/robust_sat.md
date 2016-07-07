@@ -9,3 +9,5 @@ bool isZeroVector = crossVector.LengthSquared() < 0.0001f;
 ```
 
 ## Constructing a new axis
+
+The key here is, if we are given two parallel vectors, to create a new vector that is perpendicular to both. For this all we need is a new axis to test.
