@@ -6,13 +6,35 @@ Raycsating against a triangle is a simple process
 * Raycast against that plane
 * Check if the raycast point is inside the triangle
 
-You already have all the fnuctions needed to implement this in a rudimentary way. However, our Point In Triangle test is not optimal! Remember, when we did the point in triangle test, we did not use barycentric coordinates.
+You already have all the fnuctions needed to implement this in a rudimentary way. However, our Point In Triangle test is not optimal! Also, we will have to make a special version of raycast plane!
+
+
+### Barycentric Point In Tirangle
+
+Remember, when we did the point in triangle test, we did not use barycentric coordinates.
 
 It's time to switch that. You can either implement barycentric coordinates straight up in the raycast triangle code, or you can change your point in triangle code and call that. If you change the point in triangle equation, make sure to run the unit test again to ensure everything still works.
 
 Onto implementing barycentric coordinates! Watch this video:
 
 {% youtube %}https://www.youtube.com/watch?v=EZXz-uPyCyA{% endyoutube %}
+
+### Special Plane Raycast
+
+Next up, the raycast plane function we have will not work. This is because that function takes the planes normal into consideration. I suggest making a new private function:
+
+```cs
+private static bool RaycastNoNormal(Ray ray, Plane plane, out float t) {
+```
+
+Inside the plane raycast code, we do a dot product of plane normal and ray normal, store the result in nd. We later test if the normals are pointing in the same direction by doing this bit:
+
+```cs
+if (nd >= 0f) {
+    t = -1;
+    return false;
+}
+```
 
 ## On Your Own
 
