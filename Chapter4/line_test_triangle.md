@@ -51,7 +51,7 @@ namespace CollisionDetectionSelector.Samples {
                 if (Collisions.LineTest(lines[i], plane, out result) != results[i]) {
                     LogError("Line at index " + i + " was " +
                         (results[i] ? "expected" : "not expected") +
-                        "to intersect the test plane");
+                        "to intersect the test triangle");
                 }
             }*/
         }
