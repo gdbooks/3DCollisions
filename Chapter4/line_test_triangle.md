@@ -45,15 +45,15 @@ namespace CollisionDetectionSelector.Samples {
             GL.PointSize(5f);
             GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
 
-            /*bool[] results = new bool[] { false, true, false, false, true, false };
+            bool[] results = new bool[] { false, false, false, true, true, false };
             Point result = new Point();
             for (int i = 0; i < results.Length; ++i) {
-                if (Collisions.LineTest(lines[i], plane, out result) != results[i]) {
+                if (Collisions.LineTest(lines[i], triangle, out result) != results[i]) {
                     LogError("Line at index " + i + " was " +
                         (results[i] ? "expected" : "not expected") +
                         "to intersect the test triangle");
                 }
-            }*/
+            }
         }
 
         public override void Render() {
@@ -82,5 +82,4 @@ namespace CollisionDetectionSelector.Samples {
         }
     }
 }
-
 ```
