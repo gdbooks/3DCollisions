@@ -18,7 +18,7 @@ You can [Download](../Samples/3DModels.rar) the samples for this chapter to see 
 
 A trianlge and a few lines are rendered. Any line intersecting the triangle is red. All rays not intersecting the triangle are blue. Green dots are rendered at the points of intersection. The constructor of this unit test will spit out errors if it finds any 
 
-![UNIT](unit_triangle_line_intersection.png)
+![UNIT](unit_triangle_line_intersection.PNG)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
