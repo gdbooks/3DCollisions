@@ -57,7 +57,7 @@
     * [Raycast Triangle](Chapter4/raycast_triangle.md)
     * [Line test Triangle](Chapter4/line_test_triangle.md)
   * [Broad-Phase Collision](Chapter4/containers.md)
-    * [Adding Triangles](Chapter4/addint_triangles_to_model.md) 
+    * [Adding Triangles](Chapter4/adding_triangles_to_model.md) 
     * [Sphere](Chapter4/sphere.md)
     * [AABB](Chapter4/aabb.md)
   * [Raycast Model](Chapter4/raycast_model.md)
