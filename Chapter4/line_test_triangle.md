@@ -16,7 +16,7 @@ It's just like all theother line test functions, i'm not going to go over it in 
 
 You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
-A trianlge and a few lines are rendered. Any line intersecting the triangle is green. All rays not intersecting the triangle are red. Green dots are rendered at the points of intersection. The constructor of this unit test will spit out errors if it finds any 
+A trianlge and a few lines are rendered. Any line intersecting the triangle is green. All lines not intersecting the triangle are red. Magenta dots are rendered at the points of intersection. The constructor of this unit test will spit out errors if it finds any 
 
 ![UNIT](unit_triangle_line_intersection.PNG)
 
