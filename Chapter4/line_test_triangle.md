@@ -9,3 +9,5 @@ Implement the following function
 ```cs
 public static bool LineTest(Line line, Triangle triangle, out Point result) {
 ```
+
+It's just like all theother line test functions, i'm not going to go over it in detail.
