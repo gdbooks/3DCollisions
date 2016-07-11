@@ -4,3 +4,9 @@ It's time to start implementing some broad phase collision. The first thing we'r
 
 We're also going to add a "DebugRender" function, that will loop trough all the triangles and render them. Because this is going to render each triangle indevidually, it's going to be much, much slower than the regular render function.
 
+## Constructing Triangles
+
+## Debug Render
+
+## Unit Test
+
