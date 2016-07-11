@@ -36,6 +36,8 @@ if (nd >= 0f) {
 }
 ```
 
+Thats where the problem is, the only time we want the ray and the plane to not intercept is when they are parallel, that is when nd is 0. Remember, use an epsilon. This will take the direction of the plane and ray needing to be the same out of the equation.
+
 ## On Your Own
 
 Add the following function to the ```Collisions``` class:
