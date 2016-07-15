@@ -17,7 +17,7 @@ Now, in the constructor, find where the actual vertex data is being filled in. I
 Before that loop, still in the constructor, allocate enough Triangles for the array
 
 ```cs
-collisionMesh = new Triangle[vertIndex.Count];
+collisionMesh = new Triangle[vertexData.Count / 9];
 ```
 
 Once the vertex data array has been filled with data, every 9 elements inside of it make one triangle. That is __collisionMesh[0]__ =
@@ -28,7 +28,7 @@ Once the vertex data array has been filled with data, every 9 elements inside of
   * new Point(```vertexData[6]```, ```vertexData[7]```, ```vertexData[8]```),
 * )
 
-Figure out a way to loop trough vertex data in a way that fills the ```collisionMesh``` array out!
+Figure out a way to loop trough vertex data in a way that fills the ```collisionMesh``` array out! For suzane, that means 968 triangles!
 
 
 ## Debug Render
