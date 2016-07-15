@@ -69,9 +69,9 @@ public void DebugRender() {
 
 You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
-You should already have suzanne in your project from earlyer in this chapter. This section just added triangles to the OBJLoader code. The constructor only errors out if the triangle count is off. Otherwise the rest of the test is visual only. You should see susane in the test
+The constructor only errors out if the AABB or triangle count is off. Otherwise the rest of the test is visual only. You should see susane in the test
 
-![UNIT](obj_debug_triangle.png)
+![UNIT](obj_debug_aabb.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
