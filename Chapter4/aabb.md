@@ -44,7 +44,7 @@ if (vertexData[i + 2] > containerAABB.maxZ) {
 // ...
 ```
 
-# Debug Render
+## Debug Render
 
 Now, let's add a public getter for the aabb:
 
@@ -66,3 +66,5 @@ public void DebugRender() {
     }
 }
 ```
+
+## Unit Test
