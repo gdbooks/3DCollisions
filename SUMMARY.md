@@ -63,7 +63,7 @@
        * [Adding Triangles](Chapter4/addingtriangles_to_model_md.md)
        * [AABB](Chapter4/aabb.md)
        * [Sphere](Chapter4/sphere.md)
-     * [Collision Tests](Chapter4/model_test.md) 
+   * [Collision Tests](Chapter4/model_test.md) 
    * [Raycast Model](Chapter4/raycast_model.md)
        * [BVH](Chapter4/bvh.md)
    * [Collision Hierarchy](Chapter4/collision_hierarchy.md)
