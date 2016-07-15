@@ -38,3 +38,15 @@ if (vertexData[i + 2] > containerAABB.maxZ) {
 }
 // ...
 ```
+
+# Debug Render
+
+Now, let's add a public getter for the aabb:
+
+```cs
+public AABB BoundingBox {
+    get {
+        return containerAABB;
+    }
+}
+```
