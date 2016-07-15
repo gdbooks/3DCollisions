@@ -33,6 +33,7 @@ And modify the debug-render method to draw this box:
 ```cs
 public void DebugRender() {
     containerAABB.Render();
+    containerSphere.Render();
     foreach (Triangle trianlge in collisionMesh) {
         trianlge.Render();
     }
