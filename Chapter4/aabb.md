@@ -17,7 +17,7 @@ First, assign ```containerAABB``` to be a new AABB object. Both the min and max 
 Now loop trough vertexData one vertex at a time. You will have to adjust containerAABB one component at a time. If a vertex has a smaller y than min-y assign a new y. For eaxample:
 
 ```cs
-...
+// ...
 if (vertexData[i + 0] < containerAABB.minX) {
     containerAABB.minX = vertexData[i + 0];
 }
@@ -27,9 +27,14 @@ if (vertexData[i + 0] > containerAABB.maxX) {
 if (vertexData[i + 1] < containerAABB.minY) {
     containerAABB.minY = vertexData[i + 0];
 }
-...
+if (vertexData[i + 1] > containerAABB.maxY) {
+    containerAABB.maxY = vertexData[i + 1];
+}
 if (vertexData[i + 2] < containerAABB.minZ) {
     containerAABB.minZ = vertexData[i + 0];
 }
-...
+if (vertexData[i + 2] > containerAABB.maxZ) {
+    containerAABB.maxZ = vertexData[i + 2];
+}
+// ...
 ```
