@@ -14,6 +14,11 @@ We're going to have to populate this AABB in the constructor of the mesh. Again,
 
 First, assign ```containerAABB``` to be a new AABB object. Both the min and max point of this object should be the first vertex of ```vertexData```. Remember, the first vertex is elements 0, 1 and 2.
 
+```cs
+containerAABB = new AABB(new Point(vertices[0], vertices[1], vertices[2]),
+                new Point(vertices[0], vertices[1], vertices[2]));
+```
+
 Now loop trough vertexData one vertex at a time. You will have to adjust containerAABB one component at a time. If a vertex has a smaller y than min-y assign a new y. For eaxample:
 
 ```cs
