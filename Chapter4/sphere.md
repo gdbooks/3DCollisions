@@ -15,3 +15,26 @@ protected Sphere containerSphere = null;
 ```
 
 Now, in the constructor, after you have created the AABB, make the sphere object. Follow the instructions in the introduction paragraph.
+
+## Debug Render
+
+Now, let's add a public getter for the sphere:
+
+```cs
+public Sphere BoundingSphere {
+    get {
+        return containerSphere;
+    }
+}
+```
+
+And modify the debug-render method to draw this box:
+
+```cs
+public void DebugRender() {
+    containerAABB.Render();
+    foreach (Triangle trianlge in collisionMesh) {
+        trianlge.Render();
+    }
+}
+```
