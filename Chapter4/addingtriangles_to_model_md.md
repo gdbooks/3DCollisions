@@ -6,6 +6,21 @@ We're also going to add a "DebugRender" function, that will loop trough all the 
 
 ## Constructing Triangles
 
+First thing is first, add a triangle array as a member variable to the ```ObjLoader``` class. I called mine ```collisionMesh```
+
+```cs
+protected Triangle[] collisionMesh = null;
+```
+
+Now, in the constructor, find where the actual vertex data is being filled in. I'll give you a hint, it's a for loop that happens AFTER everything has been read in from the file.
+
+Before that loop, allocate enough Triangles for the array
+
+```cs
+collisionMesh = new Triangle[vertIndex.Count];
+```
+
+
 ## Debug Render
 
 ## Unit Test
