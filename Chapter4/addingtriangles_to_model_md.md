@@ -43,5 +43,15 @@ public int NumCollisionTriangles {
 }
 ```
 
+Next, a "debug render" method, this method will simply draw out all triangles:
+
+```cs
+ public void DebugRender() {
+    foreach(Triangle trianlge in collisionMesh) {
+        trianlge.Render();
+    }
+}
+```
+
 ## Unit Test
 
