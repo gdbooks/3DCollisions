@@ -12,15 +12,9 @@ First thing is first, add a triangle array as a member variable to the ```ObjLoa
 protected Triangle[] collisionMesh = null;
 ```
 
-Now, in the constructor, find where the actual vertex data is being filled in. I'll give you a hint, it's a for loop that happens AFTER everything has been read in from the file.
+Now, in the actual constructor, we have to fill this array in. The constructor has a local array, called ```vertexData```, it's a bunch of floats. Once that array is filled in, it contains sequential triangles.
 
-Before that loop, still in the constructor, allocate enough Triangles for the array
-
-```cs
-collisionMesh = new Triangle[vertexData.Count / 9];
-```
-
-Once the vertex data array has been filled with data, every 9 elements inside of it make one triangle. That is __collisionMesh[0]__ =
+That is, the first triangle of the model is made out of the first 9 elements of the array, like so:
 
 * new Triangle(
   * new Point(```vertexData[0]```, ```vertexData[1]```, ```vertexData[2]```),
@@ -28,8 +22,16 @@ Once the vertex data array has been filled with data, every 9 elements inside of
   * new Point(```vertexData[6]```, ```vertexData[7]```, ```vertexData[8]```),
 * )
 
-Figure out a way to loop trough vertex data in a way that fills the ```collisionMesh``` array out! For suzane, that means 968 triangles!
+That means that you have as many triangles as the size of that array, divided by 9. In the case of the suzanne model, that's 968. You can allocate the array like so:
 
+```cs
+collisionMesh = new Triangle[vertexData.Count / 9];
+```
+
+## On Your Own
+
+
+Figure out a way to loop trough vertex data in a way that fills the ```collisionMesh``` array with proper data. Once you think you have that done, implement the debug renderer from below and run the unit test.
 
 ## Debug Render
 
