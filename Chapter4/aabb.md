@@ -132,5 +132,4 @@ namespace CollisionDetectionSelector.Samples {
         }
     }
 }
-
 ```
