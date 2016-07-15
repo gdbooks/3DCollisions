@@ -1,7 +1,10 @@
 #Sphere
 
 In the last section we built an AABB around out model, this actually gives us everything we need to build a bounding sphere.
-The center of the sphere is the same as the center of the AABB. The radius of the sphere is either the min or max, whichever point is further away from the center of the sphere.
+
+The center of the sphere is the same as the center of the AABB. 
+
+The radius of the sphere is either the distance between the center of the sphere and the min point or the max point. Take the length of both, and use the larger one.
 
 ## Creating the sphere
 
