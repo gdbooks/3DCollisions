@@ -33,5 +33,15 @@ Figure out a way to loop trough vertex data in a way that fills the ```collision
 
 ## Debug Render
 
+First, let's add a debug getter to check how many debug triangles we have
+
+```cs
+public int NumCollisionTriangles {
+    get {
+        return collisionMesh.Length;
+    }
+}
+```
+
 ## Unit Test
 
