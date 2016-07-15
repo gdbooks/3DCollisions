@@ -55,8 +55,6 @@ Next, a "debug render" method, this method will simply draw out all triangles:
 }
 ```
 
-## Unit Test
-
 ### Unit Test
 
 You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
