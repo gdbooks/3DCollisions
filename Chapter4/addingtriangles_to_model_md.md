@@ -59,7 +59,7 @@ Next, a "debug render" method, this method will simply draw out all triangles:
 
 You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
-A trianlge and a few lines are rendered. Any line intersecting the triangle is green. All lines not intersecting the triangle are red. Magenta dots are rendered at the points of intersection. The constructor of this unit test will spit out errors if it finds any 
+You should already have suzanne in your project from earlyer in this chapter. This section just added triangles to the OBJLoader code. The constructor only errors out if the triangle count is off. Otherwise the rest of the test is visual only.
 
 ![UNIT](unit_triangle_line_intersection.PNG)
 
