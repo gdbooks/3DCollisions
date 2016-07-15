@@ -50,3 +50,5 @@ public AABB BoundingBox {
     }
 }
 ```
+
+And modify the debug-render method to draw this box:
