@@ -35,3 +35,11 @@ Now the collisions wont work. Visually, the model looks different than how it's 
 Luckily, we can solve this using matrix operations. The translation-rotation-scale of a model can be used to create a transform matrix. This matrix represents where in world space the model is. If we take the inverse of that matrix, and multiply any point by it, the point will be transformed so that the model is at the origin of the points space.
 
 This last bit can get a tad confusing, especially since we haven't done any matrix math in a while. If you need any help on any of it, give me a call on skype.
+
+## Creating an inverse model matrix
+
+Add the following helper method to your collisions class
+
+```cs
+protected static Matrix InverseModelMatrix(Vector3 position, Vector3 
+```
