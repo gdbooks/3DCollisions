@@ -72,5 +72,30 @@ namespace CollisionDetectionSelector.Primitives {
 }
 ```
 
-From this class, we can tell that an OBJ has a position, a rotation and a scale. It holds an OBJLoader, and can only be constructed if an OBJLoader is present.
+From this class, we can tell that an OBJ has a position, a rotation and a scale. It holds an OBJLoader, and can only be constructed if an OBJLoader is present. The whole point of this class was to hold a transform matrix. So far, we have all the components of that matrix, but not the matrix its-self. Let's add it.
+
+The matrix is going to be a private variable, with a dirty flag. When getting the matrix trough a public accessor, if the dirty flag is true, the private matrix is re-calculated from position, rotation and scale, then the new correct matrix is returned
+
+```cs
+protected Matrix4 worldMatrix;
+protected bool dirty = true;
+
+public Matrix4 WorldMatrix {
+    get {
+        if (dirty) {
+            Matrix4 translation = Matrix4.Translate(position);
+
+            Matrix4 pitch = Matrix4.XRotation(rotation.X);
+            Matrix4 yaw = Matrix4.YRotation(rotation.Y);
+            Matrix4 roll = Matrix4.ZRotation(rotation.Z);
+            Matrix4 orientation = roll * pitch * yaw;
+
+            Matrix4 scaling = Matrix4.Scale(scale);
+
+            worldMatrix = translation * orientation * scaling;
+        }
+        return worldMatrix;
+    }
+}
+```
 
