@@ -122,12 +122,8 @@ public Vector3 Rotation {
     }
 }
 
-public Vector3 Scale
-{
-    get
-    {
-        return scale;
-    }
+public Vector3 Scale {
+    get { return scale; }
     set {
         scale = value;
         dirty = true;
