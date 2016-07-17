@@ -79,7 +79,7 @@ The matrix is going to be a private variable, with a dirty flag. When getting th
 ```cs
 // Add this to the OBJ class
 protected Matrix4 worldMatrix;
-protected bool dirty = true;
+protected bool dirty = true; // MUST BE TRUE BY DEFAULT
 
 public Matrix4 WorldMatrix {
     get {
@@ -100,3 +100,37 @@ public Matrix4 WorldMatrix {
 }
 ```
 
+So, what is it that will set this matrix to be dirty? Ideally changing the position, rotation or scale of the object. Lets add getters and setters for these properties. Whenever one of them is set, we flip the dirty flag to true.
+
+This way we can change all 3 properties in the intializer of the unit test (or your future game), and the world matrix will still only be re-calculated once.
+
+```cs
+// Add this to the OBJ class
+public Vector3 Position {
+    get { return position; }
+    set {
+        position = value;
+        dirty = true;
+    }
+}
+
+public Vector3 Rotation {
+    get { return rotation; }
+    set {
+        rotation = value;
+        dirty = true;
+    }
+}
+
+public Vector3 Scale
+{
+    get
+    {
+        return scale;
+    }
+    set {
+        scale = value;
+        dirty = true;
+    }
+}
+```
