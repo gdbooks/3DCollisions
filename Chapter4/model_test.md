@@ -162,7 +162,7 @@ public void Render() {
     GL.PushMatrix();
     // IMPORTANT: Calling the getter, not raw accessing the array!
     GL.MultMatrix(WorldMatrix.OpenGL);
-    model.DebugRender();
+    model.Render();
     GL.PopMatrix();
 }
 
@@ -231,9 +231,8 @@ namespace CollisionDetectionSelector.Samples {
             DrawOrigin();
 
             foreach(OBJ obj in objs) {
-                obj.Render();
+                obj.DebugRender();
             }
-            //objs[0].Render();
         }
     }
 }
