@@ -68,6 +68,7 @@
      * [AABB](Chapter4/model_test_aabb.md)
      * [Plane](Chapter4/model_test_plane.md)
      * [Triangle](Chapter4/model_test_triangle.md)
+     * [Ray](Chapter4/model_test_ray.md)
    * [Raycast Model](Chapter4/raycast_model.md)
        * [BVH](Chapter4/bvh.md)
    * [Collision Hierarchy](Chapter4/collision_hierarchy.md)
