@@ -20,11 +20,11 @@ I'm providing all the code needed for this one, there is no todo. Add the follow
 
 ```cs
 // Conveniance method
-public bool Intersects(OBJ model, Sphere sphere) {
+public static bool Intersects(OBJ model, Sphere sphere) {
     return Intersects(sphere, model);
 }
     
-public bool Intersects(Sphere sphere, OBJ model) {
+public static bool Intersects(Sphere sphere, OBJ model) {
     Matrix4 inverseWorldMatrix = Matrix4.Inverse(model.WorldMatrix);
     Vector3 newSpherePos = Matrix4.MultiplyPoint(inverseWorldMatrix, sphere.Position.ToVector());
     Sphere translatedSphere = new Sphere(newSpherePos, sphere.Radius);
