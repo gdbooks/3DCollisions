@@ -33,7 +33,10 @@ public static bool Intersects(Sphere sphere, OBJ model) {
     float newSphereRad = sphere.Radius * Math.Max(
         Math.Max(inverseWorldMatrix[0, 0], inverseWorldMatrix[1, 1]),
         inverseWorldMatrix[2, 2]);
-
+    
+    // We make this new sphere because the old one is passed in
+    // by reference. We don't want to actually modify
+    // the reference!
     Sphere translatedSphere = new Sphere(newSpherePos, newSphereRad);
 
     // Broad-phase
