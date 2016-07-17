@@ -185,7 +185,7 @@ You can [Download](../Samples/3DModels.rar) the samples for this chapter to see 
 
 The constructor only errors out if the bounding sphere is off. Otherwise the rest of the test is visual only. You should see susane in the test
 
-![UNIT](obj_debug_sphere.png)
+![UNIT](unit_test_obj_object.png)
 
 ```cs
 using OpenTK.Graphics.OpenGL;
