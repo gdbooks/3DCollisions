@@ -14,6 +14,8 @@ We can achieve this by multiplying the position of the sphere by the inverse of 
 
 ## The test
 
+The test is simple, use the inverse world matrix of the model to create a new sphere whos center is translated. Then, do broad phase testing, if neither bounding sphere, nor bounding box intersect no intersection can happen. Finally, loop trough all the triangles, if one of them intersects and intersection did happen. If none of them do, no intersection happened.
+
 I'm providing all the code needed for this one, there is no todo. Add the following test to ```Collisions.cs```
 
 ```cs
