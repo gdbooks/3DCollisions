@@ -50,8 +50,27 @@ This last bit can get a tad confusing, especially since we haven't done any matr
 
 ## The OBJ Class
 
-Add the following helper method to your collisions class
+To make the concept of spaces less confusing, we're going to create a new class, the ```OBJ``` class. This class is going to simply hold a ```OBJLoader``` object and the transform matrix of the object.  Let's implement the class as such:
 
 ```cs
-protected static Matrix InverseModelMatrix(Vector3 position, Vector3 
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+
+namespace CollisionDetectionSelector.Primitives {
+    class OBJ {
+        OBJLoader model = null;
+
+        // VERY IMPORTANT THAT THESE HAVE DEFAULT VALUES
+        protected Vector3 position = new Vector3(0f, 0f, 0f);
+        protected Vector3 rotation = new Vector3(0f, 0f, 0f);
+        protected Vector3 scale = new Vector3(1f, 1f, 1f);
+        
+        public OBJ(OBJLoader loader) {
+            model = loader;
+        }
+    }
+}
 ```
+
+From this class, we can tell that an OBJ has a position, a rotation and a scale. It holds an OBJLoader, and can only be constructed if an OBJLoader is present.
+
