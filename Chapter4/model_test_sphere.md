@@ -26,8 +26,15 @@ public static bool Intersects(OBJ model, Sphere sphere) {
     
 public static bool Intersects(Sphere sphere, OBJ model) {
     Matrix4 inverseWorldMatrix = Matrix4.Inverse(model.WorldMatrix);
+
     Vector3 newSpherePos = Matrix4.MultiplyPoint(inverseWorldMatrix, sphere.Position.ToVector());
-    Sphere translatedSphere = new Sphere(newSpherePos, sphere.Radius);
+    // We have to scale the radius of the sphere! This is difficult. The new scalar is the old radius
+    // multiplied by the largest scale component of the matrix
+    float newSphereRad = sphere.Radius * Math.Max(
+        Math.Max(model.WorldMatrix[0, 0], model.WorldMatrix[1, 1]),
+        model.WorldMatrix[2, 2]);
+
+    Sphere translatedSphere = new Sphere(newSpherePos, newSphereRad);
 
     // Broad-phase
     // If the bounding sphere does not intersect, nothing will
