@@ -130,3 +130,25 @@ public Vector3 Scale {
     }
 }
 ```
+
+Additionally, the OBJ class will be used to test collisions, so it needs to expose the collision related properties of the OBJLoader it contains, like so:
+
+```cs
+public AABB BoundingBox {
+    get {
+        return model.BoundingBox;
+    }
+}
+
+public Sphere BoundingSphere {
+    get {
+        return model.BoundingSphere;
+    }
+}
+
+public Triangle[] Mesh {
+    get {
+        return model.CollisionMesh;
+    }
+}
+```
