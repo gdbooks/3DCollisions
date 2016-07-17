@@ -178,3 +178,15 @@ public override string ToString() {
     return "Triangle count: " + model.NumCollisionTriangles;
 }
 ```
+
+## Unit Test
+
+You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
+
+The constructor only errors out if the bounding sphere is off. Otherwise the rest of the test is visual only. You should see susane in the test
+
+![UNIT](obj_debug_sphere.png)
+
+```cs
+
+```
