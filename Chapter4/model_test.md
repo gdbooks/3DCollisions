@@ -77,6 +77,7 @@ From this class, we can tell that an OBJ has a position, a rotation and a scale.
 The matrix is going to be a private variable, with a dirty flag. When getting the matrix trough a public accessor, if the dirty flag is true, the private matrix is re-calculated from position, rotation and scale, then the new correct matrix is returned
 
 ```cs
+// Add this to the OBJ class
 protected Matrix4 worldMatrix;
 protected bool dirty = true;
 
