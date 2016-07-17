@@ -183,7 +183,7 @@ public override string ToString() {
 
 You can [Download](../Samples/3DModels.rar) the samples for this chapter to see if your result looks like the unit test.
 
-The constructor only errors out if the bounding sphere is off. Otherwise the rest of the test is visual only. You should see susane in the test
+This unit test is visual only, make sure your project looks like the screenshot.
 
 ![UNIT](unit_test_obj_object.png)
 
