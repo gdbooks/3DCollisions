@@ -14,9 +14,14 @@ We can achieve this by multiplying the position of the sphere by the inverse of 
 
 ## The test
 
-Add the following test to ```Collisions.cs```
+I'm providing all the code needed for this one, there is no todo. Add the following test to ```Collisions.cs```
 
 ```cs
+// Conveniance method
+public bool Intersects(OBJ model, Sphere sphere) {
+    return Intersects(sphere, model);
+}
+    
 public bool Intersects(Sphere sphere, OBJ model) {
     Matrix4 inverseWorldMatrix = Matrix4.Inverse(model.WorldMatrix);
     Vector3 newSpherePos = Matrix4.MultiplyPoint(inverseWorldMatrix, sphere.Position.ToVector());
