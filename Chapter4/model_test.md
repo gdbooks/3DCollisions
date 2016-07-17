@@ -134,6 +134,7 @@ public Vector3 Scale {
 Additionally, the OBJ class will be used to test collisions, so it needs to expose the collision related properties of the OBJLoader it contains, like so:
 
 ```cs
+// Add this to the OBJ class
 public AABB BoundingBox {
     get {
         return model.BoundingBox;
@@ -150,5 +151,30 @@ public Triangle[] Mesh {
     get {
         return model.CollisionMesh;
     }
+}
+```
+
+Finally, all primitives have a Render and a ToString function. It's important that we call the WorldMatrix getter when setting the matrix in the renderer, if we don't the dirty flag might not be notices and the matrix might not get re-calculated.
+
+```cs
+// Add this to the OBJ class
+public void Render() {
+    GL.PushMatrix();
+    // IMPORTANT: Calling the getter, not raw accessing the array!
+    GL.MultMatrix(WorldMatrix.OpenGL);
+    model.DebugRender();
+    GL.PopMatrix();
+}
+
+public void DebugRender() {
+    GL.PushMatrix();
+    // IMPORTANT: Calling the getter, not raw accessing the array!
+    GL.MultMatrix(WorldMatrix.OpenGL);
+    model.DebugRender();
+    GL.PopMatrix();
+}
+
+public override string ToString() {
+    return "Triangle count: " + model.NumCollisionTriangles;
 }
 ```
