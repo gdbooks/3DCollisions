@@ -14,18 +14,12 @@ public static bool Raycast(Ray ray, OBJ model, out float t) {
 }
 ```
 
-## The Algorithm
-
-```cs
-code
-```
-
 ## On Your Own
 
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+public static bool Raycast(Ray ray, OBJ model, out float t)
 ```
 
 And provide an implementation for it!
