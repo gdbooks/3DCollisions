@@ -12,7 +12,14 @@ We take a similar approach to the model AABB collision that we took to the model
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+// Conveniance function
+public static bool Intersects(OBJ model, AABB aabb) {
+    return Intersects(aabb, model);
+}
+
+public static bool Intersects(AABB aabb, OBJ model) {
+    // TODO: Provide an implementation for this
+}
 ```
 
 And provide an implementation for it!
