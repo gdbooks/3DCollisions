@@ -36,7 +36,7 @@ You will notice a glaring error in the above image. The bottom left monkey, clea
 
 Once you rotate an AABB, like we do in the collision test, it is no longer axis aligned. It becomes an oriented bounding box, or OBB. The fix for this bug is simple, instead of creating a new AABB that gets modified by the inverse world matrix, we need to create a new OBB.
 
-The only issue is, we have not covered the implementation of an OBB yet, so for now, we are going to skip this.
+The only issue is, we have not covered the implementation of an OBB yet, so for now, we are going to skip this and live with the error. OBB's will be covered in a future chapter.
 
 ```cs
 using OpenTK.Graphics.OpenGL;
