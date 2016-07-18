@@ -12,6 +12,8 @@ A much better solution is to leave the model at the origin of the world, and mov
 
 We can achieve this by multiplying the position of the sphere by the inverse of the model's world matrix. This works, because if we where to multiply the models' workld position by the inverse of it's work matrix too, it would be at the origin of the world. In theory we translate both objects the same.
 
+We also have to scale the radius of the center, we find the scalar by taking the largest scale component [0, 0], [1, 1] or [2, 2] of the inverse matrix and multiplying the radius by it. When we do the comparison for the largest component, we must compare absolute values, a negative scale is valid
+
 ## The test
 
 The test is simple, use the inverse world matrix of the model to create a new sphere whos center is translated. Then, do broad phase testing, if neither bounding sphere, nor bounding box intersect no intersection can happen. Finally, loop trough all the triangles, if one of them intersects and intersection did happen. If none of them do, no intersection happened.
