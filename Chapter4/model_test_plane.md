@@ -1,5 +1,31 @@
-The Model-Plane collision is similar to Model-Sphere. 
+# Model Plane Collision
 
-You have to multiply the normal by the inverse world (MultiplyVector, not point), and you have to scale D the same way we scaled R in model-sphere
+Desctiption with images
 
-Feel free to work ahead and do this one without the pages, if you do, write your own unit for it.
+## The Algorithm
+
+```cs
+code
+```
+
+## On Your Own
+
+Add the following function to the ```Collisions``` class:
+
+```cs
+code
+```
+
+And provide an implementation for it!
+
+### Unit Test
+
+You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
+
+description of unit test
+
+![UNIT](image)
+
+```cs
+code
+```
