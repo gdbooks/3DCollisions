@@ -30,9 +30,9 @@ public static bool Intersects(Sphere sphere, OBJ model) {
     Vector3 newSpherePos = Matrix4.MultiplyPoint(inverseWorldMatrix, sphere.Position.ToVector());
     // We have to scale the radius of the sphere! This is difficult. The new scalar is the old radius
     // multiplied by the largest scale component of the matrix
-    float newSphereRad = sphere.Radius * Math.Max(
-        Math.Max(inverseWorldMatrix[0, 0], inverseWorldMatrix[1, 1]),
-        inverseWorldMatrix[2, 2]);
+    float newSphereRad = sphere.Radius * Math.Abs(Math.Max(
+            Math.Max(Math.Abs(inverseWorldMatrix[0, 0]), Math.Abs(inverseWorldMatrix[1, 1])),
+            Math.Abs(inverseWorldMatrix[2, 2])));
     
     // We make this new sphere because the old one is passed in
     // by reference. We don't want to actually modify
