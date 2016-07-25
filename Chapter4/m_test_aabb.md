@@ -32,7 +32,7 @@ This unit test is visual only, make sure your project looks like the screenshot.
 
 ![UNIT](obj_model_aabb_int_unit.png)
 
-You will notice a glaring error in the above image. The bottom left monkey, clearly intersects the AABB, yet the AABB is rendered in red, indicating no collision. This happens because of the rotation of the model!
+There is an error in the above image, the bottom left box is supposed to be red. IF yours is not, check your aabb, you probably need to call the ```Fix``` function. Despite it being visually correct, there is still a precision error.
 
 Once you rotate an AABB, like we do in the collision test, it is no longer axis aligned. It becomes an oriented bounding box, or OBB. The fix for this bug is simple, instead of creating a new AABB that gets modified by the inverse world matrix, we need to create a new OBB.
 
