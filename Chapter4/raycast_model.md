@@ -1,3 +1,5 @@
+TODO: Review [This](https://www.youtube.com/watch?v=TwZH-aoSzJk)
+
 #Raycast Model
 
 Raycasting against an OBJ model is a VERY common operation. So common in fact, that the primitive implementation we have created so far is too slow.
