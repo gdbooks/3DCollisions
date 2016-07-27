@@ -23,3 +23,13 @@ Essentially, you just traded checking 6k triangles / raycast for checking maybe 
 Here is an example of a BVH around a multi million triangle bunny model. This BVH is optimized in a manner that when an AABB does not contain any triangles, it is not split into child nodes. Therefore, this tree has leaf nodes with no triangles.
 
 ![OCTREE](octree.jpg)
+
+It might not be obvious in the above image, but this is how the ocrree is constructed trough sub-division:
+
+![OCTREE1](octree1.gif)
+
+And this is what your average mehs terrain looks like with the BVH acceleration structure rendering around it.
+
+![OCTREE2](octree2.png)
+
+###Optimize ALL OF IT
