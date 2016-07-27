@@ -17,3 +17,7 @@ We loop trough each leaf node and check for collision against the triangles of t
 Now we have an AABB tree with a bunch of triangles in each leaf node. When you do a raycast you start at the top of the tree, if the ray intersects this AABB, then you check all 4 of it's childern. Whichever child the ray intersects, you check it's children. It's a recursive process until your ray hits a leaf node. Once your ray hit a leaf node, you check for collision with the triangles inside that leaf node.
 
 Essentially, you just traded checking 6k triangles / raycast for checking maybe 20 AABB's and 30 Triangles. You can see how this will speed up raycasting against a mesh tremendusly!
+
+Here is an example of a BVH around a multi million triangle bunny model. This BVH is optimized in a manner that when an AABB does not contain any triangles, it is not split into child nodes. Therefore, this tree has leaf nodes with no triangles.
+
+![OCTREE](octree.jpg)
