@@ -33,3 +33,7 @@ And this is what your average mehs terrain looks like with the BVH acceleration 
 ![OCTREE2](octree2.png)
 
 ###Optimize ALL OF IT
+
+We're going to strictly use the BVH structure for raycasting, but professional engines use it for everything! Any time we loop trough all of the triangles of a model (Like OBJ Sphere intersection for example), we could replace that loop with a BHV query. This would improve performance considerably.
+
+For now, the performance of our collision functions is fine, let's focus on fixing the only function that has performance issues, and that is raycast-mesh.
