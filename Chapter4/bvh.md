@@ -97,3 +97,11 @@ public override void Render() {
     GL.PopMatrix();
 }
 ```
+
+Running your game, you should see this:
+
+![SAM1](obj_sample_1.PNG)
+
+Not the most impressive piece of code in the world, but it's a start! Next up, we have to figure out a way to split that AABB!
+
+### Splitting
