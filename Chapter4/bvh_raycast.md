@@ -102,3 +102,7 @@ public static bool Raycast(Ray ray, OBJ model, out float t) {
     return Raycast(newRay, model.BVHRoot, out t);
 }
 ```
+
+### Test it!
+
+Now you can test that we didn't break anything! Just load up and run the existing ```OBJRaycast``` unit test. With any luck, nothing has changed! IT should look like this:
