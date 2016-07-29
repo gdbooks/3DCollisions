@@ -79,4 +79,4 @@ public void RenderBVH() {
 
 #### Test it!
 
-Let's test our work so far!
+Let's test our work so far! To test, we're going to change the existing ```OBJSample``` class. Even tough this class only uses the ```OBJLoader``` object, not the ```OBJ``` one, it should be enough for us to do some useful testing.
