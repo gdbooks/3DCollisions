@@ -38,7 +38,7 @@ public class BVHNode {
 }
 ```
 
-Let's add a BVHNode object to the ```OBJLoader``` class:
+Let's add a BVHNode object to the ```OBJLoader``` class. With it, we're going to add a recursive "RenderBVH" function, that will render a BVH and all of it's children!
 
 ```cs
 protected BVHNode bvhRoot = null;
@@ -46,6 +46,22 @@ protected BVHNode bvhRoot = null;
 public BVHNode BvhRoot {
     get {
         return bvhRoot;
+    }
+}
+
+// Non-Recursive public API
+public void RenderBVH() {
+    RenderBVH(bvhRoot);
+}
+
+// Recursive private API
+private void RenderBVH(BVHNode node) {
+    node.AABB.Render();
+
+    if (node.Children != null) {
+        foreach (BVHNode child in node.Children) {
+            RenderBVH(child);
+        }
     }
 }
 ```
