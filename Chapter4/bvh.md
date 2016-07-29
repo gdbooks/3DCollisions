@@ -80,3 +80,20 @@ public void RenderBVH() {
 #### Test it!
 
 Let's test our work so far! To test, we're going to change the existing ```OBJSample``` class. Even tough this class only uses the ```OBJLoader``` object, not the ```OBJ``` one, it should be enough for us to do some useful testing.
+
+Change the render function of the ```OBJSample``` class, by adding a line mode render of the BVH
+
+```cs
+public override void Render() {
+    base.Render();
+    DrawOrigin();
+
+    GL.PushMatrix();
+    GL.Scale(3.0f, 3.0f, 3.0f);
+    obj.Render();
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+    obj.RenderBVH();
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+    GL.PopMatrix();
+}
+```
