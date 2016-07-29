@@ -27,3 +27,22 @@ We need to know how many children the node, and all of it's children and all of 
     }
 }
 ```
+
+### Shake it!
+
+Implementing the actual shake function is simple
+
+```cs
+public void Shake() {
+    if (Children != null) {
+        for (int i = Children.Count - 1; i >= 0; --i) {
+            if (Children[i].TriangleCount == 0) {
+                Children.RemoveAt(i);
+            }
+        }
+        foreach(BVHNode child in Children) {
+            child.Shake();
+        }
+    }
+}
+```
