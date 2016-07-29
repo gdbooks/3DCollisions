@@ -51,4 +51,37 @@ public void Shake() {
 }
 ```
 
-Now, go ahead and call the Shake function in ```ObjLoader```, right after the split function was called!
+Now, go ahead and call the Shake function in ```ObjLoader```, right after the split function was called! After all the BVH functions have been added to the ```OBJLoader``` constructor, this is what the relevant section looks like for me:
+
+```cs
+bvhRoot = new BVHNode(containerAABB);
+
+for (int i = 0; i < vertexData.Count; i += 9) {
+    collisionMesh[meshCounter++] = new Triangle(
+        new Point(vertexData[i + 0], vertexData[i + 1], vertexData[i + 2]),
+        new Point(vertexData[i + 3], vertexData[i + 4], vertexData[i + 5]),
+        new Point(vertexData[i + 6], vertexData[i + 7], vertexData[i + 8])
+    );
+
+    bvhRoot.Triangles.Add(collisionMesh[meshCounter - 1]);
+}
+
+bvhRoot.Split();
+bvhRoot.Shake();
+```
+
+### Test it
+
+Running the game, the window should now display this:
+
+![Shaken](shaken.gif)
+
+You can clearly see how the tree got sparsed out. The shape of the mesh is even more visible now.
+
+### More detail
+
+For our monkey model, a subdivision depth of 3 will suffice. The bigger a model, the deeper the subivision needs to be. The deeper the subdivision, the more expensive the BVH becomes. Just for fun, let's see what would happen if we turned the subdiv depth up from 3 to 5:
+
+![5](max_depth_5.gif)
+
+Now you can REALLY tell the shape of the model. Let's keep the max depth at 3 for now, 5 is more appropriate for things like terrain. I've NEVER seen a max depth greater than 8.
