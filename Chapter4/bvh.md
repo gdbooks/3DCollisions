@@ -66,6 +66,28 @@ private void RenderBVH(BVHNode node) {
 }
 ```
 
+Even tough we've written functions to use the bvhRoot, we have not made the root yet. We need to create the bvh root in the constructor. This needs to happen after we know the bounding box of the object. 
+
+Remember, every node is considered a leaf node when constructed, the root node is no different. Because it's a leaf node, we're going to add all the triangles it contains to it. That just happens to be every triangle of the model.
+
+There are two new lines of code in this excerpt from the ```OBJLoader``` constructor.
+
+```cs
+collisionMesh = new Triangle[vertexData.Count / 9];
+int meshCounter = 0;
+/*NEW*/bvhRoot = new BVHNode(containerAABB);
+
+for (int i = 0; i < vertexData.Count; i += 9) {
+    collisionMesh[meshCounter++] = new Triangle(
+        new Point(vertexData[i + 0], vertexData[i + 1], vertexData[i + 2]),
+        new Point(vertexData[i + 3], vertexData[i + 4], vertexData[i + 5]),
+        new Point(vertexData[i + 6], vertexData[i + 7], vertexData[i + 8])
+    );
+
+    /*NEW*/bvhRoot.Triangles.Add(collisionMesh[meshCounter - 1]);
+}
+```
+
 And finally, let's add a way to render this trough the OBJ interface, to the ```OBJ``` class, add a "RenderBVH" function:
 
 ```cs
@@ -105,3 +127,5 @@ Running your game, you should see this:
 Not the most impressive piece of code in the world, but it's a start! Next up, we have to figure out a way to split that AABB!
 
 ### Splitting
+
+Splitting as you might imagine, is going to be a 2 part process!
