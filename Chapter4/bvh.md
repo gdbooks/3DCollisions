@@ -37,3 +37,15 @@ public class BVHNode {
     }
 }
 ```
+
+Let's add a BVHNode object to the ```OBJLoader``` class:
+
+```cs
+protected BVHNode bvhRoot = null;
+
+public BVHNode BvhRoot {
+    get {
+        return bvhRoot;
+    }
+}
+```
