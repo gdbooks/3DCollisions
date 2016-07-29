@@ -46,7 +46,13 @@ Now, what we want to do is replace that triangle raycast loop with a raycast aga
 
 ### Raycast BVHNode
 
-Raycasting against a BVH node is a recursive process. 
+Raycasting against a BVH node is a recursive process. First, we check if the ray being passed in hits the AABB of the node. If it does not, we just return. 
+
+Next, we loop trough the children of the node (if it's not a leaf node, and has children). We call the raycast function on each of it's children, this is the recursive part. If any of those result in true, we return true.
+
+Finally, if the node was a leaf, we loop trough all of it's triangles. If any of the triangles hit, return true.
+
+By default we return false.
 
 
 ```cs
@@ -72,5 +78,27 @@ public static bool Raycast(Ray ray, BVHNode node, out float t) {
     }
 
     return false;
+}
+```
+
+## Raycast OBJ
+
+Now we can go back to the raycast obj function, and eliminate its triangle loop. Make sure to pass ```newRay``` into the Raycast-BVHNode function
+
+```cs
+public static bool Raycast(Ray ray, OBJ model, out float t) {
+    Matrix4 inverseWorldMatrix = Matrix4.Inverse(model.WorldMatrix);
+    Ray newRay = new Ray(ray.Position, ray.Normal);
+    newRay.Position = new Point(Matrix4.MultiplyPoint(inverseWorldMatrix, ray.Position.ToVector()));
+    newRay.Normal = Matrix4.MultiplyVector(inverseWorldMatrix, ray.Normal);
+
+    if (!Raycast(newRay, model.BoundingSphere, out t)) {
+        return false;
+    }
+    if (!Raycast(newRay, model.BoundingBox, out t)) {
+        return false;
+    }
+
+    return Raycast(newRay, model.BVHRoot, out t);
 }
 ```
