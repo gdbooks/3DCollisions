@@ -107,3 +107,5 @@ public override void Render() {
 Running the game now, the result should look like this:
 
 ![built](built.gif)
+
+Even tough the model is not rendered, you can kind of see the outline of where the model is inside the BVH structure. Sorry for the strange gif loop.....
