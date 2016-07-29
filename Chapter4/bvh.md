@@ -231,3 +231,5 @@ public override void Render() {
     GL.PopMatrix();
 }
 ```
+
+Running the game now, the result should look like this:
