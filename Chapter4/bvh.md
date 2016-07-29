@@ -8,6 +8,12 @@ Because a bounding volume hierarchy is a tree, it is made up of nodes. The root 
 
 ###BVHNode
 
+For now we're going to divide the BVH tree at most 3 times, this is going to be a protected static variable. 
+
+A BVHNode is either a leaf node or not. If it is a leaf node, it will contain triangles and have no children. If it is not a leaf node, it will have children but no triangles. A node can have triangles or children, never both. We will expose this in a getter.
+
+Finally, each BVH node is a box, an AABB box. As such, each node will need to have an AABB member. Also, when a new node is made, we assume it is going to be a leaf node.
+
 ```cs
 public class BVHNode {
     protected static int maxDepth = 3;
