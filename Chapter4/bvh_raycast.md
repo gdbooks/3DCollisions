@@ -46,4 +46,31 @@ Now, what we want to do is replace that triangle raycast loop with a raycast aga
 
 ### Raycast BVHNode
 
-Raycasting against a BVH node is a recursive process.
+Raycasting against a BVH node is a recursive process. 
+
+
+```cs
+public static bool Raycast(Ray ray, BVHNode node, out float t) {
+    if (!Raycast(ray, node.AABB, out t)) {
+        return false;
+    }
+
+    if (node.Children != null) {
+        foreach(BVHNode child in node.Children) {
+            if (Raycast(ray, child, out t)) {
+                return true;
+            }
+        }
+    }
+
+    if (node.Triangles != null) {
+        foreach (Triangle triangle in node.Triangles) {
+            if (Raycast(ray, triangle, out t)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+```
