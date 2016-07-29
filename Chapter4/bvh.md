@@ -128,4 +128,12 @@ Not the most impressive piece of code in the world, but it's a start! Next up, w
 
 ### Splitting
 
-Splitting as you might imagine, is going to be a 2 part process!
+Splitting as you might imagine, is going to be a recursive process. We're actually going to implement 2 function, 1 public one that does not expose any recursion paramaters, and a private one that will. The paramater being passed in is recursion level.
+
+The split function will first check that a node is a leaf node, as we can only split leaf nodes, non-leaf nodes are already split. 
+
+The leaf node is only going to be split if it has triangles. This makes sense, there is no need to split an empty node. Just keep blank space empty.
+
+If both of the above conditions are met, we check to make sure that we are not below the recursion limit, and if not then the BVHNode is split into 8 smaller ones.
+
+Splitting a node is simple. We get the 8 corners of the bounding box (Top Fron Left corner in code is called TFL for example). Then we make 8 new AABB's using each of the corners and the center point of the AABB as the min and max points. This is what a single split level looks like:
