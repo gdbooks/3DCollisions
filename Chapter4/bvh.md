@@ -233,3 +233,5 @@ public override void Render() {
 ```
 
 Running the game now, the result should look like this:
+
+![built](built.gif)
