@@ -105,4 +105,8 @@ public static bool Raycast(Ray ray, OBJ model, out float t) {
 
 ### Test it!
 
-Now you can test that we didn't break anything! Just load up and run the existing ```OBJRaycast``` unit test. With any luck, nothing has changed! IT should look like this:
+Now you can test that we didn't break anything! Just load up and run the existing ```OBJRaycast``` unit test. With any luck, nothing has changed! It should look like this:
+
+![UNIT](obj_model_ray_int_unit.png)
+
+Even tough visually nothing has changed, the actual raycast test is much faster now, we probably saved about 5 to 10 milliseconds / raycast. Which in game time is HUGE!
