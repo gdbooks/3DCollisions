@@ -76,3 +76,7 @@ public void RenderBVH() {
     GL.PopMatrix();
 }
 ```
+
+#### Test it!
+
+Let's test our work so far!
