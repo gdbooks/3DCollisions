@@ -210,3 +210,24 @@ protected void Split(int depth) {
     }
 }
 ```
+
+#### Test it!
+
+Call that function in the OBJLoader constructor, right after the loop that adds all of the triangles to the BVH root node.
+
+After that, go into the ```OBJSample``` class, and modify the render function so the actual model doesn't render, like so:
+
+```cs
+public override void Render() {
+    base.Render();
+    DrawOrigin();
+
+    GL.PushMatrix();
+    GL.Scale(3.0f, 3.0f, 3.0f);
+    obj.Render();
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+    obj.RenderBVH();
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+    GL.PopMatrix();
+}
+```
