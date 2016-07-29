@@ -67,3 +67,12 @@ private void RenderBVH(BVHNode node) {
 ```
 
 And finally, let's add a way to render this trough the OBJ interface, to the ```OBJ``` class, add a "RenderBVH" function:
+
+```cs
+public void RenderBVH() {
+    GL.PushMatrix();
+    GL.MultMatrix(WorldMatrix.OpenGL);
+    model.RenderBVH();
+    GL.PopMatrix();
+}
+```
