@@ -30,7 +30,11 @@ We need to know how many children the node, and all of it's children and all of 
 
 ### Shake it!
 
-Implementing the actual shake function is simple
+Implementing the actual shake function is simple. First, we check if the node has any children. If it does not, we don't do anything. 
+
+If the node has children, we loop trough them BACKWARDS. Any child that has 0 triangles is removed.
+
+After we've removed the 0 triangle children, we loop trough the remaining children and call shake on them. In this way, the shake function is recursive.
 
 ```cs
 public void Shake() {
@@ -46,3 +50,5 @@ public void Shake() {
     }
 }
 ```
+
+Now, go ahead and call the Shake function in ```ObjLoader```, right after the split function was called!
