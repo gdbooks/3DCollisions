@@ -74,7 +74,6 @@
        * [BVH - Split](Chapter4/bvh_split.md)
        * [BVH - Shake](Chapter4/bch_shake.md)
        * [BVH - Raycast](Chapter4/bvh_raycast.md)
-   * [Collision Hierarchy](Chapter4/collision_hierarchy.md)
 * [Scene Management](Chapter5/README.md)
    * [Hierarchy](Chapter5/hierarchy.md)
    * [Octree](Chapter5/octree.md)
