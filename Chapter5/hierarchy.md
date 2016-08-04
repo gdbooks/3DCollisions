@@ -51,6 +51,6 @@ protected bool dirty {
         }
     }
 }
-````
+```
 
 With the use of a protected getter we made the dirty flag recursive. That is, whenever an OBJ is marked as dirty, all it's children, and all of that nodes children will be marked dirty as well. This will force every child of the node to re-calculate it's own world matrix, the next time render is called.
