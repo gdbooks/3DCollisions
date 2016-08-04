@@ -15,4 +15,6 @@ public OBJ Parent = null;
 public List<OBJ> Children = new List<OBJ>();
 ```
 
-__TODO: __ Now, adjust the Render, RenderBVH and RenderDebug functions to loop trough all children of the OBJ and call the appropriate Render function. Also, we're going to have OBJ's with a null model, be sure to add null checks. If an OBJ's internal model variable is null it will not render, but all of its children still should.
+__TODO: __ Now, adjust the Render, RenderBVH and RenderDebug functions to loop trough all children of the OBJ and call the appropriate Render function. do this loop after the PopMatrix, each child has it's own world matrix, and will set it for its-self.
+
+Also, we're going to have OBJ's with a null model, be sure to add null checks. If an OBJ's internal model variable is null it will not render, but all of its children still should.
