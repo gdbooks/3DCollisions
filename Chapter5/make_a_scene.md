@@ -43,4 +43,4 @@ helper function on your own. It should perform a ray cast against the current Ob
   public static bool Raycast(Ray ray, OBJ model, out float t) {
 ```
 
-Change the function so it first checks if the model is empty ```model.IsEmpty```, if it is, return false by default.
+Change the function so it first checks if the model is empty ```model.IsEmpty```, if it is, set t to -1 and return false by default.
