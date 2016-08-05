@@ -21,3 +21,9 @@ That is, whenever an object rotates, you have to re-calculate it's bounding box.
 ### Updating
 
 Whenever an object changes position (The "Is Dirty" flag is set) there is a chance that it migrated into a new node of the octree. Should this happen, we have to remove the object from the node it currently belongs to, and try to insert it into the parent of that node. If that insertion fails, we recursivley walk the tree and keep trying to insert into a new parent until we reach the top of the tree.
+
+### Other Uses
+
+An octree is obviously not only used for raycasting. Normally, all scene collision operations go trough the octree. Most functions in the scene should never touch the object hierarchy directly, they should be operating on the octree.
+
+We will see this in action in the next chapter, where we are going to utilize the octree to perform Frustum Culling. For now, let's get started and actually implement the octree.
