@@ -78,7 +78,7 @@
    * [Hierarchy](Chapter5/hierarchy.md)
    * [Making a scene](Chapter5/make_a_scene.md)
    * [Octree](Chapter5/octree.md)
-       * [Dynamic Objects](Chapter5/dynamic_objects.md)
+       * [Octree-Node](Chapter5/dynamic_objects.md)
        * [Raycast](Chapter5/raycast.md)
        * [Picking](Chapter5/picking.md)
        * [Collisions](Chapter5/collisions.md)
