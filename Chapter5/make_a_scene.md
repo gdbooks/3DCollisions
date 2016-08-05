@@ -35,7 +35,7 @@ Raycast however, we are not so lucky with. Implement the
 protected OBJ RecursiveRaycast(OBJ current, Ray ray, out float t) {
  ```
  
- helper function on your own. It should perform a ray cast against the current Obj being passed in. If the result of that ray cast is true, return the OBJ. If the result of that ray cast is false, recursively call this function on all children of the OBJ. If any of the children hit something, return the OBJ which was hit. If nothing was hit, return null;
+helper function on your own. It should perform a ray cast against the current Obj being passed in. If the result of that ray cast is true, return the ```OBJ```. If the result of that ray cast is false, recursively call this function on all children of the ```OBJ```. If any of the children hit something, return the ```OBJ``` which was hit. If nothing was hit, return ```null```;
  
  We're going to have to modify the raycast obj function, in Collisions.cs, this one:
  
