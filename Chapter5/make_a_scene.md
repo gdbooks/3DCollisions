@@ -45,6 +45,12 @@ helper function on your own. It should perform a ray cast against the current Ob
 
 Change the function so it first checks if the model is empty ```model.IsEmpty```, if it is, set t to -1 and return false by default.
 
+### The Point
+
+Now that we have a scene class, we no longer care about the indevidual OBJ objects! Right now we're hard coding the new objects, but ideally you'd want to make the scene hierarchy dynamically, by reading in some text file.
+
+That's the whole point of the scene. We no longer care about indevidual objects, we just perform operations on the scene its-self! And the scene knows about objects, and how to call our existing code that's written for them
+
 ## Test it out!
 
 It's time to test out your work. Use the following unit test code:
