@@ -23,6 +23,18 @@ The __WorldMatrix__ getter is obviously in world space. It is an absolute positi
 
 The __Position__, __Rotation__ and __Scale__ getters / setters are going to be in local space. That is, they are relative to the node's parent. If the parent's position is ```0, 1, 2``` and the node's local position is ```1, 0, 1``` then the world position of the node will be ```1 1 3```
 
+Because we've now introducted the concept of an "Empty" OBJ IE: Once without a mesh, let's add a getter to check if an OBJ is empty or not
+
+```cs
+  public bool IsEmpty
+  {
+      get
+      {
+          return model == null;
+      }
+  }
+```
+
 Because we work in world and local space now, when the transform of a parent node changes, all children must be updated. We almost have a method of doing this already, each object has a dirty flag.
 
 All we have to do is make the dirty flag recursive. If a node is marked as dirty, all it's children will need to be marked dirty as well.
