@@ -29,10 +29,10 @@ namespace CollisionDetectionSelector {
 
 We have a null object at the root of the scne. This is conveniant because now every single object will form a tree. The rendering function is fairly straight forward,  Because ```OBJ.Render``` is already recursive, so we just call it on the root object.
 
-Raycast however, we are not so lucky with. Implemen the 
+Raycast however, we are not so lucky with. Implement the 
 
 ```cs
- protected OBJ RecursiveRaycast(OBJ current, Ray ray) {
+protected OBJ RecursiveRaycast(OBJ current, Ray ray, out float t) {
  ```
  
- helper function on your own. It should perform
+ helper function on your own. It should perform a raycast against the currentOBJ being passed in. If the result of that raycast is true, return the OBJ. If the result of that raycast is false, recursivley call this function on all children of the OBJ. If any of the children hit something, reutrn the OBJ which was hit. If nothing was hit, return null;
