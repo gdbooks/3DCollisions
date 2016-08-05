@@ -54,3 +54,34 @@ protected bool dirty {
 ```
 
 With the use of a protected getter we made the dirty flag recursive. That is, whenever an OBJ is marked as dirty, all it's children, and all of that nodes children will be marked dirty as well. This will force every child of the node to re-calculate it's own world matrix, the next time render is called.
+
+### Applying the transform
+
+The last thing we need to do here is make sure the world matrix takes the parents world matrix into account. We can achieve this, by multiplying the world matrix by the parent nodes world matrix
+
+
+```cs
+public Matrix4 WorldMatrix {
+    get {
+        if (dirty) {
+            Matrix4 translation = Matrix4.Translate(position);
+
+            Matrix4 pitch = Matrix4.XRotation(rotation.X);
+            Matrix4 yaw = Matrix4.YRotation(rotation.Y);
+            Matrix4 roll = Matrix4.ZRotation(rotation.Z);
+            Matrix4 orientation = roll * pitch * yaw;
+
+            Matrix4 scaling = Matrix4.Scale(scale);
+
+            worldMatrix = translation * orientation * scaling;
+
+            if (Parent != null) {
+                worldMatrix = Parent.WorldMatrix * worldMatrix;
+            }
+        }
+        return worldMatrix;
+    }
+}
+```
+
+As you can see, not much has actually changed, we just added another matrix multiplication. Important to note, we are multiplying by the parent's world matrix getter ```Parent.WorldMatrix```, using a capital W!
