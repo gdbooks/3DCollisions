@@ -26,13 +26,11 @@ The __Position__, __Rotation__ and __Scale__ getters / setters are going to be i
 Because we've now introducted the concept of an "Empty" OBJ IE: Once without a mesh, let's add a getter to check if an OBJ is empty or not
 
 ```cs
-  public bool IsEmpty
-  {
-      get
-      {
-          return model == null;
-      }
-  }
+public bool IsEmpty {
+    get {
+        return model == null;
+    }
+}
 ```
 
 Because we work in world and local space now, when the transform of a parent node changes, all children must be updated. We almost have a method of doing this already, each object has a dirty flag.
