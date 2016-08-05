@@ -11,5 +11,3 @@ A tree is made up of many nodes, the octree is no different. There is no specifi
 ### Remove
 
 ### Update
-
-### Raycast
