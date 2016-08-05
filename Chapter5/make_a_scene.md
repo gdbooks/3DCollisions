@@ -47,7 +47,7 @@ Change the function so it first checks if the model is empty ```model.IsEmpty```
 
 ## Test it out!
 
-It's time to test out your work. Use the following scene code:
+It's time to test out your work. Use the following unit test code:
 
 ```cs
 
