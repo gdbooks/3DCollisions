@@ -1,6 +1,6 @@
 # Scene
 
-Currently we have everything set up to create a transform hierarchy, but not a scene. A transform hierarchy is just a part of a scene. The scene provides a single interface for managint this crazy hierarchy. Let's make a new ```Scene``` class and implement a basic scene that will render it's transform hierarchy and perform a raycst on it.
+Currently we have everything set up to create a transform hierarchy, but not a scene. A transform hierarchy is just a part of a scene. The scene provides a single interface for managing this crazy hierarchy. Let's make a new ```Scene``` class and implement a basic scene that will render it's transform hierarchy and perform a ray cast on it.
 
 ```cs
 using OpenTK.Graphics.OpenGL;
