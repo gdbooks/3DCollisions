@@ -12,6 +12,12 @@ We're going to explore how the octree can be used as an acceleration structure t
 
 We do a raycast, if the ray hits one of the octree nodes. If the ray hits a node, we raycast against all models inside the node. If any of those models where hit by the ray, we return the model. If not, we recursivley call raycast on all children nodes of the octree node.
 
+### Inserting
+
+We insert objects into the tree based on either the objects Bounding Box or the objects Bounding Sphere. Usually you want to use the bounding box, but if you do that there is additional logic required for rotated objects. 
+
+That is, whenever an object rotates, you have to re-calculate it's bounding box. I prefer saving that performance, and sacraficing a little bit of performance in the raycast accuracy instead. So our implementation will use the bounding sphere.
+
 ### Updating
 
 Whenever an object changes position (The "Is Dirty" flag is set) there is a chance that it migrated into a new node of the octree. Should this happen, we have to remove the object from the node it currently belongs to, and try to insert it into the parent of that node. If that insertion fails, we recursivley walk the tree and keep trying to insert into a new parent until we reach the top of the tree.
