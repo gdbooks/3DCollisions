@@ -76,6 +76,7 @@
        * [BVH - Raycast](Chapter4/bvh_raycast.md)
 * [Scene Management](Chapter5/README.md)
    * [Hierarchy](Chapter5/hierarchy.md)
+   * [Making a scene](Chapter5/make_a_scene.md)
    * [Octree](Chapter5/octree.md)
        * [Dynamic Objects](Chapter5/dynamic_objects.md)
        * [Raycast](Chapter5/raycast.md)
