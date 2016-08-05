@@ -14,4 +14,4 @@ We do a raycast, if the ray hits one of the octree nodes. If the ray hits a node
 
 ### Updating
 
-Whenever an object changes position (The "Is Dirty" flag is set) there is a chance that it migrated into a new node of the octree. Should this happen, we have to remove the object 
+Whenever an object changes position (The "Is Dirty" flag is set) there is a chance that it migrated into a new node of the octree. Should this happen, we have to remove the object from the node it currently belongs to, and try to insert it into the parent of that node. If that insertion fails, we recursivley walk the tree and keep trying to insert into a new parent until we reach the top of the tree.
