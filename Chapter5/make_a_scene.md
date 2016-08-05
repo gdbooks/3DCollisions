@@ -44,3 +44,12 @@ helper function on your own. It should perform a ray cast against the current Ob
 ```
 
 Change the function so it first checks if the model is empty ```model.IsEmpty```, if it is, set t to -1 and return false by default.
+
+## Test it out!
+
+It's time to test out your work. Use the following scene code:
+
+```cs
+
+
+```
