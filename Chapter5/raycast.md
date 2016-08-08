@@ -66,3 +66,9 @@ public OBJ Raycast(Ray ray) {
     return Octree.Raycast(ray, out t);
 }
 ```
+
+This is actually how a scene works. It's a transform hierarchy and an octree. All of the methods inside the scene are just facads for the hierarchy and octree.
+
+__Run__ the last example, and nothing has changed. We still have a blue (hit detected) and red (hit not detected) ray in the scene. But, the raycast code is now much faster! It no longer loops trough all possible objects in the scene, rather it iterates over a well orgonized tree. 
+
+This might not make a huge performance difference right now, but when you get into the 10,000 object range it's really noticable!
