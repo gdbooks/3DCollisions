@@ -88,6 +88,11 @@ public Matrix4 WorldMatrix {
             if (Parent != null) {
                 worldMatrix = Parent.WorldMatrix * worldMatrix;
             }
+            
+            // DO NOT FORGET THIS! The first version
+            // I wrote, i forgot to clear the dirty flag
+            // and my game stopped running!
+            dirty = false;
         }
         return worldMatrix;
     }
