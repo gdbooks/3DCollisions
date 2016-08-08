@@ -85,6 +85,29 @@ public void Split(int level) {
 
 ### Insert Object
 
+Inserting an object is fairly straight forward. The object will only insert if the Bounds of the current node intersect it. If that's not the case, none of the children nodes will intersect the object either! 
+
+^ The above statement only holds true if the ABB-OBJ test is implemented as a SAT test. Ours is not, this is why we are going to be testing the bounding sphere, instead of the OBJ its-self. That way, our Octree insertion is a series of Sphere-AABB tests.
+
+```cs
+public bool Insert(OBJ obj) {
+    if (Collisions.Intersects(obj.BoundingSphere, Bounds)) {
+        // We knoe the obj intersects this node, if it's a leaf
+        // add it to the object list, if not, recurse!
+        if (Children != null) {
+            foreach(OctreeNode child in Children) {
+                child.Insert(obj);
+            }
+        }
+        else {
+            Contents.Add(obj);
+        }
+        return true;
+    }
+    return false;
+}
+```
+
 ### Remove Object
 
 ### Update Object
