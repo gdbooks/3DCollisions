@@ -72,3 +72,19 @@ This is actually how a scene works. It's a transform hierarchy and an octree. Al
 __Run__ the last example, and nothing has changed. We still have a blue (hit detected) and red (hit not detected) ray in the scene. But, the raycast code is now much faster! It no longer loops trough all possible objects in the scene, rather it iterates over a well orgonized tree. 
 
 This might not make a huge performance difference right now, but when you get into the 10,000 object range it's really noticable!
+
+### Get Fancy
+
+Just for the sake of fancy-ness i want to modify the octree so we can visualize exactly which nodes get traversed!
+
+First, add a new debug bool to ```OctreeNode``` to let us know if the node has been visited or not:
+
+```cs
+protected bool debugVisited = false;
+```
+
+Next, inside the ```Racyast``` function of ```OctreeNode``` flip the new debug flag to true
+
+```cs
+
+```
