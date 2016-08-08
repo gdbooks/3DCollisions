@@ -144,3 +144,5 @@ public void Render() {
 That's it! Running the last unit test should now look like this:
 
 ![Visited](unit_test_visited_nodes.png)
+
+For this demo it might not make a big difference, but for a larger demo it would! Also, this is a very small Octree. Usually one octree node is large enough to contain 3 to 5 objects! The size of our entire octree is usually the size of a single node on a larger scale project.
