@@ -126,3 +126,14 @@ public void Remove(OBJ obj) {
 ```
 
 ### Update Object
+
+Updating an octree is a very hot topic of research. Everyone wants to have the fastest update possible. When an object moves, rotates or scales, we have to update what octree nodes it belongs to.
+
+While there are a LOT of algorithms for this out there, we're going to implement a very basic one! Any time an object rotates or moves we simply remove it from the tree and re-insert it. This is the brute force method, it's not efficient, but it is reliable
+
+```cs
+public bool Update(OBJ obj) {
+    Remove(obj);
+    return Insert(obj);
+}
+```
