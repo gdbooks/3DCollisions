@@ -86,5 +86,8 @@ protected bool debugVisited = false;
 Next, inside the ```Racyast``` function of ```OctreeNode``` flip the new debug flag to true
 
 ```cs
+public OBJ Raycast(Ray ray, out float t) {
+    debugVisited = true;
 
+    // This is NOT a leaf node, see which child can be raycast against!
 ```
