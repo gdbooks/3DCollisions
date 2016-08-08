@@ -8,7 +8,6 @@ Let's start off with the definition of a node. A node contains an Axis Aligned B
 
 If a node has children, it will not have contents. If a node has contents, it will not have children. This makes determining what is and isn't a leaf node fairly simple. Leaf nodes have no children, therefore ```Children``` will be null.
 
-The constructor by default creates each node as a leaf node.
 
 ```cs
 using System.Collections.Generic;
