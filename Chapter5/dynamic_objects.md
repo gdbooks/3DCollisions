@@ -110,4 +110,19 @@ public bool Insert(OBJ obj) {
 
 ### Remove Object
 
+Removing an object is super simple. If this node is a leaf node, search trough the objects it contains, and remove the object if it is in the list. If not, recursivley call the function for every node
+
+```cs
+public void Remove(OBJ obj) {
+    if (Children != null) {
+        foreach(OctreeNode child in Children) {
+            child.Remove(obj);
+        }
+    }
+    else {
+        Contents.Remove(obj);
+    }
+}
+```
+
 ### Update Object
