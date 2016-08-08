@@ -107,3 +107,36 @@ Then, modify the ```DebugRender``` function of the ```OCtreeNode``` class to ren
 
     if (Contents != null) {
 ```
+
+Changing the outline will not be enough. It's going to flicker, because child AABB's are drawn where the parent AABB's are present. I want to get fancy and add a new debug render method that renders only the legit visited nodes:
+
+```cs
+public void DebugRenderOnlyVisitedNodes() {
+    if (!debugVisited) {
+        return;
+    }
+    if (Children != null) {
+        foreach (OctreeNode node in Children) {
+            node.DebugRenderOnlyVisitedNodes();
+        }
+    }
+    else {
+        GL.Color3(0f, 1f, 0f);
+        Bounds.Render();
+    }
+}
+```
+
+Finally, let's modify the ```Render``` method of the ```Scene``` class to render the visited nodes as solid boxes:
+
+```cs
+public void Render() {
+    RootObject.Render();
+    GL.Disable(EnableCap.Lighting);
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+    Octree.DebugRender();
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+    /* NEW */ Octree.DebugRenderOnlyVisitedNodes();
+    GL.Enable(EnableCap.Lighting);
+}
+```
