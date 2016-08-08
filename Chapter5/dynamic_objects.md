@@ -188,7 +188,11 @@ And that's it for us! In an actual game engine you would not expose the ```RootO
 
 ## Unit Testing
 
-The code for this unit test is __almost__ identical to the last one.
+The code for this unit test is __almost__ identical to the last one. The only real difference is in the ```Initialize``` and ```Update``` functions. Whenever we create a new node in the ```Initialize``` function, it is added to the octree. And, when we rotate the cube node insize the ```Update``` function we update the octree.
+
+The rendering looks different, the octree we created will be visible. This has nothing to do with the unit test however, as we simply added the code to render the octree to the scenes render function, which is called from the unit test.
+
+The current project should look like this:
 
 ```cs
 using OpenTK.Graphics.OpenGL;
