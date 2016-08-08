@@ -185,3 +185,5 @@ public void Render() {
 ```
 
 And that's it for us! In an actual game engine you would not expose the ```RootObject``` or ```Octree```. Instead you'd have a function like ```AddObject``` that would create a new object and add it to both the root and octree. For our example however, this is not needed, whoever owns the scene will also update the octree.
+
+## Unit Testing
