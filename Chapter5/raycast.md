@@ -91,3 +91,19 @@ public OBJ Raycast(Ray ray, out float t) {
 
     // This is NOT a leaf node, see which child can be raycast against!
 ```
+
+Then, modify the ```DebugRender``` function of the ```OCtreeNode``` class to render the visited nodes as green:
+
+```cs
+ public void DebugRender() {
+    if (debugVisited) {
+        GL.Color3(0f, 1f, 0f);
+    }
+    else {
+        GL.Color3(0f, 0f, 1f);
+
+    }
+    Bounds.Render();
+
+    if (Contents != null) {
+```
