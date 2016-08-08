@@ -179,6 +179,8 @@ public void DebugRender() {
 }
 ```
 
+After having finished this article, i decided it would be visually great to have the bounding spheres of objects also render so i could approximate which OctreeNode's the object is stored in. You don't have to do this, but it's a good exercise, if you want to see how i did it, [the code is here](https://gist.github.com/gszauer/426702bbf60efa497bc686a032d90e10)
+
 ## Scene Integration
 
 Now that we have an octree node, all we have to do is add the root node to the scene, and we have an octree! I'm going to be modifying the existing scene class for this. 
