@@ -9,3 +9,7 @@ The user clicks on the screen. We find the pixel they selected on the near and f
 The entire point of the OpenGL graphics pipeline is to take a world-space point and transform it to screen space coordinates. This is done using a variety of matrix multiplications. For picking we have to do the reverse! We have to take a screen space point and apply the reverse of the graphics pipeline to get two world space points.
 
 Going from world space to screen space (What openGL does) is called __Projection__. Going from screen space to world space (What we need to do) is __Un-Projection__. Let's take a look at the projection pipeline:
+
+![IM49](Image49.gif)
+
+We just have to do the inverse of this! Instead of object * model * projection, we do object * inverse(model) * inverse(projection). You get the idea!
