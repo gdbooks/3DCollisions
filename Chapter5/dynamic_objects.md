@@ -138,6 +138,20 @@ public bool Update(OBJ obj) {
 }
 ```
 
+This update method actually has a bit of a flaw. Right now, when an object is updated it is removed from the octree and then added back in. Really, this should be recursive! All of the object's children, and it's children need to be removed and inserted too! We can easily turn this function into a recursive one:
+
+```cs
+public bool Update(OBJ obj) {
+    if (obj.Children != null) {
+        foreach (OBJ child in obj.Children) {
+            Update(child);
+        }
+    }
+    Remove(obj);
+    return Insert(obj);
+}
+```
+
 ### Debug Render
 
 It's useful to be able to visualize what we just implemented! For that reason, i say we add a ```DebugRender``` function. This function is simple, it just recursivley draws the bounding rectangle of each node.
