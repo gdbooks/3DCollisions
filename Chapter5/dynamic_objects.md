@@ -225,6 +225,8 @@ The current project should look like this:
 That blue line sticking out the back is NOT a rendering artifact. It's a ray that has hit an object.
 
 
+Is the unit test chugging and choppy? Try to change the "Update" method of the octree node to comment out the recursive part. That should speed things up back to a smooth framerate. This is a great example of why we avoid recursion, it's expensive!
+
 ```cs
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
