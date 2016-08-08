@@ -13,3 +13,7 @@ Going from world space to screen space (What openGL does) is called __Projection
 ![IM49](Image49.gif)
 
 We just have to do the inverse of this! Instead of object * model * projection, we do object * inverse(model) * inverse(projection). You get the idea!
+
+##Un-project
+
+It's time to implement an "Unproject" function. I'm adding this to my __Collisions.cs__ file.
