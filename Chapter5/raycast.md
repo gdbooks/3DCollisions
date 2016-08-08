@@ -46,3 +46,23 @@ public OBJ Raycast(Ray ray, out float t) {
     return null;
 }
 ```
+
+### Changing the scene
+
+Now that we have a raycast method implemented in the ```OctreeNode``` class, we no longer need the implementation in the ```Scene``` class.
+
+Go ahead and remove the ```RecursiveRaycast``` method from the ```Scene``` class. Change the two ```Raycast``` methods inside the ```Scene``` class, to just call the ```Raycast``` method of the octree, like so:
+
+
+```cs
+public OBJ Raycast(Ray ray, out float t) {
+    //return RecursiveRaycast(RootObject, ray, out t);
+    return Octree.Raycast(ray, out t);
+}
+
+public OBJ Raycast(Ray ray) {
+    float t = 0.0f;
+    //return RecursiveRaycast(RootObject, ray, out t);
+    return Octree.Raycast(ray, out t);
+}
+```
