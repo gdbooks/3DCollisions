@@ -140,3 +140,7 @@ public void Render() {
     GL.Enable(EnableCap.Lighting);
 }
 ```
+
+That's it! Running the last unit test should now look like this:
+
+![Visited](unit_test_visited_nodes.png)
