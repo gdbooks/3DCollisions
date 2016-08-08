@@ -194,6 +194,11 @@ The rendering looks different, the octree we created will be visible. This has n
 
 The current project should look like this:
 
+![RO2](raycast_octree_2.png)
+
+That blue line sticking out the back is NOT a rendering artifact. It's a ray that has hit an object.
+
+
 ```cs
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
