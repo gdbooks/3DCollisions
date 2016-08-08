@@ -137,3 +137,49 @@ public bool Update(OBJ obj) {
     return Insert(obj);
 }
 ```
+
+### Debug Render
+
+It's useful to be able to visualize what we just implemented! For that reason, i say we add a ```DebugRender``` function. This function is simple, it just recursivley draws the bounding rectangle of each node.
+
+```cs
+public void DebugRender() {
+    Bounds.Render();
+    if (Children != null) {
+        foreach (OctreeNode node in Children) {
+            node.DebugRender();
+        }
+    }
+}
+```
+
+## Scene Integration
+
+Now that we have an octree node, all we have to do is add the root node to the scene, and we have an octree! I'm going to be modifying the existing scene class for this. 
+
+First, add the octree root to the scene. Next, add an initalize function. This function will take in the overall size of the octree (The half-size of it's root node). This function is responsible for creating the tree and splitting it. A split size of 3 will do for now.
+
+```cs
+public OctreeNode Octree = null;
+
+public void Initialize(float octreeSize) {
+    Octree = new OctreeNode(new Point(0, 0, 0), octreeSize, null);
+    Octree.Split(3);
+}
+```
+
+In larger AAA games, it's not uncommon to see the default octree be of __size 5000__, with a __split__ level of __8__.
+
+Next up, let's modify the render function of the scene to render the debug version of the octree
+
+```cs
+public void Render() {
+    RootObject.Render();
+    
+    GL.Disable(EnableCap.Lighting);
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+    Octree.DebugRender();
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+    GL.Enable(EnableCap.Lighting);
+}
+```
