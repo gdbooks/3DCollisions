@@ -11,6 +11,7 @@ If a node has children, it will not have contents. If a node has contents, it wi
 The constructor will, by default make each node a leaf node. It isn't until later, when we split the node that it can become a non-leaf.
 
 ```cs
+using System;
 using System.Collections.Generic;
 using Math_Implementation;
 using CollisionDetectionSelector.Primitives;
@@ -89,9 +90,20 @@ Inserting an object is fairly straight forward. The object will only insert if t
 
 ^ The above statement only holds true if the ABB-OBJ test is implemented as a SAT test. Ours is not, this is why we are going to be testing the bounding sphere, instead of the OBJ its-self. That way, our Octree insertion is a series of Sphere-AABB tests.
 
+The one catch here is that ```OBJ.BoundingSphere``` is local space, not world space! So, we need to fix that. This is a simple translation we've already made when handling the BVH code before.
+
 ```cs
 public bool Insert(OBJ obj) {
-    if (Collisions.Intersects(obj.BoundingSphere, Bounds)) {
+    // Remember, the bounding sphere is model space, we need it to
+    // be world space! Multiply the position and scale the radius
+    Sphere worldSpaceSphere = new Sphere();
+    worldSpaceSphere.Position = new Point(
+        Matrix4.MultiplyPoint(obj.WorldMatrix, obj.BoundingSphere.Position.ToVector())
+    ); // End new point
+    float scale = Math.Max(obj.WorldMatrix[0, 0], Math.Max(obj.WorldMatrix[1, 1], obj.WorldMatrix[2, 2]));
+    worldSpaceSphere.Radius = obj.BoundingSphere.Radius * scale;
+
+    if (Collisions.Intersects(worldSpaceSphere, Bounds)) {
         // We knoe the obj intersects this node, if it's a leaf
         // add it to the object list, if not, recurse!
         if (Children != null) {
