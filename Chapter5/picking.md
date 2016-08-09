@@ -205,4 +205,12 @@ modelView = Matrix4.Transpose(new Matrix4(rawModelView));
 projection = Matrix4.Transpose(new Matrix4(rawProjection));
 ```
 
-The ```GL.GetFloat```
+The ```GL.GetFloat``` method can be used to retrieve indevidual floating point values or entire arrays! The matrices are pretty self explanatory. Remember, our matrices are row major, openGL's matrices are column major. We therefore need to transpose any returned matrix.
+
+The viewport might seem like a bit of black magic, considering we don't set it that often, but in reality it's set every time the game is resized. We just so happened to implement a helper function in the base ```Application``` class to do it for us. Just to avoid repetative typing. That's the retrieved viewport.
+
+Finally, it's worth noting, we use an overload of raycast that returns a point, not t. If we just had t we could still find the point like so:
+
+```cs
+
+```
