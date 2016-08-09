@@ -21,3 +21,9 @@ Instead of getting split down the middle, like an octree you split a kd tree acc
 ![KD-Tree](KDtree.png)
 
 ### Portals
+
+Portals are mainly used to cull indoor scenes. The tought is, if you are indoors, you can see the room you are in, and any rooms connected with a door. A portal can be more than just a door tough. Assume you have a curvy tunnel in a cave. You can't see the end of the cave from the start because it curves. The most curvy point of that cave makes for a good protal.
+
+Portals are a natural evolution of the PVS algorithm. 
+
+![PORTAL](occlusion_fig_02a.png)
