@@ -221,5 +221,6 @@ if (raycast) {
 else { // Not hit, ofscreen?
     hitPoint = new Point(-5000, -5000, -5000);
 }
-
 ```
+
+The rest of the code should be self-explanatory. The only thing that might be confusing in there is why we don't render ```debugBox```, it's because ```AABB```'s that we render have no normal. For the sample to look good we need geometry with normals. So, i just added a box to the root of the scene that's at the same position as the AABB we are raycasting against.
