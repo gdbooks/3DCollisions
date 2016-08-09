@@ -12,14 +12,43 @@ Going from world space to screen space (What openGL does) is called __Projection
 
 ![IM49](Image49.gif)
 
-We just have to do the inverse of this! Instead of object * model * projection, we do object * inverse(model) * inverse(projection). You get the idea!
-
-[This article](http://antongerdelan.net/opengl/raycasting.html) actually does a really, really good job of explaining what we are about to talk about.
-
 ##Un-project
 
-It's time to implement an "Unproject" function. I'm adding this to my __Collisions.cs__ file. 
+It's time to implement an "Unproject" function. I'm adding this to my __Matrix4.cs__ file, as it is a matrix function.
+
+The unproject function takes 4 arguments. The first one is a ```Vector3``` that is the screen space position of the mouse. Of course, screen space mouse only has an 
 
 ```cs
+public static Vector3 UnProject(Vector3 windowCoords, Matrix4 modelView, Matrix4 projection, float[] viewPort) {
+    // First, convert from window coordinates to NDC coordinates
+    Vector4 ndcCoords = new Vector4(windowCoords.X, windowCoords.Y, windowCoords.Z, 1.0f);
+    ndcCoords.X = (ndcCoords.X - viewPort[0]) / viewPort[2]; // Range 0 to 1: (windowX - viewX) / viewWidth
+    ndcCoords.Y = (ndcCoords.Y - viewPort[1]) / viewPort[3]; // Range 0 to 1: (windowY - viewY) / viewHeight
+    // Remember, NDC ranges from -1 to 1, not 0 to 1
+    ndcCoords.X = ndcCoords.X * 2f - 1f; // Range: -1 to 1
+    ndcCoords.Y = 1f - ndcCoords.Y * 2f; // Range: -1 to 1 - Flipped!
+    ndcCoords.Z = ndcCoords.Z * 2f - 1f; // Range: -1 to 1
 
+    // Next, from NDC space to eye / view space.
+    // We get here by multiplying the inverse of the projection matrix
+    // by NDC coords. Note, this leaves a scalar in the W component!
+    Vector4 eyeCoords = Matrix4.Inverse(projection) * ndcCoords;
+
+    // Next, from eye space to world space.
+    // Remember, eye space assumes the camera is at the center of the world,
+    // this is not the case, let's move the actual point into world space
+    Vector4 worldCoords = Matrix4.Inverse(modelView) * eyeCoords;
+
+    // Finally, undo the perspective divide!
+    // When we multiplied by the inverse of the projection matrix, that
+    // multiplication left the inverse of the perspective divide in the 
+    // W component of the resulting vector. This could be 0
+    if (Math.Abs(0.0f - worldCoords.W) > 0.00001f) {
+        // This is the same as dividing every component by W
+        worldCoords *= 1.0f / worldCoords.W;
+    }
+
+    // Now we have a proper 4D vector with a W of 1 (or 0)
+    return new Vector3(worldCoords.X, worldCoords.Y, worldCoords.Z);
+}
 ```
