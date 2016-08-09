@@ -80,6 +80,8 @@ We're going to implement a unit test that will show you how to unproject a point
 
 Move your mouse around the screen, when it is over the cube being rendered, a red sphere should render in world space representing WHERE on the cube your mouse is:
 
+![UnProject](unproject_unit_test.png)
+
 ```cs
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
