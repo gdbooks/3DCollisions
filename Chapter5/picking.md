@@ -82,6 +82,24 @@ Move your mouse around the screen, when it is over the cube being rendered, a re
 
 ![UnProject](unproject_unit_test.png)
 
+Before we implement the unit test, i want to change the ```Render``` function of the ```Scene``` class to take a bool. This bool will determine if debug geometry is rendered or not.
+
+```cs
+public void Render(bool debug) {
+    RootObject.Render();
+    if (debug) {
+        GL.Disable(EnableCap.Lighting);
+        GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+        Octree.DebugRender();
+        GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+        Octree.DebugRenderOnlyVisitedNodes();
+        GL.Enable(EnableCap.Lighting);
+    }
+}
+```
+
+Now, onto the actual unit!
+
 ```cs
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
@@ -139,7 +157,7 @@ namespace CollisionDetectionSelector.Samples {
             DrawOrigin();
 
             GL.Enable(EnableCap.Lighting);
-            scene.Render(false); // TODO: DOCUMENT THIS!
+            scene.Render(false);
             GL.Disable(EnableCap.Lighting);
 
             float[] rawModelView = new float[16];
