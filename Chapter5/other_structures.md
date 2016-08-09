@@ -12,6 +12,12 @@ Once you have built up all chunks, and PVS sets for each chunk at runtime it's j
 
 ### Kd-Tree
 
-A [kd-tree, short for k-dimensional tree](https://en.wikipedia.org/wiki/K-d_tree) is often used for large outdoor games (Like grand theft auto or far cry)
+A [kd-tree, short for k-dimensional tree](https://en.wikipedia.org/wiki/K-d_tree) is often used for large outdoor games (Like grand theft auto or far cry).
+
+In practice, a kd-tree works very similar to the BVH structure we created, just on a larger scene scale, like the Octree. The kd-tree is shaken, so the number of children is not exact. There is one major difference between the kd-tree and things we implemented. Unlike our things, the KD-tree is not evenly split.
+
+Instead of getting split down the middle, like an octree you split a kd tree according to some heuristic. Usually, polygon count. This leaves the tree divided heavily where it counts, and not very much where it doesn't.
+
+![KD-Tree](KDtree.png)
 
 ### Portals
