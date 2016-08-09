@@ -215,7 +215,7 @@ Finally, it's worth noting, we use an overload of raycast that returns a point, 
 float t = -1;
 bool result = Raycast(ray, aabb, out t);
 if (raycast) {
-  Point hitPoint = new Point(ray.Position.ToVector() + ray.Normal * t);
+  Point hitPoint = new Point(ray.Position + ray.Normal * t);
 return result;
 }
 else { // Not hit, ofscreen?
