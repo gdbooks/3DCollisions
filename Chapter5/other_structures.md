@@ -12,4 +12,6 @@ Once you have built up all chunks, and PVS sets for each chunk at runtime it's j
 
 ### Kd-Tree
 
+A [kd-tree, short for k-dimensional tree](https://en.wikipedia.org/wiki/K-d_tree) is often used for large outdoor games (Like grand theft auto or far cry)
+
 ### Portals
