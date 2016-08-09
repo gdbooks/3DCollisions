@@ -179,3 +179,30 @@ namespace CollisionDetectionSelector.Samples {
     }
 }
 ```
+
+### Things to note
+
+In the above example we store the Projection matrix, ModelView matrix and Viewport as member variables:
+
+```cs
+Matrix4 modelView = new Matrix4();
+Matrix4 projection = new Matrix4();
+float[] viewport = new float[4];
+```
+
+This is because we use them in the ```Update``` function, but we can only retrieve their values in the ```Render``` function. This is how we get data from one function into the other. Let's take a quick look at how they are retrieved:
+
+```cs
+float[] rawModelView = new float[16];
+GL.GetFloat(GetPName.ModelviewMatrix, rawModelView);
+
+float[] rawProjection = new float[16];
+GL.GetFloat(GetPName.ProjectionMatrix, rawProjection);
+
+GL.GetFloat(GetPName.Viewport, viewport);
+
+modelView = Matrix4.Transpose(new Matrix4(rawModelView));
+projection = Matrix4.Transpose(new Matrix4(rawProjection));
+```
+
+The ```GL.GetFloat```
