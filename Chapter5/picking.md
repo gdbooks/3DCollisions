@@ -212,13 +212,14 @@ The viewport might seem like a bit of black magic, considering we don't set it t
 Finally, it's worth noting, we use an overload of raycast that returns a point, not t. If we just had t we could still find the point like so:
 
 ```cs
+Point hitPoint = null;
 float t = -1;
 bool result = Raycast(ray, aabb, out t);
 if (raycast) {
-  Point hitPoint = new Point(ray.Position + ray.Normal * t);
-return result;
+    hitPoint = new Point(ray.Position + ray.Normal * t);
 }
 else { // Not hit, ofscreen?
+    hitPoint = new Point(-5000, -5000, -5000);
 }
 
 ```
