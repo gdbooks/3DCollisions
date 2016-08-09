@@ -26,4 +26,4 @@ Portals are mainly used to cull indoor scenes. The tought is, if you are indoors
 
 Portals are a natural evolution of the PVS algorithm. 
 
-![PORTAL](occlusion_fig_02a.png)
+![PORTAL](occlusion_fig_02a.gif)
