@@ -16,7 +16,28 @@ Going from world space to screen space (What openGL does) is called __Projection
 
 It's time to implement an "Unproject" function. I'm adding this to my __Matrix4.cs__ file, as it is a matrix function.
 
-The unproject function takes 4 arguments. The first one is a ```Vector3``` that is the screen space position of the mouse. Of course, screen space mouse only has an 
+The unproject function takes 4 arguments. The first one is a ```Vector3``` that is the screen space position of the mouse. Of course, screen space mouse only has an X and a Y coordiante! What is Z used for? Z represents WHERE in space we want to get the unprojected point. A Z of 0 is the near clip plane of the camera. A Z of 1 is the far clip plane of the camera.
+
+Next up, we take the current view and projection matrices. These are self explanatory. Finally, we take a 4 component float array that is the screen viewport. It holds the x, y, width and height of the viewport, relative to the game window. We need this to be able to normalize the mouse screen coords.
+
+The actual unproject pipeline works like this:
+
+1. Normalize screen space X and Y
+  * Simply divide the offset X and Y by screen Width and height 
+2. Transform the normalized vector into NDC Space
+  * NDC space is -1 to 1, not 0 to 1 like normalized space. 
+3. Transform the NDC space vector into eye / view space
+  * Multiply by the inverse of the projection matrix.
+  * This will leave the inverse perspectiv divide in the W component
+  * Remember, eye space is the world as if the camera was at it's center
+4. Transform the eye space vector into world space
+  *  Multiply by the inverse of the modelView matrix
+  *  This will leave the point in proper world space
+  *  The W component from step 3 remains unchanged
+5. Compensate for perspective division
+  * Diide the X, Y and Z components by the W component acquired in step 3 
+
+I'll provide the basic implementation here
 
 ```cs
 public static Vector3 UnProject(Vector3 windowCoords, Matrix4 modelView, Matrix4 projection, float[] viewPort) {
