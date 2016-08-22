@@ -253,3 +253,10 @@ public void Pivot(float yaw, float pitch) {
     // TODO: Implement
 }
 ```
+
+Before we implement anything, let's add the code to ```CameraSample``` that calls these methods. That way you can test one method as a time as you are implementing each.
+
+### Implement Pan
+
+Pan is simple. You have to modify the position vector. Basically, any horizontal movement will modify the horizontal vector along the right normal by that amount. Any vertical movement should modify the position vector along the up normal by that amount. If this is confusing (I can't think of a better way to explain it) talk to me.
+
