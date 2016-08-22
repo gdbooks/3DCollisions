@@ -294,5 +294,5 @@ Pan is simple. You have to modify the position vector. Basically, any horizontal
 
 Zoom works the same way pan does. But, instead of moving on the right or up normals, zoom works along the forward normal
 
-
+### Implement Pivot
 
