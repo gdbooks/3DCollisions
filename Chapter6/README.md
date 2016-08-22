@@ -66,6 +66,8 @@ namespace CollisionDetectionSelector.Samples {
 
 This is a simple scene with a bunch of cubes, should look like this when you run the app
 
+![look_at_sample_000.png](look_at_sample_000.png)
+
 ## The Algorithm
 
 CREATE THE SCENE
