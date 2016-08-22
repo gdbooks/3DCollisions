@@ -15,15 +15,15 @@ code
 Add the ```Frustum``` getter to the ```Camera``` class
 
 ```cs
-        public Plane[] Frustum {
-            get {
-                Plane[] frustum = new Plane[6];
+public Plane[] Frustum {
+    get {
+        Plane[] frustum = new Plane[6];
 
-                // TODO: Populate all 6 planes
+        // TODO: Populate all 6 planes
 
-                return frustum;
-            }
-        }
+        return frustum;
+    }
+}
 ```
 
 And provide an implementation for it!
