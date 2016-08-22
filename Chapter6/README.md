@@ -213,6 +213,21 @@ Add the following unit test code to the end of the scene class (```CameraSample`
             }
 ```
 
+And change the render function to use the cameras matrix:
+
+```cs
+        public override void Render() {
+            GL.LoadMatrix(camera.ViewMatrix.OpenGL);
+            DrawOrigin();
+
+            GL.Enable(EnableCap.Lighting);
+            scene.Render(false);
+            GL.Disable(EnableCap.Lighting);
+        }
+```
+
+If no errors are thrown, your scene should look like this:
+
 ## Test it!
 
 
