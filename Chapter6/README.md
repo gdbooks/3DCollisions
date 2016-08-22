@@ -290,3 +290,9 @@ public override void Update(float deltaTime) {
 
 Pan is simple. You have to modify the position vector. Basically, any horizontal movement will modify the horizontal vector along the right normal by that amount. Any vertical movement should modify the position vector along the up normal by that amount. If this is confusing (I can't think of a better way to explain it) talk to me.
 
+### Implement zoom
+
+Zoom works the same way pan does. But, instead of moving on the right or up normals, zoom works along the forward normal
+
+
+
