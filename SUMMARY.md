@@ -89,7 +89,6 @@
        * [AABB in Frustum](Chapter6/aabb_in_frustum.md)
        * [Rendering](Chapter6/render_frustum.md)
    * [Culling](Chapter6/culling.md)
-   * [Picking](Chapter6/picking.md)
 * [Further Research](Chapter7/README.md)
    * [Other Shapes](Chapter7/shapes.md)
        * [OBB](Chapter7/obb.md)
