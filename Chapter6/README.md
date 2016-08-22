@@ -70,7 +70,7 @@ This is a simple scene with a bunch of cubes, should look like this when you run
 
 ## The Algorithm
 
-Now it's time to implement the basic camera class. I'll provide the skeleton here, and there will be a TODO after the code.
+Now it's time to implement the basic camera class. Make a new __Camera.cs__ file. I'll provide the skeleton here, and there will be a TODO after the code.
 
 
 ```cs
@@ -177,105 +177,15 @@ namespace CollisionDetectionSelector.Primitives {
 }
 ```
 
+There are two TODO's in this code. First, you have to create a translation matrix based on the position of the camera. This should be fairly simple.
+
+Next, you must return a new orientation matrix. This one might be a little harder. You should be hand-filling in the elements of the matrix. Remember, the upper 3x3 matrix is the rotation matrix. Within the upper 3x3 matrix, each column is a basis vector. The X axis for example is the right vector. Also, becuase this is OpenGL, and we are in a right-handed coordinate system, you have to negate the forward basis when constructing the matrix.
+
+## Test it!
+
 
 
 CREATE CAMERA AND IMPLEMENT IN SCENE
-```cs
-using System;
-using OpenTK.Graphics.OpenGL;
-using Math_Implementation;
-
-namespace CollisionDetectionSelector.Primitives {
-    class Camera {
-        protected Vector3 position = new Vector3(0f, 0f, 0f);
-        protected Vector3 forward = new Vector3(0f, 0f, 1f);
-        protected Vector3 right = new Vector3(1f, 0f, 0f);
-        protected Vector3 up = new Vector3(0f, 1f, 0f);
-        protected bool worldDirty = true;
-        protected bool viewDirty = true;
-        protected Matrix4 cachedWorld = new Matrix4();
-        protected Matrix4 cachedView = new Matrix4();
-
-        public Matrix4 Translation {
-            get {
-                return Matrix4.Translate(position);
-            }
-        }
-
-        public Matrix4 Orientation {
-            get {
-                Matrix4 orientation = new Matrix4( 
-                    right.X, up.X, -forward.X, 0.0f,
-                    right.Y, up.Y, -forward.Y, 0.0f,
-                    right.Z, up.Z, -forward.Z, 0.0f,
-                    0.0f, 0.0f, 0.0f, 1.0f);
-
-                return orientation;
-            }
-        }
-
-        public Matrix4 WorldMatrix
-        {
-            get
-            {
-                if (worldDirty) {
-                    cachedWorld = Translation * Orientation;
-                }
-                worldDirty = false;
-                return cachedWorld;
-            }
-        }
-
-        public Matrix4 ViewMatrix
-        {
-            get
-            {
-                if (viewDirty) {
-                    cachedView = Matrix4.Inverse(Translation * Orientation);
-                }
-                viewDirty = false;
-                return cachedView;
-            }
-        }
-
-        public Point Position {
-            get {
-                return new Point(position.X, position.Y, position.Z);
-            }
-        }
-
-        public Vector3 Forward {
-            get {
-                return new Vector3(forward.X, forward.Y, forward.Z);
-            }
-        }
-
-        public Vector3 Right {
-            get {
-                return new Vector3(right.X, right.Y, right.Z);
-            }
-        }
-
-        public Vector3 Up {
-            get {
-                return new Vector3(up.X, up.Y, up.Z);
-            }
-        }
-
-        public void LookAt(Vector3 camPosition, Vector3 camTarget, Vector3 camUp) {
-            worldDirty = true;
-            viewDirty = true;
-
-            forward = Vector3.Normalize(camTarget - camPosition);
-            right = Vector3.Normalize(Vector3.Cross(forward, camUp));
-            up = Vector3.Cross(right, forward);
-
-            // Set to a copy, not a reference!
-            position = new Vector3(camPosition.X, camPosition.Y, camPosition.Z);
-        }
-    }
-}
-```
 
 ```cs
 using OpenTK.Graphics.OpenGL;
