@@ -9,6 +9,7 @@ So far, we've set the view matrix of every example scene manually. Now, it's tim
 ## The Algorithm
 
 CREATE THE SCENE
+
 ```cs
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
@@ -60,7 +61,163 @@ namespace CollisionDetectionSelector.Samples {
         }
     }
 }
+```
 
+CREATE CAMERA AND IMPLEMENT IN SCENE
+```cs
+using System;
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+
+namespace CollisionDetectionSelector.Primitives {
+    class Camera {
+        protected Vector3 position = new Vector3(0f, 0f, 0f);
+        protected Vector3 forward = new Vector3(0f, 0f, 1f);
+        protected Vector3 right = new Vector3(1f, 0f, 0f);
+        protected Vector3 up = new Vector3(0f, 1f, 0f);
+        protected bool worldDirty = true;
+        protected bool viewDirty = true;
+        protected Matrix4 cachedWorld = new Matrix4();
+        protected Matrix4 cachedView = new Matrix4();
+
+        public Matrix4 Translation {
+            get {
+                return Matrix4.Translate(position);
+            }
+        }
+
+        public Matrix4 Orientation {
+            get {
+                Matrix4 orientation = new Matrix4( 
+                    right.X, up.X, -forward.X, 0.0f,
+                    right.Y, up.Y, -forward.Y, 0.0f,
+                    right.Z, up.Z, -forward.Z, 0.0f,
+                    0.0f, 0.0f, 0.0f, 1.0f);
+
+                return orientation;
+            }
+        }
+
+        public Matrix4 WorldMatrix
+        {
+            get
+            {
+                if (worldDirty) {
+                    cachedWorld = Translation * Orientation;
+                }
+                worldDirty = false;
+                return cachedWorld;
+            }
+        }
+
+        public Matrix4 ViewMatrix
+        {
+            get
+            {
+                if (viewDirty) {
+                    cachedView = Matrix4.Inverse(Translation * Orientation);
+                }
+                viewDirty = false;
+                return cachedView;
+            }
+        }
+
+        public Point Position {
+            get {
+                return new Point(position.X, position.Y, position.Z);
+            }
+        }
+
+        public Vector3 Forward {
+            get {
+                return new Vector3(forward.X, forward.Y, forward.Z);
+            }
+        }
+
+        public Vector3 Right {
+            get {
+                return new Vector3(right.X, right.Y, right.Z);
+            }
+        }
+
+        public Vector3 Up {
+            get {
+                return new Vector3(up.X, up.Y, up.Z);
+            }
+        }
+
+        public void LookAt(Vector3 camPosition, Vector3 camTarget, Vector3 camUp) {
+            worldDirty = true;
+            viewDirty = true;
+
+            forward = Vector3.Normalize(camTarget - camPosition);
+            right = Vector3.Normalize(Vector3.Cross(forward, camUp));
+            up = Vector3.Cross(right, forward);
+
+            // Set to a copy, not a reference!
+            position = new Vector3(camPosition.X, camPosition.Y, camPosition.Z);
+        }
+    }
+}
+```
+
+```cs
+using OpenTK.Graphics.OpenGL;
+using Math_Implementation;
+using CollisionDetectionSelector.Primitives;
+using CollisionDetectionSelector;
+
+namespace CollisionDetectionSelector.Samples {
+    class CameraSample : Application {
+        Scene scene = new Scene();
+        OBJLoader cube = null;
+        Camera camera = new Camera();
+
+        void AddCubeToSceneRoot(Vector3 position, Vector3 scale) {
+            scene.RootObject.Children.Add(new OBJ(cube));
+            int count = scene.RootObject.Children.Count - 1;
+            scene.RootObject.Children[count].Parent = scene.RootObject;
+            scene.RootObject.Children[count].Position = position;
+            scene.RootObject.Children[count].Scale = scale;
+        }
+
+        public override void Intialize(int width, int height) {
+            GL.Enable(EnableCap.DepthTest);
+            GL.Enable(EnableCap.Lighting);
+            GL.Enable(EnableCap.Light0);
+            GL.PointSize(5f);
+
+            GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0.5f, -0.5f, 0.5f, 0.0f });
+            GL.Light(LightName.Light0, LightParameter.Ambient, new float[] { 0f, 1f, 0f, 1f });
+            GL.Light(LightName.Light0, LightParameter.Diffuse, new float[] { 0f, 1f, 0f, 1f });
+            GL.Light(LightName.Light0, LightParameter.Specular, new float[] { 1f, 1f, 1f, 1f });
+
+            scene.Initialize(7f);
+            cube = new OBJLoader("Assets/cube.obj");
+
+            AddCubeToSceneRoot(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(50.0f, 1.0f, 50.0f));
+            for (int i = 0; i < 10; ++i) {
+                for (int j = 0; j < 10; ++j) {
+                    AddCubeToSceneRoot(new Vector3(25 - i * 5, 0.0f, 25 - j * 5), new Vector3(1.0f, 5.0f, 1.0f));
+                }
+            }
+
+            camera.LookAt(new Vector3(50.0f, 20.0f, 50.0f), new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+
+            Matrix4 camView = camera.ViewMatrix;
+        }
+
+        public override void Render() {
+            //base.Render();
+            GL.LoadMatrix(camera.ViewMatrix.OpenGL);
+            DrawOrigin();
+
+            GL.Enable(EnableCap.Lighting);
+            scene.Render(false);
+            GL.Disable(EnableCap.Lighting);
+        }
+    }
+}
 ```
 
 ## On Your Own
