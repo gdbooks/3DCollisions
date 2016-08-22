@@ -232,4 +232,24 @@ If no errors are thrown, your scene should have a slightly different perspective
 
 ## Interaction
 
-Finally, lets make the camera interactive! There are 3 key motions that the camera will need to do. The left mouse button will __Pan__, the middle mouse wheel will __Zoom__ and the right mouse button will __Pivot__.
+Finally, lets make the camera interactive! There are 3 key motions that the camera will need to do. The left mouse button will __Pan__, the middle mouse wheel will __Zoom__ and the right mouse button will __Pivot__. With that estabolished, add the following functions to the __Camera__ class.
+
+```cs
+public void Pan(float horizontal, float vertical) {
+    worldDirty = true;
+    viewDirty = true;
+    // TODO: Implement
+}
+
+public void Zoom(float value) {
+    worldDirty = true;
+    viewDirty = true;
+    // TODO: Implement
+}
+
+public void Pivot(float yaw, float pitch) {
+    worldDirty = true;
+    viewDirty = true;
+    // TODO: Implement
+}
+```
