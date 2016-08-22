@@ -296,4 +296,9 @@ Zoom works the same way pan does. But, instead of moving on the right or up norm
 
 ### Implement Pivot
 
-Pivot is by far the hardest camera transform we have to do. But, we can make it happen. The key is, there are actually two pivots happening. One about the yaw and one about the pitch.
+Pivot is by far the hardest camera transform we have to do. But, we can make it happen. The key is, there are actually two pivots happening. One about the yaw and one about the pitch. We can actually model these.
+
+* First, multiply the forward vector by an anlge axis.
+  * The anlge is the yaw, the axis is the up vector
+* Next, multiply the forward vector by another angle axis
+  * The angle is the pitch, the axis is the right vector 
