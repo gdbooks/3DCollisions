@@ -6,9 +6,9 @@ So far, we've set the view matrix of every example scene manually. Now, it's tim
 * Right click + Drag - Rotate the camera around
 * Mouse wheel - Zoom the camera in and out 
 
-## The Algorithm
+## Getting Ready
 
-CREATE THE SCENE
+Let's set up a quick scene before we do anything
 
 ```cs
 using OpenTK.Graphics.OpenGL;
@@ -62,6 +62,12 @@ namespace CollisionDetectionSelector.Samples {
     }
 }
 ```
+
+## The Algorithm
+
+CREATE THE SCENE
+
+
 
 CREATE CAMERA AND IMPLEMENT IN SCENE
 ```cs
