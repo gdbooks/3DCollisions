@@ -23,7 +23,7 @@ Add the ```Frustum``` getter to the ```Camera``` class
 
                 return frustum;
             }
-        }d
+        }
 ```
 
 And provide an implementation for it!
