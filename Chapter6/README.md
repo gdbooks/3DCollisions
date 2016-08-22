@@ -232,4 +232,4 @@ If no errors are thrown, your scene should have a slightly different perspective
 
 ## Interaction
 
-Finally, lets make the camera interactive!
+Finally, lets make the camera interactive! There are 3 key motions that the camera will need to do. The left mouse button will __Pan__, the middle mouse wheel will __Zoom__ and the right mouse button will __Pivot__.
