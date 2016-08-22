@@ -80,10 +80,13 @@ using Math_Implementation;
 
 namespace CollisionDetectionSelector.Primitives {
     class Camera {
+        // Members to hold the position & orientation of the camera
         protected Vector3 position = new Vector3(0f, 0f, 0f);
         protected Vector3 forward = new Vector3(0f, 0f, 1f);
         protected Vector3 right = new Vector3(1f, 0f, 0f);
         protected Vector3 up = new Vector3(0f, 1f, 0f);
+        
+        // Cached matrices to avoid work every frame
         protected bool worldDirty = true;
         protected bool viewDirty = true;
         protected Matrix4 cachedWorld = new Matrix4();
@@ -91,27 +94,25 @@ namespace CollisionDetectionSelector.Primitives {
 
         public Matrix4 Translation {
             get {
-                return Matrix4.Translate(position);
+                // TODO: Return a translation matrix!
             }
         }
 
         public Matrix4 Orientation {
             get {
-                Matrix4 orientation = new Matrix4( 
-                    right.X, up.X, -forward.X, 0.0f,
-                    right.Y, up.Y, -forward.Y, 0.0f,
-                    right.Z, up.Z, -forward.Z, 0.0f,
-                    0.0f, 0.0f, 0.0f, 1.0f);
-
-                return orientation;
+                // TODO: Return an orientation matrix
+                // based on forward, right and up!
             }
         }
-
+        
+        // The World matrix is a combination of the translation and orientation matrices
         public Matrix4 WorldMatrix
         {
             get
             {
                 if (worldDirty) {
+                    // Remember, POST MULTIPLICATION!
+                    // That means rotate first, translate second!
                     cachedWorld = Translation * Orientation;
                 }
                 worldDirty = false;
@@ -119,6 +120,7 @@ namespace CollisionDetectionSelector.Primitives {
             }
         }
 
+        // The view is just the inverse of the world matrix.
         public Matrix4 ViewMatrix
         {
             get
@@ -131,30 +133,35 @@ namespace CollisionDetectionSelector.Primitives {
             }
         }
 
+        // Read Only Position
         public Point Position {
             get {
                 return new Point(position.X, position.Y, position.Z);
             }
         }
 
+        // Read only forward
         public Vector3 Forward {
             get {
                 return new Vector3(forward.X, forward.Y, forward.Z);
             }
         }
 
+        // Read only right
         public Vector3 Right {
             get {
                 return new Vector3(right.X, right.Y, right.Z);
             }
         }
-
+        
+        // Read only up
         public Vector3 Up {
             get {
                 return new Vector3(up.X, up.Y, up.Z);
             }
         }
-
+        
+        // Does the same thing that Matrix4.LookAt does
         public void LookAt(Vector3 camPosition, Vector3 camTarget, Vector3 camUp) {
             worldDirty = true;
             viewDirty = true;
