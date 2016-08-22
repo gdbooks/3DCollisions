@@ -254,7 +254,37 @@ public void Pivot(float yaw, float pitch) {
 }
 ```
 
-Before we implement anything, let's add the code to ```CameraSample``` that calls these methods. That way you can test one method as a time as you are implementing each.
+Before we implement anything, let's add the code to ```CameraSample``` that calls these methods. That way you can test one method as a time as you are implementing each. Add the following ```Update``` method to the ```CameraSample``` scene:
+
+```cs
+public override void Update(float deltaTime) {
+    float xDelta = (float)Window.Mouse.XDelta / (float)Window.Width;
+    float yDelta = (float)Window.Mouse.YDelta / (float)Window.Height;
+    float zoom = (float)Window.Mouse.WheelDelta;
+
+    if (Window.Mouse[OpenTK.Input.MouseButton.Left]) {
+        if (xDelta != 0.0f || yDelta != 0.0f) {
+            float xPan = xDelta * deltaTime * -900.0f;
+            float yPan = yDelta * deltaTime * 900.0f;
+            camera.Pan(xPan, yPan);
+        }
+    }
+
+    if (zoom != 0) {
+        zoom = zoom < 0 ? -1f : zoom;
+        zoom = zoom > 0 ? 1f : zoom;
+        camera.Zoom(zoom * deltaTime * 50.0f);
+    }
+
+    if (Window.Mouse[OpenTK.Input.MouseButton.Right]) {
+        if (xDelta != 0.0f || yDelta != 0.0f) {
+            float xPan = xDelta * deltaTime * -900.0f;
+            float yPan = yDelta * deltaTime * 900.0f;
+            camera.Pivot(xPan, yPan);
+        }
+    }
+}
+```
 
 ### Implement Pan
 
