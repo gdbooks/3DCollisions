@@ -226,7 +226,9 @@ And change the render function to use the cameras matrix:
         }
 ```
 
-If no errors are thrown, your scene should look like this:
+If no errors are thrown, your scene should have a slightly different perspective and look like this:
+
+![look_at_sample_001.png](look_at_sample_001.png)
 
 ## Test it!
 
