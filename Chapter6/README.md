@@ -181,6 +181,38 @@ There are two TODO's in this code. First, you have to create a translation matri
 
 Next, you must return a new orientation matrix. This one might be a little harder. You should be hand-filling in the elements of the matrix. Remember, the upper 3x3 matrix is the rotation matrix. Within the upper 3x3 matrix, each column is a basis vector. The X axis for example is the right vector. Also, becuase this is OpenGL, and we are in a right-handed coordinate system, you have to negate the forward basis when constructing the matrix.
 
+Add the following unit test code to the end of the scene class (```CameraSample```) Initialize function
+
+```cs
+// Set the camera look at!
+            camera.LookAt(new Vector3(50.0f, 20.0f, 50.0f), new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+
+            // Unit tests!
+            Matrix4 expectedTrans = new Matrix4();
+            expectedTrans[0, 3] = expectedTrans[2, 3] = 50f;
+            expectedTrans[1, 3] = 20f;
+            if (expectedTrans != camera.Translation) {
+                System.Console.WriteLine("Error! Translation matrix is wrong!");
+            }
+
+            Matrix4 expectedRot = new Matrix4();
+            expectedRot[0, 0] = 0.7071068f;
+            expectedRot[2, 0] = -expectedRot[0, 0];
+            expectedRot[1, 1] = 0.9622504f;
+            expectedRot[2, 2] = expectedRot[0, 2] = 0.6804138f;
+            expectedRot[0, 1] = expectedRot[2, 1] = -0.1924501f;
+            expectedRot[1, 2] = 0.2721655f;
+            if (expectedRot != camera.Orientation) {
+                System.Console.WriteLine("Error! Rotation matrix is wrong!");
+            }
+
+            Matrix4 camView = camera.ViewMatrix;
+            Matrix4 matView = Matrix4.LookAt(new Vector3(50, 20, 50), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
+            if (camView != matView) {
+                System.Console.WriteLine("ERROR! expected camera and matrix view's to be the same!");
+            }
+```
+
 ## Test it!
 
 
@@ -188,62 +220,7 @@ Next, you must return a new orientation matrix. This one might be a little harde
 CREATE CAMERA AND IMPLEMENT IN SCENE
 
 ```cs
-using OpenTK.Graphics.OpenGL;
-using Math_Implementation;
-using CollisionDetectionSelector.Primitives;
-using CollisionDetectionSelector;
 
-namespace CollisionDetectionSelector.Samples {
-    class CameraSample : Application {
-        Scene scene = new Scene();
-        OBJLoader cube = null;
-        Camera camera = new Camera();
-
-        void AddCubeToSceneRoot(Vector3 position, Vector3 scale) {
-            scene.RootObject.Children.Add(new OBJ(cube));
-            int count = scene.RootObject.Children.Count - 1;
-            scene.RootObject.Children[count].Parent = scene.RootObject;
-            scene.RootObject.Children[count].Position = position;
-            scene.RootObject.Children[count].Scale = scale;
-        }
-
-        public override void Intialize(int width, int height) {
-            GL.Enable(EnableCap.DepthTest);
-            GL.Enable(EnableCap.Lighting);
-            GL.Enable(EnableCap.Light0);
-            GL.PointSize(5f);
-
-            GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0.5f, -0.5f, 0.5f, 0.0f });
-            GL.Light(LightName.Light0, LightParameter.Ambient, new float[] { 0f, 1f, 0f, 1f });
-            GL.Light(LightName.Light0, LightParameter.Diffuse, new float[] { 0f, 1f, 0f, 1f });
-            GL.Light(LightName.Light0, LightParameter.Specular, new float[] { 1f, 1f, 1f, 1f });
-
-            scene.Initialize(7f);
-            cube = new OBJLoader("Assets/cube.obj");
-
-            AddCubeToSceneRoot(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(50.0f, 1.0f, 50.0f));
-            for (int i = 0; i < 10; ++i) {
-                for (int j = 0; j < 10; ++j) {
-                    AddCubeToSceneRoot(new Vector3(25 - i * 5, 0.0f, 25 - j * 5), new Vector3(1.0f, 5.0f, 1.0f));
-                }
-            }
-
-            camera.LookAt(new Vector3(50.0f, 20.0f, 50.0f), new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
-
-            Matrix4 camView = camera.ViewMatrix;
-        }
-
-        public override void Render() {
-            //base.Render();
-            GL.LoadMatrix(camera.ViewMatrix.OpenGL);
-            DrawOrigin();
-
-            GL.Enable(EnableCap.Lighting);
-            scene.Render(false);
-            GL.Disable(EnableCap.Lighting);
-        }
-    }
-}
 ```
 
 
