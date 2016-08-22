@@ -302,3 +302,6 @@ Pivot is by far the hardest camera transform we have to do. But, we can make it 
   * The anlge is the yaw, the axis is the up vector
 * Next, multiply the forward vector by another angle axis
   * The angle is the pitch, the axis is the right vector 
+* Finally, normalize the 3 direction vectors 
+  * Similar to how the ```LookAt``` function does this.
+  * Major difference is you already have forward, you just need to normalize it 
