@@ -14,6 +14,8 @@ To recap, the plane equation is
 a * x + b * y + c * z + d = 0
 ```
 
+To extract the planes of a frustum, you need the viewProjection matrix, which you get by multiplying the projection and view matrices together. The plane values can be found by adding or subtracting one of the first three rows of the viewProjection matrix from the fourth row.
+
 ## On Your Own
 
 Add the ```Frustum``` getter to the ```Camera``` class
