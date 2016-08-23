@@ -81,11 +81,11 @@ public Plane[] Frustum {
 And provide an implementation for it! In order for the below unit test to pass, you have to populate your frustum as follows:
 
 * frustum[0] = left plane
-* frustum[0] = right plane
-* frustum[0] = bottom plane
-* frustum[0] = top plane
-* frustum[0] = near plane
-* frustum[0] = far plane
+* frustum[1] = right plane
+* frustum[2] = bottom plane
+* frustum[3] = top plane
+* frustum[4] = near plane
+* frustum[5] = far plane
 
 ### Unit Test
 
