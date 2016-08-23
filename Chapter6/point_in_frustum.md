@@ -28,12 +28,16 @@ And provide an implementation for it!
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
-
-description of unit test
-
-![UNIT](image)
+Add the following unit test at the end of the ```Initialize``` function in ```CameraSample```.
 
 ```cs
-code
+if (!Collisions.Intersects(new Point(), camera.Frustum)) {
+    System.Console.WriteLine("Error with point in frustum!");
+}
+if (Collisions.Intersects(new Point(-500,-500,-500), camera.Frustum)) {
+    System.Console.WriteLine("Error with point in frustum!");
+}
+if (!Collisions.Intersects(new Point(2, 30, 4), camera.Frustum)) {
+    System.Console.WriteLine("Error with point in frustum!");
+}
 ```
