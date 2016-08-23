@@ -2,10 +2,22 @@
 
 Testing if an AABB is within a frustum is a bit of a brute force method. We first have to get every vertex of the AABB, this part is simple enough. We alrady did this when we [split the BVH tree](https://gdbooks.gitbooks.io/3dcollisions/content/Chapter4/bvh_split.html). We just need the 8 points.
 
+Once we have the 8 points it's a nested loop. Foe each point, we test the point against each face of the frustum with a half space test. If, for any plane every single point is behind the plane, the cube is outside of the frustum. Otherwise, we know that at least one point is in front of at least one plane, and we have an intersection.
+
 ## The Algorithm
 
 ```cs
-code
+foreach vertex in AABB {
+    int inside = 0;
+    foreach plane in frustum {
+        if () {
+            inside += 1
+        }
+    }        
+    if inside == 0 {// All points outside!
+        return false
+    }
+}  
 ```
 
 ## On Your Own
