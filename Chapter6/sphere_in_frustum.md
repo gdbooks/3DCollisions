@@ -31,7 +31,7 @@ And provide an implementation for it!
 
 ### Unit Test
 
-Add the following unit test to the end of the ```Initialize``` function of ```CameraSample``` scene
+Add the following unit test to the end of the ```Initialize``` function of ```CameraSample```
 
 ```cs
 if (!Collisions.Intersects(new Sphere(), camera.Frustum)) {
