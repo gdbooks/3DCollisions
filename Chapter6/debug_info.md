@@ -95,5 +95,5 @@ public override void Render() {
 
 If all is well, the number of rendered objects should be a constant 101.
 
-
+![Num Rendered](num_rendered_000.png)
 
