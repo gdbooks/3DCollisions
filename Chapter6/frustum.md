@@ -28,6 +28,39 @@ public Matrix4 ProjectionMatrix {
 }
 ```
 
+* __Left Plane__ Row 1 (addition)
+* __Right Plane__ Row 1 Negated (subtraction)
+* __Bottom Plane__ Row 2 (addition)
+* __Top Plane__ Row 2 Negated (subtraction)
+* __Near Plane__ Row 3 (addition)
+* __Far Plane__ Row 3 Negated (subtraction)
+
+So, assuming that matrix ```mp``` is the view-projection matrix, you could get the left and right planes like so:
+
+```cs
+Matrix4 mv =  perspective * view;
+
+Vector4 row1 = new Vector4(mv[0, 0], mv[0, 1], mv[0, 2], mv[0, 3]);
+Vector4 row4 = new Vector4(mv[3, 0], mv[3, 1], mv[3, 2], mv[3, 3]);
+
+Vector4 p1 = row4 + row1;
+Vector4 p2 = row4 - row1;
+
+Plane left = new Plane();
+left.n = new Vector3();
+left.n.X = p1.X;
+left.n.Y = p1.Y;
+left.n.Z = p1.Z;
+left.d = p1.w;
+
+Plane right = new Plane();
+right.n = new Vector3();
+right.n.X = p2.X;
+right.n.Y = p2.Y;
+right.n.Z = p2.Z;
+right.d = p2.w;
+```
+
 ## On Your Own
 
 Add the ```Frustum``` getter to the ```Camera``` class
