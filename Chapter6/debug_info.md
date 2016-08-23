@@ -61,3 +61,20 @@ private int ChildrenRender(bool normal,bool bvh, bool debug) {
 }
 ```
 
+Now we have to go one more up the call stack and change the ```Render``` function of __Scene.cs__ to also return how many objects where rendered:
+
+```cs
+public void Render() {
+    RootObject.Render();
+
+    GL.Disable(EnableCap.Lighting);
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+    Octree.DebugRender();
+    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+
+    Octree.DebugRenderOnlyVisitedNodes();
+
+    GL.Enable(EnableCap.Lighting);
+}
+```
+
