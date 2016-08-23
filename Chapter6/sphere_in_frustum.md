@@ -18,7 +18,13 @@ return true; // We're in
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+public static bool Intersects(Plane[] frustum, Sphere sphere) {
+    // TODO: Implement this
+}
+
+public static bool Intersects(Sphere sphere, Plane[] frustum) {
+    return Intersects(frustum, sphere);
+}
 ```
 
 And provide an implementation for it!
