@@ -119,3 +119,5 @@ for (int i = 0; i < 6; ++i) {
     }
 }
 ```
+
+All tests should pass before moving on to the next section.
