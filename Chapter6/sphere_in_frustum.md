@@ -1,6 +1,6 @@
 # Sphere In Frustum
 
-Doing the sphere in frustum is pretty easy. We already have a ```DistanceFromPlane``` function in our collision class. We want to check the distance of the sphere to every plane of the frustum. If the distance between the sphere and any frustum plane is less than the negative radius of the sphere (That is to say, its further behind the plane than the radius of the sphere), no collision has happened
+Doing the sphere in frustum is pretty easy. We already have a ```HalfSpaceTest``` function in our collision class. We want to check the distance of the sphere's space to every plane of the frustum. If the distance between the sphere and any frustum plane is less than the negative radius of the sphere (That is to say, its further behind the plane than the radius of the sphere), no collision has happened
 
 ## The Algorithm
 
