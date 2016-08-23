@@ -27,6 +27,7 @@ public Matrix4 ProjectionMatrix {
     }
 }
 ```
+Now that we have the projection matrix, we can resume extracting the planes
 
 * __Left Plane__ Row 1 (addition)
 * __Right Plane__ Row 1 Negated (subtraction)
@@ -38,7 +39,7 @@ public Matrix4 ProjectionMatrix {
 So, assuming that matrix ```mp``` is the view-projection matrix, you could get the left and right planes like so:
 
 ```cs
-Matrix4 mv =  perspective * view;
+Matrix4 mv =  ProjectionMatrix * view;
 
 Vector4 row1 = new Vector4(mv[0, 0], mv[0, 1], mv[0, 2], mv[0, 3]);
 Vector4 row4 = new Vector4(mv[3, 0], mv[3, 1], mv[3, 2], mv[3, 3]);
