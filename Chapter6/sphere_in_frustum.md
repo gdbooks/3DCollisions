@@ -6,9 +6,9 @@ Doing the sphere in frustum is pretty easy. We already have a ```DistanceFromPla
 
 ```cs
 for each plane of the frustum
-  distance = DistanceFromPlane(sphere.center, plane);
+  space = HalfSpaceTest(sphere.center, plane);
   // If the distance is < radius, the sphere is outside
-  if (distance < -radius)
+  if (space < -radius)
     return false; // We are outside!
 return true; // We're in
 ```
