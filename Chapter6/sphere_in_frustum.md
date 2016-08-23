@@ -31,12 +31,16 @@ And provide an implementation for it!
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
-
-description of unit test
-
-![UNIT](image)
+Add the following unit test to the end of the ```Initialize``` function of ```CameraSample``` scene
 
 ```cs
-code
+if (!Collisions.Intersects(new Sphere(), camera.Frustum)) {
+    System.Console.WriteLine("Error with sphere in frustum! 0");
+}
+if (Collisions.Intersects(new Sphere(-500, -500, -500, 1f), camera.Frustum)) {
+    System.Console.WriteLine("Error with sphere in frustum! 1");
+}
+if (!Collisions.Intersects(new Sphere(2, 30, 4, 4f), camera.Frustum)) {
+    System.Console.WriteLine("Error with sphere in frustum! 2");
+}
 ```
