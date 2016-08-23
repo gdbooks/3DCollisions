@@ -90,12 +90,32 @@ And provide an implementation for it! In order for the below unit test to pass, 
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
-
-description of unit test
-
-![UNIT](image)
+Add the following unit test at the bottom of the ```Initialize``` function of ```CameraSample```
 
 ```cs
-code
+ Plane[] frustum = new Plane[6];
+frustum[0] = new Plane(new Vector3(0.2381448f, -0.2721655f, -1.598973f), 73.4847f);
+frustum[1] = new Plane(new Vector3(-1.598973f, -0.2721655f, 0.2381448f), 73.4847f);
+frustum[2] = new Plane(new Vector3(-1.013747f, 1.394501f, -1.013747f), 73.4847f);
+frustum[3] = new Plane(new Vector3(-0.3470805f, -1.938832f, -0.3470805f), 73.4847f);
+frustum[4] = new Plane(new Vector3(-1.360841f, -0.5443366f, -1.360841f), 146.9509f);
+frustum[5] = new Plane(new Vector3((float)1.364946E-05, (float)5.453825E-06, (float)1.364946E-05), 0.0185318f);
+
+for (int i = 0; i < 6; ++i) {
+    if (camera.Frustum[i].Normal != frustum[i].Normal) {
+        if (Vector3.Normalize(camera.Frustum[i].Normal) == Vector3.Normalize(frustum[i].Normal)) {
+            System.Console.WriteLine("\tLooks like the normal of your frustum plane is NOT NORMALIZED!");
+        }
+        else {
+            System.Console.WriteLine("Detected error in frustum, plane " + i);
+        }
+        System.Console.WriteLine("\tExpected: " + camera.Frustum[i].Normal);
+        System.Console.WriteLine("\tGot: " + frustum[i].Normal);
+    }
+    if (System.Math.Abs(camera.Frustum[i].Distance - frustum[i].Distance) > 0.0001f) {
+        System.Console.WriteLine("Wrong distance for plane: " + i);
+        System.Console.WriteLine("\tExpected: " + camera.Frustum[i].Distance);
+        System.Console.WriteLine("\tGot: " + frustum[i].Distance);
+    }
+}
 ```
