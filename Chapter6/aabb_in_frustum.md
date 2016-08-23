@@ -1,6 +1,6 @@
-# TOPIC
+# AABB In Frustum
 
-Desctiption with images
+Testing if an AABB is within a frustum is a bit of a brute force method. We first have to get every vertex of the AABB, this part is simple enough
 
 ## The Algorithm
 
