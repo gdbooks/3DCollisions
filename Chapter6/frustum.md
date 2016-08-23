@@ -39,7 +39,7 @@ Now that we have the projection matrix, we can resume extracting the planes
 So, assuming that matrix ```mp``` is the view-projection matrix, you could get the left and right planes like so:
 
 ```cs
-Matrix4 mv =  ProjectionMatrix * view;
+Matrix4 mv =  ProjectionMatrix * ViewMatrix;
 
 Vector4 row1 = new Vector4(mv[0, 0], mv[0, 1], mv[0, 2], mv[0, 3]);
 Vector4 row4 = new Vector4(mv[3, 0], mv[3, 1], mv[3, 2], mv[3, 3]);
@@ -78,7 +78,14 @@ public Plane[] Frustum {
 }
 ```
 
-And provide an implementation for it!
+And provide an implementation for it! In order for the below unit test to pass, you have to populate your frustum as follows:
+
+* frustum[0] = left plane
+* frustum[0] = right plane
+* frustum[0] = bottom plane
+* frustum[0] = top plane
+* frustum[0] = near plane
+* frustum[0] = far plane
 
 ### Unit Test
 
