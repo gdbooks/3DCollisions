@@ -83,6 +83,7 @@
    * [Picking](Chapter5/picking.md)
    * [Other structures](Chapter5/other_structures.md)
 * [Camera](Chapter6/README.md)
+   * [Debug Info](Chapter6/debug_info.md) 
    * [Frustum](Chapter6/frustum.md)
        * [Point in Frustum](Chapter6/point_in_frustum.md)
        * [Sphere in Frustum](Chapter6/sphere_in_frustum.md)
