@@ -19,6 +19,7 @@ To extract the planes of a frustum, you need the viewProjection matrix, which yo
 Our camera class already has the ViewMatrix, but not the projection matrix! Let's fix that. Add the following getter to your ```Camera``` class. This getter will simply query OpenGL for the current projection matrix. This is similar to what we did in the picking example.
 
 ```cs
+
 public Matrix4 ProjectionMatrix {
     get {
         float[] rawProjection = new float[16];
