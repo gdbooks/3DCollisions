@@ -120,4 +120,6 @@ for (int i = 0; i < 6; ++i) {
 }
 ```
 
-All tests should pass before moving on to the next section.
+All tests should pass before moving on to the next section. 
+
+Sidenote, [This Article](http://www.flipcode.com/archives/Frustum_Culling.shtml) is generally considered the go-to resource on frsutum culling.
