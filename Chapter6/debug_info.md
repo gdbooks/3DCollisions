@@ -79,3 +79,21 @@ public int Render() {
 }
 ```
 
+Finally, we change the __Render__ function of ```CameraSample.cs``` to display how many objects are rendered in the window title.
+
+```cs
+public override void Render() {
+    GL.LoadMatrix(camera.ViewMatrix.OpenGL);
+    DrawOrigin();
+
+    GL.Enable(EnableCap.Lighting);
+    int numRendered = scene.Render(false);
+    Window.Title = "Rendered: " + numRendered;
+    GL.Disable(EnableCap.Lighting);
+}
+```
+
+If all is well, the number of rendered objects should be a constant 101.
+
+
+
