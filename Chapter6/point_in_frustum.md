@@ -13,7 +13,13 @@ code
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+public static bool Intersects(Plane[] frustum, Point point) {
+    // TODO: Implement this!
+}
+
+public static bool Intersects(Point point, Plane[] frustum) {
+    return Intersects(frustum, point);
+}
 ```
 
 And provide an implementation for it!
