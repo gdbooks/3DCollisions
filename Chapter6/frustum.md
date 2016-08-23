@@ -8,8 +8,10 @@ The frustum structure is actually an acceleration structure. It's a primitive sh
 
 If this all sounds a bit familiar, it should. We have actually done this exact same thing when we [made a frustum in OpenGL](https://gdbooks.gitbooks.io/legacyopengl/content/Chapter8/frustum.html).
 
+To recap, the plane equation is
+
 ```cs
-code
+a * x + b * y + c * z + d = 0
 ```
 
 ## On Your Own
