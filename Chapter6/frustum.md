@@ -63,20 +63,43 @@ right.n.Z = p2.Z;
 right.d = p2.w;
 ```
 
-## On Your Own
+## Fixing some things
 
-Add the ```Frustum``` getter to the ```Camera``` class
+Originally, the ```Frustum``` getter was a __On Your Own__ todo. However, i noticed a pretty big error with the way we did it previously on our OpenGL Implementation. So, i'm just going to provide the code for it and explain what was wrong. Add the following code to the ```Camera``` class:
 
 ```cs
-public Plane[] Frustum {
-    get {
-        Plane[] frustum = new Plane[6];
+private static Plane FromNumbers(Vector4 numbers) {
+            Vector3 abc = new Vector3(numbers.X, numbers.Y, numbers.Z);
+            float mag = abc.Length();
+            abc.Normalize();
 
-        // TODO: Populate all 6 planes
+            Plane p = new Plane();
+            p.Normal = abc;
+            p.Distance = numbers.W / mag;
+            return p;
+        }
 
-        return frustum;
-    }
-}
+        public Plane[] Frustum {
+            get {
+                Plane[] frustum = new Plane[6];
+
+                Matrix4 vp = ProjectionMatrix * ViewMatrix;
+
+                Vector4 row1 = new Vector4(vp[0, 0], vp[0, 1], vp[0, 2], vp[0, 3]);
+                Vector4 row2 = new Vector4(vp[1, 0], vp[1, 1], vp[1, 2], vp[1, 3]);
+                Vector4 row3 = new Vector4(vp[2, 0], vp[2, 1], vp[2, 2], vp[2, 3]);
+                Vector4 row4 = new Vector4(vp[3, 0], vp[3, 1], vp[3, 2], vp[3, 3]);
+
+                frustum[0] = FromNumbers(row4 + row1);
+                frustum[1] = FromNumbers(row4 - row1);
+                frustum[2] = FromNumbers(row4 + row2);
+                frustum[3] = FromNumbers(row4 - row2);
+                frustum[4] = FromNumbers(row4 + row3);
+                frustum[5] = FromNumbers(row4 - row3);
+
+                return frustum;
+            }
+        }
 ```
 
 And provide an implementation for it! In order for the below unit test to pass, you have to populate your frustum as follows:
