@@ -26,7 +26,13 @@ return true;
 Add the following function to the ```Collisions``` class:
 
 ```cs
-code
+public static bool Intersects(Plane[] frustum, AABB aabb) {
+    // TODO
+}
+
+public static bool Intersects(AABB aabb, Plane[] frustum) {
+    return Intersects(frustum, aabb);
+}
 ```
 
 And provide an implementation for it!
