@@ -34,7 +34,7 @@ Add the following unit test at the end of the ```Initialize``` function in ```Ca
 if (!Collisions.Intersects(new Point(), camera.Frustum)) {
     System.Console.WriteLine("Error with point in frustum! 0");
 }
-if (Collisions.Intersects(new Point(-500,-500,-500), camera.Frustum)) {
+if (Collisions.Intersects(new Point(-5000,-5000,-5000), camera.Frustum)) {
     System.Console.WriteLine("Error with point in frustum! 1");
 }
 if (!Collisions.Intersects(new Point(2, 30, 4), camera.Frustum)) {
