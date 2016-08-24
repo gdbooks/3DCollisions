@@ -114,4 +114,19 @@ public void ResetRenderFlag() {
 
 There is no real unit test, we're just going to make culling work in the ```CameraSample```.
 
-The ```Scene``` class already contains an ```Octree```, but it's WAY too small. Find where the scene is Initialized and change it from ```scene.Initialize(7f);``` to a bigger Octree ```scene.Initialize(70f);```
+The ```Scene``` class already contains an ```Octree```, but it's WAY too small. Find where the scene is Initialized and change it from ```scene.Initialize(7f);``` to a bigger Octree ```scene.Initialize(70f);```.
+
+Now, just because we have an Octree, does not mean anything is in it. Change the ```AddCubeToSceneRoot``` function so that it adds cubes not only into the hierarchy, but also the octree.
+
+```cs
+void AddCubeToSceneRoot(Vector3 position, Vector3 scale) {
+    scene.RootObject.Children.Add(new OBJ(cube));
+    int count = scene.RootObject.Children.Count - 1;
+    scene.RootObject.Children[count].Parent = scene.RootObject;
+    scene.RootObject.Children[count].Position = position;
+    scene.RootObject.Children[count].Scale = scale;
+
+    // Record object with spacial partitioning tree
+    scene.Octree.Insert(scene.RootObject.Children[count]);
+}
+```
