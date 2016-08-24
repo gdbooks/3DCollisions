@@ -37,7 +37,7 @@ Add the following unit test to the end of the ```Initialize``` function of ```Ca
 if (!Collisions.Intersects(new Sphere(), camera.Frustum)) {
     System.Console.WriteLine("Error with sphere in frustum! 0");
 }
-if (Collisions.Intersects(new Sphere(-500, -500, -500, 1f), camera.Frustum)) {
+if (Collisions.Intersects(new Sphere(-5000, -5000, -5000, 1f), camera.Frustum)) {
     System.Console.WriteLine("Error with sphere in frustum! 1");
 }
 if (!Collisions.Intersects(new Sphere(2, 30, 4, 4f), camera.Frustum)) {
