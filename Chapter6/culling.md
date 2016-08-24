@@ -40,9 +40,6 @@ public bool NonRecursiveRender(Plane[] frustum) {
     }
 
 
-    // We are either good to render, or out of bounds!
-    wasRendered = true;
-
     // Is the bounds of this obejct within the view?
     Sphere bounds = new Sphere();
     bounds.Position = new Point(
@@ -53,13 +50,14 @@ public bool NonRecursiveRender(Plane[] frustum) {
             System.Math.Abs(WorldMatrix[0, 0]), System.Math.Abs(WorldMatrix[1, 1])),
             System.Math.Abs(WorldMatrix[2, 2])));
     bounds.Radius = model.BoundingSphere.Radius * scalar;
+           
 
     if (!Collisions.Intersects(frustum, bounds)) {
         return false;
     }
-            
 
     // Cool, we can render!
+    wasRendered = true;
     GL.PushMatrix();
     GL.MultMatrix(WorldMatrix.OpenGL);
     model.Render();
@@ -114,12 +112,6 @@ public void ResetRenderFlag() {
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
+There is no real unit test, we're just going to make culling work in the ```CameraSample```.
 
-description of unit test
-
-![UNIT](image)
-
-```cs
-code
-```
+The ```Scene``` class already contains an ```Octree```, but it's WAY too small. Find where the scene is Initialized and change it from ```scene.Initialize(7f);``` to a bigger Octree ```scene.Initialize(70f);```
