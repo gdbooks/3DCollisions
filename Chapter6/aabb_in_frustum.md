@@ -39,12 +39,16 @@ And provide an implementation for it!
 
 ### Unit Test
 
-You can [Download](../Samples/SAMPLE.rar) the samples for this chapter to see if your result looks like the unit test.
-
-description of unit test
-
-![UNIT](image)
+Add the following unit test to the bottom of the ```Initialize``` function in ```CameraSample```
 
 ```cs
-code
+if (!Collisions.Intersects(new AABB(), camera.Frustum)) {
+    System.Console.WriteLine("Error with aabb in frustum! 0");
+}
+if (Collisions.Intersects(new AABB(new Point(-650, -650, -650), new Point(-600, -600, -600)), camera.Frustum)) {
+    System.Console.WriteLine("Error with aabb in frustum! 1");
+}
+if (!Collisions.Intersects(new AABB(new Point(2, 30, 4), new Point(25, 35, 45)), camera.Frustum)) {
+    System.Console.WriteLine("Error with aabb in frustum! 2");
+}
 ```
