@@ -2,7 +2,15 @@
 
 We can now test robust enough intersections to perform vibility culling on a scene level! Whoo!!!! To achieve this, we're going to have to move the ```Rendering``` responsibility out of the ```OBJ``` class and into the ```OctreeNode``` class.
 
-Add a new method to ```OctreeNode```. Call this method ```Render```. It will have the following signature
+Add a new method to ```OctreeNode```. Call this method ```Render```. It will have the following signature:
+
+```cs
+public int Render() {
+    int total = 0;
+    // TODO: Render logic!
+    return total;
+}
+```
 
 ### Unit Test
 
