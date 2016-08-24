@@ -2,6 +2,21 @@
 
 We can now test robust enough intersections to perform vibility culling on a scene level! Whoo!!!! To achieve this, we're going to have to move the ```Rendering``` responsibility out of the ```OBJ``` class and into the ```OctreeNode``` class.
 
+### OBJ - Render Flag
+
+There is a slight problem in this shift of responsibility. One OBJ can belong to multiple ```OctreeNode``` objects. To make sure that only the first node that contains the ```OBJ``` actually renders it, we're going to add a new flag to the ```OBJ``` class.
+
+
+```cs
+protected bool wasRendered = false;
+```
+
+### OBJ - Reset Flag
+
+### OBJ - Non Recursive Render 
+
+ The OBJ class should no longer render its-self recursivley. That's an easy enough change to make, but there is a second, bigger problem. 
+
 ### OctreeNode - Render
 
 Add a new method to ```OctreeNode```. Call this method ```Render```. It will have the following signature:
