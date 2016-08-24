@@ -34,6 +34,15 @@ public bool NonRecursiveRender(Plane[] frustum) {
         return false;
     }
 
+    // Already rendered once!
+    if (wasRendered) {
+        return false;
+    }
+
+
+    // We are either good to render, or out of bounds!
+    wasRendered = true;
+
     // Is the bounds of this obejct within the view?
     Sphere bounds = new Sphere();
     bounds.Position = new Point(
@@ -48,14 +57,9 @@ public bool NonRecursiveRender(Plane[] frustum) {
     if (!Collisions.Intersects(frustum, bounds)) {
         return false;
     }
-
-    // Already rendered once!
-    if (wasRendered) {
-        return false;
-    }
+            
 
     // Cool, we can render!
-    wasRendered = true;
     GL.PushMatrix();
     GL.MultMatrix(WorldMatrix.OpenGL);
     model.Render();
