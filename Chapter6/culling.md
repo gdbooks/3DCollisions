@@ -20,7 +20,7 @@ First up, the total is 0. Before doing anything, check if the ```Bounds``` of th
 
 From here on out, if we didn't return we know we have a visible node.
 
-Next, if the ```Contents``` of the node are not null, go ahead and call the ```NonRecursiveRender``` function on each of the contents. for every ```NonRecursiveRender``` called, increment ```total``` by 1.
+Next, if the ```Contents``` of the node are not null, go ahead and call the ```NonRecursiveRender``` function on each of the contents. for every ```NonRecursiveRender``` called, increment ```total``` by 1, if the drawing took place.
 
 
 ### Unit Test
