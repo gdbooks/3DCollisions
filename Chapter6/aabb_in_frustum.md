@@ -8,13 +8,13 @@ Once we have the 8 points it's a nested loop. Foe each point, we test the point 
 
 ```cs
 foreach vertex in AABB {
-    int inside = 0;
+    int inside = 8;
     foreach plane in frustum {
         if () {
-            inside += 1
+            inside -= 1
         }
     }        
-    if inside == 0 {// All points outside!
+    if inside <= 0 {// All points outside!
         return false
     }
 }  
