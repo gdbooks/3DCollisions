@@ -130,3 +130,21 @@ void AddCubeToSceneRoot(Vector3 position, Vector3 scale) {
     scene.Octree.Insert(scene.RootObject.Children[count]);
 }
 ```
+
+Lastly, we need to change the ```Render``` function so that it renders the octree, instead of the root node, and that it clears render flags after the scene was drawn:
+
+```cs
+public override void Render() {
+    GL.LoadMatrix(camera.ViewMatrix.OpenGL);
+    DrawOrigin();
+
+    GL.Enable(EnableCap.Lighting);
+    int numRendered = scene.Octree.Render(camera.Frustum);
+    scene.Octree.ResetRenderFlag();
+    Window.Title = "Rendered: " + numRendered;
+    GL.Disable(EnableCap.Lighting);
+}
+```
+
+## Try it out
+Running the game now, as you move the camera trough the world, you should see considerably less objects being drawn.
