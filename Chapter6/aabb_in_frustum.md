@@ -18,6 +18,7 @@ foreach vertex in AABB {
         return false
     }
 }  
+return true;
 ```
 
 ## On Your Own
