@@ -5,7 +5,7 @@ We can now test robust enough intersections to perform vibility culling on a sce
 Add a new method to ```OctreeNode```. Call this method ```Render```. It will have the following signature:
 
 ```cs
-public int Render() {
+public int Render(Plane[] frustum) {
     int total = 0;
     // TODO: Render logic for this node
     
@@ -14,7 +14,14 @@ public int Render() {
 }
 ```
 
-Now, in the render function, 
+The key here is, you can only render an OctreeNode IF you have a frustum. This happens because we will be culling the node against the frustum.
+
+First up, the total is 0. Before doing anything, check if the ```Bounds``` of the Node are intersecting with the frustum (Frsutum V AABB). If not, just return 0.
+
+From here on out, if we didn't return we know we have a visible node.
+
+Next, if the ```Contents``` of the node are not null, go ahead and call the ```NonRecursiveRender``` function on each of the contents. for every ```NonRecursiveRender``` called, increment ```total``` by 1.
+
 
 ### Unit Test
 
