@@ -13,6 +13,14 @@ protected bool wasRendered = false;
 
 ### OBJ - Reset Flag
 
+Because we added a Render Flag, let's add a way to clear that flag. Still working with the ```OBJ``` class, add the following method:
+
+```cs
+public void ResetRenderFlag() {
+    wasRendered = true;
+}
+```
+
 ### OBJ - Non Recursive Render 
 
  The OBJ class should no longer render its-self recursivley. That's an easy enough change to make, but there is a second, bigger problem. 
