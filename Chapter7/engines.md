@@ -15,4 +15,4 @@ Unity, and most AAA games that ship use this as their physics engine. Written an
 THE OPEN SOURCE ONE! Bullet is the Open Source Physics Engine of choice. It's been used in millions of student and professional projects. It's open source nature means someone has pretty much ported it to every platform.
 
 ### [MathGeoLib](http://clb.demon.fi/MathGeoLib/nightly/)
-This one is not actually a physics engine.
+This one is not actually a physics engine. It's just a bunch of hand-coded collision detection code. I often turn to this library when i'm stuck on a hard problem.
