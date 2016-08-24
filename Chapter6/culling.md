@@ -23,7 +23,7 @@ public void ResetRenderFlag() {
 
 ### OBJ - Non Recursive Render 
 
- The OBJ class should no longer render its-self recursivley. That's an easy enough change to make, but there is a second, bigger problem. 
+The OBJ class should no longer render its-self recursivley. This is becuase the ```OctreeNode``` is going to be rendering only ```OBJ``` objects that are in view.
 
 ### OctreeNode - Render
 
