@@ -10,3 +10,9 @@ The other engine written specifically for C#! It's a port of a non C# engine, bu
 
 ### [PhysX](http://www.geforce.com/hardware/technology/physx)
 Unity, and most AAA games that ship use this as their physics engine. Written and maintained by NVidia, this engine has amazig performance as it can run mainly on the GPU.
+
+### [Bullet](http://bulletphysics.org/wordpress/)
+THE OPEN SOURCE ONE! Bullet is the Open Source Physics Engine of choice. It's been used in millions of student and professional projects. It's open source nature means someone has pretty much ported it to every platform.
+
+### [MathGeoLib](http://clb.demon.fi/MathGeoLib/nightly/)
+This one is not actually a physics engine.
