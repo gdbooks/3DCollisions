@@ -25,6 +25,45 @@ public void ResetRenderFlag() {
 
 The OBJ class should no longer render its-self recursivley. This is becuase the ```OctreeNode``` is going to be rendering only ```OBJ``` objects that are in view. We are changing our renderer from hierarchial traversal to spacial traversal. We're going to add a new function to ```OBJ``` to render only this object, and return true only if this is the first time the new render function was called, and something was rendered.
 
+Additionally, this function will take in a frustum as an argument and do a narrow-phase visibility check. That is, if the ```OctreeNode``` calls this function, we know the node is visible. But that doens't mean this object is within the camera frustum. So, we do a narrow phase test between the frustum and the objects bounding sphere.
+
+```cs
+public bool NonRecursiveRender(Plane[] frustum) {
+    // Is there anything to render?
+    if (model == null) {
+        return false;
+    }
+
+    // Is the bounds of this obejct within the view?
+    Sphere bounds = new Sphere();
+    bounds.Position = new Point(
+        Matrix4.MultiplyPoint(WorldMatrix, model.BoundingSphere.Position.ToVector())
+    );
+    float scalar = System.Math.Abs(System.Math.Max(
+        System.Math.Max(
+            System.Math.Abs(WorldMatrix[0, 0]), System.Math.Abs(WorldMatrix[1, 1])),
+            System.Math.Abs(WorldMatrix[2, 2])));
+    bounds.Radius = model.BoundingSphere.Radius * scalar;
+
+    if (!Collisions.Intersects(frustum, bounds)) {
+        return false;
+    }
+
+    // Already rendered once!
+    if (wasRendered) {
+        return false;
+    }
+
+    // Cool, we can render!
+    wasRendered = true;
+    GL.PushMatrix();
+    GL.MultMatrix(WorldMatrix.OpenGL);
+    model.Render();
+    GL.PopMatrix();
+    return true;
+}
+```
+
 ### OctreeNode - Render
 
 Add a new method to ```OctreeNode```. Call this method ```Render```. It will have the following signature:
