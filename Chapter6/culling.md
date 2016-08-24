@@ -26,6 +26,25 @@ Next, if the ```Contents``` of the node are not null, go ahead and call the ```N
 
 Lastly, if ```Children``` is not null, loop trough each of the child ```OctreeNode``` objects, and recursively call their ```Render``` functions, passing in the same frustum. Be sure to add the result of that function to the total variable.
 
+### OctreeNode - ResetRenderFlag
+
+Once a frame is done, we need a way to mark all objects as non-rendered. For this reason we are going to add a ```ResetRenderFlag``` function to ```OctreeNode```. This function is simple, if the node has contents (OBJ objects), it calls ```ResetRenderFlag``` on each of them. If the node has children, this ```ResetRenderFlag``` function recursivley calls its-self on each child.
+
+```cs
+public void ResetRenderFlag() {
+    if (Contents != null) {
+        foreach (OBJ content in Contents) {
+            content.ResetRenderFlag();
+        }
+    }
+    if (Children != null) {
+        foreach (OctreeNode child in Children) {
+            child.ResetRenderFlag();
+        }
+    }
+}
+```
+
 
 ### Unit Test
 
