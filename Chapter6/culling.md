@@ -2,6 +2,8 @@
 
 We can now test robust enough intersections to perform vibility culling on a scene level! Whoo!!!! To achieve this, we're going to have to move the ```Rendering``` responsibility out of the ```OBJ``` class and into the ```OctreeNode``` class.
 
+### OctreeNode - Render
+
 Add a new method to ```OctreeNode```. Call this method ```Render```. It will have the following signature:
 
 ```cs
@@ -21,6 +23,8 @@ First up, the total is 0. Before doing anything, check if the ```Bounds``` of th
 From here on out, if we didn't return we know we have a visible node.
 
 Next, if the ```Contents``` of the node are not null, go ahead and call the ```NonRecursiveRender``` function on each of the contents. for every ```NonRecursiveRender``` called, increment ```total``` by 1, if the drawing took place.
+
+Lastly, if ```Children``` is not null, loop trough each of the child ```OctreeNode``` objects, and recursively call their ```Render``` functions, passing in the same frustum. Be sure to add the result of that function to the total variable.
 
 
 ### Unit Test
