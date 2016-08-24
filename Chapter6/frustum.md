@@ -110,13 +110,13 @@ PReviously, the ```FromNumbers``` function was busted. It was not setting the pl
 Add the following unit test at the bottom of the ```Initialize``` function of ```CameraSample```
 
 ```cs
- Plane[] frustum = new Plane[6];
-frustum[0] = new Plane(new Vector3(0.2381448f, -0.2721655f, -1.598973f), 73.4847f);
-frustum[1] = new Plane(new Vector3(-1.598973f, -0.2721655f, 0.2381448f), 73.4847f);
-frustum[2] = new Plane(new Vector3(-1.013747f, 1.394501f, -1.013747f), 73.4847f);
-frustum[3] = new Plane(new Vector3(-0.3470805f, -1.938832f, -0.3470805f), 73.4847f);
-frustum[4] = new Plane(new Vector3(-1.360841f, -0.5443366f, -1.360841f), 146.9509f);
-frustum[5] = new Plane(new Vector3((float)1.364946E-05, (float)5.453825E-06, (float)1.364946E-05), 0.0185318f);
+Plane[] frustum = new Plane[6];
+frustum[0] = new Plane(new Vector3(0.2381448f, -0.2721655f, -1.598973f), 44.82524f);
+frustum[1] = new Plane(new Vector3(-1.598973f, -0.2721655f, 0.2381448f), 44.82524f);
+frustum[2] = new Plane(new Vector3(-1.013747f, 1.394501f, -1.013747f), 36.74234f);
+frustum[3] = new Plane(new Vector3(-0.3470805f, -1.938832f, -0.3470805f), 36.74234f);
+frustum[4] = new Plane(new Vector3(-1.360841f, -0.5443366f, -1.360841f), 73.4747f);
+frustum[5] = new Plane(new Vector3((float)1.364946E-05, (float)5.453825E-06, (float)1.364946E-05), 923.8687f);
 
 for (int i = 0; i < 6; ++i) {
     if (camera.Frustum[i].Normal != frustum[i].Normal) {
