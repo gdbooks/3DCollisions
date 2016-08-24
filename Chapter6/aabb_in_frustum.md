@@ -7,10 +7,10 @@ Once we have the 8 points it's a nested loop. Foe each point, we test the point 
 ## The Algorithm
 
 ```cs
-foreach vertex in AABB {
+foreach corner in AABB {
     int inside = 8;
     foreach plane in frustum {
-        if () {
+        if (HalfSpaceTest(corner, plane) < 0.0f) {
             inside -= 1
         }
     }        
