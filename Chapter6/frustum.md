@@ -70,39 +70,39 @@ Originally, the ```Frustum``` getter was a __On Your Own__ todo. However, i noti
 ```cs
 private static Plane FromNumbers(Vector4 numbers) {
             Vector3 abc = new Vector3(numbers.X, numbers.Y, numbers.Z);
-            float mag = abc.Length();
-            abc.Normalize();
+    float mag = abc.Length();
+    abc.Normalize();
 
-            Plane p = new Plane();
-            p.Normal = abc;
-            p.Distance = numbers.W / mag;
-            return p;
-        }
+    Plane p = new Plane();
+    p.Normal = abc;
+    p.Distance = numbers.W / mag;
+    return p;
+}
 
-        public Plane[] Frustum {
-            get {
-                Plane[] frustum = new Plane[6];
+public Plane[] Frustum {
+    get {
+        Plane[] frustum = new Plane[6];
 
-                Matrix4 vp = ProjectionMatrix * ViewMatrix;
+        Matrix4 vp = ProjectionMatrix * ViewMatrix;
 
-                Vector4 row1 = new Vector4(vp[0, 0], vp[0, 1], vp[0, 2], vp[0, 3]);
-                Vector4 row2 = new Vector4(vp[1, 0], vp[1, 1], vp[1, 2], vp[1, 3]);
-                Vector4 row3 = new Vector4(vp[2, 0], vp[2, 1], vp[2, 2], vp[2, 3]);
-                Vector4 row4 = new Vector4(vp[3, 0], vp[3, 1], vp[3, 2], vp[3, 3]);
+        Vector4 row1 = new Vector4(vp[0, 0], vp[0, 1], vp[0, 2], vp[0, 3]);
+        Vector4 row2 = new Vector4(vp[1, 0], vp[1, 1], vp[1, 2], vp[1, 3]);
+        Vector4 row3 = new Vector4(vp[2, 0], vp[2, 1], vp[2, 2], vp[2, 3]);
+        Vector4 row4 = new Vector4(vp[3, 0], vp[3, 1], vp[3, 2], vp[3, 3]);
 
-                frustum[0] = FromNumbers(row4 + row1);
-                frustum[1] = FromNumbers(row4 - row1);
-                frustum[2] = FromNumbers(row4 + row2);
-                frustum[3] = FromNumbers(row4 - row2);
-                frustum[4] = FromNumbers(row4 + row3);
-                frustum[5] = FromNumbers(row4 - row3);
+        frustum[0] = FromNumbers(row4 + row1);
+        frustum[1] = FromNumbers(row4 - row1);
+        frustum[2] = FromNumbers(row4 + row2);
+        frustum[3] = FromNumbers(row4 - row2);
+        frustum[4] = FromNumbers(row4 + row3);
+        frustum[5] = FromNumbers(row4 - row3);
 
-                return frustum;
-            }
-        }
+        return frustum;
+    }
+}
 ```
 
-And provide an implementation for it! In order for the below unit test to pass, you have to populate your frustum as follows:
+PReviously, the ```FromNumbers``` function was busted. It was not setting the plane normal to a normalized number. Also, when normalizing, you MUST divide the W component by the length of the XYZ components. PReviously, that was not being done either. The above version is correct! In order for the below unit test to pass, you have to populate your frustum as follows:
 
 * frustum[0] = left plane
 * frustum[1] = right plane
