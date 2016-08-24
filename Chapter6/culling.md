@@ -148,3 +148,5 @@ public override void Render() {
 
 ## Try it out
 Running the game now, as you move the camera trough the world, you should see considerably less objects being drawn.
+
+![FINAL](num_rendered_001.png)
