@@ -7,10 +7,14 @@ Add a new method to ```OctreeNode```. Call this method ```Render```. It will hav
 ```cs
 public int Render() {
     int total = 0;
-    // TODO: Render logic!
+    // TODO: Render logic for this node
+    
+    // TODO: Recurse trough all children
     return total;
 }
 ```
+
+Now, in the render function, 
 
 ### Unit Test
 
