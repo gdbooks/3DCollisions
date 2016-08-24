@@ -23,7 +23,7 @@ public void ResetRenderFlag() {
 
 ### OBJ - Non Recursive Render 
 
-The OBJ class should no longer render its-self recursivley. This is becuase the ```OctreeNode``` is going to be rendering only ```OBJ``` objects that are in view.
+The OBJ class should no longer render its-self recursivley. This is becuase the ```OctreeNode``` is going to be rendering only ```OBJ``` objects that are in view. We are changing our renderer from hierarchial traversal to spacial traversal. We're going to add a new function to ```OBJ``` to render only this object, and return true only if this is the first time the new render function was called, and something was rendered.
 
 ### OctreeNode - Render
 
