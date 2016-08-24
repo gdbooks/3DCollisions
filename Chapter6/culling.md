@@ -17,7 +17,7 @@ Because we added a Render Flag, let's add a way to clear that flag. Still workin
 
 ```cs
 public void ResetRenderFlag() {
-    wasRendered = true;
+    wasRendered = false;
 }
 ```
 
