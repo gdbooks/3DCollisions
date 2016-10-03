@@ -1,0 +1,1779 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Sphere · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="point_in_sphere.html" />
+    
+    
+    <link rel="prev" href="point.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter0/">
+            
+                <a href="../Chapter0/">
+            
+                    
+                    New Repo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter0/application.html">
+            
+                <a href="../Chapter0/application.html">
+            
+                    
+                    Applicaiton.cs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter0/program.html">
+            
+                <a href="../Chapter0/program.html">
+            
+                    
+                    Program.cs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter0/samples.html">
+            
+                <a href="../Chapter0/samples.html">
+            
+                    
+                    Samples
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../Chapter0/console.html">
+            
+                <a href="../Chapter0/console.html">
+            
+                    
+                    Console
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../Chapter0/window.html">
+            
+                <a href="../Chapter0/window.html">
+            
+                    
+                    Windowed
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Shapes And Points
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="point.html">
+            
+                <a href="point.html">
+            
+                    
+                    Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="sphere.html">
+            
+                <a href="sphere.html">
+            
+                    
+                    Sphere
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="point_in_sphere.html">
+            
+                <a href="point_in_sphere.html">
+            
+                    
+                    Point in Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="closest_point_sphere.html">
+            
+                <a href="closest_point_sphere.html">
+            
+                    
+                    Closest point on Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="aabb.html">
+            
+                <a href="aabb.html">
+            
+                    
+                    AABB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="point_in_aabb.html">
+            
+                <a href="point_in_aabb.html">
+            
+                    
+                    Point in AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="closest_point_aabb.html">
+            
+                <a href="closest_point_aabb.html">
+            
+                    
+                    Closest point on AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="plane.html">
+            
+                <a href="plane.html">
+            
+                    
+                    Plane
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="point_on_plane.html">
+            
+                <a href="point_on_plane.html">
+            
+                    
+                    Point on Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="closest_point_on_plane.html">
+            
+                <a href="closest_point_on_plane.html">
+            
+                    
+                    Closest point on Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="three_plane_intersection.html">
+            
+                <a href="three_plane_intersection.html">
+            
+                    
+                    3 Plane Intersection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="line.html">
+            
+                <a href="line.html">
+            
+                    
+                    Line
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="point_on_line.html">
+            
+                <a href="point_on_line.html">
+            
+                    
+                    Point on line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="closest_point_on_line.html">
+            
+                <a href="closest_point_on_line.html">
+            
+                    
+                    Closes point on Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="ray.html">
+            
+                <a href="ray.html">
+            
+                    
+                    Ray
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="point_on_ray.html">
+            
+                <a href="point_on_ray.html">
+            
+                    
+                    Point on ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="closest_point_on_ray.html">
+            
+                <a href="closest_point_on_ray.html">
+            
+                    
+                    Closest point on Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Intermission0/">
+            
+                <a href="../Intermission0/">
+            
+                    
+                    Intermission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    Static Intersections
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter2/static_sphere_sphere.html">
+            
+                <a href="../Chapter2/static_sphere_sphere.html">
+            
+                    
+                    Sphere-Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Chapter2/static_sphere_aabb.html">
+            
+                <a href="../Chapter2/static_sphere_aabb.html">
+            
+                    
+                    Sphere-AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Chapter2/static_sphere_plane.html">
+            
+                <a href="../Chapter2/static_sphere_plane.html">
+            
+                    
+                    Sphere-Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Chapter2/static_aabb_aabb.html">
+            
+                <a href="../Chapter2/static_aabb_aabb.html">
+            
+                    
+                    AABB-AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Chapter2/static_aabb_plane.html">
+            
+                <a href="../Chapter2/static_aabb_plane.html">
+            
+                    
+                    AABB-Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Chapter2/static_plane_plane.html">
+            
+                <a href="../Chapter2/static_plane_plane.html">
+            
+                    
+                    Plane-Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    Lines and Rays
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Chapter3/raycasting.html">
+            
+                <a href="../Chapter3/raycasting.html">
+            
+                    
+                    Ray casting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../Chapter3/raycast_sphere.html">
+            
+                <a href="../Chapter3/raycast_sphere.html">
+            
+                    
+                    Against Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../Chapter3/raycast_aabb.html">
+            
+                <a href="../Chapter3/raycast_aabb.html">
+            
+                    
+                    Against AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../Chapter3/raycast_plane.html">
+            
+                <a href="../Chapter3/raycast_plane.html">
+            
+                    
+                    Against Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Chapter3/linetesting.html">
+            
+                <a href="../Chapter3/linetesting.html">
+            
+                    
+                    Line testing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../Chapter3/line_sphere.html">
+            
+                <a href="../Chapter3/line_sphere.html">
+            
+                    
+                    Against Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../Chapter3/line_aabb.html">
+            
+                <a href="../Chapter3/line_aabb.html">
+            
+                    
+                    Against AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../Chapter3/line_plane.html">
+            
+                <a href="../Chapter3/line_plane.html">
+            
+                    
+                    Against Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chapter2/dynamic.html">
+            
+                <a href="../Chapter2/dynamic.html">
+            
+                    
+                    Dynamic Intersections
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Chapter2/dynamic_aabb_aabb.html">
+            
+                <a href="../Chapter2/dynamic_aabb_aabb.html">
+            
+                    
+                    Time Slicing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Chapter2/dynamic_sphere_sphere.html">
+            
+                <a href="../Chapter2/dynamic_sphere_sphere.html">
+            
+                    
+                    Linear Impact Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Chapter2/dynamic_sphere_aabb.html">
+            
+                <a href="../Chapter2/dynamic_sphere_aabb.html">
+            
+                    
+                    Binary Impact Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Chapter2/dynamic_sphere_plane.html">
+            
+                <a href="../Chapter2/dynamic_sphere_plane.html">
+            
+                    
+                    Multiple Moving Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    3D Models
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Chapter4/triangle.html">
+            
+                <a href="../Chapter4/triangle.html">
+            
+                    
+                    Triangle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../Chapter4/point_in_triangle.html">
+            
+                <a href="../Chapter4/point_in_triangle.html">
+            
+                    
+                    Point in Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../Chapter4/closest_point_to_triangle.html">
+            
+                <a href="../Chapter4/closest_point_to_triangle.html">
+            
+                    
+                    Closest point to triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../Chapter4/sphere_to_triangle.html">
+            
+                <a href="../Chapter4/sphere_to_triangle.html">
+            
+                    
+                    Sphere-Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4" data-path="../Chapter4/aabb-triangle.html">
+            
+                <a href="../Chapter4/aabb-triangle.html">
+            
+                    
+                    AABB-Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.5" data-path="../Chapter4/plane-triangle.html">
+            
+                <a href="../Chapter4/plane-triangle.html">
+            
+                    
+                    Plane-Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.6" data-path="../Chapter4/generic_sat.html">
+            
+                <a href="../Chapter4/generic_sat.html">
+            
+                    
+                    Generic SAT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.7" data-path="../Chapter4/triangle-triangle.html">
+            
+                <a href="../Chapter4/triangle-triangle.html">
+            
+                    
+                    Triangle-Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.8" data-path="../Chapter4/robust_sat.html">
+            
+                <a href="../Chapter4/robust_sat.html">
+            
+                    
+                    Robust SAT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.9" data-path="../Chapter4/raycast_triangle.html">
+            
+                <a href="../Chapter4/raycast_triangle.html">
+            
+                    
+                    Raycast Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.10" data-path="../Chapter4/line_test_triangle.html">
+            
+                <a href="../Chapter4/line_test_triangle.html">
+            
+                    
+                    Line test Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Chapter4/containers.html">
+            
+                <a href="../Chapter4/containers.html">
+            
+                    
+                    Broad-Phase Collision
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../Chapter4/addingtriangles_to_model_md.html">
+            
+                <a href="../Chapter4/addingtriangles_to_model_md.html">
+            
+                    
+                    Adding Triangles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../Chapter4/aabb.html">
+            
+                <a href="../Chapter4/aabb.html">
+            
+                    
+                    AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="../Chapter4/sphere.html">
+            
+                <a href="../Chapter4/sphere.html">
+            
+                    
+                    Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Chapter4/model_test.html">
+            
+                <a href="../Chapter4/model_test.html">
+            
+                    
+                    Collision Tests
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../Chapter4/model_test_sphere.html">
+            
+                <a href="../Chapter4/model_test_sphere.html">
+            
+                    
+                    Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../Chapter4/m_test_aabb.html">
+            
+                <a href="../Chapter4/m_test_aabb.html">
+            
+                    
+                    AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../Chapter4/model_test_plane.html">
+            
+                <a href="../Chapter4/model_test_plane.html">
+            
+                    
+                    Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="../Chapter4/model_test_triangle.html">
+            
+                <a href="../Chapter4/model_test_triangle.html">
+            
+                    
+                    Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.5" data-path="../Chapter4/model_test_ray.html">
+            
+                <a href="../Chapter4/model_test_ray.html">
+            
+                    
+                    Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Chapter4/raycast_model.html">
+            
+                <a href="../Chapter4/raycast_model.html">
+            
+                    
+                    Raycast Model
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.4.1" data-path="../Chapter4/bvh.html">
+            
+                <a href="../Chapter4/bvh.html">
+            
+                    
+                    BVH - Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.2" data-path="../Chapter4/bvh_split.html">
+            
+                <a href="../Chapter4/bvh_split.html">
+            
+                    
+                    BVH - Split
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.3" data-path="../Chapter4/bch_shake.html">
+            
+                <a href="../Chapter4/bch_shake.html">
+            
+                    
+                    BVH - Shake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.4" data-path="../Chapter4/bvh_raycast.html">
+            
+                <a href="../Chapter4/bvh_raycast.html">
+            
+                    
+                    BVH - Raycast
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Chapter5/">
+            
+                <a href="../Chapter5/">
+            
+                    
+                    Scene Management
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Chapter5/hierarchy.html">
+            
+                <a href="../Chapter5/hierarchy.html">
+            
+                    
+                    Hierarchy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Chapter5/make_a_scene.html">
+            
+                <a href="../Chapter5/make_a_scene.html">
+            
+                    
+                    Making a scene
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Chapter5/octree.html">
+            
+                <a href="../Chapter5/octree.html">
+            
+                    
+                    Octree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../Chapter5/dynamic_objects.html">
+            
+                <a href="../Chapter5/dynamic_objects.html">
+            
+                    
+                    Octree-Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.2" data-path="../Chapter5/raycast.html">
+            
+                <a href="../Chapter5/raycast.html">
+            
+                    
+                    Raycast
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Chapter5/picking.html">
+            
+                <a href="../Chapter5/picking.html">
+            
+                    
+                    Picking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Chapter5/other_structures.html">
+            
+                <a href="../Chapter5/other_structures.html">
+            
+                    
+                    Other structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Chapter6/">
+            
+                <a href="../Chapter6/">
+            
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Chapter6/debug_info.html">
+            
+                <a href="../Chapter6/debug_info.html">
+            
+                    
+                    Debug Info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Chapter6/frustum.html">
+            
+                <a href="../Chapter6/frustum.html">
+            
+                    
+                    Frustum
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../Chapter6/point_in_frustum.html">
+            
+                <a href="../Chapter6/point_in_frustum.html">
+            
+                    
+                    Point in Frustum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../Chapter6/sphere_in_frustum.html">
+            
+                <a href="../Chapter6/sphere_in_frustum.html">
+            
+                    
+                    Sphere in Frustum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../Chapter6/aabb_in_frustum.html">
+            
+                <a href="../Chapter6/aabb_in_frustum.html">
+            
+                    
+                    AABB in Frustum
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Chapter6/culling.html">
+            
+                <a href="../Chapter6/culling.html">
+            
+                    
+                    Culling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Chapter7/">
+            
+                <a href="../Chapter7/">
+            
+                    
+                    Further Research
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Chapter7/obb.html">
+            
+                <a href="../Chapter7/obb.html">
+            
+                    
+                    OBB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Chapter7/capsule.html">
+            
+                <a href="../Chapter7/capsule.html">
+            
+                    
+                    Capsule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Chapter7/elipsoid.html">
+            
+                <a href="../Chapter7/elipsoid.html">
+            
+                    
+                    Elipsoid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../Chapter7/cylinder.html">
+            
+                <a href="../Chapter7/cylinder.html">
+            
+                    
+                    Cylinder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../Chapter7/engines.html">
+            
+                <a href="../Chapter7/engines.html">
+            
+                    
+                    Physics Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Sphere</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sphere">Sphere</h1>
+<p>Other than a point, the next most basic 3D  shape. A sphere consists of a point and a radius. The radius of a sphere goes half-way accross it. So, a sphere with a radius of 1, will have a diameter of 2. This can be counter-intuitive when modelling a world, but keep it in mind!</p>
+<p><img src="sphere.jpg" alt="SPHERE"></p>
+<p>Because we&apos;re not going to actually expose a lot of the data underneath the sphere, i&apos;m going to store the point as a <code>Vector3</code>, and the radius as a <code>float</code>, but you could store the point as a <code>Point</code></p>
+<p>Based on the above information, and the image, the simplest implementation of a sphere would be:</p>
+<pre><code class="lang-cs"><span class="hljs-comment">// THIS BLOCK IS JUST SAMPLE CODE, DON&apos;T COPY IT!</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title">Sphere</span> { <span class="hljs-comment">// Could be a struct?</span>
+  <span class="hljs-keyword">public</span> Vector3 position; <span class="hljs-comment">// Could be 3 floats?</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> radius = <span class="hljs-number">1</span>f;
+}
+</code></pre>
+<h3 id="code-guide">Code Guide</h3>
+<p>Everything in and after the <strong>Rendering</strong> region will compile. The code above it is more of a suggestion than a hard guide, tough i do think this is good design. The <code>CreateRenderArrays</code> function <strong>MUST</strong> be called in <strong>EVERY</strong> constructor.</p>
+<pre><code class="lang-cs"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> OpenTK.Graphics.OpenGL;
+<span class="hljs-keyword">using</span> Math_Implementation;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Sphere</span> {
+    Vector3 point = <span class="hljs-keyword">new</span> Vector3();
+    <span class="hljs-keyword">float</span> radius = <span class="hljs-number">1</span>f;
+
+    <span class="hljs-keyword">public</span> Point Position { <span class="hljs-comment">/* TODO */</span> } <span class="hljs-comment">// Gets / Sets point vector</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> Radius { <span class="hljs-comment">/* TODO */</span>} <span class="hljs-comment">// Self explanatory</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sphere</span>(<span class="hljs-params"></span>) </span>{
+        CreateRenderArrays(); <span class="hljs-comment">// Mush call this to create Arrays</span>
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sphere</span>(<span class="hljs-params">Point p, <span class="hljs-keyword">float</span> r</span>) </span>{
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Set member variables</span>
+        CreateRenderArrays(); <span class="hljs-comment">// Mush call this to create Arrays</span>
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sphere</span>(<span class="hljs-params">Vector3 p, <span class="hljs-keyword">float</span> r</span>) </span>{
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Set member variables</span>
+        CreateRenderArrays(); <span class="hljs-comment">// Mush call this to create Arrays</span>
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sphere</span>(<span class="hljs-params"><span class="hljs-keyword">float</span> x, <span class="hljs-keyword">float</span> y, <span class="hljs-keyword">float</span> z, <span class="hljs-keyword">float</span> r</span>) </span>{
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Set member variables</span>
+        CreateRenderArrays(); <span class="hljs-comment">// Mush call this to create Arrays</span>
+    }
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">region</span> Rendering</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">float</span>[] verts = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">float</span>[] norms = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">uint</span>[] indices = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CreateVBO</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> rings = <span class="hljs-number">10</span>, <span class="hljs-keyword">uint</span> sectors = <span class="hljs-number">15</span></span>) </span>{
+        <span class="hljs-comment">// From:</span>
+        <span class="hljs-comment">// http://stackoverflow.com/questions/5988686/creating-a-3d-sphere-in-opengl-using-visual-c/5989676#5989676</span>
+        <span class="hljs-comment">// http://stackoverflow.com/questions/7957254/connecting-sphere-vertices-opengl</span>
+        <span class="hljs-keyword">float</span> R = <span class="hljs-number">1</span>f/ (<span class="hljs-keyword">float</span>)(rings - <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">float</span> S = <span class="hljs-number">1</span>f/ (<span class="hljs-keyword">float</span>)(sectors - <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">float</span> M_PI = <span class="hljs-number">3.14159265358979323846</span>f;
+        <span class="hljs-keyword">float</span> M_PI_2 = <span class="hljs-number">1.57079632679489661923</span>f;
+
+        verts = <span class="hljs-keyword">new</span> <span class="hljs-keyword">float</span>[rings * sectors * <span class="hljs-number">3</span>];
+        norms= <span class="hljs-keyword">new</span> <span class="hljs-keyword">float</span>[rings * sectors * <span class="hljs-number">3</span>];
+        indices = <span class="hljs-keyword">new</span> <span class="hljs-keyword">uint</span>[rings * sectors * <span class="hljs-number">4</span>];
+
+        <span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> r = <span class="hljs-number">0</span>; r &lt; rings; r++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> s = <span class="hljs-number">0</span>; s &lt; sectors; s++) {
+                <span class="hljs-keyword">float</span> y = (<span class="hljs-keyword">float</span>)Math.Sin(-M_PI_2 + M_PI * r * R);
+                <span class="hljs-keyword">float</span> x = (<span class="hljs-keyword">float</span>)Math.Cos(<span class="hljs-number">2</span>f * M_PI * s * S) * (<span class="hljs-keyword">float</span>)Math.Sin(M_PI * r * R);
+                <span class="hljs-keyword">float</span> z = (<span class="hljs-keyword">float</span>)Math.Sin(<span class="hljs-number">2</span>f * M_PI * s * S) * (<span class="hljs-keyword">float</span>)Math.Sin(M_PI * r * R);
+
+                verts[v++] = (x <span class="hljs-comment">/* * radius*/</span>);
+                verts[v++] = (y <span class="hljs-comment">/* * radius*/</span>);
+                verts[v++] = (z <span class="hljs-comment">/* * radius*/</span>);
+
+                norms[n++] = (x);
+                norms[n++] = (y);
+                norms[n++] = (z);
+            }
+        }
+
+        <span class="hljs-keyword">if</span> (v != verts.Length) {
+            Console.WriteLine(<span class="hljs-string">&quot;ERROR, Wrong number of verts!&quot;</span>);
+        }
+        <span class="hljs-keyword">if</span> (n != norms.Length) {
+            Console.WriteLine(<span class="hljs-string">&quot;ERROR, Wrong number of norms!&quot;</span>);
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> r = <span class="hljs-number">0</span>; r &lt; rings - <span class="hljs-number">1</span>; r++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> s = <span class="hljs-number">0</span>; s &lt; sectors - <span class="hljs-number">1</span>; s++) {
+                indices[i++] = ((<span class="hljs-keyword">uint</span>)(r * sectors + s));
+                indices[i++] = ((<span class="hljs-keyword">uint</span>)(r * sectors + (s + <span class="hljs-number">1</span>)));
+                indices[i++] = ((<span class="hljs-keyword">uint</span>)((r + <span class="hljs-number">1</span>) * sectors + (s + <span class="hljs-number">1</span>)));
+                indices[i++] = ((<span class="hljs-keyword">uint</span>)((r + <span class="hljs-number">1</span>) * sectors + s));
+            }
+        }
+
+        <span class="hljs-keyword">if</span> (i != indices.Length) {
+            Console.WriteLine(<span class="hljs-string">&quot;ERROR, Wrong number of indices!&quot;</span>);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Render</span>(<span class="hljs-params"></span>) </span>{
+        GL.PushMatrix();
+        GL.Translate(point.X, point.Y, point.Z);
+        GL.Scale(radius, radius, radius);
+
+        GL.EnableClientState(ArrayCap.VertexArray);
+        GL.EnableClientState(ArrayCap.NormalArray);
+
+        GL.VertexPointer(<span class="hljs-number">3</span>, VertexPointerType.Float, <span class="hljs-number">0</span>, verts);
+        GL.NormalPointer(NormalPointerType.Float, <span class="hljs-number">0</span>, norms);
+        GL.DrawElements(PrimitiveType.Quads, indices.Length, DrawElementsType.UnsignedInt, indices);
+
+        GL.DisableClientState(ArrayCap.VertexArray);
+        GL.DisableClientState(ArrayCap.NormalArray);
+
+        GL.PopMatrix();
+    }
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endregion</span></span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">string</span> <span class="hljs-title">ToString</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Position: (&quot;</span> + point.X + <span class="hljs-string">&quot;, &quot;</span> + point.Y + <span class="hljs-string">&quot;, &quot;</span> + point.Z + <span class="hljs-string">&quot;), Radius: &quot;</span> + radius;
+    }
+}
+</code></pre>
+<h2 id="on-your-own">On Your Own</h2>
+<p>Implement a sphere class. Feel free to use the above code as a guide, or come up with your own implementeation.</p>
+<h3 id="sample--unit-test">Sample / Unit Test</h3>
+<p>You can <a href="../Samples/CollisionSphere.rar">Download</a> the samples for this chapter to see if your result looks like the unit test.</p>
+<p>This sample is short and simple, it makes a new sphere at origin, configures some render settings and draws the sphere. There is an image of what it&apos;s supposed to look like after the code.</p>
+<pre><code class="lang-cs"><span class="hljs-keyword">using</span> OpenTK.Graphics.OpenGL;
+<span class="hljs-keyword">using</span> Math_Implementation;
+<span class="hljs-comment">// Include the namespace where your primitives live!</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">CollisionDetectionSelector.Samples</span> {
+    <span class="hljs-keyword">class</span> <span class="hljs-title">SphereSample</span> : <span class="hljs-title">Application</span>{
+        Sphere sphere = <span class="hljs-keyword">new</span> Sphere(<span class="hljs-keyword">new</span> Point(<span class="hljs-number">4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">3</span>);
+        Sphere sphere2 = <span class="hljs-keyword">new</span> Sphere();
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Intialize</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> width, <span class="hljs-keyword">int</span> height</span>) </span>{
+            GL.Enable(EnableCap.CullFace);
+            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Render</span>(<span class="hljs-params"></span>) </span>{
+            Matrix4 lookAt = Matrix4.LookAt(<span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0.0</span>f, <span class="hljs-number">5.0</span>f, <span class="hljs-number">20</span>), <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0.0</span>f, <span class="hljs-number">0.0</span>f, <span class="hljs-number">0.0</span>f), <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0.0</span>f, <span class="hljs-number">1.0</span>f, <span class="hljs-number">0.0</span>f));
+            GL.LoadMatrix(lookAt.OpenGL);
+
+            GL.Begin(PrimitiveType.Lines);
+            Line(<span class="hljs-number">1</span>f, <span class="hljs-number">0</span>f, <span class="hljs-number">0</span>f);
+            Line(<span class="hljs-number">0</span>f, <span class="hljs-number">1</span>f, <span class="hljs-number">0</span>f);
+            Line(<span class="hljs-number">0</span>f, <span class="hljs-number">0</span>f, <span class="hljs-number">1</span>f);
+            GL.End();
+
+            GL.Color3(<span class="hljs-number">0</span>f, <span class="hljs-number">0</span>f, <span class="hljs-number">1</span>f);
+            sphere2.Render();
+            GL.Color3(<span class="hljs-number">1</span>f, <span class="hljs-number">0</span>f, <span class="hljs-number">0</span>f);
+            sphere.Render();
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Line</span>(<span class="hljs-params"><span class="hljs-keyword">float</span> x, <span class="hljs-keyword">float</span> y, <span class="hljs-keyword">float</span> z</span>) </span>{
+            GL.Color3(x, y, z);
+            GL.Vertex3(<span class="hljs-number">0</span>f, <span class="hljs-number">0</span>f, <span class="hljs-number">0</span>f);
+            GL.Vertex3(x, y, z);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Resize</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> width, <span class="hljs-keyword">int</span> height</span>) </span>{
+            GL.Viewport(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, width, height);
+            GL.MatrixMode(MatrixMode.Projection);
+            <span class="hljs-keyword">float</span> aspect = (<span class="hljs-keyword">float</span>)width / (<span class="hljs-keyword">float</span>)height;
+            Matrix4 perspective = Matrix4.Perspective(<span class="hljs-number">60</span>, aspect, <span class="hljs-number">0.01</span>f, <span class="hljs-number">1000.0</span>f);
+            GL.LoadMatrix(Matrix4.Transpose(perspective).Matrix);
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity();
+        }
+    }
+}
+</code></pre>
+<p><img src="updated_spheres_sample.png" alt="UNIT_RESULT"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="point.html" class="navigation navigation-prev " aria-label="Previous page: Point">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="point_in_sphere.html" class="navigation navigation-next " aria-label="Next page: Point in Sphere">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Sphere","level":"1.3.2","depth":2,"next":{"title":"Point in Sphere","level":"1.3.2.1","depth":3,"path":"Chapter1/point_in_sphere.md","ref":"Chapter1/point_in_sphere.md","articles":[]},"previous":{"title":"Point","level":"1.3.1","depth":2,"path":"Chapter1/point.md","ref":"Chapter1/point.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","youtube"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"youtube":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"letter","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/sphere.md","mtime":"2016-07-09T03:20:07.302Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-03T17:51:33.268Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1761 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Closest point to triangle · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="sphere_to_triangle.html" />
+    
+    
+    <link rel="prev" href="point_in_triangle.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter0/">
+            
+                <a href="../Chapter0/">
+            
+                    
+                    New Repo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter0/application.html">
+            
+                <a href="../Chapter0/application.html">
+            
+                    
+                    Applicaiton.cs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter0/program.html">
+            
+                <a href="../Chapter0/program.html">
+            
+                    
+                    Program.cs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter0/samples.html">
+            
+                <a href="../Chapter0/samples.html">
+            
+                    
+                    Samples
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../Chapter0/console.html">
+            
+                <a href="../Chapter0/console.html">
+            
+                    
+                    Console
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../Chapter0/window.html">
+            
+                <a href="../Chapter0/window.html">
+            
+                    
+                    Windowed
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    Shapes And Points
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter1/point.html">
+            
+                <a href="../Chapter1/point.html">
+            
+                    
+                    Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter1/sphere.html">
+            
+                <a href="../Chapter1/sphere.html">
+            
+                    
+                    Sphere
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../Chapter1/point_in_sphere.html">
+            
+                <a href="../Chapter1/point_in_sphere.html">
+            
+                    
+                    Point in Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../Chapter1/closest_point_sphere.html">
+            
+                <a href="../Chapter1/closest_point_sphere.html">
+            
+                    
+                    Closest point on Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Chapter1/aabb.html">
+            
+                <a href="../Chapter1/aabb.html">
+            
+                    
+                    AABB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../Chapter1/point_in_aabb.html">
+            
+                <a href="../Chapter1/point_in_aabb.html">
+            
+                    
+                    Point in AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../Chapter1/closest_point_aabb.html">
+            
+                <a href="../Chapter1/closest_point_aabb.html">
+            
+                    
+                    Closest point on AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Chapter1/plane.html">
+            
+                <a href="../Chapter1/plane.html">
+            
+                    
+                    Plane
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../Chapter1/point_on_plane.html">
+            
+                <a href="../Chapter1/point_on_plane.html">
+            
+                    
+                    Point on Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../Chapter1/closest_point_on_plane.html">
+            
+                <a href="../Chapter1/closest_point_on_plane.html">
+            
+                    
+                    Closest point on Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../Chapter1/three_plane_intersection.html">
+            
+                <a href="../Chapter1/three_plane_intersection.html">
+            
+                    
+                    3 Plane Intersection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Chapter1/line.html">
+            
+                <a href="../Chapter1/line.html">
+            
+                    
+                    Line
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../Chapter1/point_on_line.html">
+            
+                <a href="../Chapter1/point_on_line.html">
+            
+                    
+                    Point on line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="../Chapter1/closest_point_on_line.html">
+            
+                <a href="../Chapter1/closest_point_on_line.html">
+            
+                    
+                    Closes point on Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Chapter1/ray.html">
+            
+                <a href="../Chapter1/ray.html">
+            
+                    
+                    Ray
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../Chapter1/point_on_ray.html">
+            
+                <a href="../Chapter1/point_on_ray.html">
+            
+                    
+                    Point on ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../Chapter1/closest_point_on_ray.html">
+            
+                <a href="../Chapter1/closest_point_on_ray.html">
+            
+                    
+                    Closest point on Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Intermission0/">
+            
+                <a href="../Intermission0/">
+            
+                    
+                    Intermission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    Static Intersections
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter2/static_sphere_sphere.html">
+            
+                <a href="../Chapter2/static_sphere_sphere.html">
+            
+                    
+                    Sphere-Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Chapter2/static_sphere_aabb.html">
+            
+                <a href="../Chapter2/static_sphere_aabb.html">
+            
+                    
+                    Sphere-AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Chapter2/static_sphere_plane.html">
+            
+                <a href="../Chapter2/static_sphere_plane.html">
+            
+                    
+                    Sphere-Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Chapter2/static_aabb_aabb.html">
+            
+                <a href="../Chapter2/static_aabb_aabb.html">
+            
+                    
+                    AABB-AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Chapter2/static_aabb_plane.html">
+            
+                <a href="../Chapter2/static_aabb_plane.html">
+            
+                    
+                    AABB-Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Chapter2/static_plane_plane.html">
+            
+                <a href="../Chapter2/static_plane_plane.html">
+            
+                    
+                    Plane-Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    Lines and Rays
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Chapter3/raycasting.html">
+            
+                <a href="../Chapter3/raycasting.html">
+            
+                    
+                    Ray casting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../Chapter3/raycast_sphere.html">
+            
+                <a href="../Chapter3/raycast_sphere.html">
+            
+                    
+                    Against Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../Chapter3/raycast_aabb.html">
+            
+                <a href="../Chapter3/raycast_aabb.html">
+            
+                    
+                    Against AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../Chapter3/raycast_plane.html">
+            
+                <a href="../Chapter3/raycast_plane.html">
+            
+                    
+                    Against Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Chapter3/linetesting.html">
+            
+                <a href="../Chapter3/linetesting.html">
+            
+                    
+                    Line testing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../Chapter3/line_sphere.html">
+            
+                <a href="../Chapter3/line_sphere.html">
+            
+                    
+                    Against Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../Chapter3/line_aabb.html">
+            
+                <a href="../Chapter3/line_aabb.html">
+            
+                    
+                    Against AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../Chapter3/line_plane.html">
+            
+                <a href="../Chapter3/line_plane.html">
+            
+                    
+                    Against Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chapter2/dynamic.html">
+            
+                <a href="../Chapter2/dynamic.html">
+            
+                    
+                    Dynamic Intersections
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Chapter2/dynamic_aabb_aabb.html">
+            
+                <a href="../Chapter2/dynamic_aabb_aabb.html">
+            
+                    
+                    Time Slicing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Chapter2/dynamic_sphere_sphere.html">
+            
+                <a href="../Chapter2/dynamic_sphere_sphere.html">
+            
+                    
+                    Linear Impact Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Chapter2/dynamic_sphere_aabb.html">
+            
+                <a href="../Chapter2/dynamic_sphere_aabb.html">
+            
+                    
+                    Binary Impact Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Chapter2/dynamic_sphere_plane.html">
+            
+                <a href="../Chapter2/dynamic_sphere_plane.html">
+            
+                    
+                    Multiple Moving Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    3D Models
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="triangle.html">
+            
+                <a href="triangle.html">
+            
+                    
+                    Triangle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="point_in_triangle.html">
+            
+                <a href="point_in_triangle.html">
+            
+                    
+                    Point in Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.1.2" data-path="closest_point_to_triangle.html">
+            
+                <a href="closest_point_to_triangle.html">
+            
+                    
+                    Closest point to triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="sphere_to_triangle.html">
+            
+                <a href="sphere_to_triangle.html">
+            
+                    
+                    Sphere-Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4" data-path="aabb-triangle.html">
+            
+                <a href="aabb-triangle.html">
+            
+                    
+                    AABB-Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.5" data-path="plane-triangle.html">
+            
+                <a href="plane-triangle.html">
+            
+                    
+                    Plane-Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.6" data-path="generic_sat.html">
+            
+                <a href="generic_sat.html">
+            
+                    
+                    Generic SAT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.7" data-path="triangle-triangle.html">
+            
+                <a href="triangle-triangle.html">
+            
+                    
+                    Triangle-Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.8" data-path="robust_sat.html">
+            
+                <a href="robust_sat.html">
+            
+                    
+                    Robust SAT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.9" data-path="raycast_triangle.html">
+            
+                <a href="raycast_triangle.html">
+            
+                    
+                    Raycast Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.10" data-path="line_test_triangle.html">
+            
+                <a href="line_test_triangle.html">
+            
+                    
+                    Line test Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="containers.html">
+            
+                <a href="containers.html">
+            
+                    
+                    Broad-Phase Collision
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="addingtriangles_to_model_md.html">
+            
+                <a href="addingtriangles_to_model_md.html">
+            
+                    
+                    Adding Triangles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="aabb.html">
+            
+                <a href="aabb.html">
+            
+                    
+                    AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="sphere.html">
+            
+                <a href="sphere.html">
+            
+                    
+                    Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="model_test.html">
+            
+                <a href="model_test.html">
+            
+                    
+                    Collision Tests
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="model_test_sphere.html">
+            
+                <a href="model_test_sphere.html">
+            
+                    
+                    Sphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="m_test_aabb.html">
+            
+                <a href="m_test_aabb.html">
+            
+                    
+                    AABB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="model_test_plane.html">
+            
+                <a href="model_test_plane.html">
+            
+                    
+                    Plane
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="model_test_triangle.html">
+            
+                <a href="model_test_triangle.html">
+            
+                    
+                    Triangle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.5" data-path="model_test_ray.html">
+            
+                <a href="model_test_ray.html">
+            
+                    
+                    Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="raycast_model.html">
+            
+                <a href="raycast_model.html">
+            
+                    
+                    Raycast Model
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.4.1" data-path="bvh.html">
+            
+                <a href="bvh.html">
+            
+                    
+                    BVH - Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.2" data-path="bvh_split.html">
+            
+                <a href="bvh_split.html">
+            
+                    
+                    BVH - Split
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.3" data-path="bch_shake.html">
+            
+                <a href="bch_shake.html">
+            
+                    
+                    BVH - Shake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.4" data-path="bvh_raycast.html">
+            
+                <a href="bvh_raycast.html">
+            
+                    
+                    BVH - Raycast
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Chapter5/">
+            
+                <a href="../Chapter5/">
+            
+                    
+                    Scene Management
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Chapter5/hierarchy.html">
+            
+                <a href="../Chapter5/hierarchy.html">
+            
+                    
+                    Hierarchy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Chapter5/make_a_scene.html">
+            
+                <a href="../Chapter5/make_a_scene.html">
+            
+                    
+                    Making a scene
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Chapter5/octree.html">
+            
+                <a href="../Chapter5/octree.html">
+            
+                    
+                    Octree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../Chapter5/dynamic_objects.html">
+            
+                <a href="../Chapter5/dynamic_objects.html">
+            
+                    
+                    Octree-Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.2" data-path="../Chapter5/raycast.html">
+            
+                <a href="../Chapter5/raycast.html">
+            
+                    
+                    Raycast
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Chapter5/picking.html">
+            
+                <a href="../Chapter5/picking.html">
+            
+                    
+                    Picking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Chapter5/other_structures.html">
+            
+                <a href="../Chapter5/other_structures.html">
+            
+                    
+                    Other structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Chapter6/">
+            
+                <a href="../Chapter6/">
+            
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Chapter6/debug_info.html">
+            
+                <a href="../Chapter6/debug_info.html">
+            
+                    
+                    Debug Info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Chapter6/frustum.html">
+            
+                <a href="../Chapter6/frustum.html">
+            
+                    
+                    Frustum
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../Chapter6/point_in_frustum.html">
+            
+                <a href="../Chapter6/point_in_frustum.html">
+            
+                    
+                    Point in Frustum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../Chapter6/sphere_in_frustum.html">
+            
+                <a href="../Chapter6/sphere_in_frustum.html">
+            
+                    
+                    Sphere in Frustum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../Chapter6/aabb_in_frustum.html">
+            
+                <a href="../Chapter6/aabb_in_frustum.html">
+            
+                    
+                    AABB in Frustum
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Chapter6/culling.html">
+            
+                <a href="../Chapter6/culling.html">
+            
+                    
+                    Culling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Chapter7/">
+            
+                <a href="../Chapter7/">
+            
+                    
+                    Further Research
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Chapter7/obb.html">
+            
+                <a href="../Chapter7/obb.html">
+            
+                    
+                    OBB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Chapter7/capsule.html">
+            
+                <a href="../Chapter7/capsule.html">
+            
+                    
+                    Capsule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Chapter7/elipsoid.html">
+            
+                <a href="../Chapter7/elipsoid.html">
+            
+                    
+                    Elipsoid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../Chapter7/cylinder.html">
+            
+                <a href="../Chapter7/cylinder.html">
+            
+                    
+                    Cylinder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../Chapter7/engines.html">
+            
+                <a href="../Chapter7/engines.html">
+            
+                    
+                    Physics Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Closest point to triangle</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="closest-point-to-triangle">Closest point to Triangle</h1>
+<p>Now that we can test if a point is inside a triangle or not, finding the closest point to a triangle becomes relativley simple. The process is as follows:</p>
+<ul>
+<li>Make a new plane out of the triangle</li>
+<li>Get the closest point on the test plane to your test point<ul>
+<li>This is your new test point </li>
+</ul>
+</li>
+<li>Is the point inside the triangle?<ul>
+<li>If so, that point is the closest point</li>
+</ul>
+</li>
+<li>Convert each edge of the triangle to a line</li>
+<li>Get the closest point on line</li>
+<li>Check the distance between the test point and all 3 closest points</li>
+<li>Return the point with the shortest distance.  </li>
+</ul>
+<p>Given that a triangle already consists of 3 points ABC (p0, p1 and p2), getting the 3 lines of AB, BC and CA becomes very simple. Especially when you consider that the line constructor takes two points.</p>
+<p>Checking which point is closest is easy too, consider the following:</p>
+<pre><code class="lang-cs"><span class="hljs-function">Point <span class="hljs-title">GetClosest</span>(<span class="hljs-params">Point test, Point test1, Point test2, Point test2</span>) </span>{
+  <span class="hljs-comment">// Get 3 vectors, going from the test point to all potential candidates</span>
+  Vector3 diff1 = test - test1; <span class="hljs-comment">// Vector from test point to potentially closest 1</span>
+  Vector3 diff2 = test - test2; <span class="hljs-comment">// Vector from test point to potentially closest 2</span>
+  Vector3 diff3 = test - test3; <span class="hljs-comment">// Vector from test point to potentially closest 3</span>
+
+  <span class="hljs-comment">// Find out how far away each point is using the difference</span>
+  <span class="hljs-comment">// vectors computed above</span>
+  <span class="hljs-keyword">float</span> distSq1 = diff1.LengthSq();  
+  <span class="hljs-keyword">float</span> distSq2 = diff2.LengthSq();
+  <span class="hljs-keyword">float</span> distSq3 = diff3.LengthSq();
+
+  <span class="hljs-comment">// Find the shortest one</span>
+  <span class="hljs-keyword">float</span> min = Min(distSq1, distSq2);
+  min = Min(max, distSq3);
+
+  <span class="hljs-comment">// Finally, return the result</span>
+  <span class="hljs-keyword">if</span> (min == distSq1) {
+    <span class="hljs-keyword">return</span> test1;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> (<span class="hljs-params">min == distSq2</span>) </span>{
+    <span class="hljs-keyword">return</span> test2;
+  }
+  <span class="hljs-keyword">return</span> test3;
+}
+</code></pre>
+<h2 id="the-algorithm">The Algorithm</h2>
+<p>Make sure you return a new point object, not a reference to the old point!</p>
+<pre><code class="lang-cs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Point <span class="hljs-title">ClosestPoint</span>(<span class="hljs-params">Triangle triangle, Point point</span>) </span>{
+    Plane plane = <span class="hljs-keyword">new</span> Plane(triangle.p0, triangle.p1, triangle.p2);
+    point = ClosestPoint(plane, point);
+
+    <span class="hljs-keyword">if</span> (PointInTriangle(triangle, point)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Point(point);
+    }
+
+    Line AB = <span class="hljs-keyword">new</span> Line(triangle.p0, triangle.p1);
+    Line BC = <span class="hljs-keyword">new</span> Line(triangle.p1, triangle.p2);
+    Line CA = <span class="hljs-keyword">new</span> Line(triangle.p2, triangle.p0);
+
+    Point c1 = ClosestPoint(AB, point);
+    Point c2 = ClosestPoint(BC, point);
+    Point c3 = ClosestPoint(CA, point);
+
+    <span class="hljs-keyword">float</span> mag1 = (point.ToVector() - c1.ToVector()).LengthSquared();
+    <span class="hljs-keyword">float</span> mag2 = (point.ToVector() - c2.ToVector()).LengthSquared();
+    <span class="hljs-keyword">float</span> mag3 = (point.ToVector() - c3.ToVector()).LengthSquared();
+
+    <span class="hljs-keyword">float</span> min = Math.Min(mag1, mag2);
+    min = Math.Min(min, mag3);
+
+    <span class="hljs-keyword">if</span> (min == mag1) {
+        <span class="hljs-keyword">return</span> c1;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> (<span class="hljs-params">min == mag2</span>) </span>{
+        <span class="hljs-keyword">return</span> c2;
+    }
+    <span class="hljs-keyword">return</span> c3;
+}
+</code></pre>
+<h2 id="on-your-own">On Your Own</h2>
+<p>Add the following function to the <code>Collisions</code> class:</p>
+<pre><code class="lang-cs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Point <span class="hljs-title">ClosestPoint</span>(<span class="hljs-params">Triangle triangle, Point point</span>)
+</span></code></pre>
+<p>And provide an implementation for it!</p>
+<h3 id="unit-test">Unit Test</h3>
+<p>You can <a href="../Samples/3DModels.rar">Download</a> the samples for this chapter to see if your result looks like the unit test.</p>
+<p>If any of your math is off, the constructor of this test should throw errors. You should read trough the test, take note how i had to use an epsilon compare to compare two points.</p>
+<p><img src="closest_point_triangle_demo.png" alt="UNIT"></p>
+<pre><code class="lang-cs"><span class="hljs-keyword">using</span> OpenTK.Graphics.OpenGL;
+<span class="hljs-keyword">using</span> Math_Implementation;
+<span class="hljs-keyword">using</span> CollisionDetectionSelector.Primitives;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">CollisionDetectionSelector.Samples</span> {
+    <span class="hljs-keyword">class</span> <span class="hljs-title">ClosestPointTriangle</span> : <span class="hljs-title">Application</span> {
+        <span class="hljs-keyword">protected</span> Point[] points = <span class="hljs-keyword">new</span> Point[] {
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">1</span>f, <span class="hljs-number">1</span>f, <span class="hljs-number">1</span>f), 
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">-1</span>f, <span class="hljs-number">-3</span>f, <span class="hljs-number">-4</span>f),
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">-1</span>),
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">-2.732051</span>f, <span class="hljs-number">6.732051</span>f, <span class="hljs-number">1.732051</span>f),
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">-4</span>)
+        };
+        Point[] tests = <span class="hljs-keyword">new</span> Point[] {
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">1</span>, <span class="hljs-number">3.5</span>f, <span class="hljs-number">-1.5</span>f),
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">-3</span>),
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">-1</span>),
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">-1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>),
+            <span class="hljs-keyword">new</span> Point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">-0.9999995</span>f),
+        };
+
+        Triangle triangle = <span class="hljs-keyword">new</span> Triangle(<span class="hljs-keyword">new</span> Point(<span class="hljs-number">-1.0</span>f, <span class="hljs-number">5.0</span>f, <span class="hljs-number">0.0</span>f), <span class="hljs-keyword">new</span> Point(<span class="hljs-number">2.0</span>f, <span class="hljs-number">2.0</span>f, <span class="hljs-number">-3.0</span>f), <span class="hljs-keyword">new</span> Point(<span class="hljs-number">5.0</span>f, <span class="hljs-number">5.0</span>f, <span class="hljs-number">0.0</span>f));
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Intialize</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> width, <span class="hljs-keyword">int</span> height</span>) </span>{
+            GL.Enable(EnableCap.DepthTest);
+            GL.PointSize(<span class="hljs-number">4</span>f);
+            GL.Disable(EnableCap.CullFace);
+            GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; points.Length; ++i) {
+                Point c = Collisions.ClosestPoint(triangle, points[i]);
+                <span class="hljs-keyword">if</span> (!PointCompare(c, tests[i])) {
+                    LogError(<span class="hljs-string">&quot;Expected point &quot;</span> + i + <span class="hljs-string">&quot; to be: &quot;</span> + tests[i] + <span class="hljs-string">&quot;, got: &quot;</span> + c);
+                }
+            }
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">PointCompare</span>(<span class="hljs-params">Point p1, Point p2</span>) </span>{
+            <span class="hljs-keyword">float</span> epsilon = <span class="hljs-number">0.00001</span>f;
+
+            <span class="hljs-keyword">float</span> x = System.Math.Abs(p1.X - p2.X);
+            <span class="hljs-keyword">float</span> y = System.Math.Abs(p1.Y - p2.Y);
+            <span class="hljs-keyword">float</span> z = System.Math.Abs(p1.Z - p2.Z);
+
+            <span class="hljs-keyword">if</span> (x &gt; epsilon) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            <span class="hljs-keyword">if</span> (y &gt; epsilon) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            <span class="hljs-keyword">if</span> (z &gt; epsilon) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Render</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">base</span>.Render();
+            DrawOrigin();
+
+            GL.Color3(<span class="hljs-number">0.0</span>f, <span class="hljs-number">0.0</span>f, <span class="hljs-number">1.0</span>f);
+            triangle.Render();
+
+            GL.Color3(<span class="hljs-number">1.0</span>f, <span class="hljs-number">0.0</span>f, <span class="hljs-number">0.0</span>f);
+            GL.Begin(PrimitiveType.Lines);
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; points.Length; ++i) {
+                Point closest = Collisions.ClosestPoint(triangle, points[i]);
+                GL.Vertex3(points[i].X, points[i].Y, points[i].Z);
+                GL.Vertex3(closest.X, closest.Y, closest.Z);
+            }
+            GL.End();
+
+            GL.Color3(<span class="hljs-number">0.0</span>f, <span class="hljs-number">1.0</span>f, <span class="hljs-number">0.0</span>f);
+            <span class="hljs-keyword">foreach</span> (Point point <span class="hljs-keyword">in</span> points) {
+                point.Render();
+            }
+        }
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="point_in_triangle.html" class="navigation navigation-prev " aria-label="Previous page: Point in Triangle">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="sphere_to_triangle.html" class="navigation navigation-next " aria-label="Next page: Sphere-Triangle">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Closest point to triangle","level":"1.8.1.2","depth":3,"next":{"title":"Sphere-Triangle","level":"1.8.1.3","depth":3,"path":"Chapter4/sphere_to_triangle.md","ref":"Chapter4/sphere_to_triangle.md","articles":[]},"previous":{"title":"Point in Triangle","level":"1.8.1.1","depth":3,"path":"Chapter4/point_in_triangle.md","ref":"Chapter4/point_in_triangle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","youtube"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"youtube":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"letter","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter4/closest_point_to_triangle.md","mtime":"2016-07-09T03:20:07.346Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-03T17:51:33.268Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
