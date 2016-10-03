@@ -3,5 +3,9 @@
         "mathjax",
         "youtube"
     ],
-    "pluginsConfig": {}
+    "pluginsConfig": {},
+    "pdf": {
+		"pageNumbers": true,
+		"paperSize": "letter"
+	}
 }
