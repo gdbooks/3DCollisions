@@ -20,7 +20,7 @@ When one primitive is at the center of the world, the projection test just needs
 
 An AABB v Triangle intersection test has a total of 13 axis which could potentially seperate it. They are:
 
-* 9 axis given by the cross profucts of the combined edges of both
+* 9 axis given by the cross products of the combined edges of both
 * 3 face normals from the AABB
 * 1 face normal from the triangle
 
